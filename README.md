@@ -1,4 +1,4 @@
-Three Point Analysis Code
+Three Point Corr Function Analysis Code
 ===========
 
 Based on fitting lib
