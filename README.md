@@ -1,4 +1,4 @@
-fitting_lib
+Three Point Analysis Code
 ===========
 
-minuit based ensem fitting library
+Based on fitting lib
