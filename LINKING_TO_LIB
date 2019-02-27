@@ -1,0 +1,57 @@
+** add this to your configure.ac
+
+##############################
+# FITTING LIBRARY INTERFACE
+##############################
+
+dnl --with-fitting=DIR
+AC_ARG_WITH(fitting,
+  AC_HELP_STRING(
+    [--with-fitting=DIR],
+    [Building on top of fitting_lib where fitting_lib is installed in DIR]
+  ),
+  [FITTING_HOME="$with_fitting"]
+)
+
+if test "X${FITTING_HOME}X" = "XX" ; then
+  AC_PATH_PROG(FITTING_LIB_CONFIG, [fitting-config], [])
+else
+  AC_PATH_PROG(FITTING_LIB_CONFIG, [fitting-config], [], [${FITTING_HOME}/bin:${PATH}])
+fi
+
+if test "X${FITTING_LIB_CONFIG}X" = "XX" ; then
+  AC_MSG_ERROR([fitting_lib configuration program fitting-config not found.
+                Cannot compile/link without fitting_lib. 
+                Use --with-fitting=<dir> to select a working version.])
+fi  
+
+AC_MSG_NOTICE([Found fitting_lib configuration program ${FITTING_LIB_CONFIG}])
+AC_SUBST(CXX, "`${FITTING_LIB_CONFIG} --cxx`")
+AC_MSG_NOTICE([fitting_lib compiler: ${CXX}])
+AC_SUBST(FITTING_LIB_CXXFLAGS, "`${FITTING_LIB_CONFIG} --cxxflags`")
+AC_MSG_NOTICE([fitting_lib compile flags: ${FITTING_LIB_CXXFLAGS}])
+AC_SUBST(FITTING_LIB_LDFLAGS,  "`${FITTING_LIB_CONFIG} --ldflags`")
+AC_MSG_NOTICE([fitting_lib linking flags: ${FITTING_LIB_LDFLAGS}])
+AC_SUBST(FITTING_LIBS,     "`${FITTING_LIB_CONFIG} --libs`")
+AC_MSG_NOTICE([fitting_lib libraries flags: ${FITTING_LIBS}])
+
+
+**************************************************
+** your makefile should reference the lib
+
+e.g.
+AM_CXXFLAGS = -I@top_srcdir@/src \
+                @CXXFLAGS@ @ADAT_CXXFLAGS@ @FITTING_LIB_CXXFLAGS@ @ITPP_CXXFLAGS@
+
+AM_LDFLAGS  = -L@top_builddir@/src \
+               @LDFLAGS@ @ADAT_LDFLAGS@ @FITTING_LIB_LDFLAGS@
+
+LDADD = -lfitting @ADAT_LIBS@ @ITPP_LIBS@ @LIBS@ @FITTING_LIBS@
+
+***************************************************
+** configure arguments need to point to the library
+
+e.g.
+../configure --with-fitting="${HOME}/Stuff/Research/Code/lattice/install/fitting_lib_install" \
+             CXXFLAGS="-O3 -mtune=native -fopenmp -fbounds-check" CFLAGS="-O3 -mtune=native -fopenmp -fbounds-check" \
+             CXX=g++-6 CC=gcc-6

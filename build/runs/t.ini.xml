@@ -1,0 +1,35 @@
+<ThreeptIniParams>
+
+    <inputProps>
+        <NumdbFiles>1</NumdbFiles>
+        <dbFnames>
+            <elem>
+                <name>t2_test24</name>
+                <dt>24</dt>
+                <tmin>0</tmin>
+                <tmax>24</tmax>
+                <tsrc>0</tsrc>
+                <tsnk>24</tsnk>             
+            </elem>
+        </dbFnames>
+    </inputProps>
+
+
+    <FitProps>
+        <NtMin>5</NtMin>
+        <fit_qual>
+            <type>QN</type>
+            <params>
+              <!--                <power>1</power>
+                <power_mass>0</power_mass>
+                <power_F>0</power_F>                
+                <power_time>0</power_time>
+                <multiply_mass>false</multiply_mass> -->
+            </params>
+        </fit_qual>
+        <chisq_cutoff>0.2</chisq_cutoff>
+        <noise_cutoff>10</noise_cutoff>
+    </FitProps>
+
+</ThreeptIniParams>
+
