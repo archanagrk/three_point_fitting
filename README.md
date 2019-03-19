@@ -1,4 +1,4 @@
-fitting_lib
+Three Point Corr Function Analysis Code
 ===========
 
-minuit based ensem fitting library
+Based on fitting lib
