@@ -38,7 +38,7 @@ void make_three_points( const vector<int>& Dts, int ncfgs, Data& data){
       double y = f( *(xs.back()), par_values );
       
       values.push_back(y);
-      errs.push_back( y * noise_level * double(*Dt) / 32.0 ); 
+      errs.push_back( y * noise_level * double(*Dt) / double(Dts[0]) ); 
     }   
   }
 
@@ -58,8 +58,7 @@ void make_three_points( const vector<int>& Dts, int ncfgs, Data& data){
 
 int main(int argc, char** argv){
 
-  /* the factories are really required here, as we're only considering a very limited set 
-     of functions and fit_qualities */
+  /* the factories  */
   //=================
   ThreePointFunctionEnv::registerAll();
   ThreePtFitQualityEnv::registerAll();
@@ -115,6 +114,10 @@ int main(int argc, char** argv){
 
   //============================
   //===== LOAD THE FAKE DATA =====
+
+  /* Generates vector of data with the size  = number of Dt. Each data[i] has data for a particular Dt and all the Dts less than it.
+   First ensemble fits are done on the smallest Dt. The range is fixed and then moves to the next Dt and does a combined fit with the fixed range
+   smaller Dt and the curret Dt to fix the range of the current Dt. Then finally data[num - 1] contains all the data the the output of this fit is used. */
 
   vector<Data> data(num); 
   vector<int> Dts;
@@ -241,8 +244,6 @@ int main(int argc, char** argv){
   //=============================
   //======= OUTPUT STUFF ========  
 
-  /* write log to screen */
-  //cout << output.fit_summary << endl;
   
   /* write log to file */
   {
