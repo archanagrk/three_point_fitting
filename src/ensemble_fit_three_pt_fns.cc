@@ -65,11 +65,11 @@ int main(int argc, char** argv){
   }
 
 
-
   //============================
   //===== LOAD THE DATA =====
 
   vector<pair<int,int>> x_int; vector<EnsemReal> y_ensem; EnsemVectorReal tmp;
+  vector<Data> data(num); 
 
 
   for(int i = 0; i < num; i++ ){ 
@@ -82,39 +82,55 @@ int main(int argc, char** argv){
       y_ensem.push_back( peekObs(tmp, t) );
       
     }
+    
+    make_pair_int_abscissa_data(x_int, y_ensem, data[i] );
   }
 
-  Data data; make_pair_int_abscissa_data(x_int, y_ensem, data );
   
-  cout << "loaded data::" << endl << data.print_data() << endl;
+  cout << "loaded data::" << endl << data[num-1].print_data() << endl;
   //============================
 
   //=================================
   //===== REMOVE UNWANTED POINTS ====
-  vector<bool> remove_dt = !(data.make_active_data()); //all false
-  {
-    for(int i = 0; i < num; i++ ){ 
+
+
+  vector<vector<bool> > keep(num);
+
+  for(int i = 0; i < num; i++ ){
+
+    vector<bool> remove_dt = !(data[i].make_active_data()); //all false
+    {
       Abscissa* x_dt = new PairIntAbscissa(make_pair(dt_v[i],dt_v[i]));
-      remove_dt = remove_dt || !( data_at_x(data, x_dt ) );
+      remove_dt = remove_dt || !( data_at_x(data[i], x_dt ) );
       delete x_dt;
     }
-  }
-  
-  vector<bool> remove_noisy = data_below_y_noise_ratio( data, noise);
-  
-  vector<bool> tmin_tmax = !(data.make_active_data()); //all false;
-  {
-    for(int i = 0; i < num; i++ ){ 
+    
+    vector<bool> remove_noisy = data_below_y_noise_ratio( data[i], noise);
+    
+    vector<bool> tmin_tmax = !(data[i].make_active_data()); //all false;
+
+    {
       Abscissa* x_tmin = new PairIntAbscissa(make_pair(dt_v[i], tmin_v[i] ));
       Abscissa* x_tmax = new PairIntAbscissa(make_pair(dt_v[i], tsnk_v[i] ));
-      tmin_tmax = tmin_tmax || data_in_x_range( data, make_pair(x_tmin, x_tmax) );
+      tmin_tmax = tmin_tmax || data_in_x_range( data[i], make_pair(x_tmin, x_tmax) );
       delete x_tmin; delete x_tmax;
     }
+
+    vector<bool> tmp = ( remove_dt && remove_noisy && tmin_tmax );
+
+    if(i > 0){
+      tmp.erase(tmp.begin(), tmp.begin() +  keep[i-1].size());
+      keep[i].reserve( keep[i-1].size() + tmp.size() ); // preallocate memory
+      keep[i].insert( keep[i].end(), keep[i-1].begin(), keep[i-1].end() );
+      keep[i].insert( keep[i].end(), tmp.begin(), tmp.end() );
+      tmp.clear();
+    }
+
+    else{keep[i] = tmp;}
+
   }
   
-  vector<bool> keep = ( remove_dt && remove_noisy && tmin_tmax );
-  
-  cout << "acceptable data::" << endl << data.print_data(keep) << endl;
+  cout << "acceptable data::" << endl << data[num-1].print_data(keep[num-1]) << endl;
 
   cout << "###############################" << endl;
   //===================================
@@ -122,15 +138,34 @@ int main(int argc, char** argv){
 
   //============================
   //======= DO THE FITS ======== 
-  fit_three_point_control control;
+  vector<fit_three_point_control> control(num);
 
-  control.tsrc = tsrc_v; control.tsnk = tsnk_v; control.Nt_min = Nt_min;
-  control.plots = true ; control.dt = dt_v; control.tmin_max = tmin_max_v;
+  for(int i = 0; i < num; i++){
+
+    if(i > 0){  
+      control[i].tsrc = control[i-1].tsrc;
+      control[i].tsnk = control[i-1].tsnk;
+      control[i].dt = control[i-1].dt;
+      control[i].tmin_max = control[i-1].tmin_max;
+    }
+
+    control[i].tsrc.push_back(tsrc_v[i]);
+    control[i].tsnk.push_back(tsnk_v[i]);
+    control[i].dt.push_back(dt_v[i]); 
+    control[i].tmin_max.push_back(tmin_max_v[i]);   
+
+
+    control[i].Nt_min = Nt_min;
+    control[i].plots = true ;
+  }
 
   //===================================
 
-  if( count_active(keep) < control.dt.size() * Nt_min )
-    { cerr << "fewer than " << Nt_min << " timeslices survive your restrictions, no fits will be acceptable, exiting ..." << endl; exit(1); }
+  for(int i = 0; i < num; i++ ){
+
+    if( count_active(keep[i]) < control[i].dt.size() * Nt_min )
+      { cerr << "fewer than " << Nt_min << " timeslices survive your restrictions, no fits will be acceptable, exiting ..." << endl; exit(1); }
+}
 
   //===================================
 
@@ -153,7 +188,7 @@ int main(int argc, char** argv){
     fit_qual = TheFitQualityFactory::Instance().createObject( qual_type, xml_in, "/ThreeptIniParams/FitProps/fit_qual/params");
   }
   
-  fit_three_point_output output =  fit_three_point_corr( data, keep, control, fit_qual, chisq_cut);
+  fit_three_point_output output =  fit( data, keep, control, fit_qual, chisq_cut, num);
   //============================
 
 

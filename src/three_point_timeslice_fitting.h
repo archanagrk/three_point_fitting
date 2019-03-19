@@ -33,6 +33,7 @@ struct fit_three_point_control{
   
   bool long_log = false;
   bool plots = false;
+  bool fixed_ranges = false;
 };
 
 //************************************************************************
@@ -51,11 +52,32 @@ struct fit_three_point_output{
 }; 
 
 //************************************************************************
+// DRIVER OVER DIFFERENT SOURCE-SINK SEPERATIONS
+//************************************************************************
+fit_three_point_output fit( const vector<Data>& data,                        /* the three_point data */
+				    const vector<vector<bool>> accepted_data,        /* times which passed noise cut etc... */
+				    vector<fit_three_point_control> control,
+				    FitQuality* fit_qual,                    /* how to compare different fits */
+				    double chisq_ndof_cutoff,                 /* accept these fits */
+            int num
+				    );
+//************************************************************************
+// FIX THE RANGES FOR EACH DT
+//************************************************************************
+void get_range( const Data& data,                        /* the three_point data */
+				    const vector<bool> accepted_data,        /* times which passed noise cut etc... */
+				    fit_three_point_control& control,
+				    FitQuality* fit_qual,                    /* how to compare different fits */
+				    double chisq_ndof_cutoff, int num, int count_dt                 /* accept these fits */
+				    );
+//************************************************************************
+// FIT EACH SOURCE-SINK SEPERATION
+//************************************************************************
 fit_three_point_output fit_three_point_corr( const Data& data,                        /* the three_point data */
 				    const vector<bool> accepted_data,        /* times which passed noise cut etc... */
-				    fit_three_point_control control,
+				    fit_three_point_control& control,
 				    FitQuality* fit_qual,                    /* how to compare different fits */
-				    double chisq_ndof_cutoff                 /* accept these fits */
+				    double chisq_ndof_cutoff, int count_dt                 /* accept these fits */
 				    );
 //************************************************************************
 
@@ -84,7 +106,7 @@ vector< pair<pair<double,double>,double> >  plot_three_point_timeslice_function(
 //************************************************************************
 
 
-std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> get_all_t_ranges(fit_three_point_control control, bool slide, bool src, bool snk);
+std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> get_all_t_ranges(fit_three_point_control control, bool slide, bool src, bool snk, int count_dt);
 
  std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > recursive_search_pairs(std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> trange_bins, int size);
 

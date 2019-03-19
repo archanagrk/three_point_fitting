@@ -19,18 +19,22 @@ LDADD = -lfitting @ADAT_LIBS@ @ITPP_LIBS@ @LIBS@ @FITTING_LIBS@
 ##   be built by 'make check' and is not installed.
 
 
-bin_PROGRAMS = fit_zt fit_const
+bin_PROGRAMS = fit_zt ensemble_fit_three_pt_fns
 
+check_PROGRAMS = test_three_pt_fit
 
 ##############################################################
 
-fit_const_SOURCES   = fit_const.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc \
+ensemble_fit_three_pt_fns_SOURCES   = ensemble_fit_three_pt_fns.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc \
 													three_point_timeslice_corr_functions_factory.cc three_pt_fit_quality_factory.cc \
 													three_pt_fit_quality.cc
 
 fit_zt_SOURCES		= fit_zt.cc z_timeslice_fitting.cc z_timeslice_functions.cc \
 												z_timeslice_functions_factory.cc
 
+test_three_pt_fit_SOURCES	= test_three_pt_fit.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc \
+                           three_point_timeslice_corr_functions_factory.cc three_pt_fit_quality_factory.cc \
+                           three_pt_fit_quality.cc
 ##############################################################
 
 

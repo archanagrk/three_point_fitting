@@ -86,7 +86,8 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = fit_zt$(EXEEXT) fit_const$(EXEEXT)
+bin_PROGRAMS = fit_zt$(EXEEXT) ensemble_fit_three_pt_fns$(EXEEXT)
+check_PROGRAMS = test_three_pt_fit$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/pac_adat_link_cxx_func.m4 \
@@ -99,21 +100,32 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_fit_const_OBJECTS = fit_const.$(OBJEXT) \
+am_ensemble_fit_three_pt_fns_OBJECTS =  \
+	ensemble_fit_three_pt_fns.$(OBJEXT) \
 	three_point_timeslice_corr_functions.$(OBJEXT) \
 	three_point_timeslice_fitting.$(OBJEXT) \
 	three_point_timeslice_corr_functions_factory.$(OBJEXT) \
 	three_pt_fit_quality_factory.$(OBJEXT) \
 	three_pt_fit_quality.$(OBJEXT)
-fit_const_OBJECTS = $(am_fit_const_OBJECTS)
-fit_const_LDADD = $(LDADD)
-fit_const_DEPENDENCIES =
+ensemble_fit_three_pt_fns_OBJECTS =  \
+	$(am_ensemble_fit_three_pt_fns_OBJECTS)
+ensemble_fit_three_pt_fns_LDADD = $(LDADD)
+ensemble_fit_three_pt_fns_DEPENDENCIES =
 am_fit_zt_OBJECTS = fit_zt.$(OBJEXT) z_timeslice_fitting.$(OBJEXT) \
 	z_timeslice_functions.$(OBJEXT) \
 	z_timeslice_functions_factory.$(OBJEXT)
 fit_zt_OBJECTS = $(am_fit_zt_OBJECTS)
 fit_zt_LDADD = $(LDADD)
 fit_zt_DEPENDENCIES =
+am_test_three_pt_fit_OBJECTS = test_three_pt_fit.$(OBJEXT) \
+	three_point_timeslice_corr_functions.$(OBJEXT) \
+	three_point_timeslice_fitting.$(OBJEXT) \
+	three_point_timeslice_corr_functions_factory.$(OBJEXT) \
+	three_pt_fit_quality_factory.$(OBJEXT) \
+	three_pt_fit_quality.$(OBJEXT)
+test_three_pt_fit_OBJECTS = $(am_test_three_pt_fit_OBJECTS)
+test_three_pt_fit_LDADD = $(LDADD)
+test_three_pt_fit_DEPENDENCIES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -129,7 +141,8 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/fit_const.Po ./$(DEPDIR)/fit_zt.Po \
+am__depfiles_remade = ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po \
+	./$(DEPDIR)/fit_zt.Po ./$(DEPDIR)/test_three_pt_fit.Po \
 	./$(DEPDIR)/three_point_timeslice_corr_functions.Po \
 	./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po \
 	./$(DEPDIR)/three_point_timeslice_fitting.Po \
@@ -152,8 +165,10 @@ AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
 am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
-SOURCES = $(fit_const_SOURCES) $(fit_zt_SOURCES)
-DIST_SOURCES = $(fit_const_SOURCES) $(fit_zt_SOURCES)
+SOURCES = $(ensemble_fit_three_pt_fns_SOURCES) $(fit_zt_SOURCES) \
+	$(test_three_pt_fit_SOURCES)
+DIST_SOURCES = $(ensemble_fit_three_pt_fns_SOURCES) $(fit_zt_SOURCES) \
+	$(test_three_pt_fit_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -294,13 +309,16 @@ AM_LDFLAGS = -L@top_builddir@/src \
 LDADD = -lfitting @ADAT_LIBS@ @ITPP_LIBS@ @LIBS@ @FITTING_LIBS@
 
 ##############################################################
-fit_const_SOURCES = fit_const.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc \
+ensemble_fit_three_pt_fns_SOURCES = ensemble_fit_three_pt_fns.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc \
 													three_point_timeslice_corr_functions_factory.cc three_pt_fit_quality_factory.cc \
 													three_pt_fit_quality.cc
 
 fit_zt_SOURCES = fit_zt.cc z_timeslice_fitting.cc z_timeslice_functions.cc \
 												z_timeslice_functions_factory.cc
 
+test_three_pt_fit_SOURCES = test_three_pt_fit.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc \
+                           three_point_timeslice_corr_functions_factory.cc three_pt_fit_quality_factory.cc \
+                           three_pt_fit_quality.cc
 
 ##############################################################
 
@@ -386,13 +404,20 @@ uninstall-binPROGRAMS:
 clean-binPROGRAMS:
 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
 
-fit_const$(EXEEXT): $(fit_const_OBJECTS) $(fit_const_DEPENDENCIES) $(EXTRA_fit_const_DEPENDENCIES) 
-	@rm -f fit_const$(EXEEXT)
-	$(AM_V_CXXLD)$(CXXLINK) $(fit_const_OBJECTS) $(fit_const_LDADD) $(LIBS)
+clean-checkPROGRAMS:
+	-test -z "$(check_PROGRAMS)" || rm -f $(check_PROGRAMS)
+
+ensemble_fit_three_pt_fns$(EXEEXT): $(ensemble_fit_three_pt_fns_OBJECTS) $(ensemble_fit_three_pt_fns_DEPENDENCIES) $(EXTRA_ensemble_fit_three_pt_fns_DEPENDENCIES) 
+	@rm -f ensemble_fit_three_pt_fns$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(ensemble_fit_three_pt_fns_OBJECTS) $(ensemble_fit_three_pt_fns_LDADD) $(LIBS)
 
 fit_zt$(EXEEXT): $(fit_zt_OBJECTS) $(fit_zt_DEPENDENCIES) $(EXTRA_fit_zt_DEPENDENCIES) 
 	@rm -f fit_zt$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(fit_zt_OBJECTS) $(fit_zt_LDADD) $(LIBS)
+
+test_three_pt_fit$(EXEEXT): $(test_three_pt_fit_OBJECTS) $(test_three_pt_fit_DEPENDENCIES) $(EXTRA_test_three_pt_fit_DEPENDENCIES) 
+	@rm -f test_three_pt_fit$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(test_three_pt_fit_OBJECTS) $(test_three_pt_fit_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -400,8 +425,9 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fit_const.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ensemble_fit_three_pt_fns.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fit_zt.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test_three_pt_fit.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/three_point_timeslice_corr_functions.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/three_point_timeslice_fitting.Po@am__quote@ # am--include-marker
@@ -517,6 +543,7 @@ distdir-am: $(DISTFILES)
 	  fi; \
 	done
 check-am: all-am
+	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
 check: check-am
 all-am: Makefile $(PROGRAMS)
 installdirs:
@@ -555,11 +582,13 @@ maintainer-clean-generic:
 	@echo "it deletes files that may require special tools to rebuild."
 clean: clean-am
 
-clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
+clean-am: clean-binPROGRAMS clean-checkPROGRAMS clean-generic \
+	mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/fit_const.Po
+		-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
 	-rm -f ./$(DEPDIR)/fit_zt.Po
+	-rm -f ./$(DEPDIR)/test_three_pt_fit.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_fitting.Po
@@ -613,8 +642,9 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/fit_const.Po
+		-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
 	-rm -f ./$(DEPDIR)/fit_zt.Po
+	-rm -f ./$(DEPDIR)/test_three_pt_fit.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_fitting.Po
@@ -640,21 +670,21 @@ ps-am:
 
 uninstall-am: uninstall-binPROGRAMS
 
-.MAKE: install-am install-strip
+.MAKE: check-am install-am install-strip
 
 .PHONY: CTAGS GTAGS TAGS all all-am am--depfiles check check-am clean \
-	clean-binPROGRAMS clean-generic cscopelist-am ctags ctags-am \
-	distclean distclean-compile distclean-generic distclean-tags \
-	distdir dvi dvi-am html html-am info info-am install \
-	install-am install-binPROGRAMS install-data install-data-am \
-	install-dvi install-dvi-am install-exec install-exec-am \
-	install-html install-html-am install-info install-info-am \
-	install-man install-pdf install-pdf-am install-ps \
-	install-ps-am install-strip installcheck installcheck-am \
-	installdirs maintainer-clean maintainer-clean-generic \
-	mostlyclean mostlyclean-compile mostlyclean-generic pdf pdf-am \
-	ps ps-am tags tags-am uninstall uninstall-am \
-	uninstall-binPROGRAMS
+	clean-binPROGRAMS clean-checkPROGRAMS clean-generic \
+	cscopelist-am ctags ctags-am distclean distclean-compile \
+	distclean-generic distclean-tags distdir dvi dvi-am html \
+	html-am info info-am install install-am install-binPROGRAMS \
+	install-data install-data-am install-dvi install-dvi-am \
+	install-exec install-exec-am install-html install-html-am \
+	install-info install-info-am install-man install-pdf \
+	install-pdf-am install-ps install-ps-am install-strip \
+	installcheck installcheck-am installdirs maintainer-clean \
+	maintainer-clean-generic mostlyclean mostlyclean-compile \
+	mostlyclean-generic pdf pdf-am ps ps-am tags tags-am uninstall \
+	uninstall-am uninstall-binPROGRAMS
 
 .PRECIOUS: Makefile
 

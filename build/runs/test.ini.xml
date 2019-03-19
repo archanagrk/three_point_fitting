@@ -11,20 +11,20 @@
                 <tsrc>0</tsrc>
                 <tsnk>24</tsnk>             
             </elem>
-        </dbFnames>
+          </dbFnames>
     </inputProps>
 
 
     <FitProps>
         <NtMin>5</NtMin>
         <fit_qual>
-            <type>gen_3_pt</type>
+            <type>QN</type>
             <params>
-              <power>1</power>
-                <power_mass>1</power_mass>
-                <power_F>1</power_F>                
-                <power_time>1</power_time>
-                <multiply_mass>true</multiply_mass>
+              <!--                <power>1</power>
+                <power_mass>0</power_mass>
+                <power_F>0</power_F>                
+                <power_time>0</power_time>
+                <multiply_mass>false</multiply_mass> -->
             </params>
         </fit_qual>
         <chisq_cutoff>0.2</chisq_cutoff>

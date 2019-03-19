@@ -1,7 +1,7 @@
 <ThreeptIniParams>
 
     <inputProps>
-        <NumdbFiles>1</NumdbFiles>
+        <NumdbFiles>2</NumdbFiles>
         <dbFnames>
             <elem>
                 <name>t2_test24</name>
@@ -11,7 +11,15 @@
                 <tsrc>0</tsrc>
                 <tsnk>24</tsnk>             
             </elem>
-        </dbFnames>
+            <elem>
+                 <name>t2_test32</name>
+                 <dt>32</dt>
+                 <tmin>0</tmin>
+                 <tmax>32</tmax>
+                 <tsrc>0</tsrc>
+                 <tsnk>32</tsnk>
+              </elem>  
+          </dbFnames>
     </inputProps>
 
 
