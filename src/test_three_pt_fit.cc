@@ -90,7 +90,7 @@ int main(int argc, char** argv){
 
 
     for(int i = 1; i <= num; i++ ){ 
-      read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(i)+"]/name", file);
+
       read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(i)+"]/dt", dt);
       read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(i)+"]/tsrc", tsrc);
       read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(i)+"]/tsnk", tsnk);
@@ -117,7 +117,8 @@ int main(int argc, char** argv){
 
   /* Generates vector of data with the size  = number of Dt. Each data[i] has data for a particular Dt and all the Dts less than it.
    First ensemble fits are done on the smallest Dt. The range is fixed and then moves to the next Dt and does a combined fit with the fixed range
-   smaller Dt and the curret Dt to fix the range of the current Dt. Then finally data[num - 1] contains all the data the the output of this fit is used. */
+   smaller Dt and the curret Dt to fix the range of the current Dt. Then finally data[num - 1] contains all the data the the output of this fit is used.
+   reduces the complexity from n^m to n*m */
 
   vector<Data> data(num); 
   vector<int> Dts;

@@ -64,11 +64,12 @@ fit_three_point_output fit( const vector<Data>& data,                        /* 
 //************************************************************************
 // FIX THE RANGES FOR EACH DT
 //************************************************************************
-void get_range( const Data& data,                        /* the three_point data */
+ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const Data& data,                        /* the three_point data */
 				    const vector<bool> accepted_data,        /* times which passed noise cut etc... */
 				    fit_three_point_control& control,
 				    FitQuality* fit_qual,                    /* how to compare different fits */
-				    double chisq_ndof_cutoff, int num, int count_dt                 /* accept these fits */
+				    double chisq_ndof_cutoff, std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > range,               /* accept these fits */
+            int count_dt  
 				    );
 //************************************************************************
 // FIT EACH SOURCE-SINK SEPERATION
@@ -77,7 +78,8 @@ fit_three_point_output fit_three_point_corr( const Data& data,                  
 				    const vector<bool> accepted_data,        /* times which passed noise cut etc... */
 				    fit_three_point_control& control,
 				    FitQuality* fit_qual,                    /* how to compare different fits */
-				    double chisq_ndof_cutoff, int count_dt                 /* accept these fits */
+				    double chisq_ndof_cutoff, std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > range,               /* accept these fits */
+            int count_dt  
 				    );
 //************************************************************************
 
@@ -106,16 +108,9 @@ vector< pair<pair<double,double>,double> >  plot_three_point_timeslice_function(
 //************************************************************************
 
 
-std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> get_all_t_ranges(fit_three_point_control control, bool slide, bool src, bool snk, int count_dt);
+std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> get_all_t_ranges(fit_three_point_control control, bool slide, bool src, bool snk,
+                      std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> range, int count_dt);
 
- std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > recursive_search_pairs(std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> trange_bins, int size);
 
- //void cartesian(std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> const& items);
-
- void cart_product(
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> >& rvvi,  // final result
-    std::vector<pair<pair<int,int>,pair<int,int>>>&  rvi,   // current result 
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> >::const_iterator me, // current input
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> >::const_iterator end); // final input
 
 #endif

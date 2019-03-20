@@ -67,6 +67,12 @@ int main(int argc, char** argv){
 
   //============================
   //===== LOAD THE DATA =====
+  
+  /* Generates vector of data with the size  = number of Dt. Each data[i] has data for a particular Dt and all the Dts less than it.
+   First ensemble fits are done on the smallest Dt. The range is fixed and then moves to the next Dt and does a combined fit with the fixed range
+   smaller Dt and the curret Dt to fix the range of the current Dt. Then finally data[num - 1] contains all the data the the output of this fit is used.
+   reduces the complexity from n^m to n*m */
+
 
   vector<pair<int,int>> x_int; vector<EnsemReal> y_ensem; EnsemVectorReal tmp;
   vector<Data> data(num); 
@@ -196,9 +202,6 @@ int main(int argc, char** argv){
   
   //=============================
   //======= OUTPUT STUFF ========  
-
-  /* write log to screen */
-  cout << output.fit_summary << endl;
   
   /* write log to file */
   {

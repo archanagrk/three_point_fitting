@@ -15,19 +15,19 @@ fit_three_point_output fit( const vector<Data>& data,
 {
 
   fit_three_point_output out;
+  std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > range;
 
   for(int i = 0; i < num-1; i++){
+    
 
-    get_range(data[i], accepted_data[i], control[i], fit_qual, chisq_ndof_cutoff, num, i);
-
+    range = get_range(data[i], accepted_data[i], control[i], fit_qual, chisq_ndof_cutoff, range, i);
     for(int j = 0; j <= i; j++){control[i+1].tmin_max[j] = control[i].tmin_max[j];}
 
   }
 
-  out = fit_three_point_corr(data[num-1], accepted_data[num-1], control[num-1], fit_qual, chisq_ndof_cutoff, num-1);
+  out = fit_three_point_corr(data[num-1], accepted_data[num-1], control[num-1], fit_qual, chisq_ndof_cutoff, range, num-1);
 
   return out;
-
 
 };
 
@@ -35,23 +35,26 @@ fit_three_point_output fit( const vector<Data>& data,
 // FIX THE RANGES FOR EACH DT
 //************************************************************************
 
-void get_range( const Data& data,                        
+std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const Data& data,                        
 				    const vector<bool> accepted_data,       
 				    fit_three_point_control& control,
 				    FitQuality* fit_qual,                   
-				    double chisq_ndof_cutoff, int num, int count_dt               
+				    double chisq_ndof_cutoff, std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > range, 
+            int count_dt               
 				    )
 {
   /* set minuit controls using defaults */
   MinuitControl minuit_controls; minuit_controls.minos = control.minos;
+
+  /* the output object */
+  std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > out;
+  std::vector<pair<pair<int,int>,pair<int,int>>> out_i;
+
   
   /* hold the various fits */
   vector<AvgFit*> fits;
   vector<AvgFit*> fits_src_exp;
   vector<AvgFit*> fits_snk_exp;
-
-  /* the output object */
-  fit_three_point_output out;
 
   //************************************************************************************************
 
@@ -90,15 +93,9 @@ void get_range( const Data& data,
   
     vector<bool> previous( accepted_data.size(), false ); 
 
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs_in;
+    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,1,1,1, range, count_dt);
 
-    t_pairs_in = get_all_t_ranges(control,1,1,1,count_dt);
-
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs;
-    std::vector<pair<pair<int,int>,pair<int,int>>>  t_pairsTemp;
-    cart_product(t_pairs, t_pairsTemp, t_pairs_in.begin(), t_pairs_in.end());
-
-
+    cout << t_pairs.size() << endl;
 
 
     for(int i = 0 ; i < t_pairs.size() ; i++){
@@ -151,7 +148,7 @@ void get_range( const Data& data,
 
       x_tlow.clear(); x_thigh.clear();
     } //next t_low
-    t_pairs_in.clear(); t_pairs.clear(); t_pairsTemp.clear();
+    t_pairs.clear();
   } //end constant fits
   //************************************************************************************************
   
@@ -229,19 +226,13 @@ void get_range( const Data& data,
       vector<bool> previous( accepted_data.size(), false );
 
 
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs_in;
-
       for(int i = 0; i < control.tmin_max.size(); i++){ //if the ordering is right it works
         std::get<1>(control.tmin_max[i]) = tmin_cnst[i].second;
         std::get<2>(control.tmin_max[i]) = tmax_cnst[i].second;
       }
 
-      t_pairs_in = get_all_t_ranges(control,0,1,0, count_dt);
 
-
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs;
-      std::vector<pair<pair<int,int>,pair<int,int>>>  t_pairsTemp;
-      cart_product(t_pairs, t_pairsTemp, t_pairs_in.begin(), t_pairs_in.end());
+    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,0,1,0, range, count_dt);
 
 
       for(int i = 0 ; i < t_pairs.size() ; i++){
@@ -289,7 +280,7 @@ void get_range( const Data& data,
         }
         x_tlow.clear(); x_thigh.clear();
       } // next t_pairs
-      t_pairs_in.clear(); t_pairs.clear(); t_pairsTemp.clear();
+      t_pairs.clear();
     } //end of src_exp fits
 
 
@@ -321,19 +312,13 @@ void get_range( const Data& data,
     
       vector<bool> previous( accepted_data.size(), false );
 
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs_in;
 
       // for(int i = 0; i < control.tmin_max.size(); i++){
       //   std::get<1>(control.tmin_max[i]) = tmin_cnst[i].second;
       //   std::get<2>(control.tmin_max[i]) = tmax_cnst[i].second;
       // }
 
-      t_pairs_in = get_all_t_ranges(control,0,0,1,count_dt);
-
-
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs;
-      std::vector<pair<pair<int,int>,pair<int,int>>>  t_pairsTemp;
-      cart_product(t_pairs, t_pairsTemp, t_pairs_in.begin(), t_pairs_in.end());
+      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,0,0,1, range, count_dt);
 
 
       for(int i = 0 ; i < t_pairs.size() ; i++){
@@ -382,7 +367,7 @@ void get_range( const Data& data,
         }
         x_tlow.clear(); x_thigh.clear();
       } // next t_pair
-      t_pairs_in.clear(); t_pairs.clear(); t_pairsTemp.clear();
+      t_pairs.clear();
     } //end of snk_exp fits
 
 
@@ -515,7 +500,6 @@ void get_range( const Data& data,
 
      vector<bool> previous( accepted_data.size(), false );
 
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs_in;
 
       for(int i = 0; i < control.tmin_max.size(); i++){
         std::get<1>(control.tmin_max[i]) =  tmin_cnst_one_exp[i].second;
@@ -523,12 +507,7 @@ void get_range( const Data& data,
       }
 
 
-      t_pairs_in = get_all_t_ranges(control,0,1,1,count_dt);
-
-
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs;
-      std::vector<pair<pair<int,int>,pair<int,int>>>  t_pairsTemp;
-      cart_product(t_pairs, t_pairsTemp, t_pairs_in.begin(), t_pairs_in.end());
+      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,0,1,1, range, count_dt);
 
 
         for(int i = 0 ; i < t_pairs.size() ; i++){
@@ -576,7 +555,7 @@ void get_range( const Data& data,
           }  
           x_tlow.clear(); x_thigh.clear();      
         } // next dt
-        t_pairs_in.clear(); t_pairs.clear(); t_pairsTemp.clear();
+        t_pairs.clear();
       }//end two exp fits
 
     }//end of !only exp loop
@@ -587,64 +566,50 @@ void get_range( const Data& data,
   //************************************************************************************************
 
   //************************************************************************************************
-  /* done with avg fitting, select a best fit, do an ensem fit ... */
-
-  cout << endl << "# fits = " << fits.size() << endl;
-
-  map<double, AvgFit*, std::greater<double> > ordered_fits = make_ordered_list( fits, fit_qual );
-
-  FitSelector fit_selector( fits, fit_qual, chisq_ndof_cutoff );
-
-  //************************************************************************************************
-
-  cout << endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-  
-  cout << "success=" << fit_selector.ensem_success();
-  //cout << fit_selector.get_summary();
-
-  cout << endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
-  
-  //************************************************************************************************
   /* done with avg fitting, select the ranges ... */
 
+  if(fits.size() > 0){
+    map<double, AvgFit*, std::greater<double> > ordered = make_ordered_list( fits, fit_qual );
+    minuit_fit_result                           best_cnst = (ordered.begin()->second)->get_result();
 
-  if( !fit_selector.ensem_success()  || control.long_log ){
-    out.fit_long_log = fit_selector.get_long_log();
-  }
-
-  if( !fit_selector.ensem_success() ){
-    for(int i = 0 ; i < control.dt.size() ; i++){
-      std::get<1>(control.tmin_max[i]) = 0;  std::get<2>(control.tmin_max[i]) = 0; 
-    }
-  }
-
-  else{
-
-    EnsemFit* efit = fit_selector.get_ensem_fit();
-    
-    cout << endl << fit_selector.get_summary() << endl;
-    cout << endl << efit->report() << endl;
-
-    vector<bool> active = efit->get_active_data();
+    auto end = ordered.begin();
+    std::advance(end, 5);
   
     {
-      int dt_count = 0;
-      for(int i = 0 ; i < control.dt.size() ; i++){
-      /* in the current case, the indexing of active_data corresponds to the count */
-        int t_min_best = 0; int t_max_best = control.dt[i];
+      for(auto it=ordered.begin(); it!=end; ++it){
+
+        vector<bool> active = (it->second)->get_active_data();
+        int dt_count = 0;
+        
+        for(int i = 0 ; i < control.dt.size() ; i++){
+        /* in the current case, the indexing of active_data corresponds to the count */
+          int t_min_best = 0; int t_max_best = control.dt[i];
 
 
-        while( !active[dt_count + t_min_best] ){ t_min_best++; }
-        while( !active[dt_count + t_max_best] ){ t_max_best--; }
-        t_min_best--;t_max_best++;
+          while( !active[dt_count + t_min_best] ){ t_min_best++; }
+          while( !active[dt_count + t_max_best] ){ t_max_best--; }
+          t_min_best--;t_max_best++;
 
-        std::get<1>(control.tmin_max[i]) = t_min_best;  std::get<2>(control.tmin_max[i]) = t_max_best; 
+          std::get<1>(control.tmin_max[i]) = t_min_best;  std::get<2>(control.tmin_max[i]) = t_max_best; 
 
-        dt_count += control.dt[i]+1;
+          dt_count += control.dt[i]+1;
+          out_i.push_back(make_pair(make_pair(std::get<0>(control.tmin_max[i]),t_min_best),make_pair(std::get<0>(control.tmin_max[i]),t_max_best) ));
+        }
+
+        out.push_back(out_i);
+
+        out_i.clear(); active.clear();
+
       }
 
     }
 
+  }
+
+  else{
+    std::get<1>(control.tmin_max[count_dt]) = 0;  std::get<2>(control.tmin_max[count_dt]) = 0; 
+    out = range;
+    for(int i = 0; i < range.size();i++){out[i].push_back(make_pair(make_pair(std::get<0>(control.tmin_max[count_dt]),0),make_pair(std::get<0>(control.tmin_max[count_dt]),0) ));}
   }
 
 
@@ -662,6 +627,9 @@ void get_range( const Data& data,
   /* clean up pointers */
   delete cnst; delete cnst_src_exp; delete cnst_two_exp; delete cnst_snk_exp;
 
+
+  return out;
+
 };
 
 //************************************************************************
@@ -672,7 +640,8 @@ fit_three_point_output fit_three_point_corr( const Data& data,
 				    const vector<bool> accepted_data,       
 				    fit_three_point_control& control,
 				    FitQuality* fit_qual,                   
-				    double chisq_ndof_cutoff, int count_dt               
+				    double chisq_ndof_cutoff, std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > range, 
+            int count_dt               
 				    )
 {
   /* set minuit controls using defaults */
@@ -723,14 +692,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
   
     vector<bool> previous( accepted_data.size(), false ); 
 
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs_in;
-
-    t_pairs_in = get_all_t_ranges(control,1,1,1,count_dt);
-
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs;
-    std::vector<pair<pair<int,int>,pair<int,int>>>  t_pairsTemp;
-    cart_product(t_pairs, t_pairsTemp, t_pairs_in.begin(), t_pairs_in.end());
-
+    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,1,1,1, range, count_dt);
 
 
 
@@ -783,7 +745,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
 
       x_tlow.clear(); x_thigh.clear();
     } //next t_low
-    t_pairs_in.clear(); t_pairs.clear(); t_pairsTemp.clear();
+    t_pairs.clear();
   } //end constant fits
   //************************************************************************************************
   
@@ -860,20 +822,12 @@ fit_three_point_output fit_three_point_corr( const Data& data,
     
       vector<bool> previous( accepted_data.size(), false );
 
-
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs_in;
-
       for(int i = 0; i < control.tmin_max.size(); i++){ //if the ordering is right it works
         std::get<1>(control.tmin_max[i]) = tmin_cnst[i].second;
         std::get<2>(control.tmin_max[i]) = tmax_cnst[i].second;
       }
 
-      t_pairs_in = get_all_t_ranges(control,0,1,0,count_dt);
-
-
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs;
-      std::vector<pair<pair<int,int>,pair<int,int>>>  t_pairsTemp;
-      cart_product(t_pairs, t_pairsTemp, t_pairs_in.begin(), t_pairs_in.end());
+      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,0,1,0, range, count_dt);
 
 
       for(int i = 0 ; i < t_pairs.size() ; i++){
@@ -921,7 +875,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
         }
         x_tlow.clear(); x_thigh.clear();
       } // next t_pairs
-      t_pairs_in.clear(); t_pairs.clear(); t_pairsTemp.clear();
+      t_pairs.clear();
     } //end of src_exp fits
 
 
@@ -953,19 +907,14 @@ fit_three_point_output fit_three_point_corr( const Data& data,
     
       vector<bool> previous( accepted_data.size(), false );
 
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs_in;
 
       // for(int i = 0; i < control.tmin_max.size(); i++){
       //   std::get<1>(control.tmin_max[i]) = tmin_cnst[i].second;
       //   std::get<2>(control.tmin_max[i]) = tmax_cnst[i].second;
       // }
 
-      t_pairs_in = get_all_t_ranges(control,0,0,1,count_dt);
+    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,0,0,1, range, count_dt);
 
-
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs;
-      std::vector<pair<pair<int,int>,pair<int,int>>>  t_pairsTemp;
-      cart_product(t_pairs, t_pairsTemp, t_pairs_in.begin(), t_pairs_in.end());
 
 
       for(int i = 0 ; i < t_pairs.size() ; i++){
@@ -1014,7 +963,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
         }
         x_tlow.clear(); x_thigh.clear();
       } // next t_pair
-      t_pairs_in.clear(); t_pairs.clear(); t_pairsTemp.clear();
+      t_pairs.clear();
     } //end of snk_exp fits
 
 
@@ -1147,20 +1096,12 @@ fit_three_point_output fit_three_point_corr( const Data& data,
 
      vector<bool> previous( accepted_data.size(), false );
 
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs_in;
-
       for(int i = 0; i < control.tmin_max.size(); i++){
         std::get<1>(control.tmin_max[i]) =  tmin_cnst_one_exp[i].second;
         std::get<2>(control.tmin_max[i]) =  tmax_cnst_one_exp[i].second;
       }
 
-
-      t_pairs_in = get_all_t_ranges(control,0,1,1,count_dt);
-
-
-      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs;
-      std::vector<pair<pair<int,int>,pair<int,int>>>  t_pairsTemp;
-      cart_product(t_pairs, t_pairsTemp, t_pairs_in.begin(), t_pairs_in.end());
+      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,0,1,1, range, count_dt);
 
 
         for(int i = 0 ; i < t_pairs.size() ; i++){
@@ -1208,7 +1149,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
           }  
           x_tlow.clear(); x_thigh.clear();      
         } // next dt
-        t_pairs_in.clear(); t_pairs.clear(); t_pairsTemp.clear();
+        t_pairs.clear();
       }//end two exp fits
 
     }//end of !only exp loop
@@ -1498,228 +1439,187 @@ vector< pair<pair<double,double>,double> > plot_three_point_timeslice_function( 
 //************************************************************************
 
 
-std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> get_all_t_ranges(fit_three_point_control control, bool slide, bool src, bool snk, int count_dt){
+std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> get_all_t_ranges(fit_three_point_control control, bool slide, bool src, bool snk,
+                  std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> range, int count_dt){
 
+
+  std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> trange_bins_i;
   std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> trange_bins;
-
-  std::vector<pair<pair<int,int>,pair<int,int>>> trange_bins_i;
 
   pair<int,int> tmin, tmax;
     //cout << "in" << endl;
 
   if(slide && src && snk){
 
-    for(int i = 0 ; i < control.tmin_max.size() ; i++)
-    { //cout << i << "...dt" << std::get<0>(control.tmin_max[i]) << endl;
+
+    for(int tlow =  std::get<1>(control.tmin_max[count_dt]); tlow >= control.tsrc[count_dt]; tlow--)
+    { //cout << "...t_low" << tlow <<  endl;
+
+      for(int thigh =  std::get<2>(control.tmin_max[count_dt]); thigh <= control.tsnk[count_dt]; thigh++)
+      { //cout << "...t_high" << thigh << endl ;
+
+        //if(tlow == control.tsrc[i] || tlow == control.tsnk[i] ){continue;}
+        //if(thigh == control.tsrc[i] || thigh == control.tsnk[i] ){continue;}
+
+        for(int t_slide_low = control.tsrc[count_dt]; t_slide_low <= control.tsnk[count_dt] - (thigh - tlow ); t_slide_low++){
+
+          trange_bins_i = range;
 
 
+          int t_slide_high = t_slide_low + thigh - tlow;
 
-      if(i == count_dt){
-        for(int tlow =  std::get<1>(control.tmin_max[i]); tlow >= control.tsrc[i]; tlow--)
-        { //cout << "...t_low" << tlow <<  endl;
+          //cout << "....t_slide_low" << t_slide_low << "....t_slide_high" << t_slide_high << endl;
+          {
 
-          for(int thigh =  std::get<2>(control.tmin_max[i]); thigh <= control.tsnk[i]; thigh++)
-          { //cout << "...t_high" << thigh << endl ;
+            tmin = make_pair(std::get<0>(control.tmin_max[count_dt]),t_slide_low);
+            tmax = make_pair(std::get<0>(control.tmin_max[count_dt]),t_slide_high);
 
-            //if(tlow == control.tsrc[i] || tlow == control.tsnk[i] ){continue;}
-            //if(thigh == control.tsrc[i] || thigh == control.tsnk[i] ){continue;}
+          if(trange_bins_i.size())
+          {
+            for(int i = 0; i < trange_bins_i.size(); i++){
+              trange_bins_i[i].push_back(make_pair( tmin, tmax ));
+            }
 
-            for(int t_slide_low = control.tsrc[i]; t_slide_low <= control.tsnk[i] - (thigh - tlow ); t_slide_low++){
+            trange_bins.insert( trange_bins.end(), trange_bins_i.begin(), trange_bins_i.end() );
+            trange_bins_i.clear();
+          }
 
+          else{
+            std::vector<pair<pair<int,int>,pair<int,int>>> tmp; tmp.push_back(make_pair( tmin, tmax ));
+            trange_bins.push_back(tmp);
+            tmp.clear();
+          }
+          cout << "here" << endl;
 
-              int t_slide_high = t_slide_low + thigh - tlow;
+          }
+        } //next tslide
+      } // next thigh
+    } // next tlow
 
-              //cout << "....t_slide_low" << t_slide_low << "....t_slide_high" << t_slide_high << endl;
-              {
-
-                tmin = make_pair(std::get<0>(control.tmin_max[i]),t_slide_low);
-                tmax = make_pair(std::get<0>(control.tmin_max[i]),t_slide_high);
-
-                trange_bins_i.push_back(make_pair( tmin, tmax ));
-
-
-              }
-            } //next tslide
-          } // next thigh
-        } // next tlow
-      } //if loop
-
-      else{
-
-        tmin = make_pair(std::get<0>(control.tmin_max[i]),std::get<1>(control.tmin_max[i]));
-        tmax = make_pair(std::get<0>(control.tmin_max[i]),std::get<2>(control.tmin_max[i]));
-
-        trange_bins_i.push_back(make_pair( tmin, tmax ));
-
-      }
-
-
-      trange_bins.push_back(trange_bins_i);
-      trange_bins_i.clear();
-
-    } //next dt
 
   }
 
   else if(!slide && !src && snk){
 
+    int tlow = std::get<1>(control.tmin_max[count_dt]);
 
 
-    for(int i = 0 ; i < control.tmin_max.size() ; i++)
-    { //cout << i << "...dt" << std::get<0>(control.tmin_max[i]) << endl;
+    for(int thigh =  std::get<2>(control.tmin_max[count_dt]); thigh <= control.tsnk[count_dt]; thigh++)
+    { //cout << "...t_high" << thigh << endl ;
 
-       int tlow = std::get<1>(control.tmin_max[i]);
+      trange_bins_i = range;
 
-      if(i == count_dt){
+      {
 
-        for(int thigh =  std::get<2>(control.tmin_max[i]); thigh <= control.tsnk[i]; thigh++)
-        { //cout << "...t_high" << thigh << endl ;
+        tmin = make_pair(std::get<0>(control.tmin_max[count_dt]),tlow);
+        tmax = make_pair(std::get<0>(control.tmin_max[count_dt]),thigh);
 
-          {
-
-            tmin = make_pair(std::get<0>(control.tmin_max[i]),tlow);
-            tmax = make_pair(std::get<0>(control.tmin_max[i]),thigh);
-
-            trange_bins_i.push_back(make_pair( tmin, tmax ));
-
-
+        if(trange_bins_i.size())
+        {
+          for(int i = 0; i < trange_bins_i.size(); i++){
+            trange_bins_i[i].push_back(make_pair( tmin, tmax ));
           }
-        } // next thigh
 
-      }// if loop
+          trange_bins.insert( trange_bins.end(), trange_bins_i.begin(), trange_bins_i.end() );
+          trange_bins_i.clear();
+        }
 
-      else{
-
-        tmin = make_pair(std::get<0>(control.tmin_max[i]),std::get<1>(control.tmin_max[i]));
-        tmax = make_pair(std::get<0>(control.tmin_max[i]),std::get<2>(control.tmin_max[i]));
-
-        trange_bins_i.push_back(make_pair( tmin, tmax ));
-
+        else{
+          std::vector<pair<pair<int,int>,pair<int,int>>> tmp; tmp.push_back(make_pair( tmin, tmax ));
+          trange_bins.push_back(tmp);
+          tmp.clear();      
+        }
       }
+    } // next thigh
 
-
-
-      trange_bins.push_back(trange_bins_i);
-      trange_bins_i.clear();
-
-    } //next dt
 
   }
 
 
   else if(!slide && src && !snk){
 
-    for(int i = 0 ; i < control.tmin_max.size() ; i++)
-    { //cout << i << "...dt" << std::get<0>(control.tmin_max[i]) << endl;
 
-      if(i == count_dt){
+    int thigh =  std::get<2>(control.tmin_max[count_dt]);
+  
+    for(int tlow =  std::get<1>(control.tmin_max[count_dt]); tlow >= control.tsrc[count_dt]; tlow--)
+    { //cout << "...t_low" << tlow <<  endl;
 
-        int thigh =  std::get<2>(control.tmin_max[i]);
-      
-        for(int tlow =  std::get<1>(control.tmin_max[i]); tlow >= control.tsrc[i]; tlow--)
-        { //cout << "...t_low" << tlow <<  endl;
+      trange_bins_i = range;
 
-          {
+      {
 
-            tmin = make_pair(std::get<0>(control.tmin_max[i]),tlow);
-            tmax = make_pair(std::get<0>(control.tmin_max[i]),thigh);
+        tmin = make_pair(std::get<0>(control.tmin_max[count_dt]),tlow);
+        tmax = make_pair(std::get<0>(control.tmin_max[count_dt]),thigh);
 
-            trange_bins_i.push_back(make_pair( tmin, tmax ));
-
-
+        if(trange_bins_i.size())
+        {
+          for(int i = 0; i < trange_bins_i.size(); i++){
+            trange_bins_i[i].push_back(make_pair( tmin, tmax ));
           }
 
-        } // next tlow
-      }// if loop
+          trange_bins.insert( trange_bins.end(), trange_bins_i.begin(), trange_bins_i.end() );
+          trange_bins_i.clear();
+        }
 
-      else{
-
-        tmin = make_pair(std::get<0>(control.tmin_max[i]),std::get<1>(control.tmin_max[i]));
-        tmax = make_pair(std::get<0>(control.tmin_max[i]),std::get<2>(control.tmin_max[i]));
-
-        trange_bins_i.push_back(make_pair( tmin, tmax ));
+        else
+        {
+          std::vector<pair<pair<int,int>,pair<int,int>>> tmp; tmp.push_back(make_pair( tmin, tmax ));
+          trange_bins.push_back(tmp);
+          tmp.clear();
+        }
 
       }
 
-      trange_bins.push_back(trange_bins_i);
-      trange_bins_i.clear();
+    } // next tlow
 
-    } //next dt
+
 
   }
 
   else if(!slide && src && snk){
 
-    for(int i = 0 ; i < control.tmin_max.size() ; i++)
-    { //cout << i << "...dt" << std::get<0>(control.tmin_max[i]) << endl;
-
-      if(i == count_dt){
         
-        for(int tlow =  std::get<1>(control.tmin_max[i]); tlow >= control.tsrc[i]; tlow--)
-        { //cout << "...t_low" << tlow <<  endl;
+    for(int tlow =  std::get<1>(control.tmin_max[count_dt]); tlow >= control.tsrc[count_dt]; tlow--)
+    { //cout << "...t_low" << tlow <<  endl;
 
-          for(int thigh =  std::get<2>(control.tmin_max[i]); thigh <= control.tsnk[i]; thigh++)
-          { //cout << "...t_high" << thigh << endl ;
+      for(int thigh =  std::get<2>(control.tmin_max[count_dt]); thigh <= control.tsnk[count_dt]; thigh++)
+      { //cout << "...t_high" << thigh << endl ;
 
-            {
+        trange_bins_i = range;
 
-              tmin = make_pair(std::get<0>(control.tmin_max[i]),tlow);
-              tmax = make_pair(std::get<0>(control.tmin_max[i]),thigh);
+        {
 
-              trange_bins_i.push_back(make_pair( tmin, tmax ));
+          tmin = make_pair(std::get<0>(control.tmin_max[count_dt]),tlow);
+          tmax = make_pair(std::get<0>(control.tmin_max[count_dt]),thigh);
 
+          if(trange_bins_i.size())
+          {
+            for(int i = 0; i < trange_bins_i.size(); i++){
+              trange_bins_i[i].push_back(make_pair( tmin, tmax ));
             }
 
-          } // next thigh
-        } // next tlow
-      } //if loop
+            trange_bins.insert( trange_bins.end(), trange_bins_i.begin(), trange_bins_i.end() );
+            trange_bins_i.clear();
+          }
 
-      else{
+          else{
+            std::vector<pair<pair<int,int>,pair<int,int>>> tmp; tmp.push_back(make_pair( tmin, tmax ));
+            trange_bins.push_back(tmp);
+            tmp.clear();
+          }
 
-        tmin = make_pair(std::get<0>(control.tmin_max[i]),std::get<1>(control.tmin_max[i]));
-        tmax = make_pair(std::get<0>(control.tmin_max[i]),std::get<2>(control.tmin_max[i]));
+        }
 
-        trange_bins_i.push_back(make_pair( tmin, tmax ));
+      } // next thigh
+    } // next tlow
 
-      }
-
-      trange_bins.push_back(trange_bins_i);
-      trange_bins_i.clear();
-
-    } //next dt
 
   }
 
-
-    return trange_bins;
+  
+  return trange_bins;
 
 };
 
-void cart_product(
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> >& rvvi,  // final result
-    std::vector<pair<pair<int,int>,pair<int,int>>>&  rvi,   // current result 
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> >::const_iterator me, // current input
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> >::const_iterator end) // final input
-{
-    if(me == end) {
-        // terminal condition of the recursion. We no longer have
-        // any input vectors to manipulate. Add the current result (rvi)
-        // to the total set of results (rvvvi).
-        rvvi.push_back(rvi);
-        return;
-    }
-
-    // need an easy name for my vector-of-ints
-    const std::vector<pair<pair<int,int>,pair<int,int>>>& mevi = *me;
-    for(std::vector<pair<pair<int,int>,pair<int,int>>>::const_iterator it = mevi.begin();
-        it != mevi.end();
-        it++) {
-        // final rvi will look like "a, b, c, ME, d, e, f"
-        // At the moment, rvi already has "a, b, c"
-        rvi.push_back(*it);  // add ME
-        cart_product(rvvi, rvi, me+1, end); //add "d, e, f"
-        rvi.pop_back(); // clean ME off for next round
-    }
-};
 
 
