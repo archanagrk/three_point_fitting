@@ -46,7 +46,7 @@ open(OUT, "> $tmpfile");
 $end = $Dt - 1;
 
 $size = $Dt*500;
-print OUT "set term x11 noenhanced size 800,500\n set multiplot\n";
+print OUT "set term x11 noenhanced size 800,$size\n set multiplot\n";
 
 ## time dep plot 
 foreach my $i (0..$end) {
