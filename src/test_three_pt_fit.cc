@@ -75,7 +75,7 @@ int main(int argc, char** argv){
   //============================
   //===== READ THE XML =====
 
-  int num, dt, tmin, tmax, tsrc, tsnk, Nt_min;
+  int num, dt, j, tmin, tmax, tsrc, tsnk, Nt_min;
   vector<string> filename;
   string file; 
   double noise, chisq_cut;
@@ -88,14 +88,21 @@ int main(int argc, char** argv){
   {
     read(xml_in,"/ThreeptIniParams/inputProps/NumdbFiles",num);
 
-
+    /* Have to sort the elems if not already descending order in Dt */
+    std::map<int,int> sort_dt;
     for(int i = 1; i <= num; i++ ){ 
-
       read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(i)+"]/dt", dt);
-      read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(i)+"]/tsrc", tsrc);
-      read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(i)+"]/tsnk", tsnk);
-      read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(i)+"]/tmin", tmin);
-      read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(i)+"]/tmax", tmax);
+      sort_dt.insert(make_pair(dt,i));
+    }
+
+
+    for(std::map<int,int>::iterator it=sort_dt.begin(); it!=sort_dt.end(); ++it){ 
+      j = it->second;
+      read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(j)+"]/dt", dt);
+      read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(j)+"]/tsrc", tsrc);
+      read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(j)+"]/tsnk", tsnk);
+      read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(j)+"]/tmin", tmin);
+      read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(j)+"]/tmax", tmax);
 
       std::tuple<int,int,int> tmin_max = std::make_tuple(dt, tsrc,tsnk);
 
@@ -248,18 +255,18 @@ int main(int argc, char** argv){
   
   /* write log to file */
   {
-    stringstream s; s << xmlini << "_three_pt_exp_fit.log"; 
+    stringstream s; s << xmlini << "_three_pt_test.log"; 
     ofstream out; out.open(s.str().c_str());
     out << output.fit_summary;
     out.close();
   }
   
   /* write mass ensem file */
-  {  ostringstream outfile; outfile << xmlini << "_three_pt_exp_fit.jack";  write(outfile.str(), output.F );  }
+  {  ostringstream outfile; outfile << xmlini << "_three_pt_test.jack";  write(outfile.str(), output.F );  }
 
   /* write mass variations to file */
   {
-    stringstream s; s << xmlini << "_three_pt_exp_fit.syst"; 
+    stringstream s; s << xmlini << "_three_pt_test.syst"; 
     ofstream out; out.open(s.str().c_str());
     out << output.F_fit_variation;
     out.close();
@@ -267,7 +274,7 @@ int main(int argc, char** argv){
 
   // /* write plot data to file */
    {
-     stringstream s; s << xmlini << "_three_pt_exp_fit.plot"; 
+     stringstream s; s << xmlini << "_three_pt_test.plot"; 
      ofstream out; out.open(s.str().c_str());
      out << output.plot_data;
      out.close();

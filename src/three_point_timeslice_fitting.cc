@@ -173,8 +173,8 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
         int t_min_cnst = 0; int t_max_cnst = control.dt[i];
 
 
-        while( !active[dt_count + t_min_cnst] ){ t_min_cnst++; }
-        while( !active[dt_count + t_max_cnst] ){ t_max_cnst--; }
+        while( !active[dt_count + t_min_cnst] ){ t_min_cnst++; if(t_min_cnst > t_max_cnst ){t_min_cnst = 1; break;};}
+        while( !active[dt_count + t_max_cnst] ){ t_max_cnst--; if(t_min_cnst > t_max_cnst ){t_max_cnst = -1; break;};}
         t_min_cnst--;t_max_cnst++;
         tmin_cnst.push_back(make_pair(control.dt[i], t_min_cnst)); tmax_cnst.push_back(make_pair(control.dt[i], t_max_cnst));
 
@@ -417,8 +417,8 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
           /* in the current case, the indexing of active_data corresponds to the count */
             int t_min_cnst_one_exp = 0; int t_max_cnst_one_exp = control.dt[i];
 
-            while( !active[dt_count + t_min_cnst_one_exp] ){ t_min_cnst_one_exp++; }
-            while( !active[dt_count + t_max_cnst_one_exp] ){ t_max_cnst_one_exp--; }
+            while( !active[dt_count + t_min_cnst_one_exp] ){ t_min_cnst_one_exp++; if(t_min_cnst_one_exp > t_max_cnst_one_exp ){t_min_cnst_one_exp = 1; break;}; }
+            while( !active[dt_count + t_max_cnst_one_exp] ){ t_max_cnst_one_exp--; if(t_min_cnst_one_exp > t_max_cnst_one_exp ){t_max_cnst_one_exp = -1; break;}; }
             t_min_cnst_one_exp--;t_max_cnst_one_exp++;
             tmin_cnst_one_exp.push_back(make_pair(control.dt[i], t_min_cnst_one_exp)); tmax_cnst_one_exp.push_back(make_pair(control.dt[i], t_max_cnst_one_exp));
 
@@ -586,8 +586,8 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
           int t_min_best = 0; int t_max_best = control.dt[i];
 
 
-          while( !active[dt_count + t_min_best] ){ t_min_best++; }
-          while( !active[dt_count + t_max_best] ){ t_max_best--; }
+          while( !active[dt_count + t_min_best] ){ t_min_best++; if(t_min_best > t_max_best ){t_min_best = 1; break;};  }
+          while( !active[dt_count + t_max_best] ){ t_max_best--; if(t_min_best > t_max_best ){t_max_best = -1; break;}; }
           t_min_best--;t_max_best++;
 
           std::get<1>(control.tmin_max[i]) = t_min_best;  std::get<2>(control.tmin_max[i]) = t_max_best; 
@@ -770,8 +770,8 @@ fit_three_point_output fit_three_point_corr( const Data& data,
         int t_min_cnst = 0; int t_max_cnst = control.dt[i];
 
 
-        while( !active[dt_count + t_min_cnst] ){ t_min_cnst++; }
-        while( !active[dt_count + t_max_cnst] ){ t_max_cnst--; }
+        while( !active[dt_count + t_min_cnst] ){ t_min_cnst++; if(t_min_cnst > t_max_cnst ){t_min_cnst = 1; break;}; }
+        while( !active[dt_count + t_max_cnst] ){ t_max_cnst--; if(t_min_cnst > t_max_cnst ){t_max_cnst = -1; break;}; }
         t_min_cnst--;t_max_cnst++;
         tmin_cnst.push_back(make_pair(control.dt[i], t_min_cnst)); tmax_cnst.push_back(make_pair(control.dt[i], t_max_cnst));
 
@@ -1013,8 +1013,8 @@ fit_three_point_output fit_three_point_corr( const Data& data,
           /* in the current case, the indexing of active_data corresponds to the count */
             int t_min_cnst_one_exp = 0; int t_max_cnst_one_exp = control.dt[i];
 
-            while( !active[dt_count + t_min_cnst_one_exp] ){ t_min_cnst_one_exp++; }
-            while( !active[dt_count + t_max_cnst_one_exp] ){ t_max_cnst_one_exp--; }
+            while( !active[dt_count + t_min_cnst_one_exp] ){ t_min_cnst_one_exp++; if(t_min_cnst_one_exp > t_max_cnst_one_exp ){t_min_cnst_one_exp = 1; break;}; }
+            while( !active[dt_count + t_max_cnst_one_exp] ){ t_max_cnst_one_exp--; if(t_min_cnst_one_exp > t_max_cnst_one_exp ){t_max_cnst_one_exp = 0; break;}; }
             t_min_cnst_one_exp--;t_max_cnst_one_exp++;
             tmin_cnst_one_exp.push_back(make_pair(control.dt[i], t_min_cnst_one_exp)); tmax_cnst_one_exp.push_back(make_pair(control.dt[i], t_max_cnst_one_exp));
 
