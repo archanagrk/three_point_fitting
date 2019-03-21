@@ -1249,10 +1249,9 @@ fit_three_point_output fit_three_point_corr( const Data& data,
     {
       stringstream plot;
       vector<AvgFit*> accepted_fits = fit_selector.get_accepted_fits();
+      int prev_dt;
 
-      /*for(int j = 0; j < control.dt.size(); j++){
-        plot << "## tmin= " << control.tsrc[j] << " tmax= " << control.tsnk[j] << " nfits = " << accepted_fits.size() << endl;
-      }*/
+      plot << "## tmin= " << control.tsrc[control.dt.size()-1] << " tmax= " << control.tsnk[control.dt.size()-1] << " nfits= " << accepted_fits.size() << endl;
       
 
       /* change this to a nice format write */
@@ -1266,28 +1265,44 @@ fit_three_point_output fit_three_point_corr( const Data& data,
       plot << endl << endl;
       
       { /* write active data */
+
         plot << "# active data" << endl;
         int count = data.get_active_data(ensem_fit_active_data, x, y, y_err);
+
+        prev_dt = control.dt[0];
   
         for(int i = 0; i < x.size(); i++)
         {
-          pair<int,int> t_i = ( static_cast<PairIntAbscissa*>(x[i]) )->get_x(); plot <<  t_i.first << " " << t_i.second  << " "; 
+          pair<int,int> t_i = ( static_cast<PairIntAbscissa*>(x[i]) )->get_x(); 
+          if(t_i.first != prev_dt){ plot << endl << endl << "# active data" << endl;}
+
+          plot <<  t_i.first << " " << t_i.second  << " "; 
           plot << y[i] * F_param.ensem_mean << " ";
           plot << y_err[i] * F_param.ensem_mean << endl;
+
+          prev_dt = t_i.first;
         }
           plot << endl << endl;
+
       }
       
       
       { /* write inactive data */
         plot << "# inactive data" << endl;
         int count = data.get_active_data(!ensem_fit_active_data, x, y, y_err);
+
+        prev_dt = control.dt[0];
   
         for(int i = 0; i < x.size(); i++)
         {
-          pair<int,int> t_i = ( static_cast<PairIntAbscissa*>(x[i]) )->get_x(); plot <<  t_i.first << " "<< t_i.second  << " ";  
+          pair<int,int> t_i = ( static_cast<PairIntAbscissa*>(x[i]) )->get_x();
+          if(t_i.first != prev_dt){ plot << endl << endl << "# inactive data" << endl;}
+
+          plot <<  t_i.first << " "<< t_i.second  << " ";  
           plot << y[i] * F_param.ensem_mean << " ";
           plot << y_err[i] * F_param.ensem_mean << endl;
+
+          prev_dt = t_i.first;
         }
         plot << endl << endl;
       }
@@ -1307,13 +1322,19 @@ fit_three_point_output fit_three_point_corr( const Data& data,
 
         plot_three_point_timeslice_function_data plot_fn = plot_three_point_timeslice_ensem_function(ft, ensem_pars, plot_t, delt );
 
+        prev_dt = control.dt[0];
+
         for(int i = 0; i < plot_fn.central.size(); i++)
         {
           pair<double,double> t = plot_fn.central[i].first;
+          if(t.first != prev_dt){ plot << endl << endl << "# ensem fit" << endl;}
+
           plot << t.first << "  " << t.second << "  "
           << plot_fn.lower[i].second   * F_param.ensem_mean << "  "
           << plot_fn.central[i].second * F_param.ensem_mean << "  "
           << plot_fn.upper[i].second   * F_param.ensem_mean << endl;
+
+          prev_dt = t.first;
         }
 
         plot << endl << endl;
@@ -1334,7 +1355,11 @@ fit_three_point_output fit_three_point_corr( const Data& data,
     
           for(int i = 0; i < plot_fn.size(); i++){
             pair<double,double> t = plot_fn[i].first;
+            if(t.first != prev_dt){plot << endl << endl << "# avg fit: " << (*fit)->get_fit_name() << endl;}
+
             plot << t.first << "  " << t.second << "  " << plot_fn[i].second * F_param.ensem_mean << endl;
+
+            prev_dt = t.first;
           }
     
           plot << endl << endl;
@@ -1489,7 +1514,6 @@ std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> get_all_t_ranges(fit
             trange_bins.push_back(tmp);
             tmp.clear();
           }
-          cout << "here" << endl;
 
           }
         } //next tslide
