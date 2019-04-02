@@ -607,7 +607,7 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
     minuit_fit_result                           best_cnst = (ordered.begin()->second)->get_result();
 
     auto end = ordered.begin();
-    std::advance(end, 1);
+    std::advance(end, 5);
   
     {
       for(auto it=ordered.begin(); it!=end; ++it){

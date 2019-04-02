@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}   
+\usepackage{subcaption}       
+\usepackage{graphicx}
+\usepackage{amsthm, amsmath, amssymb}
+\usepackage{setspace}\onehalfspacing
+\usepackage[loose,nice]{units} %replace "nice" by "ugly" for units in upright fractions
+\usepackage[arrowdel]{physics}
+\usepackage{bbold}
+\usepackage{simplewick}
+\usepackage[compat=1.0.0]{tikz-feynman}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
+\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} % inner command, used by \rchi
+\DeclareRobustCommand{\rgamma}{{\mathpalette\irgamma\relax}}
+\newcommand{\irgamma}[2]{\raisebox{\depth}{$#1\gamma$}}
+\usepackage{makecell}
+\newcolumntype{\vl}{!{\vrule width 1pt}}
+\usepackage{float}
+\usepackage{breqn}
+\usepackage{courier}
+
+
+%% The font package uses mweights.sty which has som issues with the
+%% \normalfont command. The following two lines fixes this issue.
+\let\oldnormalfont\normalfont
+\def\normalfont{\oldnormalfont\mdseries}
+
+
+\title{Three point function analysis}
+\author{Archana Radhakrishnan}
+\date{Spring 2019}
+
+\begin{document}
+\maketitle
+
+\section*{Running the code} 
+\textbf{Requirements:} \texttt{itpp, fitting\_lib, adat} \\
+\textbf{Running:} The main code is \texttt{ensemble_fit_three_pt_fns}. The input xml contains the dat files (in future will add an interface to edb) with the source time slice, sink time slice and current insertion time. It also contains any cutoffs the user wants and the minimum time-slices to be fitted and the type of ``chi-square" to be used. An example of the xml is in:\\ \texttt{/three_pt_analysis/three_pt_fit/build/runs/3pt.ini.xml} \par
+
+
+
+\section*{Logic behind the fitting method}
+The steps involved in the fitting procedure:\\
+\begin{enumerate}
+  \item Take an input containing an ensemble of data with multiple Dt.
+  \item Pick the smallest Dt and do fits on the average. First do a constant fit. The start param is the value at the midpoint. Do the fits on all ranges of the data. Start from the midpoint, increase the range on either side. Then slide the ranges over the entire data.
+  \item Pick the best constant fit and use as that start params for the constant and the overlap factor in the in the  constant + source exponential and  const + source exponential. The start params for the exponentials are 2.0. Can probably think of a better choice? Here, the range starts with the constant fit range and grows on the side of the source(sink) for the source exponential(sink exponential) fits. 
+  \item Pick the best average fit in each catagory. and use it as the start params for constant + source exponential + sink exponential fit. The range starts from the best constant fit range and grows in either direction.
+  \item Choose the best 5 fit ranges for this Dt and go to the next smallest Dt.
+  \item Do combined fits using the same start params as above for the ranges of new Dt in the similar fashion as above along with the fixed 5 ranges of other Dt.
+  \item Finally when all Dts are covered, do an ensemble fit on the average fits that cleared the chi-squared cutoff which is a user input.
+  \item The selector then selects the best ensemble fit as the fit function
+\end{enumerate}
+
+\section*{Selection of the best fit}
+The chi-square of the fit does help to determine the best fit to some extent but it fails to select the fit that one needs in the three point function analysis. So we have to define better functions that incorporates the constraints that we require.  \par
+Possible functions that can be maximized to get the best fit: 
+\begin{itemize}
+  \item \textbf{gen\_3\_pt:} Here we multiply the inverse of chi-square with the ratio of timeslices, the ratio of the value of the energy in the eponential to the error in the exponential, the ratio of the overlap to the error in the overlap fit raised to a power that the user defines. This function gives good estimates in the case of single Dt, but fails in the case of multiple Dts.  
+  \item Have to think of a function that gives more weight to the flat part of the data
+\end{itemize}
+
+\newpage
+\begin{thebibliography}{9}
+
+\bibitem{shultz} 
+     \textit{Phys.Rev. D91, 114501 (2015)},         
+       C. J. Shultz, J. J. Dudek, and R. G. Edwards       
+
+
+\end{thebibliography}
+
+\end{document}
