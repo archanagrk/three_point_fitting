@@ -1,8 +1,8 @@
 fit_zt.o: ../../src/fit_zt.cc \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/data_builders.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/data.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/tools.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/includes.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data_builders.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/includes.h \
  /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/vector \
  /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stl_algobase.h \
  /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/x86_64-apple-darwin18.0.0/bits/c++config.h \
@@ -504,37 +504,37 @@ fit_zt.o: ../../src/fit_zt.cc \
  /Users/archanar/Scattering/adat_install/include/recipes/nrtypes.h \
  /Users/archanar/Scattering/adat_install/include/recipes/nrtypes_nr.h \
  /usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin18.0.0/8.2.0/include/omp.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/abscissa_list.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/int_abscissa.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/double_abscissa.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/data_selectors.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa_list.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/int_abscissa.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/double_abscissa.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data_selectors.h \
  ../../src/z_timeslice_fitting.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/avg_fitter.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/minuit_fit.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/params.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/chisq.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/functions.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/avg_fitter.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/minuit_fit.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/chisq.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions.h \
  ../../src/z_timeslice_functions_factory.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/functions_factory.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/timeslice_corr_functions.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions_factory.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/timeslice_corr_functions.h \
  ../../src/z_timeslice_functions.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/functions.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/tools.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/params.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/fit_selector.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/ensem_fitter.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_selector.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/ensem_fitter.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/data_builders.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data_builders.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/data.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/tools.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/includes.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/includes.h:
 
 /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/vector:
 
@@ -1538,48 +1538,48 @@ fit_zt.o: ../../src/fit_zt.cc \
 
 /usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin18.0.0/8.2.0/include/omp.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/abscissa_list.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa_list.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/int_abscissa.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/int_abscissa.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/double_abscissa.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/double_abscissa.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/data_selectors.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data_selectors.h:
 
 ../../src/z_timeslice_fitting.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/avg_fitter.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/avg_fitter.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/minuit_fit.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/minuit_fit.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/params.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/chisq.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/chisq.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/functions.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions.h:
 
 ../../src/z_timeslice_functions_factory.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/functions_factory.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions_factory.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/timeslice_corr_functions.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/timeslice_corr_functions.h:
 
 ../../src/z_timeslice_functions.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/functions.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/tools.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/params.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/fit_selector.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_selector.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/ensem_fitter.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/ensem_fitter.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h:

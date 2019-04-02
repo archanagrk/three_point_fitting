@@ -2,19 +2,18 @@
 
 use List::Util qw[min max];
 
-die "plot_three_point_fit.pl <filename_header> <#Dt>\n" unless $#ARGV == 1;
+die "plot_three_point_fit.pl <filename_header>\n" unless $#ARGV == 0;
 # should probably also have options to use pdf and save the file ...
 
 $filename = $ARGV[0];
-$Dt       = $ARGV[1];
 $plotfilename = "${filename}.plot";
 
 # make a gnuplot input file
 $random = int(rand(1000));
 $tmpfile = "/tmp/plot_three_point_fit.${random}.gnu";
 
-$ymin = 100.0;
-$ymax = -100.0;
+$ymin = 0.01;
+$ymax = -0.01;
 
 open(FILE , " < ${plotfilename}");
 $firstline = <FILE>;
@@ -24,12 +23,17 @@ $chisq = <FILE>;
 #now into active data
 
 while($line = <FILE>){
-  if($line eq "\n"){last;}
+
+  if($line eq "# ensem fit"){last;}
+  if($line eq /^#/){next;}
+  if($line eq "\n"){next;}
+
   chomp $line;
   ($dt, $x, $y, $err) = split(' ', $line);
   
   if( ($y + $err) > $ymax){ $ymax = $y + $err; }
   if( ($y - $err) < $ymin){ $ymin = $y - $err; }
+
 }
 close(FILE);
 
@@ -37,11 +41,15 @@ $ymax += 0.05;
 $ymin -= 0.05;
 
 chomp $firstline; chomp $F; chomp $chisq;
-($x, $x, $tmin, $x, $tmax, $x, $nfits) = split(' ', $firstline);
+($x, $x, $tmin, $x, $DT, $x, $nfits) = split(' ', $firstline);
 $F = substr($F, 3);
 $chisq = substr($chisq, 3);
 
+my @Dt_val = split(',', $DT);
+$Dt = @Dt_val;
+
 open(OUT, "> $tmpfile");
+
 #print OUT "set term aqua noenhanced\n";  #add options for x11, or pdf
 $end = $Dt - 1;
 
@@ -53,6 +61,8 @@ foreach my $i (0..$end) {
 
   $top = 0.95+($i*0.85)/$Dt;
   $bottom = 0.1+($i*0.85)/$Dt;
+
+  $tmax = $Dt_val[$i];
   
 
   print OUT "set lmargin at screen 0.05\n set rmargin at screen 0.65\n set bmargin at screen $bottom\n set tmargin at screen $top\n";
@@ -60,7 +70,10 @@ foreach my $i (0..$end) {
   print OUT "unset label 1\n unset label 2\n unset label 3\n";
   print OUT "set border 3\n";
 
-  print OUT "set xrange[0:${tmax}]\n set yrange[${ymin}:${ymax}]\n set size ratio 1.0\n unset key\n";
+  $ratio = (($ymax - $ymin)/$tmax)*($top - $bottom);
+
+  #print OUT "set xrange[0:${tmax}]\n set yrange[${ymin}:${ymax}]\n set size ratio 1.0\n unset key\n";
+  print OUT "set xrange[0:${tmax}]\n set yrange[${ymin}:${ymax}]\n set size 0.5, 0.5 \n unset key\n";
   print OUT "set xtics nomirror\n";
   print OUT "set ytics nomirror\n";
 
@@ -79,7 +92,7 @@ foreach my $i (0..$end) {
 
 
 
-  print OUT "plot   \'${plotfilename}\' index $idx_three using 2:3:4 w filledcu fs solid 0.15 fc rgb \"#C0272D\",\\\n";
+  print OUT "plot   \'${plotfilename}\' index $idx_three using 2:3:5 w filledcu fs solid 0.15 fc rgb \"#C0272D\",\\\n";
   print OUT "       \'${plotfilename}\' index $idx_three using 2:4 w lines lw 2 lc rgb \"#C0272D\",\\\n";
   print OUT "       \'${plotfilename}\' index $idx_one using 2:3:4 with yerr pt 70 lc rgb \"#000000\",\\\n";
   print OUT "       \'${plotfilename}\' index $idx_two using 2:3:4 with yerr pt 69 lc rgb \"#2F7A79\"\n";

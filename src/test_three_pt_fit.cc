@@ -11,8 +11,6 @@
 /* generate some fake data */
 void make_three_points( const vector<int>& Dts, int ncfgs, Data& data){
 
-  
-  ThreePointtimesliceCorrNExp f(1,1);
 
   mapstringdouble par_values;
   par_values["F"] = 1.0;
@@ -21,19 +19,24 @@ void make_three_points( const vector<int>& Dts, int ncfgs, Data& data){
   vector<double> values, errs;
 
   int seed = 999;
+
+  double noise_level = 0.1; // default to 0.1
   
-  par_values["Fi"] = 0.25;
-  par_values["dmi"] = 0.2;
-
-  par_values["Ff"] = -0.65;
-  par_values["dmf"] = 0.14;
-
-
-  double noise_level = 0.01; // default to 0.1
-  
+  vector<int> dt;
   
   for( vector<int>::const_iterator Dt = Dts.begin(); Dt != Dts.end(); Dt++){
+
+    dt.push_back(*Dt);
+    
+    par_values["Fi_Dt" + to_string(*Dt)] = 0.25;
+    par_values["Ei_Dt" + to_string(*Dt)] = 0.2;
+
+    par_values["Ff_Dt" + to_string(*Dt)] = -0.65;
+    par_values["Ef_Dt" + to_string(*Dt)] = 0.14;
+
     for(int t = 0; t <= *Dt; t++){
+      
+      ThreePointtimesliceCorrNExp f(1,1, dt);
       xs.push_back( new PairIntAbscissa(make_pair(*Dt, t) ) );
       double y = f( *(xs.back()), par_values );
       

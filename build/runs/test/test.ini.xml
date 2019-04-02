@@ -16,18 +16,18 @@
 
 
     <FitProps>
-        <NtMin>5</NtMin>
+        <NtMin>10</NtMin>
         <fit_qual>
-            <type>QN</type>
+            <type>qn_gen</type>
             <params>
-              <!--                <power>1</power>
+                <power>1</power>
                 <power_mass>0</power_mass>
                 <power_F>0</power_F>                
                 <power_time>0</power_time>
-                <multiply_mass>false</multiply_mass> -->
+                <multiply_mass>true</multiply_mass>
             </params>
         </fit_qual>
-        <chisq_cutoff>0.2</chisq_cutoff>
+        <chisq_cutoff>1</chisq_cutoff>
         <noise_cutoff>10</noise_cutoff>
     </FitProps>
 

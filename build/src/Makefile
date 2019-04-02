@@ -222,9 +222,9 @@ ECHO_N =
 ECHO_T = 
 EXEEXT = 
 FITTING_LIBS = -lfitting
-FITTING_LIB_CONFIG = /Users/archanar/3pt_analysis/fitting_lib_install/bin/fitting-config
-FITTING_LIB_CXXFLAGS = -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/3pt_analysis/fitting_lib_install/include
-FITTING_LIB_LDFLAGS = -L/Users/archanar/3pt_analysis/fitting_lib_install/lib
+FITTING_LIB_CONFIG = /Users/archanar/three_pt_analysis/fitting_lib_install/bin/fitting-config
+FITTING_LIB_CXXFLAGS = -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/fitting_lib_install/include
+FITTING_LIB_LDFLAGS = -L/Users/archanar/three_pt_analysis/fitting_lib_install/lib
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
@@ -301,10 +301,10 @@ top_srcdir = ../..
 # Boiler Plate stuff: Autoconf Substitutions etc
 #
 AM_CXXFLAGS = -I../../src \
-	 -O3 -mtune=native -fopenmp -fbounds-check -O2 -I/Users/archanar/Scattering/adat_install/include -I/usr/local/Cellar/libxml2/2.9.8/include/libxml2 -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/3pt_analysis/fitting_lib_install/include  -I/Users/archanar/Scattering/itpp_install/include -std=c++0x -O3
+	 -O3 -mtune=native -fopenmp -fbounds-check -O2 -I/Users/archanar/Scattering/adat_install/include -I/usr/local/Cellar/libxml2/2.9.8/include/libxml2 -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/fitting_lib_install/include  -I/Users/archanar/Scattering/itpp_install/include -std=c++0x -O3
 
 AM_LDFLAGS = -L../src \
-  	  -L/Users/archanar/Scattering/adat_install/lib -L/Users/archanar/3pt_analysis/fitting_lib_install/lib
+  	  -L/Users/archanar/Scattering/adat_install/lib -L/Users/archanar/three_pt_analysis/fitting_lib_install/lib
 
 LDADD = -lfitting -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.8/lib -lxml2 -lz -lpthread -liconv -lm  -L/Users/archanar/Scattering/itpp_install/lib -litpp -llapack -lblas  -lfitting
 

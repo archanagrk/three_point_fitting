@@ -64,21 +64,21 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
       */
   //************************************************************************************************
 
-  Function* cnst = new ThreePointtimesliceCorrNExp( 0, 0 );  
-  Function* cnst_src_exp = new ThreePointtimesliceCorrNExp( 1, 0 );  
-  Function* cnst_snk_exp = new ThreePointtimesliceCorrNExp( 0, 1 ); 
-  Function* cnst_two_exp = new ThreePointtimesliceCorrNExp( 1, 1 );
+  Function* cnst = new ThreePointtimesliceCorrNExp( 0, 0, control.dt );  
+  Function* cnst_src_exp = new ThreePointtimesliceCorrNExp( 1, 0, control.dt );  
+  Function* cnst_snk_exp = new ThreePointtimesliceCorrNExp( 0, 1, control.dt ); 
+  Function* cnst_two_exp = new ThreePointtimesliceCorrNExp( 1, 1, control.dt );
 
 
   /* perform constant fits */
   {
 
     map<string, param_value> start_params;
-    vector<Abscissa*> x_tlow;
-    vector<Abscissa*> x_thigh;
+    vector<PairIntAbscissa*> x_tlow;
+    vector<PairIntAbscissa*> x_thigh;
 
     control.F_start = data.get_all_y_mean()[ int(control.dt[0]/2) ];
-    control.F_err   = data.get_all_y_err()[ int(control.dt[0]/2) ]*2;
+    control.F_err   = data.get_all_y_err()[ int(control.dt[0]/2) ]*5;
   
     param_value F(control.F_start, control.F_err); //the constant that would be the ff. Constraints?
     F.minos = control.minos;
@@ -104,8 +104,8 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
       for(int dt_count = 0 ; dt_count < t_pairs[i].size() ; dt_count++)
       {
 
-        Abscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
-        Abscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
+        PairIntAbscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
+        PairIntAbscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
 
         x_tlow.push_back(x_t_low_dt); x_thigh.push_back(x_t_high_dt);
 
@@ -130,7 +130,7 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
         cout << "----------------------------------------------------------------------------------" << endl;
         stringstream name; name << "c";
         for(int k = 0 ; k < control.tmin_max.size() ; k++){
-          name << "__" << *x_tlow[k] << "_" << *x_thigh[k];
+          name << "_Dt" << x_tlow[k]->get_x().first << "_" << x_tlow[k]->get_x().second << "-" << x_thigh[k]->get_x().second;
         }
   
         AvgFit* this_fit = new AvgFit( data, active_data, cnst, start_params, minuit_controls, control.correlated, name.str() );
@@ -207,19 +207,25 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
       map<string, param_value> start_params;
 
       F_cnst.fixed = false;
-      vector<Abscissa*> x_tlow;
-      vector<Abscissa*> x_thigh;
+      vector<PairIntAbscissa*> x_tlow;
+      vector<PairIntAbscissa*> x_thigh;
 
       {
         F_cnst.error *= 5.0; /* boost the error on the mass */   //Constraints?
         start_params.insert( make_pair("F", F_cnst) );
         
-        param_value dmi(2.0,2.0);
-        dmi.low_limited = true; dmi.low_limit = 0.0; dmi.fixed = false;  // Constraints
-        dmi.minos = control.minos;
-        start_params.insert( make_pair("dmi", dmi ) );
+        param_value Ei(2.0,2.0);
+        Ei.low_limited = true; Ei.low_limit = 0.0; Ei.fixed = false;  // Constraints
+        Ei.minos = control.minos;
 
-        start_params.insert( make_pair("Fi", F_cnst) );
+        for(int t = 0; t < control.dt.size(); t++){
+
+          stringstream fi; fi << "Fi" << "_Dt" << control.dt[t];
+          stringstream ei; ei << "Ei" << "_Dt" << control.dt[t];
+
+          start_params.insert( make_pair(ei.str(), Ei ) );
+          start_params.insert( make_pair(fi.str(), F_cnst) );
+        }
       }
 
     
@@ -232,7 +238,7 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
       }
 
 
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,0,1,0, range, count_dt);
+      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,0,1,0, range, count_dt);
 
 
       for(int i = 0 ; i < t_pairs.size() ; i++){
@@ -240,8 +246,8 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
         for(int dt_count = 0 ; dt_count < t_pairs[i].size() ; dt_count++)
         {
 
-          Abscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
-          Abscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
+          PairIntAbscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
+          PairIntAbscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
 
           x_tlow.push_back(x_t_low_dt); x_thigh.push_back(x_t_high_dt);
 
@@ -264,7 +270,7 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
           cout << "----------------------------------------------------------------------------------" << endl;
           stringstream name; name << "csrc";
           for(int k = 0 ; k < control.tmin_max.size() ; k++){
-            name << "__" << *x_tlow[k] << "_" << *x_thigh[k];
+            name << "_Dt" << x_tlow[k]->get_x().first << "_" << x_tlow[k]->get_x().second << "-" << x_thigh[k]->get_x().second;
           }
     
           AvgFit* this_fit = new AvgFit( data, active_data, cnst_src_exp, start_params, minuit_controls, control.correlated, name.str() );
@@ -292,20 +298,25 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
     // snk_exp_fits
     {
       map<string, param_value> start_params;
-      vector<Abscissa*> x_tlow;
-      vector<Abscissa*> x_thigh;
+      vector<PairIntAbscissa*> x_tlow;
+      vector<PairIntAbscissa*> x_thigh;
 
       {
         F_cnst.error *= 5.0; /* boost the error on the mass */   //Constraints?
         start_params.insert( make_pair("F", F_cnst) );
         
-        param_value dmf(2.0,2.0);
-        dmf.low_limited = true; dmf.low_limit = 0.0;   // Constraints
-        dmf.minos = control.minos;
-        dmf.fixed = false;
-        start_params.insert( make_pair("dmf", dmf ) );
+        param_value Ef(2.0,2.0);
+        Ef.low_limited = true; Ef.low_limit = 0.0;   // Constraints
+        Ef.minos = control.minos;
+        Ef.fixed = false;
 
-        start_params.insert( make_pair("Ff", F_cnst) );
+        for(int t = 0; t < control.dt.size(); t++){
+          stringstream ff; ff << "Ff" << "_Dt" << control.dt[t];
+          stringstream ef; ef << "Ef" << "_Dt" << control.dt[t];
+
+          start_params.insert( make_pair(ef.str(), Ef ) );
+          start_params.insert( make_pair(ff.str(), F_cnst) );
+        }
         
       }
 
@@ -327,8 +338,8 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
         for(int dt_count = 0 ; dt_count < t_pairs[i].size() ; dt_count++)
         {
 
-          Abscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
-          Abscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
+          PairIntAbscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
+          PairIntAbscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
 
           x_tlow.push_back(x_t_low_dt); x_thigh.push_back(x_t_high_dt);
 
@@ -351,7 +362,7 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
           cout << "----------------------------------------------------------------------------------" << endl;
           stringstream name; name << "csnk";
           for(int k = 0 ; k < control.tmin_max.size() ; k++){
-            name << "__" << *x_tlow[k] << "_" << *x_thigh[k];
+            name << "_Dt" << x_tlow[k]->get_x().first << "_" << x_tlow[k]->get_x().second << "-" << x_thigh[k]->get_x().second;
           }
     
           AvgFit* this_fit = new AvgFit( data, active_data, cnst_snk_exp, start_params, minuit_controls, control.correlated, name.str() );
@@ -381,25 +392,31 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
     param_value F_cnst_one_exp(control.F_start, control.F_err);
     F_cnst_one_exp.minos = control.minos;
     F_cnst_one_exp.fixed = false;
+    
+    vector<param_value>  Ei_cnst_src_exp,  Ef_cnst_snk_exp, Fi_cnst_src_exp, Ff_cnst_snk_exp;
 
-    param_value dmi_cnst_src_exp(2.0,2.0); 
-    dmi_cnst_src_exp.low_limited = true; dmi_cnst_src_exp.low_limit = 0.0;   // Constraints
-    dmi_cnst_src_exp.minos = control.minos;
-    dmi_cnst_src_exp.fixed = false;
+    param_value Emi(2.0,2.0); 
+    Emi.low_limited = true; Emi.low_limit = 0.0;   // Constraints
+    Emi.minos = control.minos;
+    Emi.fixed = false;
 
-    param_value Fi_cnst_src_exp(control.F_start, control.F_err);
-    Fi_cnst_src_exp.minos = control.minos;
-    Fi_cnst_src_exp.fixed = false;
+    param_value Fi(control.F_start, control.F_err);
+    Fi.minos = control.minos;
+    Fi.fixed = false;
 
-    param_value dmf_cnst_snk_exp(2.0,2.0);
-    dmf_cnst_snk_exp.low_limited = true; dmf_cnst_snk_exp.low_limit = 0.0;   // Constraints
-    dmf_cnst_snk_exp.minos = control.minos;
-    dmf_cnst_snk_exp.fixed = false;
+    param_value Emf(2.0,2.0);
+    Emf.low_limited = true; Emf.low_limit = 0.0;   // Constraints
+    Emf.minos = control.minos;
+    Emf.fixed = false;
 
-    param_value Ff_cnst_snk_exp(control.F_start, control.F_err);
-    Ff_cnst_snk_exp.minos = control.minos; 
-    Ff_cnst_snk_exp.fixed = false;
+    param_value Ff(control.F_start, control.F_err);
+    Ff.minos = control.minos; 
+    Ff.fixed = false;
 
+    for(int t = 0; t < control.dt.size(); t++){
+      Ei_cnst_src_exp.push_back(Emi); Ef_cnst_snk_exp.push_back(Emf); 
+      Fi_cnst_src_exp.push_back(Fi); Ff_cnst_snk_exp.push_back(Ff);
+    }
 
 
     if( fits.size() > 0 )
@@ -438,8 +455,13 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
         minuit_fit_result                           best_cnst_src_exp = (ordered_src.begin()->second)->get_result();
   
       
-        Fi_cnst_src_exp = (best_cnst_src_exp.par_values.find("Fi"))->second;
-        dmi_cnst_src_exp = (best_cnst_src_exp.par_values.find("dmi"))->second;
+        for(int t = 0; t < control.dt.size(); t++){
+          stringstream fi; fi << "Fi" << "_Dt" << control.dt[t];
+          stringstream ei; ei << "Ei" << "_Dt" << control.dt[t];
+
+          Fi_cnst_src_exp[t] = (best_cnst_src_exp.par_values.find(fi.str()))->second;
+          Ei_cnst_src_exp[t] = (best_cnst_src_exp.par_values.find(ei.str()))->second;
+        }
 
 
       }
@@ -450,9 +472,13 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
          map<double, AvgFit*, std::greater<double> > ordered_snk = make_ordered_list( fits_snk_exp, fit_qual );
          minuit_fit_result                           best_cnst_snk_exp = (ordered_snk.begin()->second)->get_result();
 
-    
-         Ff_cnst_snk_exp = (best_cnst_snk_exp.par_values.find("Ff"))->second;
-         //dmf_cnst_snk_exp = (best_cnst_snk_exp.par_values.find("dmf"))->second;  
+        for(int t = 0; t < control.dt.size(); t++){
+          stringstream ff; ff << "Ff" << "_Dt" << control.dt[t];
+          stringstream ef; ef << "Ef" << "_Dt" << control.dt[t];
+
+          Ff_cnst_snk_exp[t] = (best_cnst_snk_exp.par_values.find(ff.str()))->second;
+          Ef_cnst_snk_exp[t] = (best_cnst_snk_exp.par_values.find(ef.str()))->second;  
+        }
 
       }  
     } 
@@ -476,24 +502,32 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
       {
 
         map<string, param_value> start_params;
-        vector<Abscissa*> x_tlow;
-        vector<Abscissa*> x_thigh;
+        vector<PairIntAbscissa*> x_tlow;
+        vector<PairIntAbscissa*> x_thigh;
 
         {
           F_cnst_one_exp.error *= 5.0; /* boost the error on the from factor */
           start_params.insert( make_pair("F", F_cnst_one_exp) );
 
-          Fi_cnst_src_exp.error *= 5.0; /* boost the error on the from factor */
-          start_params.insert( make_pair("Fi", Fi_cnst_src_exp) );
+          for(int t = 0; t < control.dt.size(); t++){
+            stringstream ff; ff << "Ff" << "_Dt" << control.dt[t];
+            stringstream ef; ef << "Ef" << "_Dt" << control.dt[t];
 
-          Ff_cnst_snk_exp.error *= 5.0; /* boost the error on the from factor */
-          start_params.insert( make_pair("Ff", Ff_cnst_snk_exp) );
+            stringstream fi; fi << "Fi" << "_Dt" << control.dt[t];
+            stringstream ei; ei << "Ei" << "_Dt" << control.dt[t];
 
-          dmi_cnst_src_exp.error *= 5.0; /* boost the error on the from factor */
-          start_params.insert( make_pair("dmi", dmi_cnst_src_exp) );
+            Fi_cnst_src_exp[t].error *= 5.0; /* boost the error on the from factor */
+            start_params.insert( make_pair(fi.str(), Fi_cnst_src_exp[t]) );
 
-          dmf_cnst_snk_exp.error *= 5.0; /* boost the error on the from factor */
-          start_params.insert( make_pair("dmf", dmf_cnst_snk_exp) );
+            Ff_cnst_snk_exp[t].error *= 5.0; /* boost the error on the from factor */
+            start_params.insert( make_pair(ff.str(), Ff_cnst_snk_exp[t]) );
+
+            Ei_cnst_src_exp[t].error *= 5.0; /* boost the error on the from factor */
+            start_params.insert( make_pair(ei.str(), Ei_cnst_src_exp[t]) );
+
+            Ef_cnst_snk_exp[t].error *= 5.0; /* boost the error on the from factor */
+            start_params.insert( make_pair(ef.str(), Ef_cnst_snk_exp[t]) );
+          }
 
         }
 
@@ -515,8 +549,8 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
           for(int dt_count = 0 ; dt_count < t_pairs[i].size() ; dt_count++)
           {
 
-            Abscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
-            Abscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
+            PairIntAbscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
+            PairIntAbscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
 
             x_tlow.push_back(x_t_low_dt); x_thigh.push_back(x_t_high_dt);
 
@@ -540,7 +574,7 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
           cout << "----------------------------------------------------------------------------------" << endl;
           stringstream name; name << "c2";
           for(int k = 0 ; k < control.tmin_max.size() ; k++){
-            name << "__" << *x_tlow[k] << "_" << *x_thigh[k];
+            name << "_Dt" << x_tlow[k]->get_x().first << "_" << x_tlow[k]->get_x().second << "-" << x_thigh[k]->get_x().second;
           }
     
           AvgFit* this_fit = new AvgFit( data, active_data, cnst_two_exp, start_params, minuit_controls, control.correlated, name.str() );
@@ -573,7 +607,7 @@ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const D
     minuit_fit_result                           best_cnst = (ordered.begin()->second)->get_result();
 
     auto end = ordered.begin();
-    std::advance(end, 5);
+    std::advance(end, 1);
   
     {
       for(auto it=ordered.begin(); it!=end; ++it){
@@ -663,18 +697,18 @@ fit_three_point_output fit_three_point_corr( const Data& data,
       */
   //************************************************************************************************
 
-  Function* cnst = new ThreePointtimesliceCorrNExp( 0, 0 );  
-  Function* cnst_src_exp = new ThreePointtimesliceCorrNExp( 1, 0 );  
-  Function* cnst_snk_exp = new ThreePointtimesliceCorrNExp( 0, 1 ); 
-  Function* cnst_two_exp = new ThreePointtimesliceCorrNExp( 1, 1 );
+  Function* cnst = new ThreePointtimesliceCorrNExp( 0, 0, control.dt );  
+  Function* cnst_src_exp = new ThreePointtimesliceCorrNExp( 1, 0, control.dt );  
+  Function* cnst_snk_exp = new ThreePointtimesliceCorrNExp( 0, 1, control.dt ); 
+  Function* cnst_two_exp = new ThreePointtimesliceCorrNExp( 1, 1, control.dt );
 
 
   /* perform constant fits */
   {
 
     map<string, param_value> start_params;
-    vector<Abscissa*> x_tlow;
-    vector<Abscissa*> x_thigh;
+    vector<PairIntAbscissa*> x_tlow;
+    vector<PairIntAbscissa*> x_thigh;
 
     control.F_start = data.get_all_y_mean()[ int(control.dt[0]/2) ];
     control.F_err   = data.get_all_y_err()[ int(control.dt[0]/2) ]*2;
@@ -701,8 +735,8 @@ fit_three_point_output fit_three_point_corr( const Data& data,
       for(int dt_count = 0 ; dt_count < t_pairs[i].size() ; dt_count++)
       {
 
-        Abscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
-        Abscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
+        PairIntAbscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
+        PairIntAbscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
 
         x_tlow.push_back(x_t_low_dt); x_thigh.push_back(x_t_high_dt);
 
@@ -727,7 +761,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
         cout << "----------------------------------------------------------------------------------" << endl;
         stringstream name; name << "c";
         for(int k = 0 ; k < control.tmin_max.size() ; k++){
-          name << "__" << *x_tlow[k] << "_" << *x_thigh[k];
+          name << "_Dt" << x_tlow[k]->get_x().first << "_" << x_tlow[k]->get_x().second << "-" << x_thigh[k]->get_x().second;
         }
   
         AvgFit* this_fit = new AvgFit( data, active_data, cnst, start_params, minuit_controls, control.correlated, name.str() );
@@ -804,20 +838,27 @@ fit_three_point_output fit_three_point_corr( const Data& data,
       map<string, param_value> start_params;
 
       F_cnst.fixed = false;
-      vector<Abscissa*> x_tlow;
-      vector<Abscissa*> x_thigh;
+      vector<PairIntAbscissa*> x_tlow;
+      vector<PairIntAbscissa*> x_thigh;
 
       {
         F_cnst.error *= 5.0; /* boost the error on the mass */   //Constraints?
         start_params.insert( make_pair("F", F_cnst) );
         
-        param_value dmi(2.0,2.0);
-        dmi.low_limited = true; dmi.low_limit = 0.0; dmi.fixed = false;  // Constraints
-        dmi.minos = control.minos;
-        start_params.insert( make_pair("dmi", dmi ) );
+        param_value Ei(2.0,2.0);
+        Ei.low_limited = true; Ei.low_limit = 0.0; Ei.fixed = false;  // Constraints
+        Ei.minos = control.minos;
 
-        start_params.insert( make_pair("Fi", F_cnst) );
+        for(int t = 0; t < control.dt.size(); t++){
+
+          stringstream fi; fi << "Fi" << "_Dt" << control.dt[t];
+          stringstream ei; ei << "Ei" << "_Dt" << control.dt[t];
+
+          start_params.insert( make_pair(ei.str(), Ei ) );
+          start_params.insert( make_pair(fi.str(), F_cnst) );
+        }
       }
+
 
     
       vector<bool> previous( accepted_data.size(), false );
@@ -835,8 +876,8 @@ fit_three_point_output fit_three_point_corr( const Data& data,
         for(int dt_count = 0 ; dt_count < t_pairs[i].size() ; dt_count++)
         {
 
-          Abscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
-          Abscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
+          PairIntAbscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
+          PairIntAbscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
 
           x_tlow.push_back(x_t_low_dt); x_thigh.push_back(x_t_high_dt);
 
@@ -859,7 +900,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
           cout << "----------------------------------------------------------------------------------" << endl;
           stringstream name; name << "csrc";
           for(int k = 0 ; k < control.tmin_max.size() ; k++){
-            name << "__" << *x_tlow[k] << "_" << *x_thigh[k];
+            name << "_Dt" << x_tlow[k]->get_x().first << "_" << x_tlow[k]->get_x().second << "-" << x_thigh[k]->get_x().second;
           }
     
           AvgFit* this_fit = new AvgFit( data, active_data, cnst_src_exp, start_params, minuit_controls, control.correlated, name.str() );
@@ -887,20 +928,25 @@ fit_three_point_output fit_three_point_corr( const Data& data,
     // snk_exp_fits
     {
       map<string, param_value> start_params;
-      vector<Abscissa*> x_tlow;
-      vector<Abscissa*> x_thigh;
+      vector<PairIntAbscissa*> x_tlow;
+      vector<PairIntAbscissa*> x_thigh;
 
       {
         F_cnst.error *= 5.0; /* boost the error on the mass */   //Constraints?
         start_params.insert( make_pair("F", F_cnst) );
         
-        param_value dmf(2.0,2.0);
-        dmf.low_limited = true; dmf.low_limit = 0.0;   // Constraints
-        dmf.minos = control.minos;
-        dmf.fixed = false;
-        start_params.insert( make_pair("dmf", dmf ) );
+        param_value Ef(2.0,2.0);
+        Ef.low_limited = true; Ef.low_limit = 0.0;   // Constraints
+        Ef.minos = control.minos;
+        Ef.fixed = false;
 
-        start_params.insert( make_pair("Ff", F_cnst) );
+        for(int t = 0; t < control.dt.size(); t++){
+          stringstream ff; ff << "Ff" << "_Dt" << control.dt[t];
+          stringstream ef; ef << "Ef" << "_Dt" << control.dt[t];
+
+          start_params.insert( make_pair(ef.str(), Ef ) );
+          start_params.insert( make_pair(ff.str(), F_cnst) );
+        }
         
       }
 
@@ -913,7 +959,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
       //   std::get<2>(control.tmin_max[i]) = tmax_cnst[i].second;
       // }
 
-    std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,0,0,1, range, count_dt);
+      std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > t_pairs  = get_all_t_ranges(control,0,0,1, range, count_dt);
 
 
 
@@ -923,8 +969,8 @@ fit_three_point_output fit_three_point_corr( const Data& data,
         for(int dt_count = 0 ; dt_count < t_pairs[i].size() ; dt_count++)
         {
 
-          Abscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
-          Abscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
+          PairIntAbscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
+          PairIntAbscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
 
           x_tlow.push_back(x_t_low_dt); x_thigh.push_back(x_t_high_dt);
 
@@ -947,7 +993,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
           cout << "----------------------------------------------------------------------------------" << endl;
           stringstream name; name << "csnk";
           for(int k = 0 ; k < control.tmin_max.size() ; k++){
-            name << "__" << *x_tlow[k] << "_" << *x_thigh[k];
+            name << "_Dt" << x_tlow[k]->get_x().first << "_" << x_tlow[k]->get_x().second << "-" << x_thigh[k]->get_x().second;
           }
     
           AvgFit* this_fit = new AvgFit( data, active_data, cnst_snk_exp, start_params, minuit_controls, control.correlated, name.str() );
@@ -977,25 +1023,31 @@ fit_three_point_output fit_three_point_corr( const Data& data,
     param_value F_cnst_one_exp(control.F_start, control.F_err);
     F_cnst_one_exp.minos = control.minos;
     F_cnst_one_exp.fixed = false;
+    
+    vector<param_value>  Ei_cnst_src_exp,  Ef_cnst_snk_exp, Fi_cnst_src_exp, Ff_cnst_snk_exp;
 
-    param_value dmi_cnst_src_exp(2.0,2.0); 
-    dmi_cnst_src_exp.low_limited = true; dmi_cnst_src_exp.low_limit = 0.0;   // Constraints
-    dmi_cnst_src_exp.minos = control.minos;
-    dmi_cnst_src_exp.fixed = false;
+    param_value Emi(2.0,2.0); 
+    Emi.low_limited = true; Emi.low_limit = 0.0;   // Constraints
+    Emi.minos = control.minos;
+    Emi.fixed = false;
 
-    param_value Fi_cnst_src_exp(control.F_start, control.F_err);
-    Fi_cnst_src_exp.minos = control.minos;
-    Fi_cnst_src_exp.fixed = false;
+    param_value Fi(control.F_start, control.F_err);
+    Fi.minos = control.minos;
+    Fi.fixed = false;
 
-    param_value dmf_cnst_snk_exp(2.0,2.0);
-    dmf_cnst_snk_exp.low_limited = true; dmf_cnst_snk_exp.low_limit = 0.0;   // Constraints
-    dmf_cnst_snk_exp.minos = control.minos;
-    dmf_cnst_snk_exp.fixed = false;
+    param_value Emf(2.0,2.0);
+    Emf.low_limited = true; Emf.low_limit = 0.0;   // Constraints
+    Emf.minos = control.minos;
+    Emf.fixed = false;
 
-    param_value Ff_cnst_snk_exp(control.F_start, control.F_err);
-    Ff_cnst_snk_exp.minos = control.minos; 
-    Ff_cnst_snk_exp.fixed = false;
+    param_value Ff(control.F_start, control.F_err);
+    Ff.minos = control.minos; 
+    Ff.fixed = false;
 
+    for(int t = 0; t < control.dt.size(); t++){
+      Ei_cnst_src_exp.push_back(Emi); Ef_cnst_snk_exp.push_back(Emf); 
+      Fi_cnst_src_exp.push_back(Fi); Ff_cnst_snk_exp.push_back(Ff);
+    }
 
 
     if( fits.size() > 0 )
@@ -1034,8 +1086,13 @@ fit_three_point_output fit_three_point_corr( const Data& data,
         minuit_fit_result                           best_cnst_src_exp = (ordered_src.begin()->second)->get_result();
   
       
-        Fi_cnst_src_exp = (best_cnst_src_exp.par_values.find("Fi"))->second;
-        dmi_cnst_src_exp = (best_cnst_src_exp.par_values.find("dmi"))->second;
+        for(int t = 0; t < control.dt.size(); t++){
+          stringstream fi; fi << "Fi" << "_Dt" << control.dt[t];
+          stringstream ei; ei << "Ei" << "_Dt" << control.dt[t];
+
+          Fi_cnst_src_exp[t] = (best_cnst_src_exp.par_values.find(fi.str()))->second;
+          Ei_cnst_src_exp[t] = (best_cnst_src_exp.par_values.find(ei.str()))->second;
+        }
 
 
       }
@@ -1046,11 +1103,15 @@ fit_three_point_output fit_three_point_corr( const Data& data,
          map<double, AvgFit*, std::greater<double> > ordered_snk = make_ordered_list( fits_snk_exp, fit_qual );
          minuit_fit_result                           best_cnst_snk_exp = (ordered_snk.begin()->second)->get_result();
 
-    
-         Ff_cnst_snk_exp = (best_cnst_snk_exp.par_values.find("Ff"))->second;
-         //dmf_cnst_snk_exp = (best_cnst_snk_exp.par_values.find("dmf"))->second;  
+        for(int t = 0; t < control.dt.size(); t++){
+          stringstream ff; ff << "Ff" << "_Dt" << control.dt[t];
+          stringstream ef; ef << "Ef" << "_Dt" << control.dt[t];
 
-      }  
+          Ff_cnst_snk_exp[t] = (best_cnst_snk_exp.par_values.find(ff.str()))->second;
+          Ef_cnst_snk_exp[t] = (best_cnst_snk_exp.par_values.find(ef.str()))->second;  
+        }
+
+      } 
     } 
 
 
@@ -1072,24 +1133,32 @@ fit_three_point_output fit_three_point_corr( const Data& data,
       {
 
         map<string, param_value> start_params;
-        vector<Abscissa*> x_tlow;
-        vector<Abscissa*> x_thigh;
+        vector<PairIntAbscissa*> x_tlow;
+        vector<PairIntAbscissa*> x_thigh;
 
         {
           F_cnst_one_exp.error *= 5.0; /* boost the error on the from factor */
           start_params.insert( make_pair("F", F_cnst_one_exp) );
 
-          Fi_cnst_src_exp.error *= 5.0; /* boost the error on the from factor */
-          start_params.insert( make_pair("Fi", Fi_cnst_src_exp) );
+          for(int t = 0; t < control.dt.size(); t++){
+            stringstream ff; ff << "Ff" << "_Dt" << control.dt[t];
+            stringstream ef; ef << "Ef" << "_Dt" << control.dt[t];
 
-          Ff_cnst_snk_exp.error *= 5.0; /* boost the error on the from factor */
-          start_params.insert( make_pair("Ff", Ff_cnst_snk_exp) );
+            stringstream fi; fi << "Fi" << "_Dt" << control.dt[t];
+            stringstream ei; ei << "Ei" << "_Dt" << control.dt[t];
 
-          dmi_cnst_src_exp.error *= 5.0; /* boost the error on the from factor */
-          start_params.insert( make_pair("dmi", dmi_cnst_src_exp) );
+            Fi_cnst_src_exp[t].error *= 5.0; /* boost the error on the from factor */
+            start_params.insert( make_pair(fi.str(), Fi_cnst_src_exp[t]) );
 
-          dmf_cnst_snk_exp.error *= 5.0; /* boost the error on the from factor */
-          start_params.insert( make_pair("dmf", dmf_cnst_snk_exp) );
+            Ff_cnst_snk_exp[t].error *= 5.0; /* boost the error on the from factor */
+            start_params.insert( make_pair(ff.str(), Ff_cnst_snk_exp[t]) );
+
+            Ei_cnst_src_exp[t].error *= 5.0; /* boost the error on the from factor */
+            start_params.insert( make_pair(ei.str(), Ei_cnst_src_exp[t]) );
+
+            Ef_cnst_snk_exp[t].error *= 5.0; /* boost the error on the from factor */
+            start_params.insert( make_pair(ef.str(), Ef_cnst_snk_exp[t]) );
+          }
 
         }
 
@@ -1109,8 +1178,8 @@ fit_three_point_output fit_three_point_corr( const Data& data,
           for(int dt_count = 0 ; dt_count < t_pairs[i].size() ; dt_count++)
           {
 
-            Abscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
-            Abscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
+            PairIntAbscissa* x_t_low_dt = new PairIntAbscissa(t_pairs[i][dt_count].first);
+            PairIntAbscissa* x_t_high_dt = new PairIntAbscissa(t_pairs[i][dt_count].second);
 
             x_tlow.push_back(x_t_low_dt); x_thigh.push_back(x_t_high_dt);
 
@@ -1134,7 +1203,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
           cout << "----------------------------------------------------------------------------------" << endl;
           stringstream name; name << "c2";
           for(int k = 0 ; k < control.tmin_max.size() ; k++){
-            name << "__" << *x_tlow[k] << "_" << *x_thigh[k];
+            name << "_Dt" << x_tlow[k]->get_x().first << "_" << x_tlow[k]->get_x().second << "-" << x_thigh[k]->get_x().second;
           }
     
           AvgFit* this_fit = new AvgFit( data, active_data, cnst_two_exp, start_params, minuit_controls, control.correlated, name.str() );
@@ -1176,9 +1245,9 @@ fit_three_point_output fit_three_point_corr( const Data& data,
   cout << endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
   
   cout << "success=" << fit_selector.ensem_success();
-  //cout << fit_selector.get_summary();
 
   cout << endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+
   
   //************************************************************************************************
   /* build the output object */
@@ -1187,6 +1256,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
 
   if( !out.success  || control.long_log ){
     out.fit_long_log = fit_selector.get_long_log();
+    cout << fit_selector.get_summary();
   }
 
   if( !out.success ){
@@ -1251,7 +1321,15 @@ fit_three_point_output fit_three_point_corr( const Data& data,
       vector<AvgFit*> accepted_fits = fit_selector.get_accepted_fits();
       int prev_dt;
 
-      plot << "## tmin= " << control.tsrc[control.dt.size()-1] << " tmax= " << control.tsnk[control.dt.size()-1] << " nfits= " << accepted_fits.size() << endl;
+      plot << "## tmin= " << control.tsrc[control.dt.size()-1] << " tmax= ";
+
+      plot << control.dt[0];
+
+      for(int s = 1; s < control.dt.size(); s++){
+        plot << "," << control.dt[s];
+      } 
+    
+      plot << " nfits= " << accepted_fits.size() << endl;
       
 
       /* change this to a nice format write */

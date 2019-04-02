@@ -6,7 +6,8 @@ namespace{
 }
 
 namespace{
-  FitQuality*  createGeneric3pt( XMLReader& xml, const string& path ){ return new Generic3pt( gen3pt_params(xml, path) ); }  
+  FitQuality*  createGeneric3pt( XMLReader& xml, const string& path ){ return new Generic3pt( gen3pt_params(xml, path) ); } 
+  FitQuality*  createQNGen( XMLReader& xml, const string& path ){ return new QNGen( gen3pt_params(xml, path) ); } 
 }
 
 
@@ -24,6 +25,9 @@ namespace ThreePtFitQualityEnv
       /* N.B. still TheFitQualityFactory as we're adding to the factory defined in the library */
       success &= TheFitQualityFactory::Instance().registerObject( "gen_3_pt",
 								  createGeneric3pt);
+
+      success &= TheFitQualityFactory::Instance().registerObject( "qn_gen",
+								  createQNGen);
       registered = true;
     }
     

@@ -23,10 +23,10 @@ struct gen3pt_params{
   gen3pt_params(){};
   gen3pt_params(XMLReader& xml_in, const string& path);
   
-  int power;
-  int power_mass;
-  int power_F;
-  int power_time;
+  double power;
+  double power_mass;
+  double power_F;
+  double power_time;
   bool multiply_mass;
 };
 
@@ -35,7 +35,7 @@ struct gen3pt_params{
 class Generic3pt : public FitQuality{
 
  public:
- Generic3pt( int power_, int power_mass_,int power_F_, int power_time_, bool multiply_mass_ ) : power(power_), power_mass(power_mass_),  power_F(power_F_), power_time(power_time_), multiply_mass(multiply_mass_) {};
+ Generic3pt( double power_, double power_mass_,double power_F_, double power_time_, bool multiply_mass_ ) : power(power_), power_mass(power_mass_),  power_F(power_F_), power_time(power_time_), multiply_mass(multiply_mass_) {};
 
  Generic3pt( gen3pt_params p) : power( p.power ), power_mass(p.power_mass), power_F(p.power_F), power_time(p.power_time), multiply_mass( p.multiply_mass )
     {
@@ -48,10 +48,35 @@ class Generic3pt : public FitQuality{
   string name() const { return "gen_3_pt"; } 
   
  private:
-  int power;
-  int power_mass;
-  int power_F;
-  int power_time;
+  double power;
+  double power_mass;
+  double power_F;
+  double power_time;
+  bool multiply_mass;
+
+};
+
+
+class QNGen : public FitQuality{
+
+ public:
+ QNGen( double power_, double power_mass_,double power_F_, double power_time_, bool multiply_mass_ ) : power(power_), power_mass(power_mass_),  power_F(power_F_), power_time(power_time_), multiply_mass(multiply_mass_) {};
+
+ QNGen( gen3pt_params p) : power( p.power ), power_mass(p.power_mass), power_F(p.power_F), power_time(p.power_time), multiply_mass( p.multiply_mass )
+    {
+      cout << "constructed a QNGen with power = " << power;
+      if(multiply_mass){ cout << ", multiplying by mass"; }
+      cout << endl;
+    };
+  
+  double operator()( const AvgFit& fit ) const;
+  string name() const { return "qn_gen"; } 
+  
+ private:
+  double power;
+  double power_mass;
+  double power_F;
+  double power_time;
   bool multiply_mass;
 
 };

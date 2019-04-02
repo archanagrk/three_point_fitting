@@ -43,13 +43,14 @@ struct three_point_timeslice_corr_nexp_params{
   
   int snk_exp;
   int src_exp;
+  vector<int> dt;
 };
 
 
 /* fit snk_exp exponentials to a 3 pt */
 class ThreePointtimesliceCorrNExp : public ThreePointtimesliceCorrFunction{
  public:
-  ThreePointtimesliceCorrNExp( int src_exp_, int snk_exp_);                  /* construct with explicit integers */
+  ThreePointtimesliceCorrNExp( int src_exp_, int snk_exp_, vector<int> dt);                  /* construct with explicit integers */
   ThreePointtimesliceCorrNExp( three_point_timeslice_corr_nexp_params p );    /* construct by factory approach    */
   
   string name() const { return the_name; };
@@ -62,6 +63,7 @@ class ThreePointtimesliceCorrNExp : public ThreePointtimesliceCorrFunction{
   string the_name; 
   int snk_exp;
   int src_exp;
+  vector<int> dt;
   
   void initialize(); /* builds the name & logs the param names */
 };

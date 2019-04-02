@@ -1,7 +1,7 @@
 z_timeslice_functions.o: ../../src/z_timeslice_functions.cc \
  ../../src/z_timeslice_functions.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/functions.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/includes.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/includes.h \
  /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/vector \
  /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stl_algobase.h \
  /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/x86_64-apple-darwin18.0.0/bits/c++config.h \
@@ -503,19 +503,19 @@ z_timeslice_functions.o: ../../src/z_timeslice_functions.cc \
  /Users/archanar/Scattering/adat_install/include/recipes/nrtypes.h \
  /Users/archanar/Scattering/adat_install/include/recipes/nrtypes_nr.h \
  /usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin18.0.0/8.2.0/include/omp.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/abscissa_list.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/int_abscissa.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/double_abscissa.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/tools.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/params.h \
- /Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/tools.h
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa_list.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/int_abscissa.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/double_abscissa.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h \
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h
 
 ../../src/z_timeslice_functions.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/functions.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/includes.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/includes.h:
 
 /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/vector:
 
@@ -1519,16 +1519,16 @@ z_timeslice_functions.o: ../../src/z_timeslice_functions.cc \
 
 /usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin18.0.0/8.2.0/include/omp.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/abscissa_list.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa_list.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/int_abscissa.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/int_abscissa.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/double_abscissa.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/double_abscissa.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/tools.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/params.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h:
 
-/Users/archanar/3pt_analysis/fitting_lib_install/include/fitting_lib/tools.h:
+/Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h:

@@ -228,9 +228,9 @@ ECHO_N =
 ECHO_T = 
 EXEEXT = 
 FITTING_LIBS = -lfitting
-FITTING_LIB_CONFIG = /Users/archanar/3pt_analysis/fitting_lib_install/bin/fitting-config
-FITTING_LIB_CXXFLAGS = -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/3pt_analysis/fitting_lib_install/include
-FITTING_LIB_LDFLAGS = -L/Users/archanar/3pt_analysis/fitting_lib_install/lib
+FITTING_LIB_CONFIG = /Users/archanar/three_pt_analysis/fitting_lib_install/bin/fitting-config
+FITTING_LIB_CXXFLAGS = -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/fitting_lib_install/include
+FITTING_LIB_LDFLAGS = -L/Users/archanar/three_pt_analysis/fitting_lib_install/lib
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}

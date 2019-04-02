@@ -6,6 +6,7 @@ three_point_timeslice_corr_nexp_params::three_point_timeslice_corr_nexp_params(X
     XMLReader paramtop(xml, path); 
     read(paramtop, "src_exp", src_exp);
     read(paramtop, "snk_exp", snk_exp);
+    read(paramtop, "dt", dt);
   }
   catch(const std::string& e) 
     {  std::cerr << __func__ << ": Caught Exception reading XML: " << e << std::endl;  exit(1);   }
@@ -14,41 +15,51 @@ three_point_timeslice_corr_nexp_params::three_point_timeslice_corr_nexp_params(X
 
 /* construct using struct */
 ThreePointtimesliceCorrNExp::ThreePointtimesliceCorrNExp( three_point_timeslice_corr_nexp_params p ) 
-  :  src_exp(p.src_exp), snk_exp(p.snk_exp){ initialize(); }; 
+  :  src_exp(p.src_exp), snk_exp(p.snk_exp), dt(p.dt){ initialize(); }; 
 
 
 /* construct using integers */
-ThreePointtimesliceCorrNExp::ThreePointtimesliceCorrNExp( int src_exp_, int snk_exp_ ) 
-  : src_exp(src_exp_), snk_exp(snk_exp_){ initialize(); };  
+ThreePointtimesliceCorrNExp::ThreePointtimesliceCorrNExp( int src_exp_, int snk_exp_, vector<int> dt_ ) 
+  : src_exp(src_exp_), snk_exp(snk_exp_), dt(dt_){ initialize(); };  
 
 
 /* make the function name & log the param names */
 void ThreePointtimesliceCorrNExp::initialize(){ 
-  {stringstream ss; ss << src_exp << "src_exp" << snk_exp << "exp_pc"; the_name = ss.str();}
+  {stringstream ss; ss << src_exp << "src_exp" << snk_exp << "snk_exp"; the_name = ss.str();}
   
   par_names.push_back( "F" );
 
-  if(snk_exp == 1){par_names.push_back( "dmf" ); par_names.push_back( "Ff" );}
+  for(int t = 0; t < dt.size(); t++){
 
-  if(src_exp == 1) {par_names.push_back( "dmi" ); par_names.push_back( "Fi" );}
-
-  if(src_exp >= 2){
-    for(int i = 1; i <= snk_exp; i++){
-      { stringstream ss; ss << "dFi" << i;  par_names.push_back( ss.str() ); }
-      { stringstream ss; ss << "dmi" << i; par_names.push_back( ss.str() ); }
-    }
-    
-  }
-
-
-  if(snk_exp >= 2){
-    par_names.push_back( "F" );
-    for(int i = 1; i < snk_exp; i++){
-      { stringstream ss; ss << "dFf" << i;  par_names.push_back( ss.str() ); }
-      { stringstream ss; ss << "dmf" << i; par_names.push_back( ss.str() ); }
+    if(snk_exp == 1){    
+      { stringstream ss; ss << "Ff" << "_Dt" << dt[t];  par_names.push_back( ss.str() ); }
+      { stringstream ss; ss << "Ef" << "_Dt" << dt[t]; par_names.push_back( ss.str() ); }
     }
 
+    if(src_exp == 1) {
+      { stringstream ss; ss << "Fi" << "_Dt" << dt[t];  par_names.push_back( ss.str() ); }
+      { stringstream ss; ss << "Ei" << "_Dt" << dt[t]; par_names.push_back( ss.str() ); }      
+    }
+
+    if(src_exp >= 2){
+      for(int i = 1; i <= snk_exp; i++){
+        { stringstream ss; ss << "Fi" << i << "_Dt" << dt[t];  par_names.push_back( ss.str() ); }
+        { stringstream ss; ss << "Ei" << i << "_Dt" << dt[t]; par_names.push_back( ss.str() ); }
+      }
+      
+    }
+
+
+    if(snk_exp >= 2){
+      par_names.push_back( "F" );
+      for(int i = 1; i < snk_exp; i++){
+        { stringstream ss; ss << "Ff" << i << "_Dt" << dt[t];  par_names.push_back( ss.str() ); }
+        { stringstream ss; ss << "Ef" << i << "_Dt" << dt[t]; par_names.push_back( ss.str() ); }
+      }
+
+    }
   }
+
 
 }
 
@@ -65,18 +76,26 @@ double ThreePointtimesliceCorrNExp::operator()( std::pair<double,double> t, cons
 
   double F = pars.find("F")->second;
 
-    
+  double out = F;
+  
   if(src_exp == 0){
 
     if(snk_exp == 0){
-      return F;}
+      return out;}
     
     else if(snk_exp == 1){
+      for(int t = 0; t < dt.size(); t++){
 
-      double Ff = pars.find("Ff")->second;
-      double dmf = pars.find("dmf")->second; 
+        stringstream ff; ff << "Ff" << "_Dt" << dt[t];
+        stringstream ef; ef << "Ef" << "_Dt" << dt[t];
 
-      return F + Ff * exp( - dmf * (t_snk - t_curr) );
+        double Ff = pars.find(ff.str())->second;
+        double Ef = pars.find(ef.str())->second; 
+
+        out += Ff * exp( - Ef * (t_snk - t_curr) ); 
+
+      }
+      return out;
     }
     
   }
@@ -85,21 +104,30 @@ double ThreePointtimesliceCorrNExp::operator()( std::pair<double,double> t, cons
 
   else if(src_exp == 1){
 
-      double Fi = pars.find("Fi")->second;
-      double dmi = pars.find("dmi")->second;
+    for(int t = 0; t < dt.size(); t++){
 
-      if(snk_exp == 0){
+      stringstream fi; fi << "Fi" << "_Dt" << dt[t];
+      stringstream ei; ei << "Ei" << "_Dt" << dt[t];
 
-        return F + Fi * exp( - dmi * t_curr );
-      }
+      double Fi = pars.find(fi.str())->second;
+      double Ei = pars.find(ei.str())->second; 
+
+      out += Fi*exp( - Ei * t_curr );
+
+      if(snk_exp == 0){continue;}
 
       else if(snk_exp == 1){
 
-        double Ff = pars.find("Ff")->second;
-        double dmf = pars.find("dmf")->second; 
+        stringstream ff; ff << "Ff" << "_Dt" << dt[t];
+        stringstream ef; ef << "Ef" << "_Dt" << dt[t];
 
-        return F + Fi*exp( - dmi * t_curr ) + Ff*exp( - dmf * (t_snk - t_curr) ) ;
+        double Ff = pars.find(ff.str())->second;
+        double Ef = pars.find(ef.str())->second; 
+
+        out += Ff*exp( - Ef * (t_snk - t_curr) ) ;
       }
+    }
+    return out;
   }
 
 
@@ -107,21 +135,24 @@ double ThreePointtimesliceCorrNExp::operator()( std::pair<double,double> t, cons
   else{
     
     double out = 0.0;
-  
-    for(int i = 1; i <= src_exp; i++){
-      double dFi, dmi;
-      { stringstream ss; ss << "dFi" << i;   dFi = pars.find(ss.str())->second; }
-      { stringstream ss; ss << "dmi" << i; dmi = pars.find(ss.str())->second; }
-      out += dFi*exp( - dmi *  t_curr );
+
+    for(int t = 0; t < dt.size(); t++){
+
+      for(int i = 1; i <= src_exp; i++){
+        double Fi, Ei;
+        { stringstream ss; ss << "Fi" << i << "_Dt" << dt[t];   Fi = pars.find(ss.str())->second; }
+        { stringstream ss; ss << "Ei" << i << "_Dt" << dt[t]; Ei = pars.find(ss.str())->second; }
+        out += Fi*exp( - Ei *  t_curr );
+      }
+
+      for(int i = 1; i <= snk_exp; i++){
+        double Ff, Ef;
+        { stringstream ss; ss << "Ff" << i << "_Dt" << dt[t];   Ff = pars.find(ss.str())->second; }
+        { stringstream ss; ss << "Ef" << i << "_Dt" << dt[t]; Ef = pars.find(ss.str())->second; }
+        out += Ff*exp( - Ef *  t_snk );
+      }
     }
 
-    for(int i = 1; i <= snk_exp; i++){
-      double dFf, dmf;
-      { stringstream ss; ss << "dFf" << i;   dFf = pars.find(ss.str())->second; }
-      { stringstream ss; ss << "dmf" << i; dmf = pars.find(ss.str())->second; }
-      out += dFf*exp( - dmf *  t_snk );
-    }
-  
     out += F ;
     return out;
   }
