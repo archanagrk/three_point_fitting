@@ -9,14 +9,14 @@
                 <tmin>0</tmin>
                 <tmax>24</tmax>
                 <tsrc>0</tsrc>
-                <tsnk>24</tsnk>             
+                <tsnk>24</tsnk>
+                <NtMin>10</NtMin> 
             </elem>
         </dbFnames>
     </inputProps>
 
 
     <FitProps>
-        <NtMin>10</NtMin>
         <fit_qual>
             <type>chisq_per_n_dof</type>
             <!--<params>

@@ -10,13 +10,13 @@
                 <tmax>32</tmax>
                 <tsrc>0</tsrc>
                 <tsnk>32</tsnk>             
-            </elem>
+                <NtMin>5</NtMin>  
+              </elem>
         </dbFnames>
     </inputProps>
 
 
     <FitProps>
-        <NtMin>6</NtMin>
         <fit_qual>
             <type>chisq_per_n_dof</type>
             <!--<params>

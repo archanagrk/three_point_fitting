@@ -34,7 +34,7 @@ int main(int argc, char** argv){
   double noise, chisq_cut;
   string qual_type;
 
-  vector<int> dt_v, tmin_v, tmax_v, tsrc_v, tsnk_v;
+  vector<int> dt_v, tmin_v, tmax_v, tsrc_v, tsnk_v, Nt_min_v;
   vector<std::tuple<int,int,int>> tmin_max_v;
 
   XMLReader xml_in(xmlini);
@@ -58,15 +58,15 @@ int main(int argc, char** argv){
       read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(j)+"]/tsnk", tsnk);
       read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(j)+"]/tmin", tmin);
       read(xml_in, "/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(j)+"]/tmax", tmax);
+      read(xml_in,"/ThreeptIniParams/inputProps/dbFnames/elem["+std::to_string(j)+"]/NtMin",Nt_min);
 
       std::tuple<int,int,int> tmin_max = std::make_tuple(dt, tsrc,tsnk);
 
       filename.push_back(file);
       dt_v.push_back(dt); tmin_v.push_back(tmin); tmax_v.push_back(tmax); tsrc_v.push_back(tsrc); tsnk_v.push_back(tsnk);
-      tmin_max_v.push_back(tmin_max);  
+      tmin_max_v.push_back(tmin_max); Nt_min_v.push_back(Nt_min); 
     }
 
-    read(xml_in,"/ThreeptIniParams/FitProps/NtMin",Nt_min);
     read(xml_in,"/ThreeptIniParams/FitProps/fit_qual/type",qual_type);
     read(xml_in,"/ThreeptIniParams/FitProps/chisq_cutoff",chisq_cut);
     read(xml_in,"/ThreeptIniParams/FitProps/noise_cutoff",noise);
@@ -84,8 +84,9 @@ int main(int argc, char** argv){
    reduces the complexity from n^m to n*m */
 
 
-  vector<pair<int,int>> x_int; vector<EnsemReal> y_ensem; EnsemVectorReal tmp;
-  vector<Data> data(num); 
+  vector<pair<int,int>> x; vector<EnsemReal> y_ensem; EnsemVectorReal tmp;
+  vector<pair<int,int>> x_all; vector<EnsemReal> y_ensem_all; 
+  vector<Data> data(num+1); 
 
 
   for(int i = 0; i < num; i++ ){ 
@@ -94,23 +95,33 @@ int main(int argc, char** argv){
     
     for(int t = 0; t < tmp.numElem(); t++){
 
-      x_int.push_back(make_pair(dt_v[i],t));
+      x.push_back(make_pair(dt_v[i],t));
       y_ensem.push_back( peekObs(tmp, t) );
+
+      x_all.push_back(make_pair(dt_v[i],t));
+      y_ensem_all.push_back( peekObs(tmp, t) );
       
     }
     
-    make_pair_int_abscissa_data(x_int, y_ensem, data[i] );
+    make_pair_int_abscissa_data(x, y_ensem, data[i] );
+    x.clear(); y_ensem.clear();
+    
   }
 
-  
-  cout << "loaded data::" << endl << data[num-1].print_data() << endl;
+  make_pair_int_abscissa_data(x_all, y_ensem_all, data[num] );
+  cout << "loaded data::" << endl << data[num].print_data() << endl;
   //============================
 
   //=================================
   //===== REMOVE UNWANTED POINTS ====
 
 
-  vector<vector<bool> > keep(num);
+  vector<vector<bool> > keep(num+1);
+
+  vector<bool> remove_dt_all = !(data[num].make_active_data()); //all false
+  vector<bool> remove_noisy_all = data_below_y_noise_ratio( data[num], noise); //removes all noisy data points
+  vector<bool> tmin_tmax_all = !(data[num].make_active_data()); //all false;
+
 
   for(int i = 0; i < num; i++ ){
 
@@ -118,6 +129,7 @@ int main(int argc, char** argv){
     {
       Abscissa* x_dt = new PairIntAbscissa(make_pair(dt_v[i],dt_v[i]));
       remove_dt = remove_dt || !( data_at_x(data[i], x_dt ) );
+      remove_dt_all = remove_dt_all || !( data_at_x(data[num], x_dt ) );
       delete x_dt;
     }
     
@@ -126,27 +138,20 @@ int main(int argc, char** argv){
     vector<bool> tmin_tmax = !(data[i].make_active_data()); //all false;
 
     {
-      Abscissa* x_tmin = new PairIntAbscissa(make_pair(dt_v[i], tmin_v[i] ));
-      Abscissa* x_tmax = new PairIntAbscissa(make_pair(dt_v[i], tsnk_v[i] ));
+      Abscissa* x_tmin = new PairIntAbscissa(make_pair(dt_v[i], tmin_v[i] - 1 ));
+      Abscissa* x_tmax = new PairIntAbscissa(make_pair(dt_v[i], tsnk_v[i] + 1 ));
       tmin_tmax = tmin_tmax || data_in_x_range( data[i], make_pair(x_tmin, x_tmax) );
+      tmin_tmax_all = tmin_tmax_all || data_in_x_range( data[num], make_pair(x_tmin, x_tmax) );
       delete x_tmin; delete x_tmax;
     }
 
-    vector<bool> tmp = ( remove_dt && remove_noisy && tmin_tmax );
-
-    if(i > 0){
-      tmp.erase(tmp.begin(), tmp.begin() +  keep[i-1].size());
-      keep[i].reserve( keep[i-1].size() + tmp.size() ); // preallocate memory
-      keep[i].insert( keep[i].end(), keep[i-1].begin(), keep[i-1].end() );
-      keep[i].insert( keep[i].end(), tmp.begin(), tmp.end() );
-      tmp.clear();
-    }
-
-    else{keep[i] = tmp;}
+    keep[i] = ( remove_dt && remove_noisy && tmin_tmax );
 
   }
+
+  keep[num] = ( remove_dt_all && remove_noisy_all && tmin_tmax_all );
   
-  cout << "acceptable data::" << endl << data[num-1].print_data(keep[num-1]) << endl;
+  cout << "acceptable data::" << endl << data[num].print_data(keep[num]) << endl;
 
   cout << "###############################" << endl;
   //===================================
@@ -154,33 +159,34 @@ int main(int argc, char** argv){
 
   //============================
   //======= DO THE FITS ======== 
-  vector<fit_three_point_control> control(num);
-
+  vector<fit_three_point_control> control(num+1);
+  
   for(int i = 0; i < num; i++){
-
-    if(i > 0){  
-      control[i].tsrc = control[i-1].tsrc;
-      control[i].tsnk = control[i-1].tsnk;
-      control[i].dt = control[i-1].dt;
-      control[i].tmin_max = control[i-1].tmin_max;
-    }
 
     control[i].tsrc.push_back(tsrc_v[i]);
     control[i].tsnk.push_back(tsnk_v[i]);
     control[i].dt.push_back(dt_v[i]); 
-    control[i].tmin_max.push_back(tmin_max_v[i]);   
+    control[i].tmin_max.push_back(tmin_max_v[i]); 
+
+    control[num].tsrc.push_back(tsrc_v[i]);
+    control[num].tsnk.push_back(tsnk_v[i]);
+    control[num].dt.push_back(dt_v[i]); 
+    control[num].tmin_max.push_back(tmin_max_v[i]);   
 
 
-    control[i].Nt_min = Nt_min;
+    control[i].Nt_min.push_back(Nt_min_v[i]);
+    control[num].Nt_min.push_back(Nt_min_v[i]);
     control[i].plots = true ;
   }
+  
+  control[num].plots = true ;
 
   //===================================
 
   for(int i = 0; i < num; i++ ){
 
-    if( count_active(keep[i]) < control[i].dt.size() * Nt_min )
-      { cerr << "fewer than " << Nt_min << " timeslices survive your restrictions, no fits will be acceptable, exiting ..." << endl; exit(1); }
+    if( count_active(keep[i]) < Nt_min_v[i] )
+      { cerr << "fewer than " << Nt_min_v[i] << " timeslices survive your restrictions, no fits will be acceptable, exiting ..." << endl; exit(1); }
 }
 
   //===================================

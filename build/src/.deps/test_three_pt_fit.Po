@@ -531,6 +531,8 @@ test_three_pt_fit.o: ../../src/test_three_pt_fit.cc \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h \
+ /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/numeric \
+ /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stl_numeric.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_selector.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/ensem_fitter.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h
@@ -1598,6 +1600,10 @@ test_three_pt_fit.o: ../../src/test_three_pt_fit.cc \
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h:
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h:
+
+/usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/numeric:
+
+/usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stl_numeric.h:
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_selector.h:
 

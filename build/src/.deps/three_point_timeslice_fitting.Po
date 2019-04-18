@@ -530,6 +530,8 @@ three_point_timeslice_fitting.o: \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h \
  ../../src/pair_int_abscissa.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h \
+ /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/numeric \
+ /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stl_numeric.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_selector.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/ensem_fitter.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h
@@ -1593,6 +1595,10 @@ three_point_timeslice_fitting.o: \
 ../../src/pair_int_abscissa.h:
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h:
+
+/usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/numeric:
+
+/usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stl_numeric.h:
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_selector.h:
 

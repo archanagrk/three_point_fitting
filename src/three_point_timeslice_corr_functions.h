@@ -5,6 +5,7 @@
 #include "fitting_lib/tools.h"
 #include "fitting_lib/params.h"
 #include "pair_int_abscissa.h"
+#include <numeric>
 
 
 //**************************************************************************************
@@ -13,6 +14,11 @@
    an operator()(std::pair<double ,double> t, ...)
    which can be called to plot continuous curves
    static_cast<ThreePointtimesliceCorrFunction*>(function) can be used to convert Function pointers
+
+   Takes in vector<int> dt of different Dt (source-sink seperations) and a vector<int> src_exp and snk_exp which
+   correspond to the number of src_exp and snk_exp for each Dt. 
+   
+   The order of elements is important here: the vectors are sorted in ascending order of Dt.
 */
 //***************************************************************************************
 
@@ -41,8 +47,8 @@ struct three_point_timeslice_corr_nexp_params{
   three_point_timeslice_corr_nexp_params(){};
   three_point_timeslice_corr_nexp_params(XMLReader& xml_in, const string& path);
   
-  int snk_exp;
-  int src_exp;
+  vector<int> snk_exp;
+  vector<int> src_exp;
   vector<int> dt;
 };
 
@@ -50,7 +56,7 @@ struct three_point_timeslice_corr_nexp_params{
 /* fit snk_exp exponentials to a 3 pt */
 class ThreePointtimesliceCorrNExp : public ThreePointtimesliceCorrFunction{
  public:
-  ThreePointtimesliceCorrNExp( int src_exp_, int snk_exp_, vector<int> dt);                  /* construct with explicit integers */
+  ThreePointtimesliceCorrNExp( vector<int> src_exp_, vector<int> snk_exp_, vector<int> dt);                  /* construct with explicit integers */
   ThreePointtimesliceCorrNExp( three_point_timeslice_corr_nexp_params p );    /* construct by factory approach    */
   
   string name() const { return the_name; };
@@ -61,8 +67,8 @@ class ThreePointtimesliceCorrNExp : public ThreePointtimesliceCorrFunction{
   
  private:
   string the_name; 
-  int snk_exp;
-  int src_exp;
+  vector<int> snk_exp;
+  vector<int> src_exp;
   vector<int> dt;
   
   void initialize(); /* builds the name & logs the param names */

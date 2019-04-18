@@ -517,7 +517,9 @@ three_point_timeslice_corr_functions_factory.o: \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h \
  ../../src/pair_int_abscissa.h \
- /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h \
+ /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/numeric \
+ /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stl_numeric.h
 
 ../../src/three_point_timeslice_corr_functions_factory.h:
 
@@ -1554,3 +1556,7 @@ three_point_timeslice_corr_functions_factory.o: \
 ../../src/pair_int_abscissa.h:
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h:
+
+/usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/numeric:
+
+/usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stl_numeric.h:

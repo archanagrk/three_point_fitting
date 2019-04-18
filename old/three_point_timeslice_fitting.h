@@ -18,7 +18,7 @@
 struct fit_three_point_control{
   vector<std::tuple<int,int,int>> tmin_max;
   vector<int> dt;
-  vector<int> Nt_min;
+  int Nt_min = 6;
 
   vector<int> tsrc, tsnk;
 
@@ -51,41 +51,35 @@ struct fit_three_point_output{
   map<pair<int,int>, pair<double,double> > best_data_description; // can use this for outlier elimination
 }; 
 
-
-//************************************************************************
-
-struct single_dt_avg_fit_output{
-  bool success;
-  std::map<AvgFit*, pair<pair<int,int>,pair<int,int>> > avg_fits;
-  int dt;
-};
-
 //************************************************************************
 // DRIVER OVER DIFFERENT SOURCE-SINK SEPERATIONS
 //************************************************************************
 fit_three_point_output fit( const vector<Data>& data,                        /* the three_point data */
-				    const vector<vector<bool>> accepted_data,                        /* times which passed noise cut etc... */
+				    const vector<vector<bool>> accepted_data,        /* times which passed noise cut etc... */
 				    vector<fit_three_point_control> control,
-				    FitQuality* fit_qual,                                            /* how to compare different fits */
-				    double chisq_ndof_cutoff, double num                             /* accept these fits */
+				    FitQuality* fit_qual,                    /* how to compare different fits */
+				    double chisq_ndof_cutoff,                 /* accept these fits */
+            int num
 				    );
 //************************************************************************
 // FIX THE RANGES FOR EACH DT
 //************************************************************************
-single_dt_avg_fit_output single_dt_fit( const Data& data,                       /* the three_point data */
-				    const vector<bool> accepted_data,                                   /* times which passed noise cut etc... */
+ std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > get_range( const Data& data,                        /* the three_point data */
+				    const vector<bool> accepted_data,        /* times which passed noise cut etc... */
 				    fit_three_point_control& control,
-				    FitQuality* fit_qual,                                               /* how to compare different fits */
-				    double chisq_ndof_cutoff                                           /* accept these fits */
+				    FitQuality* fit_qual,                    /* how to compare different fits */
+				    double chisq_ndof_cutoff, std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > range,               /* accept these fits */
+            int count_dt  
 				    );
 //************************************************************************
 // FIT EACH SOURCE-SINK SEPERATION
 //************************************************************************
 fit_three_point_output fit_three_point_corr( const Data& data,                        /* the three_point data */
-				    const vector<bool> accepted_data,                                         /* times which passed noise cut etc... */
+				    const vector<bool> accepted_data,        /* times which passed noise cut etc... */
 				    fit_three_point_control& control,
-				    FitQuality* fit_qual, vector<single_dt_avg_fit_output> single_dt_fits,    /* how to compare different fits */
-				    double chisq_ndof_cutoff                                                  /* accept these fits */
+				    FitQuality* fit_qual,                    /* how to compare different fits */
+				    double chisq_ndof_cutoff, std::vector< std::vector<pair<pair<int,int>,pair<int,int>>> > range,               /* accept these fits */
+            int count_dt  
 				    );
 //************************************************************************
 
@@ -117,12 +111,6 @@ vector< pair<pair<double,double>,double> >  plot_three_point_timeslice_function(
 std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> get_all_t_ranges(fit_three_point_control control, bool slide, bool src, bool snk,
                       std::vector<std::vector<pair<pair<int,int>,pair<int,int>>>> range, int count_dt);
 
-std::vector<pair<pair<int,int>,pair<int,int>>> get_single_dt_t_ranges(fit_three_point_control control, bool slide, bool src, bool snk);
 
- void cart_product(
-    std::vector< std::vector<pair<AvgFit*, pair<pair<int,int>,pair<int,int>>> >>& rvvi,  // final result
-    std::vector<pair<AvgFit*, pair<pair<int,int>,pair<int,int>>>>&  rvi,   // current result 
-    std::vector< std::vector<pair<AvgFit*, pair<pair<int,int>,pair<int,int>>> >>::const_iterator me, // current input
-    std::vector< std::vector<pair<AvgFit*, pair<pair<int,int>,pair<int,int>>> >>::const_iterator end); // final input
 
 #endif

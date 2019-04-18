@@ -13,7 +13,8 @@ t32,fI2Y0i2,r1,00-1,pion_proj0_p100_H0D4A2__100.tm3,fI0Y0i0,r1,100,omegal_rhoxD0
                 <tmin>0</tmin>
                 <tmax>24</tmax>
                 <tsrc>0</tsrc>
-                <tsnk>24</tsnk>             
+                <tsnk>24</tsnk>
+                <NtMin>10</NtMin>             
             </elem>
             <elem>
                  <name>t2_test32</name>
@@ -22,13 +23,13 @@ t32,fI2Y0i2,r1,00-1,pion_proj0_p100_H0D4A2__100.tm3,fI0Y0i0,r1,100,omegal_rhoxD0
                  <tmax>32</tmax>
                  <tsrc>0</tsrc>
                  <tsnk>32</tsnk>
+                 <NtMin>10</NtMin>
               </elem>  
           </dbFnames>
     </inputProps>
 
 
     <FitProps>
-        <NtMin>18</NtMin>
         <fit_qual>
             <type>chisq_per_n_dof</type>
             <params>

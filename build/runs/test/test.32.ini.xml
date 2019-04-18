@@ -10,13 +10,13 @@
                 <tmax>32</tmax>
                 <tsrc>0</tsrc>
                 <tsnk>32</tsnk>             
-            </elem>
+                <NtMin>10</NtMin>  
+             </elem>
           </dbFnames>
     </inputProps>
 
 
     <FitProps>
-        <NtMin>10</NtMin>
         <fit_qual>
             <type>QN</type>
             <params>

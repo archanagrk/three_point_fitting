@@ -14,8 +14,8 @@ $plotfilename = "${filename}.plot";
 $random = int(rand(1000));
 $tmpfile = "/tmp/plot_three_point_fit.${random}.gnu";
 
-$ymin = 0.01;
-$ymax = -0.01;
+$ymin = 0.001;
+$ymax = -0.001;
 
 open(FILE , " < ${plotfilename}");
 $firstline = <FILE>;
@@ -27,6 +27,7 @@ $chisq = <FILE>;
 while($line = <FILE>){
 
   if($line =~ m/# ensem fit/){last;}
+  if($line =~ m/# inactive data/){last;}
   if($line eq /^#/){next;}
   if($line eq "\n"){next;}
 
@@ -39,8 +40,8 @@ while($line = <FILE>){
 }
 close(FILE);
 
-$ymax += 0.05;
-$ymin -= 0.05;
+$ymax += 0.05*abs($ymax - $ymin);
+$ymin -= 0.05*abs($ymax - $ymin);
 
 chomp $firstline; chomp $F; chomp $chisq;
 ($x, $x, $tmin, $x, $DT, $x, $nfits) = split(' ', $firstline);
@@ -74,6 +75,7 @@ foreach my $i (0..$end) {
 
   print OUT "set origin $x,$y\n";
   print OUT "set size $size\n";
+
   print OUT "set xrange[0:${tmax}]\n set yrange[${ymin}:${ymax}]\n ";
 
 
