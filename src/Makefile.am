@@ -1,13 +1,13 @@
 #
 # Boiler Plate stuff: Autoconf Substitutions etc
 #
-AM_CXXFLAGS = -I@top_srcdir@/src \
-	 @CXXFLAGS@ @ADAT_CXXFLAGS@ @FITTING_LIB_CXXFLAGS@ @ITPP_CXXFLAGS@
+AM_CXXFLAGS = -I@top_srcdir@/lib \
+	 @CXXFLAGS@ @SEMBLE_CXXFLAGS@ @ADAT_CXXFLAGS@ @FITTING_LIB_CXXFLAGS@ @ITPP_CXXFLAGS@
 
-AM_LDFLAGS  = -L@top_builddir@/src \
-  	 @LDFLAGS@ @ADAT_LDFLAGS@ @FITTING_LIB_LDFLAGS@
+AM_LDFLAGS  = -L@top_builddir@/lib \
+  	 @LDFLAGS@ @ADAT_LDFLAGS@ @FITTING_LIB_LDFLAGS@ @SEMBLE_LDFLAGS@
 
-LDADD = -lfitting @ADAT_LIBS@ @ITPP_LIBS@ @LIBS@ @FITTING_LIBS@
+LDADD = -lfitting @SEMBLE_LIBS@ @ADAT_LIBS@ @ITPP_LIBS@ @LIBS@ @FITTING_LIBS@
 
 #
 # The programs to build
@@ -25,7 +25,7 @@ check_PROGRAMS = test_three_pt_fit
 
 ##############################################################
 
-ensemble_fit_three_pt_fns_SOURCES   = ensemble_fit_three_pt_fns.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc \
+ensemble_fit_three_pt_fns_SOURCES   = ensemble_fit_three_pt_fns.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc edb_reader.cc key_struct.cc\
 													three_point_timeslice_corr_functions_factory.cc three_pt_fit_quality_factory.cc \
 													three_pt_fit_quality.cc
 

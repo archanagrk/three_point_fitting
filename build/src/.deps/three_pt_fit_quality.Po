@@ -293,13 +293,13 @@ three_pt_fit_quality.o: ../../src/three_pt_fit_quality.cc \
  /Users/archanar/Scattering/adat_install/include/xml_attribute.h \
  /Users/archanar/Scattering/adat_install/include/xpath_reader.h \
  /Users/archanar/Scattering/adat_install/include/basic_xpath_reader.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlmemory.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlversion.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlexports.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/threads.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/globals.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/parser.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/tree.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlmemory.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlversion.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlexports.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/threads.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/globals.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/parser.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/tree.h \
  /usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin18.0.0/8.2.0/include-fixed/limits.h \
  /usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin18.0.0/8.2.0/include-fixed/syslimits.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/limits.h \
@@ -307,24 +307,23 @@ three_pt_fit_quality.o: ../../src/three_pt_fit_quality.cc \
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/limits.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_limits.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/syslimits.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlstring.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlregexp.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/dict.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/hash.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/valid.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlerror.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/list.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlautomata.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/entities.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/encoding.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlstring.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlregexp.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/dict.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/hash.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/valid.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlerror.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/list.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlautomata.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/entities.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/encoding.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/iconv.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlIO.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/SAX.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlIO.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/SAX2.h \
  /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/stdlib.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xlink.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/SAX2.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xpath.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xpathInternals.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xlink.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xpath.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xpathInternals.h \
  /Users/archanar/Scattering/adat_install/include/xml_document.h \
  /Users/archanar/Scattering/adat_install/include/xml_tcomplex.h \
  /Users/archanar/Scattering/adat_install/include/adat/singleton.h \
@@ -1104,19 +1103,19 @@ three_pt_fit_quality.o: ../../src/three_pt_fit_quality.cc \
 
 /Users/archanar/Scattering/adat_install/include/basic_xpath_reader.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlmemory.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlmemory.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlversion.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlversion.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlexports.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlexports.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/threads.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/threads.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/globals.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/globals.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/parser.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/parser.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/tree.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/tree.h:
 
 /usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin18.0.0/8.2.0/include-fixed/limits.h:
 
@@ -1132,41 +1131,39 @@ three_pt_fit_quality.o: ../../src/three_pt_fit_quality.cc \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/syslimits.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlstring.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlstring.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlregexp.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlregexp.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/dict.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/dict.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/hash.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/hash.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/valid.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/valid.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlerror.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlerror.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/list.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/list.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlautomata.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlautomata.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/entities.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/entities.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/encoding.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/encoding.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/iconv.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlIO.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlIO.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/SAX.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/SAX2.h:
 
 /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/stdlib.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xlink.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xlink.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/SAX2.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xpath.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xpath.h:
-
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xpathInternals.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xpathInternals.h:
 
 /Users/archanar/Scattering/adat_install/include/xml_document.h:
 

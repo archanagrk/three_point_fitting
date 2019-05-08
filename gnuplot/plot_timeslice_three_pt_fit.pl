@@ -14,8 +14,8 @@ $plotfilename = "${filename}.plot";
 $random = int(rand(1000));
 $tmpfile = "/tmp/plot_three_point_fit.${random}.gnu";
 
-$ymin = 0.001;
-$ymax = -0.001;
+$ymin = 0.01;
+$ymax = -0.01;
 
 open(FILE , " < ${plotfilename}");
 $firstline = <FILE>;
@@ -80,13 +80,13 @@ foreach my $i (0..$end) {
 
 
   #$xpos = 0.25*$tmax ;
-  $ypos1 = $ymax - 0.25 * abs($ymax - $ymin);
-  $ypos2 = $ymax - 0.30 * abs($ymax - $ymin);
-  $ypos3 = $ymax - 0.35 * abs($ymax - $ymin);
+  $ypos1 = $ymax - 0.10 * abs($ymax - $ymin);
+  $ypos2 = $ymax - 0.15 * abs($ymax - $ymin);
+  $ypos3 = $ymax - 0.20 * abs($ymax - $ymin);
 
-  print OUT "set label 1 \"${filename}\" at ${tmin},${ypos1} noenhanced textcolor rgb \"#000000\"\n";
-  print OUT "set label 2 \"$F\" at ${tmin},${ypos2} noenhanced textcolor rgb \"#000000\"\n";
-  print OUT "set label 3 \"$chisq\" at ${tmin},${ypos3} noenhanced textcolor rgb \"#000000\"\n";
+  print OUT "set label 1 \"${filename}\" at ${tmin},${ypos1} noenhanced textcolor rgb \"#000000\" front \n";
+  print OUT "set label 2 \"$F\" at ${tmin},${ypos2} noenhanced textcolor rgb \"#000000\" front \n";
+  print OUT "set label 3 \"$chisq\" at ${tmin},${ypos3} noenhanced textcolor rgb \"#000000\" front \n";
 
   $idx_one   =  $i;
   $idx_two   =  $Dt + $i;

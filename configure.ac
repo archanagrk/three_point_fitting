@@ -94,6 +94,41 @@ AC_SUBST(ITPP_LIBS,     "`${ITPP_CONFIG} --static --libs`")
 AC_MSG_NOTICE([ITPP libraries flags: ${ITPP_LIBS}])
 
 
+##############################
+# SEMBLE INTERFACE
+##############################
+
+dnl --with-semble=DIR
+AC_ARG_WITH(semble,
+  AC_HELP_STRING(
+    [--with-semble=DIR],
+    [Building on top of semble where semble is installed in DIR]
+  ),
+  [SEMBLE_HOME="$with_semble"]
+)
+
+if test "X${SEMBLE_HOME}X" = "XX" ; then
+  AC_PATH_PROG(SEMBLE_CONFIG, [semble-config], [])
+else
+  AC_PATH_PROG(SEMBLE_CONFIG, [semble-config], [], [${SEMBLE_HOME}/bin:${PATH}])
+fi
+
+if test "X${SEMBLE_CONFIG}X" = "XX" ; then
+  AC_MSG_ERROR([semble configuration program semble-config not found.
+  		Cannot compile/linke without semble.
+		Use --with-semble=<dir> to select a working version.])
+fi
+
+AC_MSG_NOTICE([Found semble configuration program ${SEMBLE_CONFIG}])
+AC_SUBST(CXX, "`${SEMBLE_CONFIG} --cxx`")
+AC_MSG_NOTICE([semble compiler: ${CXX}])
+AC_SUBST(SEMBLE_CXXFLAGS, "`${SEMBLE_CONFIG} --cxxflags`")
+AC_MSG_NOTICE([semble compile flags: ${SEMBLE_CXXFLAGS}])
+AC_SUBST(SEMBLE_LDFLAGS,  "`${SEMBLE_CONFIG} --ldflags`")
+AC_MSG_NOTICE([semble linking flags: ${SEMBLE_LDFLAGS}])
+AC_SUBST(SEMBLE_LIBS,     "`${SEMBLE_CONFIG} --libs`")
+AC_MSG_NOTICE([semble libraries flags: ${SEMBLE_LIBS}])
+
 
 ##############################
 # FITTING LIBRARY INTERFACE

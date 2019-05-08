@@ -204,9 +204,9 @@ am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \
 distcleancheck_listfiles = find . -type f -print
 ACLOCAL = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing aclocal-1.16
 ADAT_CONFIG = /Users/archanar/Scattering/adat_install/bin/adat-config
-ADAT_CXXFLAGS = -O2 -I/Users/archanar/Scattering/adat_install/include -I/usr/local/Cellar/libxml2/2.9.8/include/libxml2
+ADAT_CXXFLAGS = -O2 -I/Users/archanar/Scattering/adat_install/include -I/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2
 ADAT_LDFLAGS = -L/Users/archanar/Scattering/adat_install/lib
-ADAT_LIBS = -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.8/lib -lxml2 -lz -lpthread -liconv -lm
+ADAT_LIBS = -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.9_2/lib -lxml2 -lz -lpthread -liconv -lm
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AUTOCONF = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing autoconf
@@ -215,11 +215,11 @@ AUTOMAKE = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missin
 AWK = awk
 CC = gcc-8
 CCDEPMODE = depmode=gcc3
-CFLAGS = -O3 -mtune=native -fopenmp -fbounds-check
+CFLAGS = -Wall -g -O3 -mtune=native -fopenmp -fbounds-check
 CPPFLAGS = 
 CXX = g++-8
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -O3 -mtune=native -fopenmp -fbounds-check
+CXXFLAGS = -Wall -g -O3 -mtune=native -fopenmp -fbounds-check
 CYGPATH_W = echo
 DEFS = -DPACKAGE_NAME=\"3pt_fit\" -DPACKAGE_TARNAME=\"3pt_fit\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"3pt_fit\ 1.0\" -DPACKAGE_BUGREPORT=\"archanar@jlab.org\" -DPACKAGE_URL=\"\" -DPACKAGE=\"3pt_fit\" -DVERSION=\"1.0\"
 DEPDIR = .deps
@@ -255,6 +255,10 @@ PACKAGE_URL =
 PACKAGE_VERSION = 1.0
 PATH_SEPARATOR = :
 RANLIB = ranlib
+SEMBLE_CONFIG = /Users/archanar/three_pt_analysis/semble_install/bin/semble-config
+SEMBLE_CXXFLAGS = -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/semble_install/include
+SEMBLE_LDFLAGS = -L/Users/archanar/three_pt_analysis/semble_install/lib
+SEMBLE_LIBS = -lsemble
 SET_MAKE = 
 SHELL = /bin/sh
 STRIP = 

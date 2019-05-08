@@ -22,6 +22,13 @@ fit_three_point_output fit( const vector<Data>& data,
 
   out = fit_three_point_corr(data[num], accepted_data[num], control[num], fit_qual, single_dt_fits, chisq_ndof_cutoff);
 
+
+  for(int dt = 0; dt < single_dt_fits.size(); dt++){
+    for(auto it = single_dt_fits[dt].avg_fits.begin(); it != single_dt_fits[dt].avg_fits.end(); it++){
+      delete it->first;
+    }
+  } 
+
   return out;
 
 };
@@ -124,8 +131,8 @@ single_dt_avg_fit_output single_dt_fit( const Data& data,
   
         AvgFit* this_fit = new AvgFit( data, active_data, cnst, start_params, minuit_controls, control.correlated, name.str() );
         fits.push_back( this_fit );
-        //fits_src_exp.push_back( this_fit );
-        //fits_snk_exp.push_back( this_fit );
+
+
         previous = active_data;
   
         /*cout << "==================================================================================" << endl;
@@ -135,6 +142,7 @@ single_dt_avg_fit_output single_dt_fit( const Data& data,
         cout << "==================================================================================" << endl; */
       }
     cout << "-------------------------------------------------" << endl;   
+    delete x_t_low_dt; delete x_t_high_dt; 
     } //next t_low
     t_pairs.clear();
   } //end constant fits
@@ -253,7 +261,8 @@ single_dt_avg_fit_output single_dt_fit( const Data& data,
           cout << this_fit->report() << endl;
           cout << "==================================================================================" << endl; */
         }
-      cout << "-------------------------------------------------" << endl;  
+      cout << "-------------------------------------------------" << endl;
+      delete x_t_low_dt; delete x_t_high_dt;   
       } // next t_pairs
       t_pairs.clear();
     } //end of src_exp fits
@@ -332,7 +341,8 @@ single_dt_avg_fit_output single_dt_fit( const Data& data,
           cout << this_fit->report() << endl;
           cout << "==================================================================================" << endl; */
         }
-      cout << "-------------------------------------------------" << endl;  
+      cout << "-------------------------------------------------" << endl; 
+      delete x_t_low_dt; delete x_t_high_dt;  
       } // next t_pair
       t_pairs.clear();
     } //end of snk_exp fits
@@ -518,7 +528,8 @@ single_dt_avg_fit_output single_dt_fit( const Data& data,
             cout << this_fit->report() << endl;
             cout << "==================================================================================" << endl;*/
           }  
-          cout << "-------------------------------------------------" << endl;      
+          cout << "-------------------------------------------------" << endl;  
+          delete x_t_low_dt; delete x_t_high_dt;     
         } // next dt
         t_pairs.clear();
       }//end two exp fits
@@ -566,6 +577,10 @@ single_dt_avg_fit_output single_dt_fit( const Data& data,
 
     }
 
+    /* clean up pointers after best 5 */
+    for (auto it = end ; it != ordered.end(); ++it){delete it->second;} 
+    fits.clear();    fits_src_exp.clear();    fits_snk_exp.clear();  ordered.clear(); 
+
   }
 
   else{
@@ -587,9 +602,9 @@ single_dt_avg_fit_output single_dt_fit( const Data& data,
   cout << "*******************************" << endl;;
   cout << "   " << "Fixed range for DT = " << control.dt[0] << endl;
   cout << "*******************************" << endl;;
-  /* clean up pointers */
-  delete cnst; delete cnst_src_exp; delete cnst_two_exp; delete cnst_snk_exp;
 
+
+  delete cnst; delete cnst_src_exp; delete cnst_two_exp; delete cnst_snk_exp;
 
   return out;
 
@@ -647,6 +662,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
   std::vector< std::vector<pair<AvgFit*, pair<pair<int,int>,pair<int,int>>> >> dt_fits;
   std::vector<pair<AvgFit*, pair<pair<int,int>,pair<int,int>>>> t_pairsTemp;
   cart_product(dt_fits, t_pairsTemp, t_pairs.begin(), t_pairs.end());
+  t_pairsTemp.clear(); t_pairs.clear();
   
   cout << "-------------------------------------------------" << endl; 
   
@@ -966,7 +982,11 @@ fit_three_point_output fit_three_point_corr( const Data& data,
   cout << "*********************************" << endl;;
   
   /* clean up pointers */
+  for (auto it = fit_fn.begin() ; it != fit_fn.end(); ++it){delete (*it);} 
   fit_fn.clear();
+
+  for (auto it = fits.begin() ; it != fits.end(); ++it){delete (*it);} 
+  fits.clear(); 
 
   return out; 
 

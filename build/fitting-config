@@ -25,7 +25,7 @@ version="1.0"
 extra_libs=""
 
 fitting_cxx="g++-8"
-fitting_cxxflags="-O3 -mtune=native -fopenmp -fbounds-check -I${prefix}/include"
+fitting_cxxflags="-Wall -g -O3 -mtune=native -fopenmp -fbounds-check -I${prefix}/include"
 fitting_ldflags=" -L${exec_prefix}/lib"
 fitting_libs="-lfitting "
 

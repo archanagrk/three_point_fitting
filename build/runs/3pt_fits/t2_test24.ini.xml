@@ -4,7 +4,7 @@
         <NumdbFiles>1</NumdbFiles>
         <dbFnames>
             <elem>
-                <name>t2_test24</name>
+                <name>t24.edb</name>
                 <dt>24</dt>
                 <tmin>0</tmin>
                 <tmax>24</tmax>
@@ -27,8 +27,11 @@
                 <multiply_mass>true</multiply_mass>
             </params>-->
         </fit_qual>
+        <kfac>kfac.ini.xml</kfac>
         <chisq_cutoff>2</chisq_cutoff>
         <noise_cutoff>10</noise_cutoff>
+        <Ei>0.19226</Ei>  
+        <Ef>0.133</Ef>
     </FitProps>
 
 </ThreeptIniParams>

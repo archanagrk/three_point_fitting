@@ -8,7 +8,7 @@ t32,fI2Y0i2,r1,00-1,pion_proj0_p100_H0D4A2__100.tm3,fI0Y0i0,r1,100,omegal_rhoxD0
         <NumdbFiles>2</NumdbFiles>
         <dbFnames>
             <elem>
-                <name>t2_test24</name>
+                <name>t24.edb</name>
                 <dt>24</dt>
                 <tmin>0</tmin>
                 <tmax>24</tmax>
@@ -17,7 +17,7 @@ t32,fI2Y0i2,r1,00-1,pion_proj0_p100_H0D4A2__100.tm3,fI0Y0i0,r1,100,omegal_rhoxD0
                 <NtMin>10</NtMin>             
             </elem>
             <elem>
-                 <name>t2_test32</name>
+                 <name>t32.edb</name>
                  <dt>32</dt>
                  <tmin>0</tmin>
                  <tmax>32</tmax>
@@ -39,8 +39,11 @@ t32,fI2Y0i2,r1,00-1,pion_proj0_p100_H0D4A2__100.tm3,fI0Y0i0,r1,100,omegal_rhoxD0
                 <power_time>0</power_time>
                 <multiply_mass>false</multiply_mass> -->
             </params>
-        </fit_qual>
-        <chisq_cutoff>2</chisq_cutoff>
+          </fit_qual>
+          <kfac>kfac.ini.xml</kfac>
+          <Ei>0.19226</Ei>
+          <Ef>0.133</Ef>  
+          <chisq_cutoff>2</chisq_cutoff>
         <noise_cutoff>10</noise_cutoff>
     </FitProps>
 

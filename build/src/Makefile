@@ -103,7 +103,8 @@ PROGRAMS = $(bin_PROGRAMS)
 am_ensemble_fit_three_pt_fns_OBJECTS =  \
 	ensemble_fit_three_pt_fns.$(OBJEXT) \
 	three_point_timeslice_corr_functions.$(OBJEXT) \
-	three_point_timeslice_fitting.$(OBJEXT) \
+	three_point_timeslice_fitting.$(OBJEXT) edb_reader.$(OBJEXT) \
+	key_struct.$(OBJEXT) \
 	three_point_timeslice_corr_functions_factory.$(OBJEXT) \
 	three_pt_fit_quality_factory.$(OBJEXT) \
 	three_pt_fit_quality.$(OBJEXT)
@@ -141,8 +142,9 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I. -I$(srcdir)
 depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po \
-	./$(DEPDIR)/fit_zt.Po ./$(DEPDIR)/test_three_pt_fit.Po \
+am__depfiles_remade = ./$(DEPDIR)/edb_reader.Po \
+	./$(DEPDIR)/ensemble_fit_three_pt_fns.Po ./$(DEPDIR)/fit_zt.Po \
+	./$(DEPDIR)/key_struct.Po ./$(DEPDIR)/test_three_pt_fit.Po \
 	./$(DEPDIR)/three_point_timeslice_corr_functions.Po \
 	./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po \
 	./$(DEPDIR)/three_point_timeslice_fitting.Po \
@@ -198,9 +200,9 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/config/depcomp \
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing aclocal-1.16
 ADAT_CONFIG = /Users/archanar/Scattering/adat_install/bin/adat-config
-ADAT_CXXFLAGS = -O2 -I/Users/archanar/Scattering/adat_install/include -I/usr/local/Cellar/libxml2/2.9.8/include/libxml2
+ADAT_CXXFLAGS = -O2 -I/Users/archanar/Scattering/adat_install/include -I/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2
 ADAT_LDFLAGS = -L/Users/archanar/Scattering/adat_install/lib
-ADAT_LIBS = -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.8/lib -lxml2 -lz -lpthread -liconv -lm
+ADAT_LIBS = -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.9_2/lib -lxml2 -lz -lpthread -liconv -lm
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AUTOCONF = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing autoconf
@@ -209,11 +211,11 @@ AUTOMAKE = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missin
 AWK = awk
 CC = gcc-8
 CCDEPMODE = depmode=gcc3
-CFLAGS = -O3 -mtune=native -fopenmp -fbounds-check
+CFLAGS = -Wall -g -O3 -mtune=native -fopenmp -fbounds-check
 CPPFLAGS = 
 CXX = g++-8
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -O3 -mtune=native -fopenmp -fbounds-check
+CXXFLAGS = -Wall -g -O3 -mtune=native -fopenmp -fbounds-check
 CYGPATH_W = echo
 DEFS = -DPACKAGE_NAME=\"3pt_fit\" -DPACKAGE_TARNAME=\"3pt_fit\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"3pt_fit\ 1.0\" -DPACKAGE_BUGREPORT=\"archanar@jlab.org\" -DPACKAGE_URL=\"\" -DPACKAGE=\"3pt_fit\" -DVERSION=\"1.0\"
 DEPDIR = .deps
@@ -249,6 +251,10 @@ PACKAGE_URL =
 PACKAGE_VERSION = 1.0
 PATH_SEPARATOR = :
 RANLIB = ranlib
+SEMBLE_CONFIG = /Users/archanar/three_pt_analysis/semble_install/bin/semble-config
+SEMBLE_CXXFLAGS = -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/semble_install/include
+SEMBLE_LDFLAGS = -L/Users/archanar/three_pt_analysis/semble_install/lib
+SEMBLE_LIBS = -lsemble
 SET_MAKE = 
 SHELL = /bin/sh
 STRIP = 
@@ -300,16 +306,16 @@ top_srcdir = ../..
 #
 # Boiler Plate stuff: Autoconf Substitutions etc
 #
-AM_CXXFLAGS = -I../../src \
-	 -O3 -mtune=native -fopenmp -fbounds-check -O2 -I/Users/archanar/Scattering/adat_install/include -I/usr/local/Cellar/libxml2/2.9.8/include/libxml2 -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/fitting_lib_install/include  -I/Users/archanar/Scattering/itpp_install/include -std=c++0x -O3
+AM_CXXFLAGS = -I../../lib \
+	 -Wall -g -O3 -mtune=native -fopenmp -fbounds-check -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/semble_install/include -O2 -I/Users/archanar/Scattering/adat_install/include -I/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2 -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/fitting_lib_install/include  -I/Users/archanar/Scattering/itpp_install/include -std=c++0x -O3
 
-AM_LDFLAGS = -L../src \
-  	  -L/Users/archanar/Scattering/adat_install/lib -L/Users/archanar/three_pt_analysis/fitting_lib_install/lib
+AM_LDFLAGS = -L../lib \
+  	  -L/Users/archanar/Scattering/adat_install/lib -L/Users/archanar/three_pt_analysis/fitting_lib_install/lib -L/Users/archanar/three_pt_analysis/semble_install/lib
 
-LDADD = -lfitting -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.8/lib -lxml2 -lz -lpthread -liconv -lm  -L/Users/archanar/Scattering/itpp_install/lib -litpp -llapack -lblas  -lfitting
+LDADD = -lfitting -lsemble -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.9_2/lib -lxml2 -lz -lpthread -liconv -lm  -L/Users/archanar/Scattering/itpp_install/lib -litpp -llapack -lblas  -lfitting
 
 ##############################################################
-ensemble_fit_three_pt_fns_SOURCES = ensemble_fit_three_pt_fns.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc \
+ensemble_fit_three_pt_fns_SOURCES = ensemble_fit_three_pt_fns.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc edb_reader.cc key_struct.cc\
 													three_point_timeslice_corr_functions_factory.cc three_pt_fit_quality_factory.cc \
 													three_pt_fit_quality.cc
 
@@ -425,8 +431,10 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+include ./$(DEPDIR)/edb_reader.Po # am--include-marker
 include ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po # am--include-marker
 include ./$(DEPDIR)/fit_zt.Po # am--include-marker
+include ./$(DEPDIR)/key_struct.Po # am--include-marker
 include ./$(DEPDIR)/test_three_pt_fit.Po # am--include-marker
 include ./$(DEPDIR)/three_point_timeslice_corr_functions.Po # am--include-marker
 include ./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po # am--include-marker
@@ -586,8 +594,10 @@ clean-am: clean-binPROGRAMS clean-checkPROGRAMS clean-generic \
 	mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
+		-rm -f ./$(DEPDIR)/edb_reader.Po
+	-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
 	-rm -f ./$(DEPDIR)/fit_zt.Po
+	-rm -f ./$(DEPDIR)/key_struct.Po
 	-rm -f ./$(DEPDIR)/test_three_pt_fit.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po
@@ -642,8 +652,10 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
+		-rm -f ./$(DEPDIR)/edb_reader.Po
+	-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
 	-rm -f ./$(DEPDIR)/fit_zt.Po
+	-rm -f ./$(DEPDIR)/key_struct.Po
 	-rm -f ./$(DEPDIR)/test_three_pt_fit.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po

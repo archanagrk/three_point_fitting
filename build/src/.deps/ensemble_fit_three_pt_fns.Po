@@ -291,13 +291,13 @@ ensemble_fit_three_pt_fns.o: ../../src/ensemble_fit_three_pt_fns.cc \
  /Users/archanar/Scattering/adat_install/include/xml_attribute.h \
  /Users/archanar/Scattering/adat_install/include/xpath_reader.h \
  /Users/archanar/Scattering/adat_install/include/basic_xpath_reader.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlmemory.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlversion.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlexports.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/threads.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/globals.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/parser.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/tree.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlmemory.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlversion.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlexports.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/threads.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/globals.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/parser.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/tree.h \
  /usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin18.0.0/8.2.0/include-fixed/limits.h \
  /usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin18.0.0/8.2.0/include-fixed/syslimits.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/limits.h \
@@ -305,24 +305,23 @@ ensemble_fit_three_pt_fns.o: ../../src/ensemble_fit_three_pt_fns.cc \
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/limits.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/i386/_limits.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/syslimits.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlstring.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlregexp.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/dict.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/hash.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/valid.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlerror.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/list.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlautomata.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/entities.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/encoding.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlstring.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlregexp.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/dict.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/hash.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/valid.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlerror.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/list.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlautomata.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/entities.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/encoding.h \
  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/iconv.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlIO.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/SAX.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlIO.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/SAX2.h \
  /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/stdlib.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xlink.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/SAX2.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xpath.h \
- /usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xpathInternals.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xlink.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xpath.h \
+ /usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xpathInternals.h \
  /Users/archanar/Scattering/adat_install/include/xml_document.h \
  /Users/archanar/Scattering/adat_install/include/xml_tcomplex.h \
  /Users/archanar/Scattering/adat_install/include/adat/singleton.h \
@@ -510,9 +509,9 @@ ensemble_fit_three_pt_fns.o: ../../src/ensemble_fit_three_pt_fns.cc \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/double_abscissa.h \
  ../../src/pair_int_abscissa.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h \
+ ../../src/three_point_timeslice_fitting.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data_selectors.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data.h \
- ../../src/three_point_timeslice_fitting.h \
  ../../src/three_pt_fit_quality_factory.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality.h \
@@ -535,7 +534,53 @@ ensemble_fit_three_pt_fns.o: ../../src/ensemble_fit_three_pt_fns.cc \
  /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stl_numeric.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_selector.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/ensem_fitter.h \
- /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h
+ /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h \
+ ../../src/edb_reader.h \
+ /Users/archanar/Scattering/adat_install/include/AllConfStoreDB.h \
+ /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/iterator \
+ /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stream_iterator.h \
+ /Users/archanar/Scattering/adat_install/include/FileDB.h \
+ /Users/archanar/Scattering/adat_install/include/DBCursor.h \
+ /Users/archanar/Scattering/adat_install/include/DBKey.h \
+ /Users/archanar/Scattering/adat_install/include/Serializable.h \
+ /Users/archanar/Scattering/adat_install/include/ffdb_db.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/types.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_short.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_caddr_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_addr_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_port_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_key_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsblkcnt_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/fcntl.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/fcntl.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_o_sync.h \
+ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_o_dsync.h \
+ /Users/archanar/Scattering/adat_install/include/DBData.h \
+ /Users/archanar/Scattering/adat_install/include/DBFunc.h \
+ /Users/archanar/Scattering/adat_install/include/ConfigInfo.h \
+ /Users/archanar/Scattering/adat_install/include/ConfDataStoreDB.h \
+ /Users/archanar/Scattering/adat_install/include/io/key_val_db.h \
+ /Users/archanar/Scattering/adat_install/include/DBKey.h \
+ /Users/archanar/Scattering/adat_install/include/DBData.h \
+ /Users/archanar/Scattering/adat_install/include/adat/map_obj.h \
+ /Users/archanar/Scattering/adat_install/include/hadron/hadron_sun_npart_npt_corr.h \
+ /Users/archanar/Scattering/adat_install/include/hadron/hadron_sun_npart_irrep.h \
+ /Users/archanar/Scattering/adat_install/include/hadron/hadron_sun_npart_irrep_op.h \
+ /Users/archanar/Scattering/adat_install/include/hadron/particle_op.h \
+ /Users/archanar/Scattering/adat_install/include/hadron/hadron_vertex.h \
+ /Users/archanar/Scattering/adat_install/include/hadron/cgc_su3.h \
+ /Users/archanar/Scattering/adat_install/include/hadron/cgcs.h \
+ /Users/archanar/Scattering/adat_install/include/hadron/cgc_irrep_mom.h \
+ /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/filesystem \
+ ../../src/key_struct.h \
+ /Users/archanar/three_pt_analysis/semble_install/include/semble/semble_file_management.h \
+ /Users/archanar/Scattering/adat_install/include/hadron/ensem_filenames.h \
+ /Users/archanar/three_pt_analysis/semble_install/include/semble/semble_meta.h
 
 ../../src/pair_int_abscissa_data_builder.h:
 
@@ -1121,19 +1166,19 @@ ensemble_fit_three_pt_fns.o: ../../src/ensemble_fit_three_pt_fns.cc \
 
 /Users/archanar/Scattering/adat_install/include/basic_xpath_reader.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlmemory.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlmemory.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlversion.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlversion.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlexports.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlexports.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/threads.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/threads.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/globals.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/globals.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/parser.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/parser.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/tree.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/tree.h:
 
 /usr/local/Cellar/gcc/8.2.0/lib/gcc/8/gcc/x86_64-apple-darwin18.0.0/8.2.0/include-fixed/limits.h:
 
@@ -1149,41 +1194,39 @@ ensemble_fit_three_pt_fns.o: ../../src/ensemble_fit_three_pt_fns.cc \
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/syslimits.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlstring.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlstring.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlregexp.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlregexp.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/dict.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/dict.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/hash.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/hash.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/valid.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/valid.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlerror.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlerror.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/list.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/list.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlautomata.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlautomata.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/entities.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/entities.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/encoding.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/encoding.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/iconv.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xmlIO.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xmlIO.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/SAX.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/SAX2.h:
 
 /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/stdlib.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xlink.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xlink.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/SAX2.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xpath.h:
 
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xpath.h:
-
-/usr/local/Cellar/libxml2/2.9.8/include/libxml2/libxml/xpathInternals.h:
+/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2/libxml/xpathInternals.h:
 
 /Users/archanar/Scattering/adat_install/include/xml_document.h:
 
@@ -1559,11 +1602,11 @@ ensemble_fit_three_pt_fns.o: ../../src/ensemble_fit_three_pt_fns.cc \
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/abscissa.h:
 
+../../src/three_point_timeslice_fitting.h:
+
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data_selectors.h:
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data.h:
-
-../../src/three_point_timeslice_fitting.h:
 
 ../../src/three_pt_fit_quality_factory.h:
 
@@ -1610,3 +1653,95 @@ ensemble_fit_three_pt_fns.o: ../../src/ensemble_fit_three_pt_fns.cc \
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/ensem_fitter.h:
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h:
+
+../../src/edb_reader.h:
+
+/Users/archanar/Scattering/adat_install/include/AllConfStoreDB.h:
+
+/usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/iterator:
+
+/usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/bits/stream_iterator.h:
+
+/Users/archanar/Scattering/adat_install/include/FileDB.h:
+
+/Users/archanar/Scattering/adat_install/include/DBCursor.h:
+
+/Users/archanar/Scattering/adat_install/include/DBKey.h:
+
+/Users/archanar/Scattering/adat_install/include/Serializable.h:
+
+/Users/archanar/Scattering/adat_install/include/ffdb_db.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/types.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_char.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_short.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_u_int.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_caddr_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_addr_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_in_port_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_key_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_rsize_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/fcntl.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/fcntl.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_o_sync.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_o_dsync.h:
+
+/Users/archanar/Scattering/adat_install/include/DBData.h:
+
+/Users/archanar/Scattering/adat_install/include/DBFunc.h:
+
+/Users/archanar/Scattering/adat_install/include/ConfigInfo.h:
+
+/Users/archanar/Scattering/adat_install/include/ConfDataStoreDB.h:
+
+/Users/archanar/Scattering/adat_install/include/io/key_val_db.h:
+
+/Users/archanar/Scattering/adat_install/include/DBKey.h:
+
+/Users/archanar/Scattering/adat_install/include/DBData.h:
+
+/Users/archanar/Scattering/adat_install/include/adat/map_obj.h:
+
+/Users/archanar/Scattering/adat_install/include/hadron/hadron_sun_npart_npt_corr.h:
+
+/Users/archanar/Scattering/adat_install/include/hadron/hadron_sun_npart_irrep.h:
+
+/Users/archanar/Scattering/adat_install/include/hadron/hadron_sun_npart_irrep_op.h:
+
+/Users/archanar/Scattering/adat_install/include/hadron/particle_op.h:
+
+/Users/archanar/Scattering/adat_install/include/hadron/hadron_vertex.h:
+
+/Users/archanar/Scattering/adat_install/include/hadron/cgc_su3.h:
+
+/Users/archanar/Scattering/adat_install/include/hadron/cgcs.h:
+
+/Users/archanar/Scattering/adat_install/include/hadron/cgc_irrep_mom.h:
+
+/usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/filesystem:
+
+../../src/key_struct.h:
+
+/Users/archanar/three_pt_analysis/semble_install/include/semble/semble_file_management.h:
+
+/Users/archanar/Scattering/adat_install/include/hadron/ensem_filenames.h:
+
+/Users/archanar/three_pt_analysis/semble_install/include/semble/semble_meta.h:

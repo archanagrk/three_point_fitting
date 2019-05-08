@@ -103,7 +103,8 @@ PROGRAMS = $(bin_PROGRAMS)
 am_ensemble_fit_three_pt_fns_OBJECTS =  \
 	ensemble_fit_three_pt_fns.$(OBJEXT) \
 	three_point_timeslice_corr_functions.$(OBJEXT) \
-	three_point_timeslice_fitting.$(OBJEXT) \
+	three_point_timeslice_fitting.$(OBJEXT) edb_reader.$(OBJEXT) \
+	key_struct.$(OBJEXT) \
 	three_point_timeslice_corr_functions_factory.$(OBJEXT) \
 	three_pt_fit_quality_factory.$(OBJEXT) \
 	three_pt_fit_quality.$(OBJEXT)
@@ -141,8 +142,9 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@
 depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po \
-	./$(DEPDIR)/fit_zt.Po ./$(DEPDIR)/test_three_pt_fit.Po \
+am__depfiles_remade = ./$(DEPDIR)/edb_reader.Po \
+	./$(DEPDIR)/ensemble_fit_three_pt_fns.Po ./$(DEPDIR)/fit_zt.Po \
+	./$(DEPDIR)/key_struct.Po ./$(DEPDIR)/test_three_pt_fit.Po \
 	./$(DEPDIR)/three_point_timeslice_corr_functions.Po \
 	./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po \
 	./$(DEPDIR)/three_point_timeslice_fitting.Po \
@@ -249,6 +251,10 @@ PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 RANLIB = @RANLIB@
+SEMBLE_CONFIG = @SEMBLE_CONFIG@
+SEMBLE_CXXFLAGS = @SEMBLE_CXXFLAGS@
+SEMBLE_LDFLAGS = @SEMBLE_LDFLAGS@
+SEMBLE_LIBS = @SEMBLE_LIBS@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
@@ -300,16 +306,16 @@ top_srcdir = @top_srcdir@
 #
 # Boiler Plate stuff: Autoconf Substitutions etc
 #
-AM_CXXFLAGS = -I@top_srcdir@/src \
-	 @CXXFLAGS@ @ADAT_CXXFLAGS@ @FITTING_LIB_CXXFLAGS@ @ITPP_CXXFLAGS@
+AM_CXXFLAGS = -I@top_srcdir@/lib \
+	 @CXXFLAGS@ @SEMBLE_CXXFLAGS@ @ADAT_CXXFLAGS@ @FITTING_LIB_CXXFLAGS@ @ITPP_CXXFLAGS@
 
-AM_LDFLAGS = -L@top_builddir@/src \
-  	 @LDFLAGS@ @ADAT_LDFLAGS@ @FITTING_LIB_LDFLAGS@
+AM_LDFLAGS = -L@top_builddir@/lib \
+  	 @LDFLAGS@ @ADAT_LDFLAGS@ @FITTING_LIB_LDFLAGS@ @SEMBLE_LDFLAGS@
 
-LDADD = -lfitting @ADAT_LIBS@ @ITPP_LIBS@ @LIBS@ @FITTING_LIBS@
+LDADD = -lfitting @SEMBLE_LIBS@ @ADAT_LIBS@ @ITPP_LIBS@ @LIBS@ @FITTING_LIBS@
 
 ##############################################################
-ensemble_fit_three_pt_fns_SOURCES = ensemble_fit_three_pt_fns.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc \
+ensemble_fit_three_pt_fns_SOURCES = ensemble_fit_three_pt_fns.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc edb_reader.cc key_struct.cc\
 													three_point_timeslice_corr_functions_factory.cc three_pt_fit_quality_factory.cc \
 													three_pt_fit_quality.cc
 
@@ -425,8 +431,10 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/edb_reader.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ensemble_fit_three_pt_fns.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fit_zt.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/key_struct.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test_three_pt_fit.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/three_point_timeslice_corr_functions.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po@am__quote@ # am--include-marker
@@ -586,8 +594,10 @@ clean-am: clean-binPROGRAMS clean-checkPROGRAMS clean-generic \
 	mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
+		-rm -f ./$(DEPDIR)/edb_reader.Po
+	-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
 	-rm -f ./$(DEPDIR)/fit_zt.Po
+	-rm -f ./$(DEPDIR)/key_struct.Po
 	-rm -f ./$(DEPDIR)/test_three_pt_fit.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po
@@ -642,8 +652,10 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
+		-rm -f ./$(DEPDIR)/edb_reader.Po
+	-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
 	-rm -f ./$(DEPDIR)/fit_zt.Po
+	-rm -f ./$(DEPDIR)/key_struct.Po
 	-rm -f ./$(DEPDIR)/test_three_pt_fit.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions.Po
 	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po

@@ -10,7 +10,7 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-inline void make_pair_int_abscissa_data( const vector<pair<int,int>>& x_pair_int, const vector<EnsemReal>& y_ensem,
+inline void make_pair_int_abscissa_data( const vector<pair<int,int>>& x_pair_int, const std::vector<ENSEM::EnsemReal>& y_ensem,
 				    Data& data ) /* you should pass in an empty Data object */ 
 {  
   vector< Abscissa* > x; 
