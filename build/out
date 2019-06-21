@@ -1,6 +1,0 @@
-Making install in src
-make[2]: Nothing to be done for `install-data-am'.
- ../../config/install-sh -c -d '/Users/archanar/3pt_analysis/fitting_lib_install/bin'
-  /usr/bin/install -c fit_const fit_zt '/Users/archanar/3pt_analysis/fitting_lib_install/bin'
-make[2]: Nothing to be done for `install-exec-am'.
-make[2]: Nothing to be done for `install-data-am'.

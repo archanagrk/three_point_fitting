@@ -30,8 +30,8 @@ Kernel configured for up to 8 processors.
 Processor type: x86_64h (Intel x86-64h Haswell)
 Processors active: 0 1 2 3 4 5 6 7
 Primary memory available: 16.00 gigabytes
-Default processor set: 602 tasks, 2580 threads, 8 processors
-Load average: 1.57, Mach factor: 6.41
+Default processor set: 432 tasks, 1808 threads, 8 processors
+Load average: 2.38, Mach factor: 5.61
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
@@ -307,7 +307,7 @@ am_cv_prog_cc_c_o=yes
 ## Output variables. ##
 ## ----------------- ##
 
-ACLOCAL='${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing aclocal-1.16'
+ACLOCAL='${SHELL} /Users/archanar/three_pt_analysis/three_point_function_analysis/config/missing aclocal-1.16'
 ADAT_CONFIG='/Users/archanar/Scattering/adat_install/bin/adat-config'
 ADAT_CXXFLAGS='-O2 -I/Users/archanar/Scattering/adat_install/include -I/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2'
 ADAT_LDFLAGS='-L/Users/archanar/Scattering/adat_install/lib'
@@ -320,9 +320,9 @@ AM_BACKSLASH='\'
 AM_DEFAULT_V='$(AM_DEFAULT_VERBOSITY)'
 AM_DEFAULT_VERBOSITY='1'
 AM_V='$(V)'
-AUTOCONF='${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing autoconf'
-AUTOHEADER='${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing autoheader'
-AUTOMAKE='${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing automake-1.16'
+AUTOCONF='${SHELL} /Users/archanar/three_pt_analysis/three_point_function_analysis/config/missing autoconf'
+AUTOHEADER='${SHELL} /Users/archanar/three_pt_analysis/three_point_function_analysis/config/missing autoheader'
+AUTOMAKE='${SHELL} /Users/archanar/three_pt_analysis/three_point_function_analysis/config/missing automake-1.16'
 AWK='awk'
 CC='gcc'
 CCDEPMODE='depmode=gcc3'
@@ -353,7 +353,7 @@ LDFLAGS=''
 LIBOBJS=''
 LIBS=''
 LTLIBOBJS=''
-MAKEINFO='${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing makeinfo'
+MAKEINFO='${SHELL} /Users/archanar/three_pt_analysis/three_point_function_analysis/config/missing makeinfo'
 MKDIR_P='../config/install-sh -c -d'
 OBJEXT='o'
 PACKAGE='3pt_fit'
@@ -399,7 +399,7 @@ host_alias=''
 htmldir='${docdir}'
 includedir='${prefix}/include'
 infodir='${datarootdir}/info'
-install_sh='${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/install-sh'
+install_sh='${SHELL} /Users/archanar/three_pt_analysis/three_point_function_analysis/config/install-sh'
 libdir='${exec_prefix}/lib'
 libexecdir='${exec_prefix}/libexec'
 localedir='${datarootdir}/locale'
