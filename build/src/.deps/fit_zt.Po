@@ -508,7 +508,7 @@ fit_zt.o: ../../src/fit_zt.cc \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/int_abscissa.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/double_abscissa.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data_selectors.h \
- ../../src/z_timeslice_fitting.h \
+ ../../src/lib/z_timeslice_fitting.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/avg_fitter.h \
@@ -516,10 +516,10 @@ fit_zt.o: ../../src/fit_zt.cc \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/chisq.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions.h \
- ../../src/z_timeslice_functions_factory.h \
+ ../../src/lib/z_timeslice_functions_factory.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions_factory.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/timeslice_corr_functions.h \
- ../../src/z_timeslice_functions.h \
+ ../../src/lib/z_timeslice_functions.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/tools.h \
  /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/params.h \
@@ -1545,7 +1545,7 @@ fit_zt.o: ../../src/fit_zt.cc \
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/data_selectors.h:
 
-../../src/z_timeslice_fitting.h:
+../../src/lib/z_timeslice_fitting.h:
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/fit_quality_factory.h:
 
@@ -1561,13 +1561,13 @@ fit_zt.o: ../../src/fit_zt.cc \
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions.h:
 
-../../src/z_timeslice_functions_factory.h:
+../../src/lib/z_timeslice_functions_factory.h:
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions_factory.h:
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/timeslice_corr_functions.h:
 
-../../src/z_timeslice_functions.h:
+../../src/lib/z_timeslice_functions.h:
 
 /Users/archanar/three_pt_analysis/fitting_lib_install/include/fitting_lib/functions.h:
 

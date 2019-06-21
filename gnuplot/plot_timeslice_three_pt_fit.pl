@@ -18,10 +18,11 @@ $ymin = 0.01;
 $ymax = -0.01;
 
 open(FILE , " < ${plotfilename}");
+$corrname = <FILE>;
 $firstline = <FILE>;
 $F = <FILE>;
 $chisq = <FILE>;
-<FILE>; <FILE>; <FILE>;
+<FILE>; <FILE>; <FILE>; <FILE>;
 
 #now into active data
 while($line = <FILE>){
@@ -43,7 +44,8 @@ close(FILE);
 $ymax += 0.05*abs($ymax - $ymin);
 $ymin -= 0.05*abs($ymax - $ymin);
 
-chomp $firstline; chomp $F; chomp $chisq;
+chomp $firstline; chomp $F; chomp $chisq; chomp $corrname;
+$corrname = substr($corrname, 8);
 ($x, $x, $tmin, $x, $DT, $x, $nfits) = split(' ', $firstline);
 $F = substr($F, 3);
 $chisq = substr($chisq, 3);
@@ -53,6 +55,9 @@ my @Dt_val = split(',', $DT);
 $Dt = @Dt_val;
 
 open(OUT, "> $tmpfile");
+# print OUT "set terminal pdf\n";  #add options for x11, or pdf
+# print OUT "set output '.pdf'";
+
 $end = $Dt - 1;
 
 
@@ -84,7 +89,7 @@ foreach my $i (0..$end) {
   $ypos2 = $ymax - 0.15 * abs($ymax - $ymin);
   $ypos3 = $ymax - 0.20 * abs($ymax - $ymin);
 
-  print OUT "set label 1 \"${filename}\" at ${tmin},${ypos1} noenhanced textcolor rgb \"#000000\" front \n";
+  print OUT "set label 1 \"${corrname}\" at ${tmin},${ypos1} noenhanced textcolor rgb \"#000000\" front \n";
   print OUT "set label 2 \"$F\" at ${tmin},${ypos2} noenhanced textcolor rgb \"#000000\" front \n";
   print OUT "set label 3 \"$chisq\" at ${tmin},${ypos3} noenhanced textcolor rgb \"#000000\" front \n";
 
@@ -94,7 +99,9 @@ foreach my $i (0..$end) {
 
 
 
-  print OUT "plot   \'${plotfilename}\' index $idx_three using 2:3:5 w filledcu fs solid 0.15 fc rgb \"#C0272D\",\\\n";
+  #print OUT "plot   \'${plotfilename}\' index $idx_three using 2:3:5 w filledcu fs solid 0.15 fc rgb \"#C0272D\",\\\n";
+  print OUT "plot   \'${plotfilename}\' index $idx_three using 2:5 w lines lw 2 lc rgb \"#C0272D\",\\\n"; #don't fill in aquaterm to see better
+  print OUT "       \'${plotfilename}\' index $idx_three using 2:3 w lines lw 2 lc rgb \"#C0272D\",\\\n"; #don't fill in aquaterm to see better
   print OUT "       \'${plotfilename}\' index $idx_three using 2:4 w lines lw 2 lc rgb \"#C0272D\",\\\n";
   print OUT "       \'${plotfilename}\' index $idx_one using 2:3:4 with yerr pt 70 lc rgb \"#000000\",\\\n";
   print OUT "       \'${plotfilename}\' index $idx_two using 2:3:4 with yerr pt 69 lc rgb \"#2F7A79\"\n";

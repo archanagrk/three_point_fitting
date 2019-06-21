@@ -1,0 +1,40 @@
+\hypertarget{radmat_8cc}{}\section{/\+Users/archanar/three\+\_\+pt\+\_\+analysis/three\+\_\+pt\+\_\+fit/old/radmat.cc File Reference}
+\label{radmat_8cc}\index{/Users/archanar/three\_pt\_analysis/three\_pt\_fit/old/radmat.cc@{/Users/archanar/three\_pt\_analysis/three\_pt\_fit/old/radmat.cc}}
+{\ttfamily \#include \char`\"{}radmat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ensem/ensem.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}hadron/ensem\+\_\+filenames.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+Include dependency graph for radmat.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd9/radmat_8cc__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceradmat}{radmat}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespaceradmat_a452f967dd14ae6fc0f7f9aa7ba04f8a0}{radmat\+::operator$<$$<$}} (std\+::ostream \&, const Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t \&)
+\begin{DoxyCompactList}\small\item\em for error messages \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_a99ffeb2977d9d4a90de6b401be74526c}{radmat\+::read}} (A\+D\+A\+T\+I\+O\+::\+Binary\+Reader \&bin, Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t \&param)
+\begin{DoxyCompactList}\small\item\em read a serialized key \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_a2ca0177bbaa4c0cfe7505fd997dae1f1}{radmat\+::write}} (A\+D\+A\+T\+I\+O\+::\+Binary\+Writer \&bin, const Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t \&param)
+\begin{DoxyCompactList}\small\item\em write a key to binary \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_ac62d85f3d4d74fc2ca2dc2536a8558fa}{radmat\+::read}} (A\+D\+A\+T\+X\+M\+L\+::\+X\+M\+L\+Reader \&xml, const std\+::string \&path, Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t \&param)
+\begin{DoxyCompactList}\small\item\em read a key from xml \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_adaf52a8cd9ebda9a7d68fbe9f69d20a9}{radmat\+::write}} (A\+D\+A\+T\+X\+M\+L\+::\+X\+M\+L\+Writer \&xml, const std\+::string \&path, const Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t \&param)
+\begin{DoxyCompactList}\small\item\em write a key to xml \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespaceradmat_a29507df1342906351184fb8d4e1bb16a}{radmat\+::file\+Name}} (const Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t \&param)
+\begin{DoxyCompactList}\small\item\em a uniqe key \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_a48bba8fb1d24a49efdc5eed962710717}{radmat\+::read}} (A\+D\+A\+T\+I\+O\+::\+Binary\+Reader \&bin, Radmat\+Mass\+Overlap\+Data\+\_\+t \&param)
+\begin{DoxyCompactList}\small\item\em read serialized data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_a47d088d360c723c8981b3ef1ed8da405}{radmat\+::write}} (A\+D\+A\+T\+I\+O\+::\+Binary\+Writer \&bin, const Radmat\+Mass\+Overlap\+Data\+\_\+t \&param)
+\begin{DoxyCompactList}\small\item\em write serialized data \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceradmat_a33c106e5957a1e9d566afd6012f2d87e}{radmat\+::operator==}} (const Radmat\+Mass\+Overlap\+Data\+\_\+t \&, const Radmat\+Mass\+Overlap\+Data\+\_\+t \&)
+\begin{DoxyCompactList}\small\item\em for testing routines \end{DoxyCompactList}\end{DoxyCompactItemize}

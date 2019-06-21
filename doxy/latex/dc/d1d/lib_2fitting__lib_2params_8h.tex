@@ -1,0 +1,165 @@
+\hypertarget{lib_2fitting__lib_2params_8h}{}\section{/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/params.h File Reference}
+\label{lib_2fitting__lib_2params_8h}\index{/Users/archanar/three\_pt\_analysis/fitting\_lib/lib/fitting\_lib/params.h@{/Users/archanar/three\_pt\_analysis/fitting\_lib/lib/fitting\_lib/params.h}}
+{\ttfamily \#include \char`\"{}includes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tools.\+h\char`\"{}}\newline
+Include dependency graph for params.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d93/lib_2fitting__lib_2params_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d1c/lib_2fitting__lib_2params_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structparam__value}{param\+\_\+value}}
+\item 
+struct \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespaceparams}{params}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_a53266cd744184eb7c7640ed228eefd4a}{print\+\_\+params}} (const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&par\+\_\+values, const map$<$ pair$<$ string, string $>$, double $>$ \&par\+\_\+corr)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_a4446d39908cad25714b8920e4286ff61}{print\+\_\+params}} (const vector$<$ string $>$ \&par\+\_\+names, const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&par\+\_\+values, const map$<$ pair$<$ string, string $>$, double $>$ \&par\+\_\+corr)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_ab7c42c99f67a26e8b78c1508090ac357}{print\+\_\+params}} (const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&par\+\_\+values)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_aa5be6a7d2c763bfd0739de882260f7d2}{print\+\_\+params}} (const vector$<$ string $>$ \&par\+\_\+names, const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&par\+\_\+values)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_a126d0bed5723763bee30090a8caa81cc}{print\+\_\+params\+\_\+one\+\_\+liner}} (const vector$<$ string $>$ \&par\+\_\+names, const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&par\+\_\+values)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_a5b23aca59191c690c39cf546983f3f76}{print\+\_\+params\+\_\+one\+\_\+liner}} (const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&par\+\_\+values)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_a259b2f15feb40154091395d84f561840}{check\+\_\+param\+\_\+corr}} (const vector$<$ string $>$ \&par\+\_\+names, const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&par\+\_\+values, const map$<$ pair$<$ string, string $>$, double $>$ \&par\+\_\+corr)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_ad085d3f2c3567bac99ca104cffe44591}{check\+\_\+param\+\_\+corr}} (const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&par\+\_\+values, const map$<$ pair$<$ string, string $>$, double $>$ \&par\+\_\+corr)
+\item 
+void \mbox{\hyperlink{lib_2fitting__lib_2params_8h_a45920595cb007a1a286df90e82af12a8}{build\+\_\+\+Mn\+User\+Parameters}} (const vector$<$ string $>$ \&par\+\_\+names, const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&start\+\_\+pars, Mn\+User\+Parameters \&mn\+\_\+pars, int \&n\+\_\+pars, int \&n\+\_\+fixed)
+\item 
+bool \mbox{\hyperlink{lib_2fitting__lib_2params_8h_a6e028c2bb6e694fb945730064242d098}{extract\+\_\+from\+\_\+\+Mn\+User\+Parameter\+State}} (const Mn\+User\+Parameter\+State \&upar\+\_\+state, map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&par\+\_\+values, map$<$ pair$<$ string, string $>$, double $>$ \&par\+\_\+corr)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_a163eb7e3dc649bd3ac288c62549025b9}{print\+\_\+params}} (const vector$<$ string $>$ \&par\+\_\+names, const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&ensem\+\_\+pars)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_ac112ca55f9ad93e2d7c7fd742febed27}{print\+\_\+params}} (const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&ensem\+\_\+pars)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_ad84b477fe4838ed53a49e6cb3bcd6110}{print\+\_\+params\+\_\+one\+\_\+liner}} (const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&ensem\+\_\+pars)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_ad17e8d6396d7fcb918790c66a851aa16}{check\+\_\+param\+\_\+corr}} (const vector$<$ string $>$ \&par\+\_\+names, const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&ensem\+\_\+pars)
+\item 
+string \mbox{\hyperlink{lib_2fitting__lib_2params_8h_a565339dc9b4c890cfc76b283df522014}{check\+\_\+param\+\_\+corr}} (const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&ensem\+\_\+pars)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{namespaceparams_ab3e1340597bd84fd5ab6073c64de9cd1}{params\+::max\+\_\+param\+\_\+name\+\_\+length}} = 24
+\item 
+const double \mbox{\hyperlink{namespaceparams_a2a3f7e9e4567872b90211f63ca913c7b}{params\+::max\+\_\+param\+\_\+corr}} = 0.\+75
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_a45920595cb007a1a286df90e82af12a8}\label{lib_2fitting__lib_2params_8h_a45920595cb007a1a286df90e82af12a8}} 
+\index{params.h@{params.h}!build\_MnUserParameters@{build\_MnUserParameters}}
+\index{build\_MnUserParameters@{build\_MnUserParameters}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{build\_MnUserParameters()}{build\_MnUserParameters()}}
+{\footnotesize\ttfamily void build\+\_\+\+Mn\+User\+Parameters (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{par\+\_\+names,  }\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{start\+\_\+pars,  }\item[{Mn\+User\+Parameters \&}]{mn\+\_\+pars,  }\item[{int \&}]{n\+\_\+pars,  }\item[{int \&}]{n\+\_\+fixed }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_a259b2f15feb40154091395d84f561840}\label{lib_2fitting__lib_2params_8h_a259b2f15feb40154091395d84f561840}} 
+\index{params.h@{params.h}!check\_param\_corr@{check\_param\_corr}}
+\index{check\_param\_corr@{check\_param\_corr}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{check\_param\_corr()}{check\_param\_corr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily string check\+\_\+param\+\_\+corr (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{par\+\_\+names,  }\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{par\+\_\+values,  }\item[{const map$<$ pair$<$ string, string $>$, double $>$ \&}]{par\+\_\+corr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_ad085d3f2c3567bac99ca104cffe44591}\label{lib_2fitting__lib_2params_8h_ad085d3f2c3567bac99ca104cffe44591}} 
+\index{params.h@{params.h}!check\_param\_corr@{check\_param\_corr}}
+\index{check\_param\_corr@{check\_param\_corr}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{check\_param\_corr()}{check\_param\_corr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily string check\+\_\+param\+\_\+corr (\begin{DoxyParamCaption}\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{par\+\_\+values,  }\item[{const map$<$ pair$<$ string, string $>$, double $>$ \&}]{par\+\_\+corr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_ad17e8d6396d7fcb918790c66a851aa16}\label{lib_2fitting__lib_2params_8h_ad17e8d6396d7fcb918790c66a851aa16}} 
+\index{params.h@{params.h}!check\_param\_corr@{check\_param\_corr}}
+\index{check\_param\_corr@{check\_param\_corr}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{check\_param\_corr()}{check\_param\_corr()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily string check\+\_\+param\+\_\+corr (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{par\+\_\+names,  }\item[{const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&}]{ensem\+\_\+pars }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_a565339dc9b4c890cfc76b283df522014}\label{lib_2fitting__lib_2params_8h_a565339dc9b4c890cfc76b283df522014}} 
+\index{params.h@{params.h}!check\_param\_corr@{check\_param\_corr}}
+\index{check\_param\_corr@{check\_param\_corr}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{check\_param\_corr()}{check\_param\_corr()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily string check\+\_\+param\+\_\+corr (\begin{DoxyParamCaption}\item[{const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&}]{ensem\+\_\+pars }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_a6e028c2bb6e694fb945730064242d098}\label{lib_2fitting__lib_2params_8h_a6e028c2bb6e694fb945730064242d098}} 
+\index{params.h@{params.h}!extract\_from\_MnUserParameterState@{extract\_from\_MnUserParameterState}}
+\index{extract\_from\_MnUserParameterState@{extract\_from\_MnUserParameterState}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{extract\_from\_MnUserParameterState()}{extract\_from\_MnUserParameterState()}}
+{\footnotesize\ttfamily bool extract\+\_\+from\+\_\+\+Mn\+User\+Parameter\+State (\begin{DoxyParamCaption}\item[{const Mn\+User\+Parameter\+State \&}]{upar\+\_\+state,  }\item[{map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{par\+\_\+values,  }\item[{map$<$ pair$<$ string, string $>$, double $>$ \&}]{par\+\_\+corr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_a53266cd744184eb7c7640ed228eefd4a}\label{lib_2fitting__lib_2params_8h_a53266cd744184eb7c7640ed228eefd4a}} 
+\index{params.h@{params.h}!print\_params@{print\_params}}
+\index{print\_params@{print\_params}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{print\_params()}{print\_params()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily string print\+\_\+params (\begin{DoxyParamCaption}\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{par\+\_\+values,  }\item[{const map$<$ pair$<$ string, string $>$, double $>$ \&}]{par\+\_\+corr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_a4446d39908cad25714b8920e4286ff61}\label{lib_2fitting__lib_2params_8h_a4446d39908cad25714b8920e4286ff61}} 
+\index{params.h@{params.h}!print\_params@{print\_params}}
+\index{print\_params@{print\_params}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{print\_params()}{print\_params()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily string print\+\_\+params (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{par\+\_\+names,  }\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{par\+\_\+values,  }\item[{const map$<$ pair$<$ string, string $>$, double $>$ \&}]{par\+\_\+corr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_ab7c42c99f67a26e8b78c1508090ac357}\label{lib_2fitting__lib_2params_8h_ab7c42c99f67a26e8b78c1508090ac357}} 
+\index{params.h@{params.h}!print\_params@{print\_params}}
+\index{print\_params@{print\_params}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{print\_params()}{print\_params()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily string print\+\_\+params (\begin{DoxyParamCaption}\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{par\+\_\+values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_aa5be6a7d2c763bfd0739de882260f7d2}\label{lib_2fitting__lib_2params_8h_aa5be6a7d2c763bfd0739de882260f7d2}} 
+\index{params.h@{params.h}!print\_params@{print\_params}}
+\index{print\_params@{print\_params}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{print\_params()}{print\_params()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily string print\+\_\+params (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{par\+\_\+names,  }\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{par\+\_\+values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_a163eb7e3dc649bd3ac288c62549025b9}\label{lib_2fitting__lib_2params_8h_a163eb7e3dc649bd3ac288c62549025b9}} 
+\index{params.h@{params.h}!print\_params@{print\_params}}
+\index{print\_params@{print\_params}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{print\_params()}{print\_params()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily string print\+\_\+params (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{par\+\_\+names,  }\item[{const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&}]{ensem\+\_\+pars }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_ac112ca55f9ad93e2d7c7fd742febed27}\label{lib_2fitting__lib_2params_8h_ac112ca55f9ad93e2d7c7fd742febed27}} 
+\index{params.h@{params.h}!print\_params@{print\_params}}
+\index{print\_params@{print\_params}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{print\_params()}{print\_params()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily string print\+\_\+params (\begin{DoxyParamCaption}\item[{const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&}]{ensem\+\_\+pars }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_a126d0bed5723763bee30090a8caa81cc}\label{lib_2fitting__lib_2params_8h_a126d0bed5723763bee30090a8caa81cc}} 
+\index{params.h@{params.h}!print\_params\_one\_liner@{print\_params\_one\_liner}}
+\index{print\_params\_one\_liner@{print\_params\_one\_liner}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{print\_params\_one\_liner()}{print\_params\_one\_liner()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily string print\+\_\+params\+\_\+one\+\_\+liner (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{par\+\_\+names,  }\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{par\+\_\+values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_a5b23aca59191c690c39cf546983f3f76}\label{lib_2fitting__lib_2params_8h_a5b23aca59191c690c39cf546983f3f76}} 
+\index{params.h@{params.h}!print\_params\_one\_liner@{print\_params\_one\_liner}}
+\index{print\_params\_one\_liner@{print\_params\_one\_liner}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{print\_params\_one\_liner()}{print\_params\_one\_liner()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily string print\+\_\+params\+\_\+one\+\_\+liner (\begin{DoxyParamCaption}\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{par\+\_\+values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2params_8h_ad84b477fe4838ed53a49e6cb3bcd6110}\label{lib_2fitting__lib_2params_8h_ad84b477fe4838ed53a49e6cb3bcd6110}} 
+\index{params.h@{params.h}!print\_params\_one\_liner@{print\_params\_one\_liner}}
+\index{print\_params\_one\_liner@{print\_params\_one\_liner}!params.h@{params.h}}
+\subsubsection{\texorpdfstring{print\_params\_one\_liner()}{print\_params\_one\_liner()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily string print\+\_\+params\+\_\+one\+\_\+liner (\begin{DoxyParamCaption}\item[{const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&}]{ensem\+\_\+pars }\end{DoxyParamCaption})}
+

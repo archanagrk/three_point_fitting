@@ -1,0 +1,217 @@
+\hypertarget{tools_8cc}{}\section{/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/tools.cc File Reference}
+\label{tools_8cc}\index{/Users/archanar/three\_pt\_analysis/fitting\_lib/lib/fitting\_lib/tools.cc@{/Users/archanar/three\_pt\_analysis/fitting\_lib/lib/fitting\_lib/tools.cc}}
+{\ttfamily \#include \char`\"{}tools.\+h\char`\"{}}\newline
+Include dependency graph for tools.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/df0/tools_8cc__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+pair$<$ double, double $>$ \mbox{\hyperlink{tools_8cc_a36a15a543355583b84ee2b203a6b2fd1}{mean\+\_\+err}} (const Ensem\+Real \&e)
+\item 
+double \mbox{\hyperlink{tools_8cc_a63b1a63a02eb3d422d9378ac0fd3c5cc}{covariance}} (const Ensem\+Real \&e1, const Ensem\+Real \&e2)
+\item 
+double \mbox{\hyperlink{tools_8cc_a2ad08e4e24ac38df5733f7122e3c1c7d}{correlation}} (const Ensem\+Real \&e1, const Ensem\+Real \&e2)
+\item 
+itpp\+::mat \mbox{\hyperlink{tools_8cc_ad4dd58ed09ce5cd92c83dccef1c65c21}{covariance\+\_\+matrix}} (const vector$<$ Ensem\+Real $>$ \&ve)
+\item 
+itpp\+::mat \mbox{\hyperlink{tools_8cc_a60cad8235c6ee5aab8b545d18663751d}{correlation\+\_\+matrix}} (const vector$<$ Ensem\+Real $>$ \&ve)
+\item 
+bool \mbox{\hyperlink{tools_8cc_acfaf3b10ef34d327d62809c6679f8cdc}{check\+\_\+reasonable\+\_\+fluctuation}} (double \mbox{\hyperlink{old__edb_8cc_a63584b830e7aaacb521b11b72291a4bc}{x}}, double mean, double err, double nsigma, string \&report)
+\item 
+Ensem\+Real \mbox{\hyperlink{tools_8cc_a64c66317d02a16716dbf165817a9005a}{generate\+\_\+ensem\+\_\+value}} (double value, double error, int ncfgs, int seed, bool exact\+\_\+mean)
+\item 
+map$<$ string, Ensem\+Real $>$ \mbox{\hyperlink{tools_8cc_a7bb30e3079207936e3b00a59bebcb93d}{generate\+\_\+correlated\+\_\+ensembles}} (vector$<$ string $>$ names, vector$<$ double $>$ values, vector$<$ double $>$ errs, itpp\+::mat corr, int ncfgs, int seed, bool exact\+\_\+mean)
+\item 
+vector$<$ Ensem\+Real $>$ \mbox{\hyperlink{tools_8cc_af28215753b66ad79b3440faeffb84ef1}{generate\+\_\+correlated\+\_\+ensembles}} (vector$<$ double $>$ values, vector$<$ double $>$ errs, itpp\+::mat corr, int ncfgs, int seed, bool exact\+\_\+mean)
+\item 
+itpp\+::mat \mbox{\hyperlink{tools_8cc_afcdd28a774035022274585e6b41a6f0c}{invert\+S\+VD}} (const itpp\+::mat \&A, double tol, int \&n\+Reset)
+\item 
+string \mbox{\hyperlink{tools_8cc_a9936795def8f2d6be874d6860525e79c}{bracketed\+\_\+error}} (double val, double err)
+\item 
+string \mbox{\hyperlink{tools_8cc_ad3209e5c8326eda24011ebbd7175260b}{get\+\_\+current\+\_\+working\+\_\+directory}} ()
+\item 
+bool \mbox{\hyperlink{tools_8cc_acc6f44ad08fd74ee215aa1497a40bdb2}{does\+\_\+directory\+\_\+exist}} (const string \&path)
+\item 
+void \mbox{\hyperlink{tools_8cc_a2de026bc5e34ef39e60586776fef4214}{make\+\_\+directory}} (const string \&path)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{tools_8cc_a9936795def8f2d6be874d6860525e79c}\label{tools_8cc_a9936795def8f2d6be874d6860525e79c}} 
+\index{tools.cc@{tools.cc}!bracketed\_error@{bracketed\_error}}
+\index{bracketed\_error@{bracketed\_error}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{bracketed\_error()}{bracketed\_error()}}
+{\footnotesize\ttfamily string bracketed\+\_\+error (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{double}]{err }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tools_8cc_acfaf3b10ef34d327d62809c6679f8cdc}\label{tools_8cc_acfaf3b10ef34d327d62809c6679f8cdc}} 
+\index{tools.cc@{tools.cc}!check\_reasonable\_fluctuation@{check\_reasonable\_fluctuation}}
+\index{check\_reasonable\_fluctuation@{check\_reasonable\_fluctuation}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{check\_reasonable\_fluctuation()}{check\_reasonable\_fluctuation()}}
+{\footnotesize\ttfamily bool check\+\_\+reasonable\+\_\+fluctuation (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{mean,  }\item[{double}]{err,  }\item[{double}]{nsigma,  }\item[{string \&}]{report }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/tools_8cc_acfaf3b10ef34d327d62809c6679f8cdc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tools_8cc_a2ad08e4e24ac38df5733f7122e3c1c7d}\label{tools_8cc_a2ad08e4e24ac38df5733f7122e3c1c7d}} 
+\index{tools.cc@{tools.cc}!correlation@{correlation}}
+\index{correlation@{correlation}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{correlation()}{correlation()}}
+{\footnotesize\ttfamily double correlation (\begin{DoxyParamCaption}\item[{const Ensem\+Real \&}]{e1,  }\item[{const Ensem\+Real \&}]{e2 }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/tools_8cc_a2ad08e4e24ac38df5733f7122e3c1c7d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tools_8cc_a60cad8235c6ee5aab8b545d18663751d}\label{tools_8cc_a60cad8235c6ee5aab8b545d18663751d}} 
+\index{tools.cc@{tools.cc}!correlation\_matrix@{correlation\_matrix}}
+\index{correlation\_matrix@{correlation\_matrix}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{correlation\_matrix()}{correlation\_matrix()}}
+{\footnotesize\ttfamily itpp\+::mat correlation\+\_\+matrix (\begin{DoxyParamCaption}\item[{const vector$<$ Ensem\+Real $>$ \&}]{ve }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/tools_8cc_a60cad8235c6ee5aab8b545d18663751d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tools_8cc_a63b1a63a02eb3d422d9378ac0fd3c5cc}\label{tools_8cc_a63b1a63a02eb3d422d9378ac0fd3c5cc}} 
+\index{tools.cc@{tools.cc}!covariance@{covariance}}
+\index{covariance@{covariance}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{covariance()}{covariance()}}
+{\footnotesize\ttfamily double covariance (\begin{DoxyParamCaption}\item[{const Ensem\+Real \&}]{e1,  }\item[{const Ensem\+Real \&}]{e2 }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/tools_8cc_a63b1a63a02eb3d422d9378ac0fd3c5cc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tools_8cc_ad4dd58ed09ce5cd92c83dccef1c65c21}\label{tools_8cc_ad4dd58ed09ce5cd92c83dccef1c65c21}} 
+\index{tools.cc@{tools.cc}!covariance\_matrix@{covariance\_matrix}}
+\index{covariance\_matrix@{covariance\_matrix}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{covariance\_matrix()}{covariance\_matrix()}}
+{\footnotesize\ttfamily itpp\+::mat covariance\+\_\+matrix (\begin{DoxyParamCaption}\item[{const vector$<$ Ensem\+Real $>$ \&}]{ve }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/tools_8cc_ad4dd58ed09ce5cd92c83dccef1c65c21_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tools_8cc_acc6f44ad08fd74ee215aa1497a40bdb2}\label{tools_8cc_acc6f44ad08fd74ee215aa1497a40bdb2}} 
+\index{tools.cc@{tools.cc}!does\_directory\_exist@{does\_directory\_exist}}
+\index{does\_directory\_exist@{does\_directory\_exist}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{does\_directory\_exist()}{does\_directory\_exist()}}
+{\footnotesize\ttfamily bool does\+\_\+directory\+\_\+exist (\begin{DoxyParamCaption}\item[{const string \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tools_8cc_a7bb30e3079207936e3b00a59bebcb93d}\label{tools_8cc_a7bb30e3079207936e3b00a59bebcb93d}} 
+\index{tools.cc@{tools.cc}!generate\_correlated\_ensembles@{generate\_correlated\_ensembles}}
+\index{generate\_correlated\_ensembles@{generate\_correlated\_ensembles}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{generate\_correlated\_ensembles()}{generate\_correlated\_ensembles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily map$<$string, Ensem\+Real$>$ generate\+\_\+correlated\+\_\+ensembles (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{names,  }\item[{vector$<$ double $>$}]{values,  }\item[{vector$<$ double $>$}]{errs,  }\item[{itpp\+::mat}]{corr,  }\item[{int}]{ncfgs,  }\item[{int}]{seed,  }\item[{bool}]{exact\+\_\+mean }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/tools_8cc_a7bb30e3079207936e3b00a59bebcb93d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tools_8cc_af28215753b66ad79b3440faeffb84ef1}\label{tools_8cc_af28215753b66ad79b3440faeffb84ef1}} 
+\index{tools.cc@{tools.cc}!generate\_correlated\_ensembles@{generate\_correlated\_ensembles}}
+\index{generate\_correlated\_ensembles@{generate\_correlated\_ensembles}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{generate\_correlated\_ensembles()}{generate\_correlated\_ensembles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vector$<$Ensem\+Real$>$ generate\+\_\+correlated\+\_\+ensembles (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{values,  }\item[{vector$<$ double $>$}]{errs,  }\item[{itpp\+::mat}]{corr,  }\item[{int}]{ncfgs,  }\item[{int}]{seed,  }\item[{bool}]{exact\+\_\+mean }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/tools_8cc_af28215753b66ad79b3440faeffb84ef1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tools_8cc_a64c66317d02a16716dbf165817a9005a}\label{tools_8cc_a64c66317d02a16716dbf165817a9005a}} 
+\index{tools.cc@{tools.cc}!generate\_ensem\_value@{generate\_ensem\_value}}
+\index{generate\_ensem\_value@{generate\_ensem\_value}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{generate\_ensem\_value()}{generate\_ensem\_value()}}
+{\footnotesize\ttfamily Ensem\+Real generate\+\_\+ensem\+\_\+value (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{double}]{error,  }\item[{int}]{ncfgs,  }\item[{int}]{seed,  }\item[{bool}]{exact\+\_\+mean }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/tools_8cc_a64c66317d02a16716dbf165817a9005a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tools_8cc_ad3209e5c8326eda24011ebbd7175260b}\label{tools_8cc_ad3209e5c8326eda24011ebbd7175260b}} 
+\index{tools.cc@{tools.cc}!get\_current\_working\_directory@{get\_current\_working\_directory}}
+\index{get\_current\_working\_directory@{get\_current\_working\_directory}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{get\_current\_working\_directory()}{get\_current\_working\_directory()}}
+{\footnotesize\ttfamily string get\+\_\+current\+\_\+working\+\_\+directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tools_8cc_afcdd28a774035022274585e6b41a6f0c}\label{tools_8cc_afcdd28a774035022274585e6b41a6f0c}} 
+\index{tools.cc@{tools.cc}!invertSVD@{invertSVD}}
+\index{invertSVD@{invertSVD}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{invertSVD()}{invertSVD()}}
+{\footnotesize\ttfamily itpp\+::mat invert\+S\+VD (\begin{DoxyParamCaption}\item[{const itpp\+::mat \&}]{A,  }\item[{double}]{tol,  }\item[{int \&}]{n\+Reset }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/tools_8cc_afcdd28a774035022274585e6b41a6f0c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tools_8cc_a2de026bc5e34ef39e60586776fef4214}\label{tools_8cc_a2de026bc5e34ef39e60586776fef4214}} 
+\index{tools.cc@{tools.cc}!make\_directory@{make\_directory}}
+\index{make\_directory@{make\_directory}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{make\_directory()}{make\_directory()}}
+{\footnotesize\ttfamily void make\+\_\+directory (\begin{DoxyParamCaption}\item[{const string \&}]{path }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{d7/d21/tools_8cc_a2de026bc5e34ef39e60586776fef4214_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{tools_8cc_a36a15a543355583b84ee2b203a6b2fd1}\label{tools_8cc_a36a15a543355583b84ee2b203a6b2fd1}} 
+\index{tools.cc@{tools.cc}!mean\_err@{mean\_err}}
+\index{mean\_err@{mean\_err}!tools.cc@{tools.cc}}
+\subsubsection{\texorpdfstring{mean\_err()}{mean\_err()}}
+{\footnotesize\ttfamily pair$<$double, double$>$ mean\+\_\+err (\begin{DoxyParamCaption}\item[{const Ensem\+Real \&}]{e }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d21/tools_8cc_a36a15a543355583b84ee2b203a6b2fd1_cgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,61 @@
+\hypertarget{lib_2fitting__lib_2timeslice__fitting_8h}{}\section{/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/timeslice\+\_\+fitting.h File Reference}
+\label{lib_2fitting__lib_2timeslice__fitting_8h}\index{/Users/archanar/three\_pt\_analysis/fitting\_lib/lib/fitting\_lib/timeslice\_fitting.h@{/Users/archanar/three\_pt\_analysis/fitting\_lib/lib/fitting\_lib/timeslice\_fitting.h}}
+{\ttfamily \#include \char`\"{}data\+\_\+selectors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fit\+\_\+quality\+\_\+factory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}functions\+\_\+factory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fit\+\_\+selector.\+h\char`\"{}}\newline
+Include dependency graph for timeslice\+\_\+fitting.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/dbe/lib_2fitting__lib_2timeslice__fitting_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{d5/d8a/lib_2fitting__lib_2timeslice__fitting_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfit__prin__corr__control}{fit\+\_\+prin\+\_\+corr\+\_\+control}}
+\item 
+struct \mbox{\hyperlink{structfit__prin__corr__output}{fit\+\_\+prin\+\_\+corr\+\_\+output}}
+\item 
+struct \mbox{\hyperlink{structplot__timeslice__function__data}{plot\+\_\+timeslice\+\_\+function\+\_\+data}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfit__prin__corr__output}{fit\+\_\+prin\+\_\+corr\+\_\+output}} \mbox{\hyperlink{lib_2fitting__lib_2timeslice__fitting_8h_a4e4a5a15b1e1f9decdb8715ff43eb245}{fit\+\_\+prin\+\_\+corr}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, int t0, const vector$<$ bool $>$ accepted\+\_\+data, \mbox{\hyperlink{structfit__prin__corr__control}{fit\+\_\+prin\+\_\+corr\+\_\+control}} control, \mbox{\hyperlink{classFitQuality}{Fit\+Quality}} $\ast$fit\+\_\+qual, double chisq\+\_\+ndof\+\_\+cutoff)
+\item 
+\mbox{\hyperlink{structplot__timeslice__function__data}{plot\+\_\+timeslice\+\_\+function\+\_\+data}} \mbox{\hyperlink{lib_2fitting__lib_2timeslice__fitting_8h_a4e14aec3ef28211aa108df4b49d09b22}{plot\+\_\+timeslice\+\_\+ensem\+\_\+function}} (\mbox{\hyperlink{classTimesliceFunction}{Timeslice\+Function}} $\ast$fn, const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&ensem\+\_\+pars, const vector$<$ double $>$ \&t\+\_\+values)
+\item 
+vector$<$ pair$<$ double, double $>$ $>$ \mbox{\hyperlink{lib_2fitting__lib_2timeslice__fitting_8h_a05370af33d1f1f4be1c79362b80415ed}{plot\+\_\+timeslice\+\_\+function}} (\mbox{\hyperlink{classTimesliceFunction}{Timeslice\+Function}} $\ast$fn, const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&pars, const vector$<$ double $>$ \&t\+\_\+values)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{lib_2fitting__lib_2timeslice__fitting_8h_a4e4a5a15b1e1f9decdb8715ff43eb245}\label{lib_2fitting__lib_2timeslice__fitting_8h_a4e4a5a15b1e1f9decdb8715ff43eb245}} 
+\index{timeslice\_fitting.h@{timeslice\_fitting.h}!fit\_prin\_corr@{fit\_prin\_corr}}
+\index{fit\_prin\_corr@{fit\_prin\_corr}!timeslice\_fitting.h@{timeslice\_fitting.h}}
+\subsubsection{\texorpdfstring{fit\_prin\_corr()}{fit\_prin\_corr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfit__prin__corr__output}{fit\+\_\+prin\+\_\+corr\+\_\+output}} fit\+\_\+prin\+\_\+corr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{int}]{t0,  }\item[{const vector$<$ bool $>$}]{accepted\+\_\+data,  }\item[{\mbox{\hyperlink{structfit__prin__corr__control}{fit\+\_\+prin\+\_\+corr\+\_\+control}}}]{control,  }\item[{\mbox{\hyperlink{classFitQuality}{Fit\+Quality}} $\ast$}]{fit\+\_\+qual,  }\item[{double}]{chisq\+\_\+ndof\+\_\+cutoff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2timeslice__fitting_8h_a4e14aec3ef28211aa108df4b49d09b22}\label{lib_2fitting__lib_2timeslice__fitting_8h_a4e14aec3ef28211aa108df4b49d09b22}} 
+\index{timeslice\_fitting.h@{timeslice\_fitting.h}!plot\_timeslice\_ensem\_function@{plot\_timeslice\_ensem\_function}}
+\index{plot\_timeslice\_ensem\_function@{plot\_timeslice\_ensem\_function}!timeslice\_fitting.h@{timeslice\_fitting.h}}
+\subsubsection{\texorpdfstring{plot\_timeslice\_ensem\_function()}{plot\_timeslice\_ensem\_function()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structplot__timeslice__function__data}{plot\+\_\+timeslice\+\_\+function\+\_\+data}} plot\+\_\+timeslice\+\_\+ensem\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTimesliceFunction}{Timeslice\+Function}} $\ast$}]{fn,  }\item[{const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&}]{ensem\+\_\+pars,  }\item[{const vector$<$ double $>$ \&}]{t\+\_\+values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lib_2fitting__lib_2timeslice__fitting_8h_a05370af33d1f1f4be1c79362b80415ed}\label{lib_2fitting__lib_2timeslice__fitting_8h_a05370af33d1f1f4be1c79362b80415ed}} 
+\index{timeslice\_fitting.h@{timeslice\_fitting.h}!plot\_timeslice\_function@{plot\_timeslice\_function}}
+\index{plot\_timeslice\_function@{plot\_timeslice\_function}!timeslice\_fitting.h@{timeslice\_fitting.h}}
+\subsubsection{\texorpdfstring{plot\_timeslice\_function()}{plot\_timeslice\_function()}}
+{\footnotesize\ttfamily vector$<$ pair$<$double,double$>$ $>$ plot\+\_\+timeslice\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTimesliceFunction}{Timeslice\+Function}} $\ast$}]{fn,  }\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{pars,  }\item[{const vector$<$ double $>$ \&}]{t\+\_\+values }\end{DoxyParamCaption})}
+

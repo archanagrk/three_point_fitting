@@ -8,6 +8,7 @@ AC_PROG_RANLIB
 
 dnl Initialise automake
 AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([subdir-objects])
 dnl
 dnl
 dnl --with-xxxx and --enable-xxxx switches 

@@ -10,6 +10,10 @@
                 <tmax>24</tmax>
                 <tsrc>0</tsrc>
                 <tsnk>24</tsnk>
+                <EiMin>0.001</EiMin>
+                <EfMin>0.001</EfMin>
+                <EiMax>0.8</EiMax>
+                <EfMax>0.4</EfMax>
                 <NtMin>10</NtMin>             
             </elem>
           </dbFnames>
@@ -18,14 +22,14 @@
 
     <FitProps>
         <fit_qual>
-            <type>chisq_per_n_dof</type>
-            <!--<params>
+            <type>generic</type>
+            <params>
                 <power>1</power>
-                <power_mass>0</power_mass>
-                <power_F>0</power_F>                
-                <power_time>0</power_time>
-                <multiply_mass>true</multiply_mass>
-            </params>-->
+                <powerT>2</powerT>
+                <powerExp>0</powerExp>                
+                <expFac>false</expFac>
+                <dev>1</dev>
+              </params>
         </fit_qual>
         <chisq_cutoff>1</chisq_cutoff>
         <noise_cutoff>10</noise_cutoff>

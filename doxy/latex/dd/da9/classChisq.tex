@@ -1,0 +1,217 @@
+\hypertarget{classChisq}{}\section{Chisq Class Reference}
+\label{classChisq}\index{Chisq@{Chisq}}
+
+
+{\ttfamily \#include $<$chisq.\+h$>$}
+
+
+
+Inheritance diagram for Chisq\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{d4/d39/classChisq__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Chisq\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=139pt]{d5/d97/classChisq__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChisq_a625fc6e1e3ffc8faa123f2f50f54a22b}{Chisq}} (const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&x\+\_\+, const vector$<$ double $>$ \&y\+\_\+, const itpp\+::mat \&inv\+\_\+cov\+\_\+, const int \&n\+\_\+reset\+\_\+data\+\_\+sv\+\_\+, \mbox{\hyperlink{classFunction}{Function}} $\ast$fn\+\_\+)
+\item 
+double \mbox{\hyperlink{classChisq_a3cc0c9f3bf8b806ce836537bc3d94686}{Up}} () const
+\item 
+void \mbox{\hyperlink{classChisq_a0707a4c0241bb82e81d2c5a9c1a303d7}{Set\+Error\+Def}} (double def)
+\item 
+double \mbox{\hyperlink{classChisq_a321122741639e94feeb3bff1eeadd1e7}{operator()}} (const vector$<$ double $>$ \&vars) const
+\item 
+double \mbox{\hyperlink{classChisq_a32a21d511405fc53af969f0984abc54f}{operator()}} (const \mbox{\hyperlink{lib_2fitting__lib_2includes_8h_a647b481c557c7966517f753340a81d13}{mapstringdouble}} \&pars\+\_\+map) const
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{classChisq_a2c9e190b411d2e6b225d2ca32b950a1e}{get\+\_\+par\+\_\+list}} () const
+\item 
+string \mbox{\hyperlink{classChisq_a43f74965844bd0b1aa8a323e973728e6}{get\+\_\+fn\+\_\+name}} () const
+\item 
+int \mbox{\hyperlink{classChisq_aab815b002c716da22d72ef225aa1bbec}{get\+\_\+n\+\_\+data}} () const
+\item 
+int \mbox{\hyperlink{classChisq_a5dfe38f15b32fc23fb8530f7a4daf3e0}{get\+\_\+n\+\_\+reset\+\_\+data\+\_\+sv}} () const
+\item 
+\mbox{\hyperlink{classChisq_a625fc6e1e3ffc8faa123f2f50f54a22b}{Chisq}} (const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&x\+\_\+, const vector$<$ double $>$ \&y\+\_\+, const itpp\+::mat \&inv\+\_\+cov\+\_\+, const int \&n\+\_\+reset\+\_\+data\+\_\+sv\+\_\+, \mbox{\hyperlink{classFunction}{Function}} $\ast$fn\+\_\+)
+\item 
+double \mbox{\hyperlink{classChisq_a3cc0c9f3bf8b806ce836537bc3d94686}{Up}} () const
+\item 
+void \mbox{\hyperlink{classChisq_a0707a4c0241bb82e81d2c5a9c1a303d7}{Set\+Error\+Def}} (double def)
+\item 
+double \mbox{\hyperlink{classChisq_a321122741639e94feeb3bff1eeadd1e7}{operator()}} (const vector$<$ double $>$ \&vars) const
+\item 
+double \mbox{\hyperlink{classChisq_a32a21d511405fc53af969f0984abc54f}{operator()}} (const \mbox{\hyperlink{lib_2fitting__lib_2includes_8h_a647b481c557c7966517f753340a81d13}{mapstringdouble}} \&pars\+\_\+map) const
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{classChisq_a2c9e190b411d2e6b225d2ca32b950a1e}{get\+\_\+par\+\_\+list}} () const
+\item 
+string \mbox{\hyperlink{classChisq_a43f74965844bd0b1aa8a323e973728e6}{get\+\_\+fn\+\_\+name}} () const
+\item 
+int \mbox{\hyperlink{classChisq_aab815b002c716da22d72ef225aa1bbec}{get\+\_\+n\+\_\+data}} () const
+\item 
+int \mbox{\hyperlink{classChisq_a5dfe38f15b32fc23fb8530f7a4daf3e0}{get\+\_\+n\+\_\+reset\+\_\+data\+\_\+sv}} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classChisq_a625fc6e1e3ffc8faa123f2f50f54a22b}\label{classChisq_a625fc6e1e3ffc8faa123f2f50f54a22b}} 
+\index{Chisq@{Chisq}!Chisq@{Chisq}}
+\index{Chisq@{Chisq}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{Chisq()}{Chisq()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Chisq\+::\+Chisq (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&}]{x\+\_\+,  }\item[{const vector$<$ double $>$ \&}]{y\+\_\+,  }\item[{const itpp\+::mat \&}]{inv\+\_\+cov\+\_\+,  }\item[{const int \&}]{n\+\_\+reset\+\_\+data\+\_\+sv\+\_\+,  }\item[{\mbox{\hyperlink{classFunction}{Function}} $\ast$}]{fn\+\_\+ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{dd/da9/classChisq_a625fc6e1e3ffc8faa123f2f50f54a22b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classChisq_a625fc6e1e3ffc8faa123f2f50f54a22b}\label{classChisq_a625fc6e1e3ffc8faa123f2f50f54a22b}} 
+\index{Chisq@{Chisq}!Chisq@{Chisq}}
+\index{Chisq@{Chisq}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{Chisq()}{Chisq()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Chisq\+::\+Chisq (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&}]{x\+\_\+,  }\item[{const vector$<$ double $>$ \&}]{y\+\_\+,  }\item[{const itpp\+::mat \&}]{inv\+\_\+cov\+\_\+,  }\item[{const int \&}]{n\+\_\+reset\+\_\+data\+\_\+sv\+\_\+,  }\item[{\mbox{\hyperlink{classFunction}{Function}} $\ast$}]{fn\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classChisq_a43f74965844bd0b1aa8a323e973728e6}\label{classChisq_a43f74965844bd0b1aa8a323e973728e6}} 
+\index{Chisq@{Chisq}!get\_fn\_name@{get\_fn\_name}}
+\index{get\_fn\_name@{get\_fn\_name}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{get\_fn\_name()}{get\_fn\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Chisq\+::get\+\_\+fn\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{dd/da9/classChisq_a43f74965844bd0b1aa8a323e973728e6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classChisq_a43f74965844bd0b1aa8a323e973728e6}\label{classChisq_a43f74965844bd0b1aa8a323e973728e6}} 
+\index{Chisq@{Chisq}!get\_fn\_name@{get\_fn\_name}}
+\index{get\_fn\_name@{get\_fn\_name}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{get\_fn\_name()}{get\_fn\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Chisq\+::get\+\_\+fn\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{dd/da9/classChisq_a43f74965844bd0b1aa8a323e973728e6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classChisq_aab815b002c716da22d72ef225aa1bbec}\label{classChisq_aab815b002c716da22d72ef225aa1bbec}} 
+\index{Chisq@{Chisq}!get\_n\_data@{get\_n\_data}}
+\index{get\_n\_data@{get\_n\_data}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{get\_n\_data()}{get\_n\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Chisq\+::get\+\_\+n\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classChisq_aab815b002c716da22d72ef225aa1bbec}\label{classChisq_aab815b002c716da22d72ef225aa1bbec}} 
+\index{Chisq@{Chisq}!get\_n\_data@{get\_n\_data}}
+\index{get\_n\_data@{get\_n\_data}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{get\_n\_data()}{get\_n\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Chisq\+::get\+\_\+n\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classChisq_a5dfe38f15b32fc23fb8530f7a4daf3e0}\label{classChisq_a5dfe38f15b32fc23fb8530f7a4daf3e0}} 
+\index{Chisq@{Chisq}!get\_n\_reset\_data\_sv@{get\_n\_reset\_data\_sv}}
+\index{get\_n\_reset\_data\_sv@{get\_n\_reset\_data\_sv}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{get\_n\_reset\_data\_sv()}{get\_n\_reset\_data\_sv()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Chisq\+::get\+\_\+n\+\_\+reset\+\_\+data\+\_\+sv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classChisq_a5dfe38f15b32fc23fb8530f7a4daf3e0}\label{classChisq_a5dfe38f15b32fc23fb8530f7a4daf3e0}} 
+\index{Chisq@{Chisq}!get\_n\_reset\_data\_sv@{get\_n\_reset\_data\_sv}}
+\index{get\_n\_reset\_data\_sv@{get\_n\_reset\_data\_sv}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{get\_n\_reset\_data\_sv()}{get\_n\_reset\_data\_sv()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Chisq\+::get\+\_\+n\+\_\+reset\+\_\+data\+\_\+sv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classChisq_a2c9e190b411d2e6b225d2ca32b950a1e}\label{classChisq_a2c9e190b411d2e6b225d2ca32b950a1e}} 
+\index{Chisq@{Chisq}!get\_par\_list@{get\_par\_list}}
+\index{get\_par\_list@{get\_par\_list}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{get\_par\_list()}{get\_par\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vector$<$string$>$ Chisq\+::get\+\_\+par\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classChisq_a2c9e190b411d2e6b225d2ca32b950a1e}\label{classChisq_a2c9e190b411d2e6b225d2ca32b950a1e}} 
+\index{Chisq@{Chisq}!get\_par\_list@{get\_par\_list}}
+\index{get\_par\_list@{get\_par\_list}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{get\_par\_list()}{get\_par\_list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vector$<$string$>$ Chisq\+::get\+\_\+par\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{dd/da9/classChisq_a2c9e190b411d2e6b225d2ca32b950a1e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classChisq_a321122741639e94feeb3bff1eeadd1e7}\label{classChisq_a321122741639e94feeb3bff1eeadd1e7}} 
+\index{Chisq@{Chisq}!operator()@{operator()}}
+\index{operator()@{operator()}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily double Chisq\+::operator() (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{vars }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classChisq_a321122741639e94feeb3bff1eeadd1e7}\label{classChisq_a321122741639e94feeb3bff1eeadd1e7}} 
+\index{Chisq@{Chisq}!operator()@{operator()}}
+\index{operator()@{operator()}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily double Chisq\+::operator() (\begin{DoxyParamCaption}\item[{const vector$<$ double $>$ \&}]{vars }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classChisq_a32a21d511405fc53af969f0984abc54f}\label{classChisq_a32a21d511405fc53af969f0984abc54f}} 
+\index{Chisq@{Chisq}!operator()@{operator()}}
+\index{operator()@{operator()}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily double Chisq\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{lib_2fitting__lib_2includes_8h_a647b481c557c7966517f753340a81d13}{mapstringdouble}} \&}]{pars\+\_\+map }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classChisq_a32a21d511405fc53af969f0984abc54f}\label{classChisq_a32a21d511405fc53af969f0984abc54f}} 
+\index{Chisq@{Chisq}!operator()@{operator()}}
+\index{operator()@{operator()}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily double Chisq\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{lib_2fitting__lib_2includes_8h_a647b481c557c7966517f753340a81d13}{mapstringdouble}} \&}]{pars\+\_\+map }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classChisq_a0707a4c0241bb82e81d2c5a9c1a303d7}\label{classChisq_a0707a4c0241bb82e81d2c5a9c1a303d7}} 
+\index{Chisq@{Chisq}!SetErrorDef@{SetErrorDef}}
+\index{SetErrorDef@{SetErrorDef}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{SetErrorDef()}{SetErrorDef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Chisq\+::\+Set\+Error\+Def (\begin{DoxyParamCaption}\item[{double}]{def }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classChisq_a0707a4c0241bb82e81d2c5a9c1a303d7}\label{classChisq_a0707a4c0241bb82e81d2c5a9c1a303d7}} 
+\index{Chisq@{Chisq}!SetErrorDef@{SetErrorDef}}
+\index{SetErrorDef@{SetErrorDef}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{SetErrorDef()}{SetErrorDef()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Chisq\+::\+Set\+Error\+Def (\begin{DoxyParamCaption}\item[{double}]{def }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classChisq_a3cc0c9f3bf8b806ce836537bc3d94686}\label{classChisq_a3cc0c9f3bf8b806ce836537bc3d94686}} 
+\index{Chisq@{Chisq}!Up@{Up}}
+\index{Up@{Up}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{Up()}{Up()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Chisq\+::\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classChisq_a3cc0c9f3bf8b806ce836537bc3d94686}\label{classChisq_a3cc0c9f3bf8b806ce836537bc3d94686}} 
+\index{Chisq@{Chisq}!Up@{Up}}
+\index{Up@{Up}!Chisq@{Chisq}}
+\subsubsection{\texorpdfstring{Up()}{Up()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double Chisq\+::\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/\mbox{\hyperlink{lib_2fitting__lib_2chisq_8h}{chisq.\+h}}\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/\mbox{\hyperlink{chisq_8cc}{chisq.\+cc}}\end{DoxyCompactItemize}

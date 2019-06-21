@@ -86,7 +86,8 @@ POST_INSTALL = :
 NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
-bin_PROGRAMS = fit_zt$(EXEEXT) ensemble_fit_three_pt_fns$(EXEEXT)
+bin_PROGRAMS = fit_zt$(EXEEXT) ensemble_fit_three_pt_fns$(EXEEXT) \
+	make_elab$(EXEEXT)
 check_PROGRAMS = test_three_pt_fit$(EXEEXT)
 subdir = src
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -100,30 +101,36 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
+am__dirstamp = $(am__leading_dot)dirstamp
 am_ensemble_fit_three_pt_fns_OBJECTS =  \
-	ensemble_fit_three_pt_fns.$(OBJEXT) \
-	three_point_timeslice_corr_functions.$(OBJEXT) \
-	three_point_timeslice_fitting.$(OBJEXT) edb_reader.$(OBJEXT) \
-	key_struct.$(OBJEXT) \
-	three_point_timeslice_corr_functions_factory.$(OBJEXT) \
-	three_pt_fit_quality_factory.$(OBJEXT) \
-	three_pt_fit_quality.$(OBJEXT)
+	exe/ensemble_fit_three_pt_fns.$(OBJEXT) \
+	lib/three_point_timeslice_corr_functions.$(OBJEXT) \
+	lib/three_point_timeslice_fitting.$(OBJEXT) \
+	lib/edb_reader.$(OBJEXT) lib/key_struct.$(OBJEXT) \
+	lib/three_point_timeslice_corr_functions_factory.$(OBJEXT) \
+	lib/three_pt_fit_quality_factory.$(OBJEXT) \
+	lib/three_pt_fit_quality.$(OBJEXT)
 ensemble_fit_three_pt_fns_OBJECTS =  \
 	$(am_ensemble_fit_three_pt_fns_OBJECTS)
 ensemble_fit_three_pt_fns_LDADD = $(LDADD)
 ensemble_fit_three_pt_fns_DEPENDENCIES =
-am_fit_zt_OBJECTS = fit_zt.$(OBJEXT) z_timeslice_fitting.$(OBJEXT) \
-	z_timeslice_functions.$(OBJEXT) \
-	z_timeslice_functions_factory.$(OBJEXT)
+am_fit_zt_OBJECTS = exe/fit_zt.$(OBJEXT) \
+	lib/z_timeslice_fitting.$(OBJEXT) \
+	lib/z_timeslice_functions.$(OBJEXT) \
+	lib/z_timeslice_functions_factory.$(OBJEXT)
 fit_zt_OBJECTS = $(am_fit_zt_OBJECTS)
 fit_zt_LDADD = $(LDADD)
 fit_zt_DEPENDENCIES =
-am_test_three_pt_fit_OBJECTS = test_three_pt_fit.$(OBJEXT) \
-	three_point_timeslice_corr_functions.$(OBJEXT) \
-	three_point_timeslice_fitting.$(OBJEXT) \
-	three_point_timeslice_corr_functions_factory.$(OBJEXT) \
-	three_pt_fit_quality_factory.$(OBJEXT) \
-	three_pt_fit_quality.$(OBJEXT)
+am_make_elab_OBJECTS = exe/make_elab.$(OBJEXT)
+make_elab_OBJECTS = $(am_make_elab_OBJECTS)
+make_elab_LDADD = $(LDADD)
+make_elab_DEPENDENCIES =
+am_test_three_pt_fit_OBJECTS = exe/test_three_pt_fit.$(OBJEXT) \
+	lib/three_point_timeslice_corr_functions.$(OBJEXT) \
+	lib/three_point_timeslice_fitting.$(OBJEXT) \
+	lib/three_point_timeslice_corr_functions_factory.$(OBJEXT) \
+	lib/three_pt_fit_quality_factory.$(OBJEXT) \
+	lib/three_pt_fit_quality.$(OBJEXT)
 test_three_pt_fit_OBJECTS = $(am_test_three_pt_fit_OBJECTS)
 test_three_pt_fit_LDADD = $(LDADD)
 test_three_pt_fit_DEPENDENCIES =
@@ -142,17 +149,18 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I. -I$(srcdir)
 depcomp = $(SHELL) $(top_srcdir)/config/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/edb_reader.Po \
-	./$(DEPDIR)/ensemble_fit_three_pt_fns.Po ./$(DEPDIR)/fit_zt.Po \
-	./$(DEPDIR)/key_struct.Po ./$(DEPDIR)/test_three_pt_fit.Po \
-	./$(DEPDIR)/three_point_timeslice_corr_functions.Po \
-	./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po \
-	./$(DEPDIR)/three_point_timeslice_fitting.Po \
-	./$(DEPDIR)/three_pt_fit_quality.Po \
-	./$(DEPDIR)/three_pt_fit_quality_factory.Po \
-	./$(DEPDIR)/z_timeslice_fitting.Po \
-	./$(DEPDIR)/z_timeslice_functions.Po \
-	./$(DEPDIR)/z_timeslice_functions_factory.Po
+am__depfiles_remade = exe/$(DEPDIR)/ensemble_fit_three_pt_fns.Po \
+	exe/$(DEPDIR)/fit_zt.Po exe/$(DEPDIR)/make_elab.Po \
+	exe/$(DEPDIR)/test_three_pt_fit.Po lib/$(DEPDIR)/edb_reader.Po \
+	lib/$(DEPDIR)/key_struct.Po \
+	lib/$(DEPDIR)/three_point_timeslice_corr_functions.Po \
+	lib/$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po \
+	lib/$(DEPDIR)/three_point_timeslice_fitting.Po \
+	lib/$(DEPDIR)/three_pt_fit_quality.Po \
+	lib/$(DEPDIR)/three_pt_fit_quality_factory.Po \
+	lib/$(DEPDIR)/z_timeslice_fitting.Po \
+	lib/$(DEPDIR)/z_timeslice_functions.Po \
+	lib/$(DEPDIR)/z_timeslice_functions_factory.Po
 am__mv = mv -f
 CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
 	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
@@ -168,9 +176,9 @@ am__v_CXXLD_ = $(am__v_CXXLD_$(AM_DEFAULT_VERBOSITY))
 am__v_CXXLD_0 = @echo "  CXXLD   " $@;
 am__v_CXXLD_1 = 
 SOURCES = $(ensemble_fit_three_pt_fns_SOURCES) $(fit_zt_SOURCES) \
-	$(test_three_pt_fit_SOURCES)
+	$(make_elab_SOURCES) $(test_three_pt_fit_SOURCES)
 DIST_SOURCES = $(ensemble_fit_three_pt_fns_SOURCES) $(fit_zt_SOURCES) \
-	$(test_three_pt_fit_SOURCES)
+	$(make_elab_SOURCES) $(test_three_pt_fit_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -209,15 +217,15 @@ AUTOCONF = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missin
 AUTOHEADER = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing autoheader
 AUTOMAKE = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing automake-1.16
 AWK = awk
-CC = gcc-8
+CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -Wall -g -O3 -mtune=native -fopenmp -fbounds-check
+CFLAGS = -g -O2
 CPPFLAGS = 
 CXX = g++-8
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -Wall -g -O3 -mtune=native -fopenmp -fbounds-check
+CXXFLAGS = -g -O2
 CYGPATH_W = echo
-DEFS = -DPACKAGE_NAME=\"3pt_fit\" -DPACKAGE_TARNAME=\"3pt_fit\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"3pt_fit\ 1.0\" -DPACKAGE_BUGREPORT=\"archanar@jlab.org\" -DPACKAGE_URL=\"\" -DPACKAGE=\"3pt_fit\" -DVERSION=\"1.0\"
+DEFS = -DPACKAGE_NAME=\"3pt_fit\" -DPACKAGE_TARNAME=\"3pt_fit\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"3pt_fit\ 1.0\" -DPACKAGE_BUGREPORT=\"archanar@jlab.org\" -DPACKAGE_URL=\"\" -DPACKAGE=\"3pt_fit\" -DVERSION=\"1.0\" -DPACKAGE=\"3pt_fit\" -DVERSION=\"1.0\"
 DEPDIR = .deps
 ECHO_C = \c
 ECHO_N = 
@@ -263,8 +271,8 @@ abs_builddir = /Users/archanar/three_pt_analysis/three_pt_fit/build/src
 abs_srcdir = /Users/archanar/three_pt_analysis/three_pt_fit/build/../src
 abs_top_builddir = /Users/archanar/three_pt_analysis/three_pt_fit/build
 abs_top_srcdir = /Users/archanar/three_pt_analysis/three_pt_fit/build/..
-ac_ct_CC = 
-ac_ct_CXX = 
+ac_ct_CC = gcc
+ac_ct_CXX = g++
 am__include = include
 am__leading_dot = .
 am__quote = 
@@ -307,7 +315,7 @@ top_srcdir = ../..
 # Boiler Plate stuff: Autoconf Substitutions etc
 #
 AM_CXXFLAGS = -I../../lib \
-	 -Wall -g -O3 -mtune=native -fopenmp -fbounds-check -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/semble_install/include -O2 -I/Users/archanar/Scattering/adat_install/include -I/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2 -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/fitting_lib_install/include  -I/Users/archanar/Scattering/itpp_install/include -std=c++0x -O3
+	 -g -O2 -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/semble_install/include -O2 -I/Users/archanar/Scattering/adat_install/include -I/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2 -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/three_pt_analysis/fitting_lib_install/include  -I/Users/archanar/Scattering/itpp_install/include -std=c++0x -O3
 
 AM_LDFLAGS = -L../lib \
   	  -L/Users/archanar/Scattering/adat_install/lib -L/Users/archanar/three_pt_analysis/fitting_lib_install/lib -L/Users/archanar/three_pt_analysis/semble_install/lib
@@ -315,17 +323,18 @@ AM_LDFLAGS = -L../lib \
 LDADD = -lfitting -lsemble -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.9_2/lib -lxml2 -lz -lpthread -liconv -lm  -L/Users/archanar/Scattering/itpp_install/lib -litpp -llapack -lblas  -lfitting
 
 ##############################################################
-ensemble_fit_three_pt_fns_SOURCES = ensemble_fit_three_pt_fns.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc edb_reader.cc key_struct.cc\
-													three_point_timeslice_corr_functions_factory.cc three_pt_fit_quality_factory.cc \
-													three_pt_fit_quality.cc
+ensemble_fit_three_pt_fns_SOURCES = exe/ensemble_fit_three_pt_fns.cc lib/three_point_timeslice_corr_functions.cc lib/three_point_timeslice_fitting.cc lib/edb_reader.cc lib/key_struct.cc\
+													lib/three_point_timeslice_corr_functions_factory.cc lib/three_pt_fit_quality_factory.cc \
+													lib/three_pt_fit_quality.cc
 
-fit_zt_SOURCES = fit_zt.cc z_timeslice_fitting.cc z_timeslice_functions.cc \
-												z_timeslice_functions_factory.cc
+fit_zt_SOURCES = exe/fit_zt.cc lib/z_timeslice_fitting.cc lib/z_timeslice_functions.cc \
+												lib/z_timeslice_functions_factory.cc
 
-test_three_pt_fit_SOURCES = test_three_pt_fit.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc \
-                           three_point_timeslice_corr_functions_factory.cc three_pt_fit_quality_factory.cc \
-                           three_pt_fit_quality.cc
+test_three_pt_fit_SOURCES = exe/test_three_pt_fit.cc lib/three_point_timeslice_corr_functions.cc lib/three_point_timeslice_fitting.cc \
+                           lib/three_point_timeslice_corr_functions_factory.cc lib/three_pt_fit_quality_factory.cc \
+                           lib/three_pt_fit_quality.cc
 
+make_elab_SOURCES = exe/make_elab.cc 
 ##############################################################
 
 #
@@ -412,14 +421,58 @@ clean-binPROGRAMS:
 
 clean-checkPROGRAMS:
 	-test -z "$(check_PROGRAMS)" || rm -f $(check_PROGRAMS)
+exe/$(am__dirstamp):
+	@$(MKDIR_P) exe
+	@: > exe/$(am__dirstamp)
+exe/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) exe/$(DEPDIR)
+	@: > exe/$(DEPDIR)/$(am__dirstamp)
+exe/ensemble_fit_three_pt_fns.$(OBJEXT): exe/$(am__dirstamp) \
+	exe/$(DEPDIR)/$(am__dirstamp)
+lib/$(am__dirstamp):
+	@$(MKDIR_P) lib
+	@: > lib/$(am__dirstamp)
+lib/$(DEPDIR)/$(am__dirstamp):
+	@$(MKDIR_P) lib/$(DEPDIR)
+	@: > lib/$(DEPDIR)/$(am__dirstamp)
+lib/three_point_timeslice_corr_functions.$(OBJEXT):  \
+	lib/$(am__dirstamp) lib/$(DEPDIR)/$(am__dirstamp)
+lib/three_point_timeslice_fitting.$(OBJEXT): lib/$(am__dirstamp) \
+	lib/$(DEPDIR)/$(am__dirstamp)
+lib/edb_reader.$(OBJEXT): lib/$(am__dirstamp) \
+	lib/$(DEPDIR)/$(am__dirstamp)
+lib/key_struct.$(OBJEXT): lib/$(am__dirstamp) \
+	lib/$(DEPDIR)/$(am__dirstamp)
+lib/three_point_timeslice_corr_functions_factory.$(OBJEXT):  \
+	lib/$(am__dirstamp) lib/$(DEPDIR)/$(am__dirstamp)
+lib/three_pt_fit_quality_factory.$(OBJEXT): lib/$(am__dirstamp) \
+	lib/$(DEPDIR)/$(am__dirstamp)
+lib/three_pt_fit_quality.$(OBJEXT): lib/$(am__dirstamp) \
+	lib/$(DEPDIR)/$(am__dirstamp)
 
 ensemble_fit_three_pt_fns$(EXEEXT): $(ensemble_fit_three_pt_fns_OBJECTS) $(ensemble_fit_three_pt_fns_DEPENDENCIES) $(EXTRA_ensemble_fit_three_pt_fns_DEPENDENCIES) 
 	@rm -f ensemble_fit_three_pt_fns$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(ensemble_fit_three_pt_fns_OBJECTS) $(ensemble_fit_three_pt_fns_LDADD) $(LIBS)
+exe/fit_zt.$(OBJEXT): exe/$(am__dirstamp) \
+	exe/$(DEPDIR)/$(am__dirstamp)
+lib/z_timeslice_fitting.$(OBJEXT): lib/$(am__dirstamp) \
+	lib/$(DEPDIR)/$(am__dirstamp)
+lib/z_timeslice_functions.$(OBJEXT): lib/$(am__dirstamp) \
+	lib/$(DEPDIR)/$(am__dirstamp)
+lib/z_timeslice_functions_factory.$(OBJEXT): lib/$(am__dirstamp) \
+	lib/$(DEPDIR)/$(am__dirstamp)
 
 fit_zt$(EXEEXT): $(fit_zt_OBJECTS) $(fit_zt_DEPENDENCIES) $(EXTRA_fit_zt_DEPENDENCIES) 
 	@rm -f fit_zt$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(fit_zt_OBJECTS) $(fit_zt_LDADD) $(LIBS)
+exe/make_elab.$(OBJEXT): exe/$(am__dirstamp) \
+	exe/$(DEPDIR)/$(am__dirstamp)
+
+make_elab$(EXEEXT): $(make_elab_OBJECTS) $(make_elab_DEPENDENCIES) $(EXTRA_make_elab_DEPENDENCIES) 
+	@rm -f make_elab$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(make_elab_OBJECTS) $(make_elab_LDADD) $(LIBS)
+exe/test_three_pt_fit.$(OBJEXT): exe/$(am__dirstamp) \
+	exe/$(DEPDIR)/$(am__dirstamp)
 
 test_three_pt_fit$(EXEEXT): $(test_three_pt_fit_OBJECTS) $(test_three_pt_fit_DEPENDENCIES) $(EXTRA_test_three_pt_fit_DEPENDENCIES) 
 	@rm -f test_three_pt_fit$(EXEEXT)
@@ -427,23 +480,26 @@ test_three_pt_fit$(EXEEXT): $(test_three_pt_fit_OBJECTS) $(test_three_pt_fit_DEP
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
+	-rm -f exe/*.$(OBJEXT)
+	-rm -f lib/*.$(OBJEXT)
 
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/edb_reader.Po # am--include-marker
-include ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po # am--include-marker
-include ./$(DEPDIR)/fit_zt.Po # am--include-marker
-include ./$(DEPDIR)/key_struct.Po # am--include-marker
-include ./$(DEPDIR)/test_three_pt_fit.Po # am--include-marker
-include ./$(DEPDIR)/three_point_timeslice_corr_functions.Po # am--include-marker
-include ./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po # am--include-marker
-include ./$(DEPDIR)/three_point_timeslice_fitting.Po # am--include-marker
-include ./$(DEPDIR)/three_pt_fit_quality.Po # am--include-marker
-include ./$(DEPDIR)/three_pt_fit_quality_factory.Po # am--include-marker
-include ./$(DEPDIR)/z_timeslice_fitting.Po # am--include-marker
-include ./$(DEPDIR)/z_timeslice_functions.Po # am--include-marker
-include ./$(DEPDIR)/z_timeslice_functions_factory.Po # am--include-marker
+include exe/$(DEPDIR)/ensemble_fit_three_pt_fns.Po # am--include-marker
+include exe/$(DEPDIR)/fit_zt.Po # am--include-marker
+include exe/$(DEPDIR)/make_elab.Po # am--include-marker
+include exe/$(DEPDIR)/test_three_pt_fit.Po # am--include-marker
+include lib/$(DEPDIR)/edb_reader.Po # am--include-marker
+include lib/$(DEPDIR)/key_struct.Po # am--include-marker
+include lib/$(DEPDIR)/three_point_timeslice_corr_functions.Po # am--include-marker
+include lib/$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po # am--include-marker
+include lib/$(DEPDIR)/three_point_timeslice_fitting.Po # am--include-marker
+include lib/$(DEPDIR)/three_pt_fit_quality.Po # am--include-marker
+include lib/$(DEPDIR)/three_pt_fit_quality_factory.Po # am--include-marker
+include lib/$(DEPDIR)/z_timeslice_fitting.Po # am--include-marker
+include lib/$(DEPDIR)/z_timeslice_functions.Po # am--include-marker
+include lib/$(DEPDIR)/z_timeslice_functions_factory.Po # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -452,15 +508,17 @@ $(am__depfiles_remade):
 am--depfiles: $(am__depfiles_remade)
 
 .cc.o:
-	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+	$(am__mv) $$depbase.Tpo $$depbase.Po
 #	$(AM_V_CXX)source='$<' object='$@' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ $<
 
 .cc.obj:
-	$(AM_V_CXX)$(CXXCOMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ `$(CYGPATH_W) '$<'`
-	$(AM_V_at)$(am__mv) $(DEPDIR)/$*.Tpo $(DEPDIR)/$*.Po
+	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
+	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
+	$(am__mv) $$depbase.Tpo $$depbase.Po
 #	$(AM_V_CXX)source='$<' object='$@' libtool=no \
 #	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) \
 #	$(AM_V_CXX_no)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
@@ -584,6 +642,10 @@ clean-generic:
 distclean-generic:
 	-test -z "$(CONFIG_CLEAN_FILES)" || rm -f $(CONFIG_CLEAN_FILES)
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
+	-rm -f exe/$(DEPDIR)/$(am__dirstamp)
+	-rm -f exe/$(am__dirstamp)
+	-rm -f lib/$(DEPDIR)/$(am__dirstamp)
+	-rm -f lib/$(am__dirstamp)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
@@ -594,19 +656,20 @@ clean-am: clean-binPROGRAMS clean-checkPROGRAMS clean-generic \
 	mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/edb_reader.Po
-	-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
-	-rm -f ./$(DEPDIR)/fit_zt.Po
-	-rm -f ./$(DEPDIR)/key_struct.Po
-	-rm -f ./$(DEPDIR)/test_three_pt_fit.Po
-	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions.Po
-	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po
-	-rm -f ./$(DEPDIR)/three_point_timeslice_fitting.Po
-	-rm -f ./$(DEPDIR)/three_pt_fit_quality.Po
-	-rm -f ./$(DEPDIR)/three_pt_fit_quality_factory.Po
-	-rm -f ./$(DEPDIR)/z_timeslice_fitting.Po
-	-rm -f ./$(DEPDIR)/z_timeslice_functions.Po
-	-rm -f ./$(DEPDIR)/z_timeslice_functions_factory.Po
+		-rm -f exe/$(DEPDIR)/ensemble_fit_three_pt_fns.Po
+	-rm -f exe/$(DEPDIR)/fit_zt.Po
+	-rm -f exe/$(DEPDIR)/make_elab.Po
+	-rm -f exe/$(DEPDIR)/test_three_pt_fit.Po
+	-rm -f lib/$(DEPDIR)/edb_reader.Po
+	-rm -f lib/$(DEPDIR)/key_struct.Po
+	-rm -f lib/$(DEPDIR)/three_point_timeslice_corr_functions.Po
+	-rm -f lib/$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po
+	-rm -f lib/$(DEPDIR)/three_point_timeslice_fitting.Po
+	-rm -f lib/$(DEPDIR)/three_pt_fit_quality.Po
+	-rm -f lib/$(DEPDIR)/three_pt_fit_quality_factory.Po
+	-rm -f lib/$(DEPDIR)/z_timeslice_fitting.Po
+	-rm -f lib/$(DEPDIR)/z_timeslice_functions.Po
+	-rm -f lib/$(DEPDIR)/z_timeslice_functions_factory.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -652,19 +715,20 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/edb_reader.Po
-	-rm -f ./$(DEPDIR)/ensemble_fit_three_pt_fns.Po
-	-rm -f ./$(DEPDIR)/fit_zt.Po
-	-rm -f ./$(DEPDIR)/key_struct.Po
-	-rm -f ./$(DEPDIR)/test_three_pt_fit.Po
-	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions.Po
-	-rm -f ./$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po
-	-rm -f ./$(DEPDIR)/three_point_timeslice_fitting.Po
-	-rm -f ./$(DEPDIR)/three_pt_fit_quality.Po
-	-rm -f ./$(DEPDIR)/three_pt_fit_quality_factory.Po
-	-rm -f ./$(DEPDIR)/z_timeslice_fitting.Po
-	-rm -f ./$(DEPDIR)/z_timeslice_functions.Po
-	-rm -f ./$(DEPDIR)/z_timeslice_functions_factory.Po
+		-rm -f exe/$(DEPDIR)/ensemble_fit_three_pt_fns.Po
+	-rm -f exe/$(DEPDIR)/fit_zt.Po
+	-rm -f exe/$(DEPDIR)/make_elab.Po
+	-rm -f exe/$(DEPDIR)/test_three_pt_fit.Po
+	-rm -f lib/$(DEPDIR)/edb_reader.Po
+	-rm -f lib/$(DEPDIR)/key_struct.Po
+	-rm -f lib/$(DEPDIR)/three_point_timeslice_corr_functions.Po
+	-rm -f lib/$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po
+	-rm -f lib/$(DEPDIR)/three_point_timeslice_fitting.Po
+	-rm -f lib/$(DEPDIR)/three_pt_fit_quality.Po
+	-rm -f lib/$(DEPDIR)/three_pt_fit_quality_factory.Po
+	-rm -f lib/$(DEPDIR)/z_timeslice_fitting.Po
+	-rm -f lib/$(DEPDIR)/z_timeslice_functions.Po
+	-rm -f lib/$(DEPDIR)/z_timeslice_functions_factory.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 

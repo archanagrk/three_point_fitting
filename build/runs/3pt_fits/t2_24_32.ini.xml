@@ -1,7 +1,3 @@
-<!-- 
-t24,fI2Y0i2,r1,00-1,pion_proj0_p100_H0D4A2__100.tm3,fI0Y0i0,r1,100,omegal_rhoxD0_J0__J1_H1D4E2__100.t0,fI2Y0i2,r1,10-1,rho_proj0_p110_H1D2B1__110.dat
-t32,fI2Y0i2,r1,00-1,pion_proj0_p100_H0D4A2__100.tm3,fI0Y0i0,r1,100,omegal_rhoxD0_J0__J1_H1D4E2__100.t0,fI2Y0i2,r1,10-1,rho_proj0_p110_H1D2B1__110.dat
- -->
 <ThreeptIniParams>
 
     <inputProps>
@@ -14,6 +10,10 @@ t32,fI2Y0i2,r1,00-1,pion_proj0_p100_H0D4A2__100.tm3,fI0Y0i0,r1,100,omegal_rhoxD0
                 <tmax>24</tmax>
                 <tsrc>0</tsrc>
                 <tsnk>24</tsnk>
+                <EiMin>0.001</EiMin>
+                <EfMin>0.001</EfMin>
+                <EiMax>0.8</EiMax>
+                <EfMax>0.4</EfMax>
                 <NtMin>10</NtMin>             
             </elem>
             <elem>
@@ -23,6 +23,10 @@ t32,fI2Y0i2,r1,00-1,pion_proj0_p100_H0D4A2__100.tm3,fI0Y0i0,r1,100,omegal_rhoxD0
                  <tmax>32</tmax>
                  <tsrc>0</tsrc>
                  <tsnk>32</tsnk>
+                 <EiMin>0.001</EiMin>
+                 <EfMin>0.001</EfMin>
+                 <EiMax>0.8</EiMax>
+                 <EfMax>0.4</EfMax>
                  <NtMin>10</NtMin>
               </elem>  
           </dbFnames>
@@ -31,20 +35,29 @@ t32,fI2Y0i2,r1,00-1,pion_proj0_p100_H0D4A2__100.tm3,fI0Y0i0,r1,100,omegal_rhoxD0
 
     <FitProps>
         <fit_qual>
-            <type>chisq_per_n_dof</type>
-            <params>
-              <!--                <power>1</power>
-                <power_mass>0</power_mass>
-                <power_F>0</power_F>                
-                <power_time>0</power_time>
-                <multiply_mass>false</multiply_mass> -->
-            </params>
+            <type>generic</type>
+              <params>
+                 <power>1</power>
+                 <powerExp>1</powerExp>
+                 <powerT>2</powerT>
+                 <expFac>true</expFac>
+               </params>
           </fit_qual>
-          <kfac>kfac.ini.xml</kfac>
-          <Ei>0.19226</Ei>
-          <Ef>0.133</Ef>  
-          <chisq_cutoff>2</chisq_cutoff>
-        <noise_cutoff>10</noise_cutoff>
+          <divKfac>true</divKfac>
+          <kfac>check.xml</kfac>
+         <chisq_cutoff>2</chisq_cutoff>
+         <noise_cutoff>100</noise_cutoff>
+         <Ei>
+           <elem>rho_proj0_p110_H1D2B2.jack</elem>
+           <elem>rho_proj0_p000_T1.jack</elem>
+           <elem>rho_proj0_p100_H1D4E2.jack</elem>
+           <elem>rho_proj0_p110_H1D2B1.jack</elem>
+         </Ei>
+         <Ef>
+           <elem>pion_proj0_p110_H0D2A2.jack</elem>
+           <elem>pion_proj0_p000_A1.jack</elem>
+           <elem>pion_proj0_p100_H0D4A2.jack</elem>
+         </Ef>
     </FitProps>
 
 </ThreeptIniParams>

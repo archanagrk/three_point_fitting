@@ -1,0 +1,6 @@
+<map id="radmat::read" name="radmat::read">
+<area shape="rect" id="node1" title="read a key from xml" alt="" coords="5,44,102,69"/>
+<area shape="rect" id="node2" href="$d4/d83/namespaceradmat.html#a48bba8fb1d24a49efdc5eed962710717" title="read serialized data" alt="" coords="150,44,247,69"/>
+<area shape="rect" id="node3" href="$d7/d75/structradmat_1_1RadmatMassOverlapData__t.html#a0789ab137fc29ffcc3a3917d25aec0fb" title=" " alt="" coords="295,5,491,44"/>
+<area shape="rect" id="node4" href="$d7/d75/structradmat_1_1RadmatMassOverlapData__t.html#a1453a8a3daa1adf8693514f0d5d9756b" title=" " alt="" coords="295,68,491,107"/>
+</map>

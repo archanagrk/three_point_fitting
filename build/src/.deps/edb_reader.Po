@@ -369,8 +369,7 @@ edb_reader.o: ../../src/edb_reader.cc ../../src/edb_reader.h \
  /Users/archanar/Scattering/adat_install/include/hadron/hadron_vertex.h \
  /Users/archanar/Scattering/adat_install/include/hadron/cgc_su3.h \
  /Users/archanar/Scattering/adat_install/include/hadron/cgcs.h \
- /Users/archanar/Scattering/adat_install/include/hadron/cgc_irrep_mom.h \
- /usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/filesystem
+ /Users/archanar/Scattering/adat_install/include/hadron/cgc_irrep_mom.h
 
 ../../src/edb_reader.h:
 
@@ -1115,5 +1114,3 @@ edb_reader.o: ../../src/edb_reader.cc ../../src/edb_reader.h \
 /Users/archanar/Scattering/adat_install/include/hadron/cgcs.h:
 
 /Users/archanar/Scattering/adat_install/include/hadron/cgc_irrep_mom.h:
-
-/usr/local/Cellar/gcc/8.2.0/include/c++/8.2.0/filesystem:

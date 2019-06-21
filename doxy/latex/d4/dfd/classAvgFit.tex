@@ -1,0 +1,317 @@
+\hypertarget{classAvgFit}{}\section{Avg\+Fit Class Reference}
+\label{classAvgFit}\index{AvgFit@{AvgFit}}
+
+
+{\ttfamily \#include $<$avg\+\_\+fitter.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAvgFit_a578a5426ad4b8bf8caea1dad68b014ac}{Avg\+Fit}} (const \mbox{\hyperlink{classData}{Data}} \&data\+\_\+, const vector$<$ bool $>$ \&active\+\_\+data\+\_\+, \mbox{\hyperlink{classFunction}{Function}} $\ast$fn\+\_\+, const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&start\+\_\+params\+\_\+, const \mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} \&control\+\_\+, bool correlated\+\_\+, string fit\+\_\+name\+\_\+)
+\item 
+string \mbox{\hyperlink{classAvgFit_a78ac6ba410c7f44b543e3b7202e046ca}{report}} () const
+\item 
+bool \mbox{\hyperlink{classAvgFit_a9a906abeb09e724f98fc8b77aff0ea6d}{is\+\_\+valid}} () const
+\item 
+\mbox{\hyperlink{structchisq__dof}{chisq\+\_\+dof}} \mbox{\hyperlink{classAvgFit_ad4b8b6e5bf145cbeb62b02787612f226}{get\+\_\+chisq}} () const
+\item 
+string \mbox{\hyperlink{classAvgFit_af9fc84ffb95d3b08daa27ee377892537}{get\+\_\+fit\+\_\+name}} () const
+\item 
+\mbox{\hyperlink{structminuit__fit__result}{minuit\+\_\+fit\+\_\+result}} \mbox{\hyperlink{classAvgFit_a2d288928c4cf2f92ee28fce2503da979}{get\+\_\+result}} () const
+\item 
+\mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} \mbox{\hyperlink{classAvgFit_a2a1fb43d6a70a74e39d7d05de9fe5e5d}{get\+\_\+minuit\+\_\+control}} () const
+\item 
+bool \mbox{\hyperlink{classAvgFit_af828c76e39fea9326e2828e176abb1c4}{is\+\_\+correlated}} () const
+\item 
+map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \mbox{\hyperlink{classAvgFit_a7823eaaddd8f06848f2c092886076d0d}{get\+\_\+start\+\_\+params}} () const
+\item 
+const \mbox{\hyperlink{classData}{Data}} \& \mbox{\hyperlink{classAvgFit_aab0805acd73d39676069431db93684ed}{get\+\_\+data}} () const
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{classAvgFit_aafbaf377162566bd059950a6a4e454e9}{get\+\_\+active\+\_\+data}} () const
+\item 
+\mbox{\hyperlink{classFunction}{Function}} $\ast$ \mbox{\hyperlink{classAvgFit_a40e757ad0dc9563c684491165bee9baa}{get\+\_\+function}} () const
+\item 
+\mbox{\hyperlink{classAvgFit_a578a5426ad4b8bf8caea1dad68b014ac}{Avg\+Fit}} (const \mbox{\hyperlink{classData}{Data}} \&data\+\_\+, const vector$<$ bool $>$ \&active\+\_\+data\+\_\+, \mbox{\hyperlink{classFunction}{Function}} $\ast$fn\+\_\+, const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&start\+\_\+params\+\_\+, const \mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} \&control\+\_\+, bool correlated\+\_\+, string fit\+\_\+name\+\_\+)
+\item 
+string \mbox{\hyperlink{classAvgFit_a78ac6ba410c7f44b543e3b7202e046ca}{report}} () const
+\item 
+bool \mbox{\hyperlink{classAvgFit_a9a906abeb09e724f98fc8b77aff0ea6d}{is\+\_\+valid}} () const
+\item 
+\mbox{\hyperlink{structchisq__dof}{chisq\+\_\+dof}} \mbox{\hyperlink{classAvgFit_ad4b8b6e5bf145cbeb62b02787612f226}{get\+\_\+chisq}} () const
+\item 
+string \mbox{\hyperlink{classAvgFit_af9fc84ffb95d3b08daa27ee377892537}{get\+\_\+fit\+\_\+name}} () const
+\item 
+\mbox{\hyperlink{structminuit__fit__result}{minuit\+\_\+fit\+\_\+result}} \mbox{\hyperlink{classAvgFit_a2d288928c4cf2f92ee28fce2503da979}{get\+\_\+result}} () const
+\item 
+\mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} \mbox{\hyperlink{classAvgFit_a2a1fb43d6a70a74e39d7d05de9fe5e5d}{get\+\_\+minuit\+\_\+control}} () const
+\item 
+bool \mbox{\hyperlink{classAvgFit_af828c76e39fea9326e2828e176abb1c4}{is\+\_\+correlated}} () const
+\item 
+map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \mbox{\hyperlink{classAvgFit_a7823eaaddd8f06848f2c092886076d0d}{get\+\_\+start\+\_\+params}} () const
+\item 
+const \mbox{\hyperlink{classData}{Data}} \& \mbox{\hyperlink{classAvgFit_aab0805acd73d39676069431db93684ed}{get\+\_\+data}} () const
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{classAvgFit_aafbaf377162566bd059950a6a4e454e9}{get\+\_\+active\+\_\+data}} () const
+\item 
+\mbox{\hyperlink{classFunction}{Function}} $\ast$ \mbox{\hyperlink{classAvgFit_a40e757ad0dc9563c684491165bee9baa}{get\+\_\+function}} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAvgFit_a578a5426ad4b8bf8caea1dad68b014ac}\label{classAvgFit_a578a5426ad4b8bf8caea1dad68b014ac}} 
+\index{AvgFit@{AvgFit}!AvgFit@{AvgFit}}
+\index{AvgFit@{AvgFit}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{AvgFit()}{AvgFit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Avg\+Fit\+::\+Avg\+Fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data\+\_\+,  }\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data\+\_\+,  }\item[{\mbox{\hyperlink{classFunction}{Function}} $\ast$}]{fn\+\_\+,  }\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{start\+\_\+params\+\_\+,  }\item[{const \mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} \&}]{control\+\_\+,  }\item[{bool}]{correlated\+\_\+,  }\item[{string}]{fit\+\_\+name\+\_\+ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dfd/classAvgFit_a578a5426ad4b8bf8caea1dad68b014ac_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAvgFit_a578a5426ad4b8bf8caea1dad68b014ac}\label{classAvgFit_a578a5426ad4b8bf8caea1dad68b014ac}} 
+\index{AvgFit@{AvgFit}!AvgFit@{AvgFit}}
+\index{AvgFit@{AvgFit}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{AvgFit()}{AvgFit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Avg\+Fit\+::\+Avg\+Fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data\+\_\+,  }\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data\+\_\+,  }\item[{\mbox{\hyperlink{classFunction}{Function}} $\ast$}]{fn\+\_\+,  }\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{start\+\_\+params\+\_\+,  }\item[{const \mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} \&}]{control\+\_\+,  }\item[{bool}]{correlated\+\_\+,  }\item[{string}]{fit\+\_\+name\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAvgFit_aafbaf377162566bd059950a6a4e454e9}\label{classAvgFit_aafbaf377162566bd059950a6a4e454e9}} 
+\index{AvgFit@{AvgFit}!get\_active\_data@{get\_active\_data}}
+\index{get\_active\_data@{get\_active\_data}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_active\_data()}{get\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ Avg\+Fit\+::get\+\_\+active\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dfd/classAvgFit_aafbaf377162566bd059950a6a4e454e9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAvgFit_aafbaf377162566bd059950a6a4e454e9}\label{classAvgFit_aafbaf377162566bd059950a6a4e454e9}} 
+\index{AvgFit@{AvgFit}!get\_active\_data@{get\_active\_data}}
+\index{get\_active\_data@{get\_active\_data}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_active\_data()}{get\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ Avg\+Fit\+::get\+\_\+active\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAvgFit_ad4b8b6e5bf145cbeb62b02787612f226}\label{classAvgFit_ad4b8b6e5bf145cbeb62b02787612f226}} 
+\index{AvgFit@{AvgFit}!get\_chisq@{get\_chisq}}
+\index{get\_chisq@{get\_chisq}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_chisq()}{get\_chisq()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structchisq__dof}{chisq\+\_\+dof}} Avg\+Fit\+::get\+\_\+chisq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{d4/dfd/classAvgFit_ad4b8b6e5bf145cbeb62b02787612f226_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAvgFit_ad4b8b6e5bf145cbeb62b02787612f226}\label{classAvgFit_ad4b8b6e5bf145cbeb62b02787612f226}} 
+\index{AvgFit@{AvgFit}!get\_chisq@{get\_chisq}}
+\index{get\_chisq@{get\_chisq}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_chisq()}{get\_chisq()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structchisq__dof}{chisq\+\_\+dof}} Avg\+Fit\+::get\+\_\+chisq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAvgFit_aab0805acd73d39676069431db93684ed}\label{classAvgFit_aab0805acd73d39676069431db93684ed}} 
+\index{AvgFit@{AvgFit}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_data()}{get\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classData}{Data}}\& Avg\+Fit\+::get\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{d4/dfd/classAvgFit_aab0805acd73d39676069431db93684ed_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAvgFit_aab0805acd73d39676069431db93684ed}\label{classAvgFit_aab0805acd73d39676069431db93684ed}} 
+\index{AvgFit@{AvgFit}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_data()}{get\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classData}{Data}}\& Avg\+Fit\+::get\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAvgFit_af9fc84ffb95d3b08daa27ee377892537}\label{classAvgFit_af9fc84ffb95d3b08daa27ee377892537}} 
+\index{AvgFit@{AvgFit}!get\_fit\_name@{get\_fit\_name}}
+\index{get\_fit\_name@{get\_fit\_name}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_fit\_name()}{get\_fit\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Avg\+Fit\+::get\+\_\+fit\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{d4/dfd/classAvgFit_af9fc84ffb95d3b08daa27ee377892537_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAvgFit_af9fc84ffb95d3b08daa27ee377892537}\label{classAvgFit_af9fc84ffb95d3b08daa27ee377892537}} 
+\index{AvgFit@{AvgFit}!get\_fit\_name@{get\_fit\_name}}
+\index{get\_fit\_name@{get\_fit\_name}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_fit\_name()}{get\_fit\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Avg\+Fit\+::get\+\_\+fit\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAvgFit_a40e757ad0dc9563c684491165bee9baa}\label{classAvgFit_a40e757ad0dc9563c684491165bee9baa}} 
+\index{AvgFit@{AvgFit}!get\_function@{get\_function}}
+\index{get\_function@{get\_function}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_function()}{get\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFunction}{Function}}$\ast$ Avg\+Fit\+::get\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAvgFit_a40e757ad0dc9563c684491165bee9baa}\label{classAvgFit_a40e757ad0dc9563c684491165bee9baa}} 
+\index{AvgFit@{AvgFit}!get\_function@{get\_function}}
+\index{get\_function@{get\_function}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_function()}{get\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFunction}{Function}}$\ast$ Avg\+Fit\+::get\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{d4/dfd/classAvgFit_a40e757ad0dc9563c684491165bee9baa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAvgFit_a2a1fb43d6a70a74e39d7d05de9fe5e5d}\label{classAvgFit_a2a1fb43d6a70a74e39d7d05de9fe5e5d}} 
+\index{AvgFit@{AvgFit}!get\_minuit\_control@{get\_minuit\_control}}
+\index{get\_minuit\_control@{get\_minuit\_control}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_minuit\_control()}{get\_minuit\_control()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} Avg\+Fit\+::get\+\_\+minuit\+\_\+control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAvgFit_a2a1fb43d6a70a74e39d7d05de9fe5e5d}\label{classAvgFit_a2a1fb43d6a70a74e39d7d05de9fe5e5d}} 
+\index{AvgFit@{AvgFit}!get\_minuit\_control@{get\_minuit\_control}}
+\index{get\_minuit\_control@{get\_minuit\_control}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_minuit\_control()}{get\_minuit\_control()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} Avg\+Fit\+::get\+\_\+minuit\+\_\+control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{d4/dfd/classAvgFit_a2a1fb43d6a70a74e39d7d05de9fe5e5d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAvgFit_a2d288928c4cf2f92ee28fce2503da979}\label{classAvgFit_a2d288928c4cf2f92ee28fce2503da979}} 
+\index{AvgFit@{AvgFit}!get\_result@{get\_result}}
+\index{get\_result@{get\_result}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_result()}{get\_result()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structminuit__fit__result}{minuit\+\_\+fit\+\_\+result}} Avg\+Fit\+::get\+\_\+result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAvgFit_a2d288928c4cf2f92ee28fce2503da979}\label{classAvgFit_a2d288928c4cf2f92ee28fce2503da979}} 
+\index{AvgFit@{AvgFit}!get\_result@{get\_result}}
+\index{get\_result@{get\_result}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_result()}{get\_result()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structminuit__fit__result}{minuit\+\_\+fit\+\_\+result}} Avg\+Fit\+::get\+\_\+result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{d4/dfd/classAvgFit_a2d288928c4cf2f92ee28fce2503da979_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAvgFit_a7823eaaddd8f06848f2c092886076d0d}\label{classAvgFit_a7823eaaddd8f06848f2c092886076d0d}} 
+\index{AvgFit@{AvgFit}!get\_start\_params@{get\_start\_params}}
+\index{get\_start\_params@{get\_start\_params}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_start\_params()}{get\_start\_params()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily map$<$string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}}$>$ Avg\+Fit\+::get\+\_\+start\+\_\+params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dfd/classAvgFit_a7823eaaddd8f06848f2c092886076d0d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAvgFit_a7823eaaddd8f06848f2c092886076d0d}\label{classAvgFit_a7823eaaddd8f06848f2c092886076d0d}} 
+\index{AvgFit@{AvgFit}!get\_start\_params@{get\_start\_params}}
+\index{get\_start\_params@{get\_start\_params}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{get\_start\_params()}{get\_start\_params()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily map$<$string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}}$>$ Avg\+Fit\+::get\+\_\+start\+\_\+params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAvgFit_af828c76e39fea9326e2828e176abb1c4}\label{classAvgFit_af828c76e39fea9326e2828e176abb1c4}} 
+\index{AvgFit@{AvgFit}!is\_correlated@{is\_correlated}}
+\index{is\_correlated@{is\_correlated}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{is\_correlated()}{is\_correlated()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Avg\+Fit\+::is\+\_\+correlated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{d4/dfd/classAvgFit_af828c76e39fea9326e2828e176abb1c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAvgFit_af828c76e39fea9326e2828e176abb1c4}\label{classAvgFit_af828c76e39fea9326e2828e176abb1c4}} 
+\index{AvgFit@{AvgFit}!is\_correlated@{is\_correlated}}
+\index{is\_correlated@{is\_correlated}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{is\_correlated()}{is\_correlated()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Avg\+Fit\+::is\+\_\+correlated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAvgFit_a9a906abeb09e724f98fc8b77aff0ea6d}\label{classAvgFit_a9a906abeb09e724f98fc8b77aff0ea6d}} 
+\index{AvgFit@{AvgFit}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{is\_valid()}{is\_valid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Avg\+Fit\+::is\+\_\+valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAvgFit_a9a906abeb09e724f98fc8b77aff0ea6d}\label{classAvgFit_a9a906abeb09e724f98fc8b77aff0ea6d}} 
+\index{AvgFit@{AvgFit}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{is\_valid()}{is\_valid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Avg\+Fit\+::is\+\_\+valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{d4/dfd/classAvgFit_a9a906abeb09e724f98fc8b77aff0ea6d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classAvgFit_a78ac6ba410c7f44b543e3b7202e046ca}\label{classAvgFit_a78ac6ba410c7f44b543e3b7202e046ca}} 
+\index{AvgFit@{AvgFit}!report@{report}}
+\index{report@{report}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{report()}{report()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Avg\+Fit\+::report (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classAvgFit_a78ac6ba410c7f44b543e3b7202e046ca}\label{classAvgFit_a78ac6ba410c7f44b543e3b7202e046ca}} 
+\index{AvgFit@{AvgFit}!report@{report}}
+\index{report@{report}!AvgFit@{AvgFit}}
+\subsubsection{\texorpdfstring{report()}{report()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Avg\+Fit\+::report (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dfd/classAvgFit_a78ac6ba410c7f44b543e3b7202e046ca_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{d4/dfd/classAvgFit_a78ac6ba410c7f44b543e3b7202e046ca_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/\mbox{\hyperlink{lib_2fitting__lib_2avg__fitter_8h}{avg\+\_\+fitter.\+h}}\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/\mbox{\hyperlink{avg__fitter_8cc}{avg\+\_\+fitter.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,1528 @@
+\hypertarget{structSEMBLE_1_1SembleMatrix}{}\section{S\+E\+M\+B\+LE\+:\+:Semble\+Matrix$<$ T $>$ Struct Template Reference}
+\label{structSEMBLE_1_1SembleMatrix}\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+
+
+{\ttfamily \#include $<$semble\+\_\+matrix.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a870fcbb89e1fd8f5ad2404edc58b53d6}{Semble\+Matrix}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_afaf672b694d5af975145b48ede17dfe5}{Semble\+Matrix}} (int bins\+\_\+, int rows\+\_\+, int cols\+\_\+)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a11b1a303d2acda92882da3328762c9d9}{Semble\+Matrix}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&other)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ae0777794c361366bc0840e443e60d18b}{Semble\+Matrix}} (const typename std\+::vector$<$ itpp\+::\+Mat$<$ T $>$ $>$ \&in)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a58bec7f5fd4b0169dfbbb472981e9dee}{$\sim$\+Semble\+Matrix}} ()
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a9ccb068428d7a8bb19cfb75ca2efbf09}{operator=}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&other)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a8f29a7755be1f2cad035c0fcafc522f5}{operator=}} (const itpp\+::\+Mat$<$ T $>$ \&other)
+\item 
+itpp\+::\+Mat$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_adb4d8183e55a5ff64f3cf8dd6cc21d92}{operator\mbox{[}$\,$\mbox{]}}} (int bin\+\_\+) const
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ac971ccfb246830b41dc70f8003281cae}{operator()}} (int row\+\_\+, int col\+\_\+) const
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a31078e328f597a99646b6f12caa01418}{get\+Ensem\+Element}} (int row\+\_\+, int col\+\_\+) const
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_abebebe665ebbe033993dbc10e29c73e3}{operator()}} (int bin\+\_\+, int row\+\_\+, int col\+\_\+) const
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_aeee188c8f5e6f655d9d4ae52e8ff70b4}{get\+Row}} (int row) const
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_afaaa55df8ea1fc3e27b2100d5cc70d78}{get\+Col}} (int col) const
+\item 
+itpp\+::\+Mat$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a3118ba5b51d9bf99f0c33fc769bca336}{operator\mbox{[}$\,$\mbox{]}}} (int bin)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a84fd4f9ffc4012e6e09faa054ed57908}{load\+Ensem\+Element}} (int row\+\_\+, int col\+\_\+, const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&ensem)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a1b68e0d33a0d6699d94590135e3f4163}{set\+Element}} (int bin\+\_\+, int row\+\_\+, int col\+\_\+, const T elem\+\_\+)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a5840aaaabbade4c2714f3bfd99d150a8}{set\+Element}} (int bin\+\_\+, int row\+\_\+, int col\+\_\+, const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&scalar)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a1b6d5a9a3816e9d98eb55a71a5fa1a5f}{zeros}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_aef0a3843776f6b716f466616c10b1cd2}{ones}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a7553dc6264308f6f0755e46ed49c3df4}{append\+\_\+row}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$ T $>$ \&new\+\_\+row)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a823a02fc92f954965ca57bd5cbe72cfe}{append\+\_\+row}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&new\+\_\+rows)
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a08e062d74d9de22f303e1ab957eb77f2}{getN}} (void) const
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a26d2ee5bf9ad9cb0fdd30bce5abadf92}{getM}} (void) const
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_aecff047627ee656c5836dcdf873c8ad6}{getB}} (void) const
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a89cbc720521103b2a30228a3ca3b1e03}{rows}} (void) const
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_af0d467ec8fe85b4947556ad5d25bcda0}{cols}} (void) const
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_af79972f16dd8874677ed61b5bfdc7ed3}{bins}} (void) const
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_abd156f95830c6b27aac722d4346901cc}{setN}} (int n)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_acbb4c25efd64633247fc6119a0d427ca}{setM}} (int m)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a3efa5315ec7e5fd9491e5904479c82ec}{setB}} (int b)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a648b1088d29de6b44ca6508492939b42}{del\+\_\+rows}} (int r1, int r2)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a6e73d380227b99dd131a8c39742734a0}{del\+\_\+cols}} (int c1, int c2)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_aa489bc3fac488706d97e78519e7334df}{rows}} (int r)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a06252460e771d092f72f9d7dfee55084}{cols}} (int c)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ae3efc835049db0182eaf149bcbf9d142}{bins}} (int b)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a376b3b7cc061b6d20370cb78ade11b0e}{re\+Dim}} (int b, int c)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a9bb9814650ff3bd6c43656781811391b}{re\+Dim}} (int b, int r, int c)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ab778c582ca37ce69f2f9ab1074af0ca6}{dimensions}} (const std\+::string \&msg) const
+\item 
+itpp\+::\+Mat$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a53a5289f03357a50c6504282100e4237}{mean}} (void) const
+\item 
+itpp\+::\+Mat$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a62af996687fe0bd0444fc4360b1b651f}{variance}} (void) const
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a4d2124fd0ca69d6e0759080eb4aec67b}{rescale\+Semble\+Down}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a7015574fba80f7dbabb0501567c5b58c}{rescale\+Semble\+Up}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a8073a3547ac8aa58aa4c76a11328d776}{rescale\+Ensem\+Down}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a6c6da8677941f6422d30c582f6fd87c0}{rescale\+Ensem\+Up}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a5936a2f5446365cd0eafb0ede754d392}{operator+=}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a0196369ecba26c3cf14d9741d49de9d0}{operator+=}} (const itpp\+::\+Mat$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a61af6d42338efa84f4ed2456c4799445}{operator-\/=}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a327dbea8055acd490fb9848a512f7581}{operator-\/=}} (const itpp\+::\+Mat$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ac14d8431e3f54854981c8a2355cbcc5b}{operator$\ast$=}} (const T \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a9da9280a327b75bb2a7d58080ef6aa59}{operator$\ast$=}} (const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a0170ab204b392638e23a215fe9943cd5}{operator$\ast$=}} (const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_aa96c5b6adbf7c2a69d602d68d7abc863}{operator$\ast$=}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a602798716caad1042d39dc1c9dfd2730}{operator$\ast$=}} (const itpp\+::\+Mat$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a372ea71e90cececd03d22b6ac2076ff5}{operator/=}} (const T \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ab57fe2184f8f547f2cf6cdf71143f67f}{operator/=}} (const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a3af162e4847faabe6206811309d9ed8e}{operator/=}} (const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a2d9ca142e670502eb4f05c559dc33f1d}{hermitian\+Conjugate}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a560e987e3d3151b9d5c31b4bb919983a}{H}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a1005b8d94ad7731fe6826fd614203703}{adj}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a2013e3dd6f0dbfc71933b7e2c0a6e716}{transpose}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a1f306991f4b4e22697c8b1c5e1fc9d66}{tran}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ae1a1e21202bf3bb9198e8f769a3c9697}{conj}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a870fcbb89e1fd8f5ad2404edc58b53d6}{Semble\+Matrix}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_afaf672b694d5af975145b48ede17dfe5}{Semble\+Matrix}} (int bins\+\_\+, int rows\+\_\+, int cols\+\_\+)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a11b1a303d2acda92882da3328762c9d9}{Semble\+Matrix}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&other)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ae0777794c361366bc0840e443e60d18b}{Semble\+Matrix}} (const typename std\+::vector$<$ itpp\+::\+Mat$<$ T $>$ $>$ \&in)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a58bec7f5fd4b0169dfbbb472981e9dee}{$\sim$\+Semble\+Matrix}} ()
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a74e1c17cd1508165df588807c3ee5ce8}{operator=}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&other)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_aa8b242b6d0156b1cbaaa65dfa60f343b}{operator=}} (const itpp\+::\+Mat$<$ T $>$ \&other)
+\item 
+itpp\+::\+Mat$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_aa94e51e73d150167c5ad97d4c8291add}{operator\mbox{[}$\,$\mbox{]}}} (int bin\+\_\+) const
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ac971ccfb246830b41dc70f8003281cae}{operator()}} (int row\+\_\+, int col\+\_\+) const
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a94e51c97855304a2fc8a59ef4ee8b109}{get\+Ensem\+Element}} (int row\+\_\+, int col\+\_\+) const
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a8c7221108aa9bee53e6261599685944b}{operator()}} (int bin\+\_\+, int row\+\_\+, int col\+\_\+) const
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ad95bd96d7ebe3ece4ec35a3db8e3d517}{get\+Row}} (int row) const
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ac90d6f868b9a3731eadb99891c078149}{get\+Col}} (int col) const
+\item 
+itpp\+::\+Mat$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ae3f8a4a0618707cf388b9815f9f4b197}{operator\mbox{[}$\,$\mbox{]}}} (int bin)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a84fd4f9ffc4012e6e09faa054ed57908}{load\+Ensem\+Element}} (int row\+\_\+, int col\+\_\+, const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&ensem)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a1b68e0d33a0d6699d94590135e3f4163}{set\+Element}} (int bin\+\_\+, int row\+\_\+, int col\+\_\+, const T elem\+\_\+)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a5840aaaabbade4c2714f3bfd99d150a8}{set\+Element}} (int bin\+\_\+, int row\+\_\+, int col\+\_\+, const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&scalar)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a1b6d5a9a3816e9d98eb55a71a5fa1a5f}{zeros}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_aef0a3843776f6b716f466616c10b1cd2}{ones}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a7553dc6264308f6f0755e46ed49c3df4}{append\+\_\+row}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$ T $>$ \&new\+\_\+row)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a823a02fc92f954965ca57bd5cbe72cfe}{append\+\_\+row}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&new\+\_\+rows)
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a08e062d74d9de22f303e1ab957eb77f2}{getN}} (void) const
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a26d2ee5bf9ad9cb0fdd30bce5abadf92}{getM}} (void) const
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_aecff047627ee656c5836dcdf873c8ad6}{getB}} (void) const
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a89cbc720521103b2a30228a3ca3b1e03}{rows}} (void) const
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_af0d467ec8fe85b4947556ad5d25bcda0}{cols}} (void) const
+\item 
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_af79972f16dd8874677ed61b5bfdc7ed3}{bins}} (void) const
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_abd156f95830c6b27aac722d4346901cc}{setN}} (int n)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_acbb4c25efd64633247fc6119a0d427ca}{setM}} (int m)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a3efa5315ec7e5fd9491e5904479c82ec}{setB}} (int b)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a648b1088d29de6b44ca6508492939b42}{del\+\_\+rows}} (int r1, int r2)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a6e73d380227b99dd131a8c39742734a0}{del\+\_\+cols}} (int c1, int c2)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_aa489bc3fac488706d97e78519e7334df}{rows}} (int r)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a06252460e771d092f72f9d7dfee55084}{cols}} (int c)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ae3efc835049db0182eaf149bcbf9d142}{bins}} (int b)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a376b3b7cc061b6d20370cb78ade11b0e}{re\+Dim}} (int b, int c)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a9bb9814650ff3bd6c43656781811391b}{re\+Dim}} (int b, int r, int c)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ab778c582ca37ce69f2f9ab1074af0ca6}{dimensions}} (const std\+::string \&msg) const
+\item 
+itpp\+::\+Mat$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a0013e054dd36b47be4616b828c0ef19d}{mean}} (void) const
+\item 
+itpp\+::\+Mat$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a00415604d082cee224aaf70367977b40}{variance}} (void) const
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a4d2124fd0ca69d6e0759080eb4aec67b}{rescale\+Semble\+Down}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a7015574fba80f7dbabb0501567c5b58c}{rescale\+Semble\+Up}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a8073a3547ac8aa58aa4c76a11328d776}{rescale\+Ensem\+Down}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a6c6da8677941f6422d30c582f6fd87c0}{rescale\+Ensem\+Up}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a76423cb9bf22b03e432cf612f395c404}{operator+=}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a88d796467ab566d47c31aa9bbff09356}{operator+=}} (const itpp\+::\+Mat$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a74f00dfff31b8befe21919b1147218d2}{operator-\/=}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a51fc6327be31b88c5478f4a4418aaa92}{operator-\/=}} (const itpp\+::\+Mat$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ac332d2c0b52d2727a4159a7a876d7e39}{operator$\ast$=}} (const T \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a3ef3830b0983652f9a25811ab7180357}{operator$\ast$=}} (const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a174956301b0911918f9ea9e1fde610dd}{operator$\ast$=}} (const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a44e7f1c8ae0ecd6c4cb43978efbbad4c}{operator$\ast$=}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a977ecfbf1cc215db0349a3dc8b5f6069}{operator$\ast$=}} (const itpp\+::\+Mat$<$ T $>$ \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ae57419bca4730110675256c1f4adeb8f}{operator/=}} (const T \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_aa93e79177451ce22b75d9eeecd789b4b}{operator/=}} (const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a2ecb3f62dbf02cbf3e0b9dc4828ce844}{operator/=}} (const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&rhs)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a13321a2e52ce610fd220853564a9cb3c}{hermitian\+Conjugate}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a560e987e3d3151b9d5c31b4bb919983a}{H}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a1005b8d94ad7731fe6826fd614203703}{adj}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a7e0c35ec29e619bde2f07fe9cbac56c6}{transpose}} (void)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a1f306991f4b4e22697c8b1c5e1fc9d66}{tran}} (void)
+\item 
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_ae1a1e21202bf3bb9198e8f769a3c9697}{conj}} (void)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a821dd2813fe3a716f33e5498a31745b9}{operator-\/}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&plus)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix_a821dd2813fe3a716f33e5498a31745b9}{operator-\/}} (const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&plus)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a870fcbb89e1fd8f5ad2404edc58b53d6}\label{structSEMBLE_1_1SembleMatrix_a870fcbb89e1fd8f5ad2404edc58b53d6}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!SembleMatrix@{SembleMatrix}}
+\index{SembleMatrix@{SembleMatrix}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{SembleMatrix()}{SembleMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}} (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_afaf672b694d5af975145b48ede17dfe5}\label{structSEMBLE_1_1SembleMatrix_afaf672b694d5af975145b48ede17dfe5}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!SembleMatrix@{SembleMatrix}}
+\index{SembleMatrix@{SembleMatrix}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{SembleMatrix()}{SembleMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}} (\begin{DoxyParamCaption}\item[{int}]{bins\+\_\+,  }\item[{int}]{rows\+\_\+,  }\item[{int}]{cols\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a11b1a303d2acda92882da3328762c9d9}\label{structSEMBLE_1_1SembleMatrix_a11b1a303d2acda92882da3328762c9d9}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!SembleMatrix@{SembleMatrix}}
+\index{SembleMatrix@{SembleMatrix}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{SembleMatrix()}{SembleMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ae0777794c361366bc0840e443e60d18b}\label{structSEMBLE_1_1SembleMatrix_ae0777794c361366bc0840e443e60d18b}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!SembleMatrix@{SembleMatrix}}
+\index{SembleMatrix@{SembleMatrix}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{SembleMatrix()}{SembleMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}} (\begin{DoxyParamCaption}\item[{const typename std\+::vector$<$ itpp\+::\+Mat$<$ T $>$ $>$ \&}]{in }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a58bec7f5fd4b0169dfbbb472981e9dee}\label{structSEMBLE_1_1SembleMatrix_a58bec7f5fd4b0169dfbbb472981e9dee}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!````~SembleMatrix@{$\sim$SembleMatrix}}
+\index{````~SembleMatrix@{$\sim$SembleMatrix}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{$\sim$SembleMatrix()}{~SembleMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a870fcbb89e1fd8f5ad2404edc58b53d6}\label{structSEMBLE_1_1SembleMatrix_a870fcbb89e1fd8f5ad2404edc58b53d6}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!SembleMatrix@{SembleMatrix}}
+\index{SembleMatrix@{SembleMatrix}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{SembleMatrix()}{SembleMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}} (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_afaf672b694d5af975145b48ede17dfe5}\label{structSEMBLE_1_1SembleMatrix_afaf672b694d5af975145b48ede17dfe5}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!SembleMatrix@{SembleMatrix}}
+\index{SembleMatrix@{SembleMatrix}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{SembleMatrix()}{SembleMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}} (\begin{DoxyParamCaption}\item[{int}]{bins\+\_\+,  }\item[{int}]{rows\+\_\+,  }\item[{int}]{cols\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a11b1a303d2acda92882da3328762c9d9}\label{structSEMBLE_1_1SembleMatrix_a11b1a303d2acda92882da3328762c9d9}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!SembleMatrix@{SembleMatrix}}
+\index{SembleMatrix@{SembleMatrix}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{SembleMatrix()}{SembleMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ae0777794c361366bc0840e443e60d18b}\label{structSEMBLE_1_1SembleMatrix_ae0777794c361366bc0840e443e60d18b}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!SembleMatrix@{SembleMatrix}}
+\index{SembleMatrix@{SembleMatrix}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{SembleMatrix()}{SembleMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}} (\begin{DoxyParamCaption}\item[{const typename std\+::vector$<$ itpp\+::\+Mat$<$ T $>$ $>$ \&}]{in }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a58bec7f5fd4b0169dfbbb472981e9dee}\label{structSEMBLE_1_1SembleMatrix_a58bec7f5fd4b0169dfbbb472981e9dee}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!````~SembleMatrix@{$\sim$SembleMatrix}}
+\index{````~SembleMatrix@{$\sim$SembleMatrix}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{$\sim$SembleMatrix()}{~SembleMatrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a1005b8d94ad7731fe6826fd614203703}\label{structSEMBLE_1_1SembleMatrix_a1005b8d94ad7731fe6826fd614203703}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!adj@{adj}}
+\index{adj@{adj}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{adj()}{adj()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::adj (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a1005b8d94ad7731fe6826fd614203703_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a1005b8d94ad7731fe6826fd614203703}\label{structSEMBLE_1_1SembleMatrix_a1005b8d94ad7731fe6826fd614203703}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!adj@{adj}}
+\index{adj@{adj}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{adj()}{adj()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::adj (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a1005b8d94ad7731fe6826fd614203703_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a7553dc6264308f6f0755e46ed49c3df4}\label{structSEMBLE_1_1SembleMatrix_a7553dc6264308f6f0755e46ed49c3df4}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!append\_row@{append\_row}}
+\index{append\_row@{append\_row}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{append\_row()}{append\_row()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::append\+\_\+row (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$ T $>$ \&}]{new\+\_\+row }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a7553dc6264308f6f0755e46ed49c3df4}\label{structSEMBLE_1_1SembleMatrix_a7553dc6264308f6f0755e46ed49c3df4}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!append\_row@{append\_row}}
+\index{append\_row@{append\_row}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{append\_row()}{append\_row()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::append\+\_\+row (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$ T $>$ \&}]{new\+\_\+row }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a7553dc6264308f6f0755e46ed49c3df4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a823a02fc92f954965ca57bd5cbe72cfe}\label{structSEMBLE_1_1SembleMatrix_a823a02fc92f954965ca57bd5cbe72cfe}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!append\_row@{append\_row}}
+\index{append\_row@{append\_row}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{append\_row()}{append\_row()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::append\+\_\+row (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{new\+\_\+rows }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a823a02fc92f954965ca57bd5cbe72cfe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a823a02fc92f954965ca57bd5cbe72cfe}\label{structSEMBLE_1_1SembleMatrix_a823a02fc92f954965ca57bd5cbe72cfe}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!append\_row@{append\_row}}
+\index{append\_row@{append\_row}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{append\_row()}{append\_row()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::append\+\_\+row (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{new\+\_\+rows }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_af79972f16dd8874677ed61b5bfdc7ed3}\label{structSEMBLE_1_1SembleMatrix_af79972f16dd8874677ed61b5bfdc7ed3}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!bins@{bins}}
+\index{bins@{bins}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{bins()}{bins()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::bins (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_af79972f16dd8874677ed61b5bfdc7ed3}\label{structSEMBLE_1_1SembleMatrix_af79972f16dd8874677ed61b5bfdc7ed3}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!bins@{bins}}
+\index{bins@{bins}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{bins()}{bins()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::bins (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_af79972f16dd8874677ed61b5bfdc7ed3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ae3efc835049db0182eaf149bcbf9d142}\label{structSEMBLE_1_1SembleMatrix_ae3efc835049db0182eaf149bcbf9d142}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!bins@{bins}}
+\index{bins@{bins}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{bins()}{bins()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::bins (\begin{DoxyParamCaption}\item[{int}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ae3efc835049db0182eaf149bcbf9d142}\label{structSEMBLE_1_1SembleMatrix_ae3efc835049db0182eaf149bcbf9d142}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!bins@{bins}}
+\index{bins@{bins}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{bins()}{bins()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::bins (\begin{DoxyParamCaption}\item[{int}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_af0d467ec8fe85b4947556ad5d25bcda0}\label{structSEMBLE_1_1SembleMatrix_af0d467ec8fe85b4947556ad5d25bcda0}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!cols@{cols}}
+\index{cols@{cols}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{cols()}{cols()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::cols (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_af0d467ec8fe85b4947556ad5d25bcda0}\label{structSEMBLE_1_1SembleMatrix_af0d467ec8fe85b4947556ad5d25bcda0}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!cols@{cols}}
+\index{cols@{cols}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{cols()}{cols()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::cols (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_af0d467ec8fe85b4947556ad5d25bcda0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a06252460e771d092f72f9d7dfee55084}\label{structSEMBLE_1_1SembleMatrix_a06252460e771d092f72f9d7dfee55084}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!cols@{cols}}
+\index{cols@{cols}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{cols()}{cols()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::cols (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a06252460e771d092f72f9d7dfee55084}\label{structSEMBLE_1_1SembleMatrix_a06252460e771d092f72f9d7dfee55084}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!cols@{cols}}
+\index{cols@{cols}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{cols()}{cols()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::cols (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ae1a1e21202bf3bb9198e8f769a3c9697}\label{structSEMBLE_1_1SembleMatrix_ae1a1e21202bf3bb9198e8f769a3c9697}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!conj@{conj}}
+\index{conj@{conj}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{conj()}{conj()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::conj (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_ae1a1e21202bf3bb9198e8f769a3c9697_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ae1a1e21202bf3bb9198e8f769a3c9697}\label{structSEMBLE_1_1SembleMatrix_ae1a1e21202bf3bb9198e8f769a3c9697}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!conj@{conj}}
+\index{conj@{conj}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{conj()}{conj()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::conj (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a6e73d380227b99dd131a8c39742734a0}\label{structSEMBLE_1_1SembleMatrix_a6e73d380227b99dd131a8c39742734a0}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!del\_cols@{del\_cols}}
+\index{del\_cols@{del\_cols}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{del\_cols()}{del\_cols()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::del\+\_\+cols (\begin{DoxyParamCaption}\item[{int}]{c1,  }\item[{int}]{c2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a6e73d380227b99dd131a8c39742734a0}\label{structSEMBLE_1_1SembleMatrix_a6e73d380227b99dd131a8c39742734a0}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!del\_cols@{del\_cols}}
+\index{del\_cols@{del\_cols}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{del\_cols()}{del\_cols()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::del\+\_\+cols (\begin{DoxyParamCaption}\item[{int}]{c1,  }\item[{int}]{c2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a648b1088d29de6b44ca6508492939b42}\label{structSEMBLE_1_1SembleMatrix_a648b1088d29de6b44ca6508492939b42}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!del\_rows@{del\_rows}}
+\index{del\_rows@{del\_rows}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{del\_rows()}{del\_rows()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::del\+\_\+rows (\begin{DoxyParamCaption}\item[{int}]{r1,  }\item[{int}]{r2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a648b1088d29de6b44ca6508492939b42}\label{structSEMBLE_1_1SembleMatrix_a648b1088d29de6b44ca6508492939b42}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!del\_rows@{del\_rows}}
+\index{del\_rows@{del\_rows}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{del\_rows()}{del\_rows()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::del\+\_\+rows (\begin{DoxyParamCaption}\item[{int}]{r1,  }\item[{int}]{r2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ab778c582ca37ce69f2f9ab1074af0ca6}\label{structSEMBLE_1_1SembleMatrix_ab778c582ca37ce69f2f9ab1074af0ca6}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!dimensions@{dimensions}}
+\index{dimensions@{dimensions}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{dimensions()}{dimensions()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::dimensions (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ab778c582ca37ce69f2f9ab1074af0ca6}\label{structSEMBLE_1_1SembleMatrix_ab778c582ca37ce69f2f9ab1074af0ca6}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!dimensions@{dimensions}}
+\index{dimensions@{dimensions}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{dimensions()}{dimensions()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::dimensions (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_aecff047627ee656c5836dcdf873c8ad6}\label{structSEMBLE_1_1SembleMatrix_aecff047627ee656c5836dcdf873c8ad6}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getB@{getB}}
+\index{getB@{getB}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getB()}{getB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::getB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/d87/structSEMBLE_1_1SembleMatrix_aecff047627ee656c5836dcdf873c8ad6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_aecff047627ee656c5836dcdf873c8ad6}\label{structSEMBLE_1_1SembleMatrix_aecff047627ee656c5836dcdf873c8ad6}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getB@{getB}}
+\index{getB@{getB}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getB()}{getB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::getB (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ac90d6f868b9a3731eadb99891c078149}\label{structSEMBLE_1_1SembleMatrix_ac90d6f868b9a3731eadb99891c078149}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getCol@{getCol}}
+\index{getCol@{getCol}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getCol()}{getCol()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$T$>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::get\+Col (\begin{DoxyParamCaption}\item[{int}]{col }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_afaaa55df8ea1fc3e27b2100d5cc70d78}\label{structSEMBLE_1_1SembleMatrix_afaaa55df8ea1fc3e27b2100d5cc70d78}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getCol@{getCol}}
+\index{getCol@{getCol}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getCol()}{getCol()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::get\+Col (\begin{DoxyParamCaption}\item[{int}]{col }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_afaaa55df8ea1fc3e27b2100d5cc70d78_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a31078e328f597a99646b6f12caa01418}\label{structSEMBLE_1_1SembleMatrix_a31078e328f597a99646b6f12caa01418}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getEnsemElement@{getEnsemElement}}
+\index{getEnsemElement@{getEnsemElement}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getEnsemElement()}{getEnsemElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::get\+Ensem\+Element (\begin{DoxyParamCaption}\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{df/d87/structSEMBLE_1_1SembleMatrix_a31078e328f597a99646b6f12caa01418_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a31078e328f597a99646b6f12caa01418_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a94e51c97855304a2fc8a59ef4ee8b109}\label{structSEMBLE_1_1SembleMatrix_a94e51c97855304a2fc8a59ef4ee8b109}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getEnsemElement@{getEnsemElement}}
+\index{getEnsemElement@{getEnsemElement}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getEnsemElement()}{getEnsemElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$T$>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::get\+Ensem\+Element (\begin{DoxyParamCaption}\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a26d2ee5bf9ad9cb0fdd30bce5abadf92}\label{structSEMBLE_1_1SembleMatrix_a26d2ee5bf9ad9cb0fdd30bce5abadf92}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getM@{getM}}
+\index{getM@{getM}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getM()}{getM()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::getM (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a26d2ee5bf9ad9cb0fdd30bce5abadf92}\label{structSEMBLE_1_1SembleMatrix_a26d2ee5bf9ad9cb0fdd30bce5abadf92}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getM@{getM}}
+\index{getM@{getM}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getM()}{getM()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::getM (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a26d2ee5bf9ad9cb0fdd30bce5abadf92_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a08e062d74d9de22f303e1ab957eb77f2}\label{structSEMBLE_1_1SembleMatrix_a08e062d74d9de22f303e1ab957eb77f2}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getN@{getN}}
+\index{getN@{getN}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getN()}{getN()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::getN (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{df/d87/structSEMBLE_1_1SembleMatrix_a08e062d74d9de22f303e1ab957eb77f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a08e062d74d9de22f303e1ab957eb77f2}\label{structSEMBLE_1_1SembleMatrix_a08e062d74d9de22f303e1ab957eb77f2}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getN@{getN}}
+\index{getN@{getN}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getN()}{getN()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::getN (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ad95bd96d7ebe3ece4ec35a3db8e3d517}\label{structSEMBLE_1_1SembleMatrix_ad95bd96d7ebe3ece4ec35a3db8e3d517}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getRow@{getRow}}
+\index{getRow@{getRow}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getRow()}{getRow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$T$>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::get\+Row (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_aeee188c8f5e6f655d9d4ae52e8ff70b4}\label{structSEMBLE_1_1SembleMatrix_aeee188c8f5e6f655d9d4ae52e8ff70b4}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!getRow@{getRow}}
+\index{getRow@{getRow}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{getRow()}{getRow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleVector}{Semble\+Vector}}$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::get\+Row (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_aeee188c8f5e6f655d9d4ae52e8ff70b4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_aeee188c8f5e6f655d9d4ae52e8ff70b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a560e987e3d3151b9d5c31b4bb919983a}\label{structSEMBLE_1_1SembleMatrix_a560e987e3d3151b9d5c31b4bb919983a}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!H@{H}}
+\index{H@{H}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{H()}{H()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::H (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a560e987e3d3151b9d5c31b4bb919983a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a560e987e3d3151b9d5c31b4bb919983a}\label{structSEMBLE_1_1SembleMatrix_a560e987e3d3151b9d5c31b4bb919983a}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!H@{H}}
+\index{H@{H}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{H()}{H()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::H (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a560e987e3d3151b9d5c31b4bb919983a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a2d9ca142e670502eb4f05c559dc33f1d}\label{structSEMBLE_1_1SembleMatrix_a2d9ca142e670502eb4f05c559dc33f1d}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!hermitianConjugate@{hermitianConjugate}}
+\index{hermitianConjugate@{hermitianConjugate}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{hermitianConjugate()}{hermitianConjugate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::hermitian\+Conjugate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a2d9ca142e670502eb4f05c559dc33f1d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a13321a2e52ce610fd220853564a9cb3c}\label{structSEMBLE_1_1SembleMatrix_a13321a2e52ce610fd220853564a9cb3c}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!hermitianConjugate@{hermitianConjugate}}
+\index{hermitianConjugate@{hermitianConjugate}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{hermitianConjugate()}{hermitianConjugate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::hermitian\+Conjugate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a84fd4f9ffc4012e6e09faa054ed57908}\label{structSEMBLE_1_1SembleMatrix_a84fd4f9ffc4012e6e09faa054ed57908}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!loadEnsemElement@{loadEnsemElement}}
+\index{loadEnsemElement@{loadEnsemElement}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{loadEnsemElement()}{loadEnsemElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::load\+Ensem\+Element (\begin{DoxyParamCaption}\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+,  }\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&}]{ensem }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a84fd4f9ffc4012e6e09faa054ed57908}\label{structSEMBLE_1_1SembleMatrix_a84fd4f9ffc4012e6e09faa054ed57908}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!loadEnsemElement@{loadEnsemElement}}
+\index{loadEnsemElement@{loadEnsemElement}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{loadEnsemElement()}{loadEnsemElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::load\+Ensem\+Element (\begin{DoxyParamCaption}\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+,  }\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&}]{ensem }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{df/d87/structSEMBLE_1_1SembleMatrix_a84fd4f9ffc4012e6e09faa054ed57908_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a84fd4f9ffc4012e6e09faa054ed57908_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a53a5289f03357a50c6504282100e4237}\label{structSEMBLE_1_1SembleMatrix_a53a5289f03357a50c6504282100e4237}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!mean@{mean}}
+\index{mean@{mean}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{mean()}{mean()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+itpp\+::\+Mat$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::mean (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{df/d87/structSEMBLE_1_1SembleMatrix_a53a5289f03357a50c6504282100e4237_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a0013e054dd36b47be4616b828c0ef19d}\label{structSEMBLE_1_1SembleMatrix_a0013e054dd36b47be4616b828c0ef19d}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!mean@{mean}}
+\index{mean@{mean}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{mean()}{mean()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+itpp\+::\+Mat$<$T$>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::mean (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_aef0a3843776f6b716f466616c10b1cd2}\label{structSEMBLE_1_1SembleMatrix_aef0a3843776f6b716f466616c10b1cd2}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!ones@{ones}}
+\index{ones@{ones}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{ones()}{ones()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::ones (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_aef0a3843776f6b716f466616c10b1cd2}\label{structSEMBLE_1_1SembleMatrix_aef0a3843776f6b716f466616c10b1cd2}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!ones@{ones}}
+\index{ones@{ones}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{ones()}{ones()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::ones (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ac971ccfb246830b41dc70f8003281cae}\label{structSEMBLE_1_1SembleMatrix_ac971ccfb246830b41dc70f8003281cae}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$T$>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ac971ccfb246830b41dc70f8003281cae}\label{structSEMBLE_1_1SembleMatrix_ac971ccfb246830b41dc70f8003281cae}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$T$>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_abebebe665ebbe033993dbc10e29c73e3}\label{structSEMBLE_1_1SembleMatrix_abebebe665ebbe033993dbc10e29c73e3}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{bin\+\_\+,  }\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{df/d87/structSEMBLE_1_1SembleMatrix_abebebe665ebbe033993dbc10e29c73e3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a8c7221108aa9bee53e6261599685944b}\label{structSEMBLE_1_1SembleMatrix_a8c7221108aa9bee53e6261599685944b}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$T$>$\+::Type \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{bin\+\_\+,  }\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ac14d8431e3f54854981c8a2355cbcc5b}\label{structSEMBLE_1_1SembleMatrix_ac14d8431e3f54854981c8a2355cbcc5b}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const T \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ac332d2c0b52d2727a4159a7a876d7e39}\label{structSEMBLE_1_1SembleMatrix_ac332d2c0b52d2727a4159a7a876d7e39}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const T \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a9da9280a327b75bb2a7d58080ef6aa59}\label{structSEMBLE_1_1SembleMatrix_a9da9280a327b75bb2a7d58080ef6aa59}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&}]{rhs }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{df/d87/structSEMBLE_1_1SembleMatrix_a9da9280a327b75bb2a7d58080ef6aa59_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a3ef3830b0983652f9a25811ab7180357}\label{structSEMBLE_1_1SembleMatrix_a3ef3830b0983652f9a25811ab7180357}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a0170ab204b392638e23a215fe9943cd5}\label{structSEMBLE_1_1SembleMatrix_a0170ab204b392638e23a215fe9943cd5}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&}]{rhs }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a0170ab204b392638e23a215fe9943cd5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a174956301b0911918f9ea9e1fde610dd}\label{structSEMBLE_1_1SembleMatrix_a174956301b0911918f9ea9e1fde610dd}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_aa96c5b6adbf7c2a69d602d68d7abc863}\label{structSEMBLE_1_1SembleMatrix_aa96c5b6adbf7c2a69d602d68d7abc863}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_aa96c5b6adbf7c2a69d602d68d7abc863_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a44e7f1c8ae0ecd6c4cb43978efbbad4c}\label{structSEMBLE_1_1SembleMatrix_a44e7f1c8ae0ecd6c4cb43978efbbad4c}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a602798716caad1042d39dc1c9dfd2730}\label{structSEMBLE_1_1SembleMatrix_a602798716caad1042d39dc1c9dfd2730}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const itpp\+::\+Mat$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a977ecfbf1cc215db0349a3dc8b5f6069}\label{structSEMBLE_1_1SembleMatrix_a977ecfbf1cc215db0349a3dc8b5f6069}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const itpp\+::\+Mat$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a5936a2f5446365cd0eafb0ede754d392}\label{structSEMBLE_1_1SembleMatrix_a5936a2f5446365cd0eafb0ede754d392}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a5936a2f5446365cd0eafb0ede754d392_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a76423cb9bf22b03e432cf612f395c404}\label{structSEMBLE_1_1SembleMatrix_a76423cb9bf22b03e432cf612f395c404}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a0196369ecba26c3cf14d9741d49de9d0}\label{structSEMBLE_1_1SembleMatrix_a0196369ecba26c3cf14d9741d49de9d0}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const itpp\+::\+Mat$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a88d796467ab566d47c31aa9bbff09356}\label{structSEMBLE_1_1SembleMatrix_a88d796467ab566d47c31aa9bbff09356}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const itpp\+::\+Mat$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a61af6d42338efa84f4ed2456c4799445}\label{structSEMBLE_1_1SembleMatrix_a61af6d42338efa84f4ed2456c4799445}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a61af6d42338efa84f4ed2456c4799445_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a74f00dfff31b8befe21919b1147218d2}\label{structSEMBLE_1_1SembleMatrix_a74f00dfff31b8befe21919b1147218d2}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a327dbea8055acd490fb9848a512f7581}\label{structSEMBLE_1_1SembleMatrix_a327dbea8055acd490fb9848a512f7581}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const itpp\+::\+Mat$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a51fc6327be31b88c5478f4a4418aaa92}\label{structSEMBLE_1_1SembleMatrix_a51fc6327be31b88c5478f4a4418aaa92}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const itpp\+::\+Mat$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a372ea71e90cececd03d22b6ac2076ff5}\label{structSEMBLE_1_1SembleMatrix_a372ea71e90cececd03d22b6ac2076ff5}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ae57419bca4730110675256c1f4adeb8f}\label{structSEMBLE_1_1SembleMatrix_ae57419bca4730110675256c1f4adeb8f}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_aa93e79177451ce22b75d9eeecd789b4b}\label{structSEMBLE_1_1SembleMatrix_aa93e79177451ce22b75d9eeecd789b4b}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ab57fe2184f8f547f2cf6cdf71143f67f}\label{structSEMBLE_1_1SembleMatrix_ab57fe2184f8f547f2cf6cdf71143f67f}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&}]{rhs }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{df/d87/structSEMBLE_1_1SembleMatrix_ab57fe2184f8f547f2cf6cdf71143f67f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a2ecb3f62dbf02cbf3e0b9dc4828ce844}\label{structSEMBLE_1_1SembleMatrix_a2ecb3f62dbf02cbf3e0b9dc4828ce844}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&}]{rhs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a3af162e4847faabe6206811309d9ed8e}\label{structSEMBLE_1_1SembleMatrix_a3af162e4847faabe6206811309d9ed8e}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteEnsem}{Promote\+Ensem}}$<$ T $>$\+::Type \&}]{rhs }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a3af162e4847faabe6206811309d9ed8e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a9ccb068428d7a8bb19cfb75ca2efbf09}\label{structSEMBLE_1_1SembleMatrix_a9ccb068428d7a8bb19cfb75ca2efbf09}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a74e1c17cd1508165df588807c3ee5ce8}\label{structSEMBLE_1_1SembleMatrix_a74e1c17cd1508165df588807c3ee5ce8}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a8f29a7755be1f2cad035c0fcafc522f5}\label{structSEMBLE_1_1SembleMatrix_a8f29a7755be1f2cad035c0fcafc522f5}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const itpp\+::\+Mat$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_aa8b242b6d0156b1cbaaa65dfa60f343b}\label{structSEMBLE_1_1SembleMatrix_aa8b242b6d0156b1cbaaa65dfa60f343b}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const itpp\+::\+Mat$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_adb4d8183e55a5ff64f3cf8dd6cc21d92}\label{structSEMBLE_1_1SembleMatrix_adb4d8183e55a5ff64f3cf8dd6cc21d92}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+itpp\+::\+Mat$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{bin\+\_\+ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_aa94e51e73d150167c5ad97d4c8291add}\label{structSEMBLE_1_1SembleMatrix_aa94e51e73d150167c5ad97d4c8291add}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+itpp\+::\+Mat$<$T$>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{bin\+\_\+ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_ae3f8a4a0618707cf388b9815f9f4b197}\label{structSEMBLE_1_1SembleMatrix_ae3f8a4a0618707cf388b9815f9f4b197}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+itpp\+::\+Mat$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{bin }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a3118ba5b51d9bf99f0c33fc769bca336}\label{structSEMBLE_1_1SembleMatrix_a3118ba5b51d9bf99f0c33fc769bca336}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+itpp\+::\+Mat$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{bin }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a376b3b7cc061b6d20370cb78ade11b0e}\label{structSEMBLE_1_1SembleMatrix_a376b3b7cc061b6d20370cb78ade11b0e}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!reDim@{reDim}}
+\index{reDim@{reDim}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{reDim()}{reDim()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::re\+Dim (\begin{DoxyParamCaption}\item[{int}]{b,  }\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a376b3b7cc061b6d20370cb78ade11b0e}\label{structSEMBLE_1_1SembleMatrix_a376b3b7cc061b6d20370cb78ade11b0e}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!reDim@{reDim}}
+\index{reDim@{reDim}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{reDim()}{reDim()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::re\+Dim (\begin{DoxyParamCaption}\item[{int}]{b,  }\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a376b3b7cc061b6d20370cb78ade11b0e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a9bb9814650ff3bd6c43656781811391b}\label{structSEMBLE_1_1SembleMatrix_a9bb9814650ff3bd6c43656781811391b}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!reDim@{reDim}}
+\index{reDim@{reDim}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{reDim()}{reDim()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::re\+Dim (\begin{DoxyParamCaption}\item[{int}]{b,  }\item[{int}]{r,  }\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a9bb9814650ff3bd6c43656781811391b}\label{structSEMBLE_1_1SembleMatrix_a9bb9814650ff3bd6c43656781811391b}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!reDim@{reDim}}
+\index{reDim@{reDim}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{reDim()}{reDim()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::re\+Dim (\begin{DoxyParamCaption}\item[{int}]{b,  }\item[{int}]{r,  }\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a8073a3547ac8aa58aa4c76a11328d776}\label{structSEMBLE_1_1SembleMatrix_a8073a3547ac8aa58aa4c76a11328d776}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rescaleEnsemDown@{rescaleEnsemDown}}
+\index{rescaleEnsemDown@{rescaleEnsemDown}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rescaleEnsemDown()}{rescaleEnsemDown()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rescale\+Ensem\+Down (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a8073a3547ac8aa58aa4c76a11328d776}\label{structSEMBLE_1_1SembleMatrix_a8073a3547ac8aa58aa4c76a11328d776}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rescaleEnsemDown@{rescaleEnsemDown}}
+\index{rescaleEnsemDown@{rescaleEnsemDown}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rescaleEnsemDown()}{rescaleEnsemDown()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rescale\+Ensem\+Down (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a8073a3547ac8aa58aa4c76a11328d776_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a6c6da8677941f6422d30c582f6fd87c0}\label{structSEMBLE_1_1SembleMatrix_a6c6da8677941f6422d30c582f6fd87c0}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rescaleEnsemUp@{rescaleEnsemUp}}
+\index{rescaleEnsemUp@{rescaleEnsemUp}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rescaleEnsemUp()}{rescaleEnsemUp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rescale\+Ensem\+Up (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a6c6da8677941f6422d30c582f6fd87c0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a6c6da8677941f6422d30c582f6fd87c0}\label{structSEMBLE_1_1SembleMatrix_a6c6da8677941f6422d30c582f6fd87c0}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rescaleEnsemUp@{rescaleEnsemUp}}
+\index{rescaleEnsemUp@{rescaleEnsemUp}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rescaleEnsemUp()}{rescaleEnsemUp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rescale\+Ensem\+Up (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a4d2124fd0ca69d6e0759080eb4aec67b}\label{structSEMBLE_1_1SembleMatrix_a4d2124fd0ca69d6e0759080eb4aec67b}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rescaleSembleDown@{rescaleSembleDown}}
+\index{rescaleSembleDown@{rescaleSembleDown}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rescaleSembleDown()}{rescaleSembleDown()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rescale\+Semble\+Down (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a4d2124fd0ca69d6e0759080eb4aec67b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a4d2124fd0ca69d6e0759080eb4aec67b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a4d2124fd0ca69d6e0759080eb4aec67b}\label{structSEMBLE_1_1SembleMatrix_a4d2124fd0ca69d6e0759080eb4aec67b}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rescaleSembleDown@{rescaleSembleDown}}
+\index{rescaleSembleDown@{rescaleSembleDown}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rescaleSembleDown()}{rescaleSembleDown()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rescale\+Semble\+Down (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a7015574fba80f7dbabb0501567c5b58c}\label{structSEMBLE_1_1SembleMatrix_a7015574fba80f7dbabb0501567c5b58c}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rescaleSembleUp@{rescaleSembleUp}}
+\index{rescaleSembleUp@{rescaleSembleUp}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rescaleSembleUp()}{rescaleSembleUp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rescale\+Semble\+Up (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a7015574fba80f7dbabb0501567c5b58c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a7015574fba80f7dbabb0501567c5b58c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a7015574fba80f7dbabb0501567c5b58c}\label{structSEMBLE_1_1SembleMatrix_a7015574fba80f7dbabb0501567c5b58c}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rescaleSembleUp@{rescaleSembleUp}}
+\index{rescaleSembleUp@{rescaleSembleUp}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rescaleSembleUp()}{rescaleSembleUp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rescale\+Semble\+Up (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a89cbc720521103b2a30228a3ca3b1e03}\label{structSEMBLE_1_1SembleMatrix_a89cbc720521103b2a30228a3ca3b1e03}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rows@{rows}}
+\index{rows@{rows}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rows()}{rows()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rows (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a89cbc720521103b2a30228a3ca3b1e03}\label{structSEMBLE_1_1SembleMatrix_a89cbc720521103b2a30228a3ca3b1e03}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rows@{rows}}
+\index{rows@{rows}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rows()}{rows()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+int \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rows (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a89cbc720521103b2a30228a3ca3b1e03_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_aa489bc3fac488706d97e78519e7334df}\label{structSEMBLE_1_1SembleMatrix_aa489bc3fac488706d97e78519e7334df}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rows@{rows}}
+\index{rows@{rows}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rows()}{rows()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rows (\begin{DoxyParamCaption}\item[{int}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_aa489bc3fac488706d97e78519e7334df}\label{structSEMBLE_1_1SembleMatrix_aa489bc3fac488706d97e78519e7334df}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!rows@{rows}}
+\index{rows@{rows}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{rows()}{rows()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::rows (\begin{DoxyParamCaption}\item[{int}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a3efa5315ec7e5fd9491e5904479c82ec}\label{structSEMBLE_1_1SembleMatrix_a3efa5315ec7e5fd9491e5904479c82ec}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!setB@{setB}}
+\index{setB@{setB}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{setB()}{setB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::setB (\begin{DoxyParamCaption}\item[{int}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a3efa5315ec7e5fd9491e5904479c82ec}\label{structSEMBLE_1_1SembleMatrix_a3efa5315ec7e5fd9491e5904479c82ec}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!setB@{setB}}
+\index{setB@{setB}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{setB()}{setB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::setB (\begin{DoxyParamCaption}\item[{int}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a1b68e0d33a0d6699d94590135e3f4163}\label{structSEMBLE_1_1SembleMatrix_a1b68e0d33a0d6699d94590135e3f4163}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!setElement@{setElement}}
+\index{setElement@{setElement}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{setElement()}{setElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::set\+Element (\begin{DoxyParamCaption}\item[{int}]{bin\+\_\+,  }\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+,  }\item[{const T}]{elem\+\_\+ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a1b68e0d33a0d6699d94590135e3f4163}\label{structSEMBLE_1_1SembleMatrix_a1b68e0d33a0d6699d94590135e3f4163}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!setElement@{setElement}}
+\index{setElement@{setElement}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{setElement()}{setElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::set\+Element (\begin{DoxyParamCaption}\item[{int}]{bin\+\_\+,  }\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+,  }\item[{const T}]{elem\+\_\+ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{df/d87/structSEMBLE_1_1SembleMatrix_a1b68e0d33a0d6699d94590135e3f4163_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a5840aaaabbade4c2714f3bfd99d150a8}\label{structSEMBLE_1_1SembleMatrix_a5840aaaabbade4c2714f3bfd99d150a8}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!setElement@{setElement}}
+\index{setElement@{setElement}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{setElement()}{setElement()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::set\+Element (\begin{DoxyParamCaption}\item[{int}]{bin\+\_\+,  }\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+,  }\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&}]{scalar }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a5840aaaabbade4c2714f3bfd99d150a8}\label{structSEMBLE_1_1SembleMatrix_a5840aaaabbade4c2714f3bfd99d150a8}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!setElement@{setElement}}
+\index{setElement@{setElement}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{setElement()}{setElement()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::set\+Element (\begin{DoxyParamCaption}\item[{int}]{bin\+\_\+,  }\item[{int}]{row\+\_\+,  }\item[{int}]{col\+\_\+,  }\item[{const typename \mbox{\hyperlink{structSEMBLE_1_1PromoteScalar}{Promote\+Scalar}}$<$ T $>$\+::Type \&}]{scalar }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{df/d87/structSEMBLE_1_1SembleMatrix_a5840aaaabbade4c2714f3bfd99d150a8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_acbb4c25efd64633247fc6119a0d427ca}\label{structSEMBLE_1_1SembleMatrix_acbb4c25efd64633247fc6119a0d427ca}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!setM@{setM}}
+\index{setM@{setM}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{setM()}{setM()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::setM (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_acbb4c25efd64633247fc6119a0d427ca}\label{structSEMBLE_1_1SembleMatrix_acbb4c25efd64633247fc6119a0d427ca}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!setM@{setM}}
+\index{setM@{setM}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{setM()}{setM()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::setM (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_abd156f95830c6b27aac722d4346901cc}\label{structSEMBLE_1_1SembleMatrix_abd156f95830c6b27aac722d4346901cc}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!setN@{setN}}
+\index{setN@{setN}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{setN()}{setN()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::setN (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_abd156f95830c6b27aac722d4346901cc}\label{structSEMBLE_1_1SembleMatrix_abd156f95830c6b27aac722d4346901cc}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!setN@{setN}}
+\index{setN@{setN}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{setN()}{setN()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::setN (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a1f306991f4b4e22697c8b1c5e1fc9d66}\label{structSEMBLE_1_1SembleMatrix_a1f306991f4b4e22697c8b1c5e1fc9d66}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!tran@{tran}}
+\index{tran@{tran}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{tran()}{tran()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::tran (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a1f306991f4b4e22697c8b1c5e1fc9d66_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a1f306991f4b4e22697c8b1c5e1fc9d66}\label{structSEMBLE_1_1SembleMatrix_a1f306991f4b4e22697c8b1c5e1fc9d66}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!tran@{tran}}
+\index{tran@{tran}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{tran()}{tran()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::tran (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a1f306991f4b4e22697c8b1c5e1fc9d66_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a7e0c35ec29e619bde2f07fe9cbac56c6}\label{structSEMBLE_1_1SembleMatrix_a7e0c35ec29e619bde2f07fe9cbac56c6}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!transpose@{transpose}}
+\index{transpose@{transpose}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{transpose()}{transpose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$\& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::transpose (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a2013e3dd6f0dbfc71933b7e2c0a6e716}\label{structSEMBLE_1_1SembleMatrix_a2013e3dd6f0dbfc71933b7e2c0a6e716}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!transpose@{transpose}}
+\index{transpose@{transpose}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{transpose()}{transpose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \& \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::transpose (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{df/d87/structSEMBLE_1_1SembleMatrix_a2013e3dd6f0dbfc71933b7e2c0a6e716_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a2013e3dd6f0dbfc71933b7e2c0a6e716_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a00415604d082cee224aaf70367977b40}\label{structSEMBLE_1_1SembleMatrix_a00415604d082cee224aaf70367977b40}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!variance@{variance}}
+\index{variance@{variance}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{variance()}{variance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+itpp\+::\+Mat$<$T$>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::variance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a62af996687fe0bd0444fc4360b1b651f}\label{structSEMBLE_1_1SembleMatrix_a62af996687fe0bd0444fc4360b1b651f}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!variance@{variance}}
+\index{variance@{variance}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{variance()}{variance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+itpp\+::\+Mat$<$ T $>$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::variance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a62af996687fe0bd0444fc4360b1b651f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{df/d87/structSEMBLE_1_1SembleMatrix_a62af996687fe0bd0444fc4360b1b651f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a1b6d5a9a3816e9d98eb55a71a5fa1a5f}\label{structSEMBLE_1_1SembleMatrix_a1b6d5a9a3816e9d98eb55a71a5fa1a5f}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!zeros@{zeros}}
+\index{zeros@{zeros}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{zeros()}{zeros()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::zeros (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d87/structSEMBLE_1_1SembleMatrix_a1b6d5a9a3816e9d98eb55a71a5fa1a5f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a1b6d5a9a3816e9d98eb55a71a5fa1a5f}\label{structSEMBLE_1_1SembleMatrix_a1b6d5a9a3816e9d98eb55a71a5fa1a5f}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!zeros@{zeros}}
+\index{zeros@{zeros}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{zeros()}{zeros()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{S\+E\+M\+B\+L\+E\+::\+Semble\+Matrix}}$<$ T $>$\+::zeros (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a821dd2813fe3a716f33e5498a31745b9}\label{structSEMBLE_1_1SembleMatrix_a821dd2813fe3a716f33e5498a31745b9}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$ operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{plus }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{structSEMBLE_1_1SembleMatrix_a821dd2813fe3a716f33e5498a31745b9}\label{structSEMBLE_1_1SembleMatrix_a821dd2813fe3a716f33e5498a31745b9}} 
+\index{SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!SEMBLE::SembleMatrix$<$ T $>$@{SEMBLE::SembleMatrix$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator-\/}{operator-}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$T$>$ operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ T $>$ \&}]{plus }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/semble/lib/semble/\mbox{\hyperlink{lib_2semble_2semble__matrix_8h}{semble\+\_\+matrix.\+h}}\end{DoxyCompactItemize}

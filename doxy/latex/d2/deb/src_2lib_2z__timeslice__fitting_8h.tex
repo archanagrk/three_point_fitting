@@ -1,0 +1,77 @@
+\hypertarget{src_2lib_2z__timeslice__fitting_8h}{}\section{/\+Users/archanar/three\+\_\+pt\+\_\+analysis/three\+\_\+pt\+\_\+fit/src/lib/z\+\_\+timeslice\+\_\+fitting.h File Reference}
+\label{src_2lib_2z__timeslice__fitting_8h}\index{/Users/archanar/three\_pt\_analysis/three\_pt\_fit/src/lib/z\_timeslice\_fitting.h@{/Users/archanar/three\_pt\_analysis/three\_pt\_fit/src/lib/z\_timeslice\_fitting.h}}
+{\ttfamily \#include \char`\"{}fitting\+\_\+lib/data\+\_\+selectors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fitting\+\_\+lib/fit\+\_\+quality\+\_\+factory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}z\+\_\+timeslice\+\_\+functions\+\_\+factory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fitting\+\_\+lib/fit\+\_\+selector.\+h\char`\"{}}\newline
+Include dependency graph for z\+\_\+timeslice\+\_\+fitting.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/df2/src_2lib_2z__timeslice__fitting_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{d6/de5/src_2lib_2z__timeslice__fitting_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfit__z__timeslice__control}{fit\+\_\+z\+\_\+timeslice\+\_\+control}}
+\item 
+struct \mbox{\hyperlink{structfit__z__timeslice__output}{fit\+\_\+z\+\_\+timeslice\+\_\+output}}
+\item 
+struct \mbox{\hyperlink{structplot__timeslice__function__data}{plot\+\_\+timeslice\+\_\+function\+\_\+data}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfit__z__timeslice__output}{fit\+\_\+z\+\_\+timeslice\+\_\+output}} \mbox{\hyperlink{src_2lib_2z__timeslice__fitting_8h_af65880e58f43583ee19aceb1197fc267}{fit\+\_\+z\+\_\+timeslice}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, int t0, const vector$<$ bool $>$ accepted\+\_\+data, \mbox{\hyperlink{structfit__z__timeslice__control}{fit\+\_\+z\+\_\+timeslice\+\_\+control}} control, \mbox{\hyperlink{classFitQuality}{Fit\+Quality}} $\ast$fit\+\_\+qual, double chisq\+\_\+ndof\+\_\+cutoff)
+\item 
+\mbox{\hyperlink{structplot__timeslice__function__data}{plot\+\_\+timeslice\+\_\+function\+\_\+data}} \mbox{\hyperlink{src_2lib_2z__timeslice__fitting_8h_a0245fb1ccfe834f7b3291da3f1a0bb01}{plot\+\_\+timeslice\+\_\+ensem\+\_\+function}} (\mbox{\hyperlink{classZtimesliceFunction}{Ztimeslice\+Function}} $\ast$fn, const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&ensem\+\_\+pars, const vector$<$ double $>$ \&t\+\_\+values)
+\item 
+vector$<$ pair$<$ double, double $>$ $>$ \mbox{\hyperlink{src_2lib_2z__timeslice__fitting_8h_a12681f9a5da4f79d05b27564d2706f2f}{plot\+\_\+timeslice\+\_\+function}} (\mbox{\hyperlink{classZtimesliceFunction}{Ztimeslice\+Function}} $\ast$fn, const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&pars, const vector$<$ double $>$ \&t\+\_\+values)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{src_2lib_2z__timeslice__fitting_8h_af65880e58f43583ee19aceb1197fc267}\label{src_2lib_2z__timeslice__fitting_8h_af65880e58f43583ee19aceb1197fc267}} 
+\index{z\_timeslice\_fitting.h@{z\_timeslice\_fitting.h}!fit\_z\_timeslice@{fit\_z\_timeslice}}
+\index{fit\_z\_timeslice@{fit\_z\_timeslice}!z\_timeslice\_fitting.h@{z\_timeslice\_fitting.h}}
+\subsubsection{\texorpdfstring{fit\_z\_timeslice()}{fit\_z\_timeslice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfit__z__timeslice__output}{fit\+\_\+z\+\_\+timeslice\+\_\+output}} fit\+\_\+z\+\_\+timeslice (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{int}]{t0,  }\item[{const vector$<$ bool $>$}]{accepted\+\_\+data,  }\item[{\mbox{\hyperlink{structfit__z__timeslice__control}{fit\+\_\+z\+\_\+timeslice\+\_\+control}}}]{control,  }\item[{\mbox{\hyperlink{classFitQuality}{Fit\+Quality}} $\ast$}]{fit\+\_\+qual,  }\item[{double}]{chisq\+\_\+ndof\+\_\+cutoff }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/deb/src_2lib_2z__timeslice__fitting_8h_af65880e58f43583ee19aceb1197fc267_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{src_2lib_2z__timeslice__fitting_8h_a0245fb1ccfe834f7b3291da3f1a0bb01}\label{src_2lib_2z__timeslice__fitting_8h_a0245fb1ccfe834f7b3291da3f1a0bb01}} 
+\index{z\_timeslice\_fitting.h@{z\_timeslice\_fitting.h}!plot\_timeslice\_ensem\_function@{plot\_timeslice\_ensem\_function}}
+\index{plot\_timeslice\_ensem\_function@{plot\_timeslice\_ensem\_function}!z\_timeslice\_fitting.h@{z\_timeslice\_fitting.h}}
+\subsubsection{\texorpdfstring{plot\_timeslice\_ensem\_function()}{plot\_timeslice\_ensem\_function()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structplot__timeslice__function__data}{plot\+\_\+timeslice\+\_\+function\+\_\+data}} plot\+\_\+timeslice\+\_\+ensem\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classZtimesliceFunction}{Ztimeslice\+Function}} $\ast$}]{fn,  }\item[{const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&}]{ensem\+\_\+pars,  }\item[{const vector$<$ double $>$ \&}]{t\+\_\+values }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d2/deb/src_2lib_2z__timeslice__fitting_8h_a0245fb1ccfe834f7b3291da3f1a0bb01_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{src_2lib_2z__timeslice__fitting_8h_a12681f9a5da4f79d05b27564d2706f2f}\label{src_2lib_2z__timeslice__fitting_8h_a12681f9a5da4f79d05b27564d2706f2f}} 
+\index{z\_timeslice\_fitting.h@{z\_timeslice\_fitting.h}!plot\_timeslice\_function@{plot\_timeslice\_function}}
+\index{plot\_timeslice\_function@{plot\_timeslice\_function}!z\_timeslice\_fitting.h@{z\_timeslice\_fitting.h}}
+\subsubsection{\texorpdfstring{plot\_timeslice\_function()}{plot\_timeslice\_function()}}
+{\footnotesize\ttfamily vector$<$ pair$<$double,double$>$ $>$ plot\+\_\+timeslice\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classZtimesliceFunction}{Ztimeslice\+Function}} $\ast$}]{fn,  }\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{pars,  }\item[{const vector$<$ double $>$ \&}]{t\+\_\+values }\end{DoxyParamCaption})}
+

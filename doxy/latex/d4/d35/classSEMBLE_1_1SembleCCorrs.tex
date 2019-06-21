@@ -1,0 +1,125 @@
+\hypertarget{classSEMBLE_1_1SembleCCorrs}{}\section{S\+E\+M\+B\+LE\+:\+:Semble\+C\+Corrs Class Reference}
+\label{classSEMBLE_1_1SembleCCorrs}\index{SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}}
+
+
+{\ttfamily \#include $<$semble\+\_\+load\+\_\+correlators.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSEMBLE_1_1SembleCCorrs_a16a87863192b0b8933203122230e672e}{Semble\+C\+Corrs}} ()
+\item 
+void \mbox{\hyperlink{classSEMBLE_1_1SembleCCorrs_aff77b082f126bb4094553ca6e9309985}{load\+From\+DB}} (const string \&dbfile, vector$<$ string $>$ ops\+List\+\_\+, vector$<$ int $>$ ops\+List\+C\+Conj\+\_\+, int irrepdim\+\_\+, F\+F\+::\+Key\+Hadron2\+Pt\+Corr\+\_\+t Default\+Keys, const string \&avg\+Mode, double avg\+Tol, const string \&badlistfile, bool avg\+Mom, vector$<$ Array$<$ int $>$ $>$ mom\+List\+\_\+)
+\item 
+void \mbox{\hyperlink{classSEMBLE_1_1SembleCCorrs_a9fa9fdd587137bb3434f8d9c329c6561}{load\+From\+DB}} (const string \&dbfile, vector$<$ string $>$ ops\+List\+\_\+, vector$<$ int $>$ ops\+List\+C\+Conj\+\_\+, const Array$<$ string $>$ \&opsxmlfiles, Array$<$ int $>$ avg\+Rows, double avg\+Tol, const string \&badlistfile, bool avg\+Mom, vector$<$ Array$<$ int $>$ $>$ mom\+List\+\_\+, Input\+Props\+Redstar\+Keys\+\_\+t key\+Params)
+\item 
+vector$<$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ double $>$ $>$ \mbox{\hyperlink{classSEMBLE_1_1SembleCCorrs_a8a6ab4bd80f866d566c8a62ec53d5a53}{rephase\+Corrs}} (const string \&rephase\+Mode, const string \&fold\+Time\+Reversal, int tmax)
+\item 
+\mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ std\+::complex$<$ double $>$ $>$ \mbox{\hyperlink{classSEMBLE_1_1SembleCCorrs_a800db1b6b985a3064c3adc0fa85aac0b}{get\+Ct}} (int t) const
+\item 
+Ensem\+Vector\+Complex \mbox{\hyperlink{classSEMBLE_1_1SembleCCorrs_a822cf18e7c93c9fb037d5823aacbd11c}{get\+Cij}} (int i, int j) const
+\item 
+int \mbox{\hyperlink{classSEMBLE_1_1SembleCCorrs_aac492c18afa3475a688db0ffa4d27ff6}{get\+Lt}} () const
+\item 
+int \mbox{\hyperlink{classSEMBLE_1_1SembleCCorrs_ac3f37c3af38d763addbec0cdb86d6117}{get\+Dim}} () const
+\item 
+int \mbox{\hyperlink{classSEMBLE_1_1SembleCCorrs_aca4e53b5dfff91c60c3072d39e516a33}{get\+Bins}} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSEMBLE_1_1SembleCCorrs_a16a87863192b0b8933203122230e672e}\label{classSEMBLE_1_1SembleCCorrs_a16a87863192b0b8933203122230e672e}} 
+\index{SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}!SembleCCorrs@{SembleCCorrs}}
+\index{SembleCCorrs@{SembleCCorrs}!SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}}
+\subsubsection{\texorpdfstring{SembleCCorrs()}{SembleCCorrs()}}
+{\footnotesize\ttfamily S\+E\+M\+B\+L\+E\+::\+Semble\+C\+Corrs\+::\+Semble\+C\+Corrs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSEMBLE_1_1SembleCCorrs_aca4e53b5dfff91c60c3072d39e516a33}\label{classSEMBLE_1_1SembleCCorrs_aca4e53b5dfff91c60c3072d39e516a33}} 
+\index{SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}!getBins@{getBins}}
+\index{getBins@{getBins}!SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}}
+\subsubsection{\texorpdfstring{getBins()}{getBins()}}
+{\footnotesize\ttfamily int S\+E\+M\+B\+L\+E\+::\+Semble\+C\+Corrs\+::get\+Bins (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d35/classSEMBLE_1_1SembleCCorrs_aca4e53b5dfff91c60c3072d39e516a33_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSEMBLE_1_1SembleCCorrs_a822cf18e7c93c9fb037d5823aacbd11c}\label{classSEMBLE_1_1SembleCCorrs_a822cf18e7c93c9fb037d5823aacbd11c}} 
+\index{SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}!getCij@{getCij}}
+\index{getCij@{getCij}!SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}}
+\subsubsection{\texorpdfstring{getCij()}{getCij()}}
+{\footnotesize\ttfamily Ensem\+Vector\+Complex S\+E\+M\+B\+L\+E\+::\+Semble\+C\+Corrs\+::get\+Cij (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classSEMBLE_1_1SembleCCorrs_a800db1b6b985a3064c3adc0fa85aac0b}\label{classSEMBLE_1_1SembleCCorrs_a800db1b6b985a3064c3adc0fa85aac0b}} 
+\index{SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}!getCt@{getCt}}
+\index{getCt@{getCt}!SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}}
+\subsubsection{\texorpdfstring{getCt()}{getCt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ std\+::complex$<$ double $>$ $>$ S\+E\+M\+B\+L\+E\+::\+Semble\+C\+Corrs\+::get\+Ct (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classSEMBLE_1_1SembleCCorrs_ac3f37c3af38d763addbec0cdb86d6117}\label{classSEMBLE_1_1SembleCCorrs_ac3f37c3af38d763addbec0cdb86d6117}} 
+\index{SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}!getDim@{getDim}}
+\index{getDim@{getDim}!SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}}
+\subsubsection{\texorpdfstring{getDim()}{getDim()}}
+{\footnotesize\ttfamily int S\+E\+M\+B\+L\+E\+::\+Semble\+C\+Corrs\+::get\+Dim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classSEMBLE_1_1SembleCCorrs_aac492c18afa3475a688db0ffa4d27ff6}\label{classSEMBLE_1_1SembleCCorrs_aac492c18afa3475a688db0ffa4d27ff6}} 
+\index{SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}!getLt@{getLt}}
+\index{getLt@{getLt}!SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}}
+\subsubsection{\texorpdfstring{getLt()}{getLt()}}
+{\footnotesize\ttfamily int S\+E\+M\+B\+L\+E\+::\+Semble\+C\+Corrs\+::get\+Lt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d35/classSEMBLE_1_1SembleCCorrs_aac492c18afa3475a688db0ffa4d27ff6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSEMBLE_1_1SembleCCorrs_aff77b082f126bb4094553ca6e9309985}\label{classSEMBLE_1_1SembleCCorrs_aff77b082f126bb4094553ca6e9309985}} 
+\index{SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}!loadFromDB@{loadFromDB}}
+\index{loadFromDB@{loadFromDB}!SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}}
+\subsubsection{\texorpdfstring{loadFromDB()}{loadFromDB()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void S\+E\+M\+B\+L\+E\+::\+Semble\+C\+Corrs\+::load\+From\+DB (\begin{DoxyParamCaption}\item[{const string \&}]{dbfile,  }\item[{vector$<$ string $>$}]{ops\+List\+\_\+,  }\item[{vector$<$ int $>$}]{ops\+List\+C\+Conj\+\_\+,  }\item[{int}]{irrepdim\+\_\+,  }\item[{F\+F\+::\+Key\+Hadron2\+Pt\+Corr\+\_\+t}]{Default\+Keys,  }\item[{const string \&}]{avg\+Mode,  }\item[{double}]{avg\+Tol,  }\item[{const string \&}]{badlistfile,  }\item[{bool}]{avg\+Mom,  }\item[{vector$<$ Array$<$ int $>$ $>$}]{mom\+List\+\_\+ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d35/classSEMBLE_1_1SembleCCorrs_aff77b082f126bb4094553ca6e9309985_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSEMBLE_1_1SembleCCorrs_a9fa9fdd587137bb3434f8d9c329c6561}\label{classSEMBLE_1_1SembleCCorrs_a9fa9fdd587137bb3434f8d9c329c6561}} 
+\index{SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}!loadFromDB@{loadFromDB}}
+\index{loadFromDB@{loadFromDB}!SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}}
+\subsubsection{\texorpdfstring{loadFromDB()}{loadFromDB()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void S\+E\+M\+B\+L\+E\+::\+Semble\+C\+Corrs\+::load\+From\+DB (\begin{DoxyParamCaption}\item[{const string \&}]{dbfile,  }\item[{vector$<$ string $>$}]{ops\+List\+\_\+,  }\item[{vector$<$ int $>$}]{ops\+List\+C\+Conj\+\_\+,  }\item[{const Array$<$ string $>$ \&}]{opsxmlfiles,  }\item[{Array$<$ int $>$}]{avg\+Rows,  }\item[{double}]{avg\+Tol,  }\item[{const string \&}]{badlistfile,  }\item[{bool}]{avg\+Mom,  }\item[{vector$<$ Array$<$ int $>$ $>$}]{mom\+List\+\_\+,  }\item[{Input\+Props\+Redstar\+Keys\+\_\+t}]{key\+Params }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSEMBLE_1_1SembleCCorrs_a8a6ab4bd80f866d566c8a62ec53d5a53}\label{classSEMBLE_1_1SembleCCorrs_a8a6ab4bd80f866d566c8a62ec53d5a53}} 
+\index{SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}!rephaseCorrs@{rephaseCorrs}}
+\index{rephaseCorrs@{rephaseCorrs}!SEMBLE::SembleCCorrs@{SEMBLE::SembleCCorrs}}
+\subsubsection{\texorpdfstring{rephaseCorrs()}{rephaseCorrs()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structSEMBLE_1_1SembleMatrix}{Semble\+Matrix}}$<$ double $>$ $>$ S\+E\+M\+B\+L\+E\+::\+Semble\+C\+Corrs\+::rephase\+Corrs (\begin{DoxyParamCaption}\item[{const string \&}]{rephase\+Mode,  }\item[{const string \&}]{fold\+Time\+Reversal,  }\item[{int}]{tmax }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d35/classSEMBLE_1_1SembleCCorrs_a8a6ab4bd80f866d566c8a62ec53d5a53_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/semble/lib/semble/\mbox{\hyperlink{semble__load__correlators_8h}{semble\+\_\+load\+\_\+correlators.\+h}}\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/semble/lib/semble/\mbox{\hyperlink{semble__load__correlators_8cc}{semble\+\_\+load\+\_\+correlators.\+cc}}\end{DoxyCompactItemize}

@@ -1,0 +1,373 @@
+\hypertarget{classEnsemFit}{}\section{Ensem\+Fit Class Reference}
+\label{classEnsemFit}\index{EnsemFit@{EnsemFit}}
+
+
+{\ttfamily \#include $<$ensem\+\_\+fitter.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEnsemFit_ae8fc27d065976ce4b2a357b457e7755d}{Ensem\+Fit}} (const \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} \&avg\+\_\+fit\+\_\+)
+\item 
+string \mbox{\hyperlink{classEnsemFit_a699cb4ec2b3d2107c67aaed422414f4d}{report}} () const
+\item 
+bool \mbox{\hyperlink{classEnsemFit_a5f154286b15fe9dbfe74fd5e00b4ed11}{is\+\_\+valid}} () const
+\item 
+\mbox{\hyperlink{structchisq__dof}{chisq\+\_\+dof}} \mbox{\hyperlink{classEnsemFit_a4122f6735d730a4759cc134056b8aa96}{get\+\_\+chisq}} () const
+\item 
+string \mbox{\hyperlink{classEnsemFit_a16f3c8ad4cdab894e5e4e1262bc9fcb6}{get\+\_\+fit\+\_\+name}} () const
+\item 
+map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \mbox{\hyperlink{classEnsemFit_aefa2dcc89aad7c209fac39ebba06372a}{get\+\_\+ensem\+\_\+param\+\_\+values}} () const
+\item 
+\mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} \mbox{\hyperlink{classEnsemFit_afa01cceaae9172656f561cdd2d63121b}{get\+\_\+ensem\+\_\+param\+\_\+value}} (string par\+\_\+name) const
+\item 
+\mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} \mbox{\hyperlink{classEnsemFit_a47405314215c4adc9420af46dd5d9572}{get\+\_\+minuit\+\_\+control}} () const
+\item 
+bool \mbox{\hyperlink{classEnsemFit_a1abab16ecba6b2a75d6d570585d35e9a}{is\+\_\+correlated}} () const
+\item 
+map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \mbox{\hyperlink{classEnsemFit_a24424685749c260b1db4e63e34de74ae}{get\+\_\+start\+\_\+params}} () const
+\item 
+const \mbox{\hyperlink{classData}{Data}} \& \mbox{\hyperlink{classEnsemFit_a3015ab1126ad56869931c3ee6e5f054f}{get\+\_\+data}} () const
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{classEnsemFit_a562d0418f52bf3491752e53a1f65f13b}{get\+\_\+active\+\_\+data}} () const
+\item 
+\mbox{\hyperlink{classFunction}{Function}} $\ast$ \mbox{\hyperlink{classEnsemFit_a0731f0c71cd1b0b6c9d26ebff9cc3620}{get\+\_\+function}} () const
+\item 
+const \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} \& \mbox{\hyperlink{classEnsemFit_ad84c2ab3c1bce4d11140ff275acd27ae}{get\+\_\+avg\+\_\+fit}} () const
+\item 
+\mbox{\hyperlink{classEnsemFit_ae8fc27d065976ce4b2a357b457e7755d}{Ensem\+Fit}} (const \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} \&avg\+\_\+fit\+\_\+)
+\item 
+string \mbox{\hyperlink{classEnsemFit_a699cb4ec2b3d2107c67aaed422414f4d}{report}} () const
+\item 
+bool \mbox{\hyperlink{classEnsemFit_a5f154286b15fe9dbfe74fd5e00b4ed11}{is\+\_\+valid}} () const
+\item 
+\mbox{\hyperlink{structchisq__dof}{chisq\+\_\+dof}} \mbox{\hyperlink{classEnsemFit_a4122f6735d730a4759cc134056b8aa96}{get\+\_\+chisq}} () const
+\item 
+string \mbox{\hyperlink{classEnsemFit_a16f3c8ad4cdab894e5e4e1262bc9fcb6}{get\+\_\+fit\+\_\+name}} () const
+\item 
+map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \mbox{\hyperlink{classEnsemFit_aefa2dcc89aad7c209fac39ebba06372a}{get\+\_\+ensem\+\_\+param\+\_\+values}} () const
+\item 
+\mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} \mbox{\hyperlink{classEnsemFit_afa01cceaae9172656f561cdd2d63121b}{get\+\_\+ensem\+\_\+param\+\_\+value}} (string par\+\_\+name) const
+\item 
+\mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} \mbox{\hyperlink{classEnsemFit_a47405314215c4adc9420af46dd5d9572}{get\+\_\+minuit\+\_\+control}} () const
+\item 
+bool \mbox{\hyperlink{classEnsemFit_a1abab16ecba6b2a75d6d570585d35e9a}{is\+\_\+correlated}} () const
+\item 
+map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \mbox{\hyperlink{classEnsemFit_a24424685749c260b1db4e63e34de74ae}{get\+\_\+start\+\_\+params}} () const
+\item 
+const \mbox{\hyperlink{classData}{Data}} \& \mbox{\hyperlink{classEnsemFit_a3015ab1126ad56869931c3ee6e5f054f}{get\+\_\+data}} () const
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{classEnsemFit_a562d0418f52bf3491752e53a1f65f13b}{get\+\_\+active\+\_\+data}} () const
+\item 
+\mbox{\hyperlink{classFunction}{Function}} $\ast$ \mbox{\hyperlink{classEnsemFit_a0731f0c71cd1b0b6c9d26ebff9cc3620}{get\+\_\+function}} () const
+\item 
+const \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} \& \mbox{\hyperlink{classEnsemFit_ad84c2ab3c1bce4d11140ff275acd27ae}{get\+\_\+avg\+\_\+fit}} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEnsemFit_ae8fc27d065976ce4b2a357b457e7755d}\label{classEnsemFit_ae8fc27d065976ce4b2a357b457e7755d}} 
+\index{EnsemFit@{EnsemFit}!EnsemFit@{EnsemFit}}
+\index{EnsemFit@{EnsemFit}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{EnsemFit()}{EnsemFit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Ensem\+Fit\+::\+Ensem\+Fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} \&}]{avg\+\_\+fit\+\_\+ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dae/classEnsemFit_ae8fc27d065976ce4b2a357b457e7755d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_ae8fc27d065976ce4b2a357b457e7755d}\label{classEnsemFit_ae8fc27d065976ce4b2a357b457e7755d}} 
+\index{EnsemFit@{EnsemFit}!EnsemFit@{EnsemFit}}
+\index{EnsemFit@{EnsemFit}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{EnsemFit()}{EnsemFit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Ensem\+Fit\+::\+Ensem\+Fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} \&}]{avg\+\_\+fit\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classEnsemFit_a562d0418f52bf3491752e53a1f65f13b}\label{classEnsemFit_a562d0418f52bf3491752e53a1f65f13b}} 
+\index{EnsemFit@{EnsemFit}!get\_active\_data@{get\_active\_data}}
+\index{get\_active\_data@{get\_active\_data}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_active\_data()}{get\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ Ensem\+Fit\+::get\+\_\+active\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dae/classEnsemFit_a562d0418f52bf3491752e53a1f65f13b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dae/classEnsemFit_a562d0418f52bf3491752e53a1f65f13b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_a562d0418f52bf3491752e53a1f65f13b}\label{classEnsemFit_a562d0418f52bf3491752e53a1f65f13b}} 
+\index{EnsemFit@{EnsemFit}!get\_active\_data@{get\_active\_data}}
+\index{get\_active\_data@{get\_active\_data}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_active\_data()}{get\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ Ensem\+Fit\+::get\+\_\+active\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dae/classEnsemFit_a562d0418f52bf3491752e53a1f65f13b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_ad84c2ab3c1bce4d11140ff275acd27ae}\label{classEnsemFit_ad84c2ab3c1bce4d11140ff275acd27ae}} 
+\index{EnsemFit@{EnsemFit}!get\_avg\_fit@{get\_avg\_fit}}
+\index{get\_avg\_fit@{get\_avg\_fit}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_avg\_fit()}{get\_avg\_fit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classAvgFit}{Avg\+Fit}}\& Ensem\+Fit\+::get\+\_\+avg\+\_\+fit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classEnsemFit_ad84c2ab3c1bce4d11140ff275acd27ae}\label{classEnsemFit_ad84c2ab3c1bce4d11140ff275acd27ae}} 
+\index{EnsemFit@{EnsemFit}!get\_avg\_fit@{get\_avg\_fit}}
+\index{get\_avg\_fit@{get\_avg\_fit}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_avg\_fit()}{get\_avg\_fit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classAvgFit}{Avg\+Fit}}\& Ensem\+Fit\+::get\+\_\+avg\+\_\+fit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classEnsemFit_a4122f6735d730a4759cc134056b8aa96}\label{classEnsemFit_a4122f6735d730a4759cc134056b8aa96}} 
+\index{EnsemFit@{EnsemFit}!get\_chisq@{get\_chisq}}
+\index{get\_chisq@{get\_chisq}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_chisq()}{get\_chisq()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structchisq__dof}{chisq\+\_\+dof}} Ensem\+Fit\+::get\+\_\+chisq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classEnsemFit_a4122f6735d730a4759cc134056b8aa96}\label{classEnsemFit_a4122f6735d730a4759cc134056b8aa96}} 
+\index{EnsemFit@{EnsemFit}!get\_chisq@{get\_chisq}}
+\index{get\_chisq@{get\_chisq}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_chisq()}{get\_chisq()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structchisq__dof}{chisq\+\_\+dof}} Ensem\+Fit\+::get\+\_\+chisq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classEnsemFit_a3015ab1126ad56869931c3ee6e5f054f}\label{classEnsemFit_a3015ab1126ad56869931c3ee6e5f054f}} 
+\index{EnsemFit@{EnsemFit}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_data()}{get\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classData}{Data}}\& Ensem\+Fit\+::get\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{dc/dae/classEnsemFit_a3015ab1126ad56869931c3ee6e5f054f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_a3015ab1126ad56869931c3ee6e5f054f}\label{classEnsemFit_a3015ab1126ad56869931c3ee6e5f054f}} 
+\index{EnsemFit@{EnsemFit}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_data()}{get\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classData}{Data}}\& Ensem\+Fit\+::get\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{dc/dae/classEnsemFit_a3015ab1126ad56869931c3ee6e5f054f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_afa01cceaae9172656f561cdd2d63121b}\label{classEnsemFit_afa01cceaae9172656f561cdd2d63121b}} 
+\index{EnsemFit@{EnsemFit}!get\_ensem\_param\_value@{get\_ensem\_param\_value}}
+\index{get\_ensem\_param\_value@{get\_ensem\_param\_value}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_ensem\_param\_value()}{get\_ensem\_param\_value()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} Ensem\+Fit\+::get\+\_\+ensem\+\_\+param\+\_\+value (\begin{DoxyParamCaption}\item[{string}]{par\+\_\+name }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEnsemFit_afa01cceaae9172656f561cdd2d63121b}\label{classEnsemFit_afa01cceaae9172656f561cdd2d63121b}} 
+\index{EnsemFit@{EnsemFit}!get\_ensem\_param\_value@{get\_ensem\_param\_value}}
+\index{get\_ensem\_param\_value@{get\_ensem\_param\_value}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_ensem\_param\_value()}{get\_ensem\_param\_value()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} Ensem\+Fit\+::get\+\_\+ensem\+\_\+param\+\_\+value (\begin{DoxyParamCaption}\item[{string}]{par\+\_\+name }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classEnsemFit_aefa2dcc89aad7c209fac39ebba06372a}\label{classEnsemFit_aefa2dcc89aad7c209fac39ebba06372a}} 
+\index{EnsemFit@{EnsemFit}!get\_ensem\_param\_values@{get\_ensem\_param\_values}}
+\index{get\_ensem\_param\_values@{get\_ensem\_param\_values}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_ensem\_param\_values()}{get\_ensem\_param\_values()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily map$<$string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}}$>$ Ensem\+Fit\+::get\+\_\+ensem\+\_\+param\+\_\+values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classEnsemFit_aefa2dcc89aad7c209fac39ebba06372a}\label{classEnsemFit_aefa2dcc89aad7c209fac39ebba06372a}} 
+\index{EnsemFit@{EnsemFit}!get\_ensem\_param\_values@{get\_ensem\_param\_values}}
+\index{get\_ensem\_param\_values@{get\_ensem\_param\_values}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_ensem\_param\_values()}{get\_ensem\_param\_values()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily map$<$string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}}$>$ Ensem\+Fit\+::get\+\_\+ensem\+\_\+param\+\_\+values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classEnsemFit_a16f3c8ad4cdab894e5e4e1262bc9fcb6}\label{classEnsemFit_a16f3c8ad4cdab894e5e4e1262bc9fcb6}} 
+\index{EnsemFit@{EnsemFit}!get\_fit\_name@{get\_fit\_name}}
+\index{get\_fit\_name@{get\_fit\_name}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_fit\_name()}{get\_fit\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Ensem\+Fit\+::get\+\_\+fit\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classEnsemFit_a16f3c8ad4cdab894e5e4e1262bc9fcb6}\label{classEnsemFit_a16f3c8ad4cdab894e5e4e1262bc9fcb6}} 
+\index{EnsemFit@{EnsemFit}!get\_fit\_name@{get\_fit\_name}}
+\index{get\_fit\_name@{get\_fit\_name}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_fit\_name()}{get\_fit\_name()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Ensem\+Fit\+::get\+\_\+fit\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classEnsemFit_a0731f0c71cd1b0b6c9d26ebff9cc3620}\label{classEnsemFit_a0731f0c71cd1b0b6c9d26ebff9cc3620}} 
+\index{EnsemFit@{EnsemFit}!get\_function@{get\_function}}
+\index{get\_function@{get\_function}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_function()}{get\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFunction}{Function}}$\ast$ Ensem\+Fit\+::get\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{dc/dae/classEnsemFit_a0731f0c71cd1b0b6c9d26ebff9cc3620_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_a0731f0c71cd1b0b6c9d26ebff9cc3620}\label{classEnsemFit_a0731f0c71cd1b0b6c9d26ebff9cc3620}} 
+\index{EnsemFit@{EnsemFit}!get\_function@{get\_function}}
+\index{get\_function@{get\_function}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_function()}{get\_function()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFunction}{Function}}$\ast$ Ensem\+Fit\+::get\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{dc/dae/classEnsemFit_a0731f0c71cd1b0b6c9d26ebff9cc3620_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_a47405314215c4adc9420af46dd5d9572}\label{classEnsemFit_a47405314215c4adc9420af46dd5d9572}} 
+\index{EnsemFit@{EnsemFit}!get\_minuit\_control@{get\_minuit\_control}}
+\index{get\_minuit\_control@{get\_minuit\_control}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_minuit\_control()}{get\_minuit\_control()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} Ensem\+Fit\+::get\+\_\+minuit\+\_\+control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{dc/dae/classEnsemFit_a47405314215c4adc9420af46dd5d9572_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_a47405314215c4adc9420af46dd5d9572}\label{classEnsemFit_a47405314215c4adc9420af46dd5d9572}} 
+\index{EnsemFit@{EnsemFit}!get\_minuit\_control@{get\_minuit\_control}}
+\index{get\_minuit\_control@{get\_minuit\_control}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_minuit\_control()}{get\_minuit\_control()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structMinuitControl}{Minuit\+Control}} Ensem\+Fit\+::get\+\_\+minuit\+\_\+control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{dc/dae/classEnsemFit_a47405314215c4adc9420af46dd5d9572_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_a24424685749c260b1db4e63e34de74ae}\label{classEnsemFit_a24424685749c260b1db4e63e34de74ae}} 
+\index{EnsemFit@{EnsemFit}!get\_start\_params@{get\_start\_params}}
+\index{get\_start\_params@{get\_start\_params}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_start\_params()}{get\_start\_params()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily map$<$string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}}$>$ Ensem\+Fit\+::get\+\_\+start\+\_\+params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{dc/dae/classEnsemFit_a24424685749c260b1db4e63e34de74ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_a24424685749c260b1db4e63e34de74ae}\label{classEnsemFit_a24424685749c260b1db4e63e34de74ae}} 
+\index{EnsemFit@{EnsemFit}!get\_start\_params@{get\_start\_params}}
+\index{get\_start\_params@{get\_start\_params}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{get\_start\_params()}{get\_start\_params()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily map$<$string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}}$>$ Ensem\+Fit\+::get\+\_\+start\+\_\+params (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{dc/dae/classEnsemFit_a24424685749c260b1db4e63e34de74ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_a1abab16ecba6b2a75d6d570585d35e9a}\label{classEnsemFit_a1abab16ecba6b2a75d6d570585d35e9a}} 
+\index{EnsemFit@{EnsemFit}!is\_correlated@{is\_correlated}}
+\index{is\_correlated@{is\_correlated}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{is\_correlated()}{is\_correlated()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Ensem\+Fit\+::is\+\_\+correlated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{dc/dae/classEnsemFit_a1abab16ecba6b2a75d6d570585d35e9a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_a1abab16ecba6b2a75d6d570585d35e9a}\label{classEnsemFit_a1abab16ecba6b2a75d6d570585d35e9a}} 
+\index{EnsemFit@{EnsemFit}!is\_correlated@{is\_correlated}}
+\index{is\_correlated@{is\_correlated}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{is\_correlated()}{is\_correlated()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Ensem\+Fit\+::is\+\_\+correlated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{dc/dae/classEnsemFit_a1abab16ecba6b2a75d6d570585d35e9a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_a5f154286b15fe9dbfe74fd5e00b4ed11}\label{classEnsemFit_a5f154286b15fe9dbfe74fd5e00b4ed11}} 
+\index{EnsemFit@{EnsemFit}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{is\_valid()}{is\_valid()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Ensem\+Fit\+::is\+\_\+valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classEnsemFit_a5f154286b15fe9dbfe74fd5e00b4ed11}\label{classEnsemFit_a5f154286b15fe9dbfe74fd5e00b4ed11}} 
+\index{EnsemFit@{EnsemFit}!is\_valid@{is\_valid}}
+\index{is\_valid@{is\_valid}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{is\_valid()}{is\_valid()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Ensem\+Fit\+::is\+\_\+valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classEnsemFit_a699cb4ec2b3d2107c67aaed422414f4d}\label{classEnsemFit_a699cb4ec2b3d2107c67aaed422414f4d}} 
+\index{EnsemFit@{EnsemFit}!report@{report}}
+\index{report@{report}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{report()}{report()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Ensem\+Fit\+::report (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dae/classEnsemFit_a699cb4ec2b3d2107c67aaed422414f4d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{dc/dae/classEnsemFit_a699cb4ec2b3d2107c67aaed422414f4d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classEnsemFit_a699cb4ec2b3d2107c67aaed422414f4d}\label{classEnsemFit_a699cb4ec2b3d2107c67aaed422414f4d}} 
+\index{EnsemFit@{EnsemFit}!report@{report}}
+\index{report@{report}!EnsemFit@{EnsemFit}}
+\subsubsection{\texorpdfstring{report()}{report()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Ensem\+Fit\+::report (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/\mbox{\hyperlink{lib_2fitting__lib_2ensem__fitter_8h}{ensem\+\_\+fitter.\+h}}\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/\mbox{\hyperlink{ensem__fitter_8cc}{ensem\+\_\+fitter.\+cc}}\end{DoxyCompactItemize}

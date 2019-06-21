@@ -1,0 +1,584 @@
+\hypertarget{classData}{}\section{Data Class Reference}
+\label{classData}\index{Data@{Data}}
+
+
+{\ttfamily \#include $<$data.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classData_af11f741cb7f587e2e495452a8905a22a}{Data}} ()
+\item 
+\mbox{\hyperlink{classData_a9f1ea96cc98b80ed3778ff5818cb91f8}{Data}} (const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$ $>$ \&x\+\_\+, const vector$<$ Ensem\+Real $>$ \&y\+\_\+)
+\item 
+\mbox{\hyperlink{classData_aab31956423290f0d62dcca47ab4d16dd}{$\sim$\+Data}} ()
+\item 
+void \mbox{\hyperlink{classData_acf9b4e6e52730e9da47d82bda61ac1ca}{make}} (const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$ $>$ \&x\+\_\+, const vector$<$ Ensem\+Real $>$ \&y\+\_\+)
+\item 
+bool \mbox{\hyperlink{classData_a804a4d59e6211aa54a629b31ad66cbd4}{is\+\_\+data\+\_\+init}} () const
+\item 
+int \mbox{\hyperlink{classData_a1ac2adcf6c6717759f820eceed4b55e4}{get\+\_\+n\+\_\+cfgs}} () const
+\item 
+int \mbox{\hyperlink{classData_a1ec16adf40ee062d8d75b33acfe156d5}{get\+\_\+n\+\_\+data}} () const
+\item 
+string \mbox{\hyperlink{classData_aeb6b453e589d11d200e711fbd7501e8f}{get\+\_\+abscissa\+\_\+type}} () const
+\item 
+bool \mbox{\hyperlink{classData_ad7e50542712441af6ad2a227193a777f}{get\+\_\+datum}} (\mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$x, Ensem\+Real \&y) const
+\item 
+bool \mbox{\hyperlink{classData_aab2d2ba01acb88ede5beb3ab54053d73}{get\+\_\+datum}} (\mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$x, double \&y\+\_\+val, double \&y\+\_\+err) const
+\item 
+const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$ $>$ \& \mbox{\hyperlink{classData_a79204577812567531adde90797885b3e}{get\+\_\+all\+\_\+x}} () const
+\item 
+const vector$<$ double $>$ \& \mbox{\hyperlink{classData_a5b3bba18a4893fc7cb415beaed1ef859}{get\+\_\+all\+\_\+y\+\_\+mean}} () const
+\item 
+const vector$<$ double $>$ \& \mbox{\hyperlink{classData_ad4988122408ff487d5f891a9b04b3c83}{get\+\_\+all\+\_\+y\+\_\+err}} () const
+\item 
+const itpp\+::mat \& \mbox{\hyperlink{classData_a19b920edbea6526f6db747bfe1c4c1c2}{get\+\_\+cov}} () const
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{classData_af5d089365e8be78e4cd486bda87f37b4}{make\+\_\+active\+\_\+data}} () const
+\item 
+itpp\+::mat \mbox{\hyperlink{classData_a39cfb18f88b5b75d640404d87b428820}{make\+\_\+inv\+\_\+cov}} (const vector$<$ bool $>$ \&active\+\_\+data, int \&n\+\_\+reset\+\_\+sv) const
+\item 
+void \mbox{\hyperlink{classData_a8faffbd514fe8831470ce0e982c048da}{set\+\_\+sv\+\_\+cut}} (double cut)
+\item 
+int \mbox{\hyperlink{classData_acde259686a74799b2fea4d1383d43ec4}{get\+\_\+active\+\_\+data}} (const vector$<$ bool $>$ \&active\+\_\+data, vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&x, vector$<$ double $>$ \&y, vector$<$ double $>$ \&y\+\_\+err, itpp\+::mat \&inv\+\_\+cov, int \&n\+\_\+reset\+\_\+sv) const
+\item 
+int \mbox{\hyperlink{classData_a0400209f4bebe1ba6128a11612677c24}{get\+\_\+active\+\_\+data}} (const vector$<$ bool $>$ \&active\+\_\+data, vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&x, vector$<$ double $>$ \&y) const
+\item 
+int \mbox{\hyperlink{classData_aa57667ce832cbf712b9a77a70ccfdbac}{get\+\_\+active\+\_\+data}} (const vector$<$ bool $>$ \&active\+\_\+data, vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&x, vector$<$ double $>$ \&y, vector$<$ double $>$ \&y\+\_\+err) const
+\item 
+int \mbox{\hyperlink{classData_a2852ff59adff1f77d3e0ce4c620fe501}{get\+\_\+active\+\_\+data\+\_\+scaled\+\_\+down\+\_\+cfg}} (int cfg, const vector$<$ bool $>$ \&active\+\_\+data, vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&x, vector$<$ double $>$ \&y) const
+\item 
+string \mbox{\hyperlink{classData_a8663c7e41a90bdc730ff8b6cbe046c52}{print\+\_\+data}} (const vector$<$ bool $>$ \&active\+\_\+data) const
+\item 
+string \mbox{\hyperlink{classData_a255a7abe193d5dfbd77fb957942bda64}{print\+\_\+data}} () const
+\item 
+string \mbox{\hyperlink{classData_a9dd9812c56754c985d50e9a5fc855320}{print\+\_\+plot\+\_\+data}} (const vector$<$ bool $>$ \&active\+\_\+data) const
+\item 
+\mbox{\hyperlink{classData_af11f741cb7f587e2e495452a8905a22a}{Data}} ()
+\item 
+\mbox{\hyperlink{classData_a9f1ea96cc98b80ed3778ff5818cb91f8}{Data}} (const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$ $>$ \&x\+\_\+, const vector$<$ Ensem\+Real $>$ \&y\+\_\+)
+\item 
+\mbox{\hyperlink{classData_aab31956423290f0d62dcca47ab4d16dd}{$\sim$\+Data}} ()
+\item 
+void \mbox{\hyperlink{classData_acf9b4e6e52730e9da47d82bda61ac1ca}{make}} (const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$ $>$ \&x\+\_\+, const vector$<$ Ensem\+Real $>$ \&y\+\_\+)
+\item 
+bool \mbox{\hyperlink{classData_a804a4d59e6211aa54a629b31ad66cbd4}{is\+\_\+data\+\_\+init}} () const
+\item 
+int \mbox{\hyperlink{classData_a1ac2adcf6c6717759f820eceed4b55e4}{get\+\_\+n\+\_\+cfgs}} () const
+\item 
+int \mbox{\hyperlink{classData_a1ec16adf40ee062d8d75b33acfe156d5}{get\+\_\+n\+\_\+data}} () const
+\item 
+string \mbox{\hyperlink{classData_aeb6b453e589d11d200e711fbd7501e8f}{get\+\_\+abscissa\+\_\+type}} () const
+\item 
+bool \mbox{\hyperlink{classData_ad7e50542712441af6ad2a227193a777f}{get\+\_\+datum}} (\mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$x, Ensem\+Real \&y) const
+\item 
+bool \mbox{\hyperlink{classData_aab2d2ba01acb88ede5beb3ab54053d73}{get\+\_\+datum}} (\mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$x, double \&y\+\_\+val, double \&y\+\_\+err) const
+\item 
+const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$ $>$ \& \mbox{\hyperlink{classData_a79204577812567531adde90797885b3e}{get\+\_\+all\+\_\+x}} () const
+\item 
+const vector$<$ double $>$ \& \mbox{\hyperlink{classData_a5b3bba18a4893fc7cb415beaed1ef859}{get\+\_\+all\+\_\+y\+\_\+mean}} () const
+\item 
+const vector$<$ double $>$ \& \mbox{\hyperlink{classData_ad4988122408ff487d5f891a9b04b3c83}{get\+\_\+all\+\_\+y\+\_\+err}} () const
+\item 
+const itpp\+::mat \& \mbox{\hyperlink{classData_a19b920edbea6526f6db747bfe1c4c1c2}{get\+\_\+cov}} () const
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{classData_af5d089365e8be78e4cd486bda87f37b4}{make\+\_\+active\+\_\+data}} () const
+\item 
+itpp\+::mat \mbox{\hyperlink{classData_a39cfb18f88b5b75d640404d87b428820}{make\+\_\+inv\+\_\+cov}} (const vector$<$ bool $>$ \&active\+\_\+data, int \&n\+\_\+reset\+\_\+sv) const
+\item 
+void \mbox{\hyperlink{classData_a8faffbd514fe8831470ce0e982c048da}{set\+\_\+sv\+\_\+cut}} (double cut)
+\item 
+int \mbox{\hyperlink{classData_acde259686a74799b2fea4d1383d43ec4}{get\+\_\+active\+\_\+data}} (const vector$<$ bool $>$ \&active\+\_\+data, vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&x, vector$<$ double $>$ \&y, vector$<$ double $>$ \&y\+\_\+err, itpp\+::mat \&inv\+\_\+cov, int \&n\+\_\+reset\+\_\+sv) const
+\item 
+int \mbox{\hyperlink{classData_a0400209f4bebe1ba6128a11612677c24}{get\+\_\+active\+\_\+data}} (const vector$<$ bool $>$ \&active\+\_\+data, vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&x, vector$<$ double $>$ \&y) const
+\item 
+int \mbox{\hyperlink{classData_aa57667ce832cbf712b9a77a70ccfdbac}{get\+\_\+active\+\_\+data}} (const vector$<$ bool $>$ \&active\+\_\+data, vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&x, vector$<$ double $>$ \&y, vector$<$ double $>$ \&y\+\_\+err) const
+\item 
+int \mbox{\hyperlink{classData_a2852ff59adff1f77d3e0ce4c620fe501}{get\+\_\+active\+\_\+data\+\_\+scaled\+\_\+down\+\_\+cfg}} (int cfg, const vector$<$ bool $>$ \&active\+\_\+data, vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&x, vector$<$ double $>$ \&y) const
+\item 
+string \mbox{\hyperlink{classData_a8663c7e41a90bdc730ff8b6cbe046c52}{print\+\_\+data}} (const vector$<$ bool $>$ \&active\+\_\+data) const
+\item 
+string \mbox{\hyperlink{classData_a255a7abe193d5dfbd77fb957942bda64}{print\+\_\+data}} () const
+\item 
+string \mbox{\hyperlink{classData_a9dd9812c56754c985d50e9a5fc855320}{print\+\_\+plot\+\_\+data}} (const vector$<$ bool $>$ \&active\+\_\+data) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classData_a860bcc89b14c2106e0fc5e33f065fa0f}{Data}} (const \mbox{\hyperlink{classData}{Data}} \&d\+\_\+)
+\item 
+void \mbox{\hyperlink{classData_a4af8ede7697476321f80686ca5576228}{operator=}} (const \mbox{\hyperlink{classData}{Data}} \&d\+\_\+)
+\item 
+\mbox{\hyperlink{classData_a860bcc89b14c2106e0fc5e33f065fa0f}{Data}} (const \mbox{\hyperlink{classData}{Data}} \&d\+\_\+)
+\item 
+void \mbox{\hyperlink{classData_a4af8ede7697476321f80686ca5576228}{operator=}} (const \mbox{\hyperlink{classData}{Data}} \&d\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classData_af11f741cb7f587e2e495452a8905a22a}\label{classData_af11f741cb7f587e2e495452a8905a22a}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a9f1ea96cc98b80ed3778ff5818cb91f8}\label{classData_a9f1ea96cc98b80ed3778ff5818cb91f8}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$ $>$ \&}]{x\+\_\+,  }\item[{const vector$<$ Ensem\+Real $>$ \&}]{y\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{d0/df3/classData_a9f1ea96cc98b80ed3778ff5818cb91f8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_aab31956423290f0d62dcca47ab4d16dd}\label{classData_aab31956423290f0d62dcca47ab4d16dd}} 
+\index{Data@{Data}!````~Data@{$\sim$Data}}
+\index{````~Data@{$\sim$Data}!Data@{Data}}
+\subsubsection{\texorpdfstring{$\sim$Data()}{~Data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Data\+::$\sim$\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a860bcc89b14c2106e0fc5e33f065fa0f}\label{classData_a860bcc89b14c2106e0fc5e33f065fa0f}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{d\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classData_af11f741cb7f587e2e495452a8905a22a}\label{classData_af11f741cb7f587e2e495452a8905a22a}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a9f1ea96cc98b80ed3778ff5818cb91f8}\label{classData_a9f1ea96cc98b80ed3778ff5818cb91f8}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$ $>$ \&}]{x\+\_\+,  }\item[{const vector$<$ Ensem\+Real $>$ \&}]{y\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{d0/df3/classData_a9f1ea96cc98b80ed3778ff5818cb91f8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_aab31956423290f0d62dcca47ab4d16dd}\label{classData_aab31956423290f0d62dcca47ab4d16dd}} 
+\index{Data@{Data}!````~Data@{$\sim$Data}}
+\index{````~Data@{$\sim$Data}!Data@{Data}}
+\subsubsection{\texorpdfstring{$\sim$Data()}{~Data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Data\+::$\sim$\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a860bcc89b14c2106e0fc5e33f065fa0f}\label{classData_a860bcc89b14c2106e0fc5e33f065fa0f}} 
+\index{Data@{Data}!Data@{Data}}
+\index{Data@{Data}!Data@{Data}}
+\subsubsection{\texorpdfstring{Data()}{Data()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily Data\+::\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{d\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classData_aeb6b453e589d11d200e711fbd7501e8f}\label{classData_aeb6b453e589d11d200e711fbd7501e8f}} 
+\index{Data@{Data}!get\_abscissa\_type@{get\_abscissa\_type}}
+\index{get\_abscissa\_type@{get\_abscissa\_type}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_abscissa\_type()}{get\_abscissa\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Data\+::get\+\_\+abscissa\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_aeb6b453e589d11d200e711fbd7501e8f}\label{classData_aeb6b453e589d11d200e711fbd7501e8f}} 
+\index{Data@{Data}!get\_abscissa\_type@{get\_abscissa\_type}}
+\index{get\_abscissa\_type@{get\_abscissa\_type}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_abscissa\_type()}{get\_abscissa\_type()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Data\+::get\+\_\+abscissa\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_acde259686a74799b2fea4d1383d43ec4}\label{classData_acde259686a74799b2fea4d1383d43ec4}} 
+\index{Data@{Data}!get\_active\_data@{get\_active\_data}}
+\index{get\_active\_data@{get\_active\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_active\_data()}{get\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+active\+\_\+data (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data,  }\item[{vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&}]{x,  }\item[{vector$<$ double $>$ \&}]{y,  }\item[{vector$<$ double $>$ \&}]{y\+\_\+err,  }\item[{itpp\+::mat \&}]{inv\+\_\+cov,  }\item[{int \&}]{n\+\_\+reset\+\_\+sv }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_acde259686a74799b2fea4d1383d43ec4}\label{classData_acde259686a74799b2fea4d1383d43ec4}} 
+\index{Data@{Data}!get\_active\_data@{get\_active\_data}}
+\index{get\_active\_data@{get\_active\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_active\_data()}{get\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+active\+\_\+data (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data,  }\item[{vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&}]{x,  }\item[{vector$<$ double $>$ \&}]{y,  }\item[{vector$<$ double $>$ \&}]{y\+\_\+err,  }\item[{itpp\+::mat \&}]{inv\+\_\+cov,  }\item[{int \&}]{n\+\_\+reset\+\_\+sv }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/classData_acde259686a74799b2fea4d1383d43ec4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_a0400209f4bebe1ba6128a11612677c24}\label{classData_a0400209f4bebe1ba6128a11612677c24}} 
+\index{Data@{Data}!get\_active\_data@{get\_active\_data}}
+\index{get\_active\_data@{get\_active\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_active\_data()}{get\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+active\+\_\+data (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data,  }\item[{vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&}]{x,  }\item[{vector$<$ double $>$ \&}]{y }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_a0400209f4bebe1ba6128a11612677c24}\label{classData_a0400209f4bebe1ba6128a11612677c24}} 
+\index{Data@{Data}!get\_active\_data@{get\_active\_data}}
+\index{get\_active\_data@{get\_active\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_active\_data()}{get\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+active\+\_\+data (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data,  }\item[{vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&}]{x,  }\item[{vector$<$ double $>$ \&}]{y }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_aa57667ce832cbf712b9a77a70ccfdbac}\label{classData_aa57667ce832cbf712b9a77a70ccfdbac}} 
+\index{Data@{Data}!get\_active\_data@{get\_active\_data}}
+\index{get\_active\_data@{get\_active\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_active\_data()}{get\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+active\+\_\+data (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data,  }\item[{vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&}]{x,  }\item[{vector$<$ double $>$ \&}]{y,  }\item[{vector$<$ double $>$ \&}]{y\+\_\+err }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_aa57667ce832cbf712b9a77a70ccfdbac}\label{classData_aa57667ce832cbf712b9a77a70ccfdbac}} 
+\index{Data@{Data}!get\_active\_data@{get\_active\_data}}
+\index{get\_active\_data@{get\_active\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_active\_data()}{get\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+active\+\_\+data (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data,  }\item[{vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&}]{x,  }\item[{vector$<$ double $>$ \&}]{y,  }\item[{vector$<$ double $>$ \&}]{y\+\_\+err }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_a2852ff59adff1f77d3e0ce4c620fe501}\label{classData_a2852ff59adff1f77d3e0ce4c620fe501}} 
+\index{Data@{Data}!get\_active\_data\_scaled\_down\_cfg@{get\_active\_data\_scaled\_down\_cfg}}
+\index{get\_active\_data\_scaled\_down\_cfg@{get\_active\_data\_scaled\_down\_cfg}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_active\_data\_scaled\_down\_cfg()}{get\_active\_data\_scaled\_down\_cfg()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+active\+\_\+data\+\_\+scaled\+\_\+down\+\_\+cfg (\begin{DoxyParamCaption}\item[{int}]{cfg,  }\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data,  }\item[{vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&}]{x,  }\item[{vector$<$ double $>$ \&}]{y }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_a2852ff59adff1f77d3e0ce4c620fe501}\label{classData_a2852ff59adff1f77d3e0ce4c620fe501}} 
+\index{Data@{Data}!get\_active\_data\_scaled\_down\_cfg@{get\_active\_data\_scaled\_down\_cfg}}
+\index{get\_active\_data\_scaled\_down\_cfg@{get\_active\_data\_scaled\_down\_cfg}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_active\_data\_scaled\_down\_cfg()}{get\_active\_data\_scaled\_down\_cfg()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+active\+\_\+data\+\_\+scaled\+\_\+down\+\_\+cfg (\begin{DoxyParamCaption}\item[{int}]{cfg,  }\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data,  }\item[{vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ \&}]{x,  }\item[{vector$<$ double $>$ \&}]{y }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_a79204577812567531adde90797885b3e}\label{classData_a79204577812567531adde90797885b3e}} 
+\index{Data@{Data}!get\_all\_x@{get\_all\_x}}
+\index{get\_all\_x@{get\_all\_x}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_all\_x()}{get\_all\_x()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const vector$<$\mbox{\hyperlink{classAbscissa}{Abscissa}}$\ast$$>$\& Data\+::get\+\_\+all\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a79204577812567531adde90797885b3e}\label{classData_a79204577812567531adde90797885b3e}} 
+\index{Data@{Data}!get\_all\_x@{get\_all\_x}}
+\index{get\_all\_x@{get\_all\_x}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_all\_x()}{get\_all\_x()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const vector$<$\mbox{\hyperlink{classAbscissa}{Abscissa}}$\ast$$>$\& Data\+::get\+\_\+all\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_ad4988122408ff487d5f891a9b04b3c83}\label{classData_ad4988122408ff487d5f891a9b04b3c83}} 
+\index{Data@{Data}!get\_all\_y\_err@{get\_all\_y\_err}}
+\index{get\_all\_y\_err@{get\_all\_y\_err}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_all\_y\_err()}{get\_all\_y\_err()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const vector$<$double$>$\& Data\+::get\+\_\+all\+\_\+y\+\_\+err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_ad4988122408ff487d5f891a9b04b3c83}\label{classData_ad4988122408ff487d5f891a9b04b3c83}} 
+\index{Data@{Data}!get\_all\_y\_err@{get\_all\_y\_err}}
+\index{get\_all\_y\_err@{get\_all\_y\_err}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_all\_y\_err()}{get\_all\_y\_err()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const vector$<$double$>$\& Data\+::get\+\_\+all\+\_\+y\+\_\+err (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a5b3bba18a4893fc7cb415beaed1ef859}\label{classData_a5b3bba18a4893fc7cb415beaed1ef859}} 
+\index{Data@{Data}!get\_all\_y\_mean@{get\_all\_y\_mean}}
+\index{get\_all\_y\_mean@{get\_all\_y\_mean}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_all\_y\_mean()}{get\_all\_y\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const vector$<$double$>$\& Data\+::get\+\_\+all\+\_\+y\+\_\+mean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a5b3bba18a4893fc7cb415beaed1ef859}\label{classData_a5b3bba18a4893fc7cb415beaed1ef859}} 
+\index{Data@{Data}!get\_all\_y\_mean@{get\_all\_y\_mean}}
+\index{get\_all\_y\_mean@{get\_all\_y\_mean}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_all\_y\_mean()}{get\_all\_y\_mean()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const vector$<$double$>$\& Data\+::get\+\_\+all\+\_\+y\+\_\+mean (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a19b920edbea6526f6db747bfe1c4c1c2}\label{classData_a19b920edbea6526f6db747bfe1c4c1c2}} 
+\index{Data@{Data}!get\_cov@{get\_cov}}
+\index{get\_cov@{get\_cov}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_cov()}{get\_cov()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const itpp\+::mat\& Data\+::get\+\_\+cov (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a19b920edbea6526f6db747bfe1c4c1c2}\label{classData_a19b920edbea6526f6db747bfe1c4c1c2}} 
+\index{Data@{Data}!get\_cov@{get\_cov}}
+\index{get\_cov@{get\_cov}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_cov()}{get\_cov()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const itpp\+::mat\& Data\+::get\+\_\+cov (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_ad7e50542712441af6ad2a227193a777f}\label{classData_ad7e50542712441af6ad2a227193a777f}} 
+\index{Data@{Data}!get\_datum@{get\_datum}}
+\index{get\_datum@{get\_datum}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_datum()}{get\_datum()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Data\+::get\+\_\+datum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$}]{x,  }\item[{Ensem\+Real \&}]{y }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_ad7e50542712441af6ad2a227193a777f}\label{classData_ad7e50542712441af6ad2a227193a777f}} 
+\index{Data@{Data}!get\_datum@{get\_datum}}
+\index{get\_datum@{get\_datum}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_datum()}{get\_datum()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Data\+::get\+\_\+datum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$}]{x,  }\item[{Ensem\+Real \&}]{y }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{d0/df3/classData_ad7e50542712441af6ad2a227193a777f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_aab2d2ba01acb88ede5beb3ab54053d73}\label{classData_aab2d2ba01acb88ede5beb3ab54053d73}} 
+\index{Data@{Data}!get\_datum@{get\_datum}}
+\index{get\_datum@{get\_datum}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_datum()}{get\_datum()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Data\+::get\+\_\+datum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$}]{x,  }\item[{double \&}]{y\+\_\+val,  }\item[{double \&}]{y\+\_\+err }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_aab2d2ba01acb88ede5beb3ab54053d73}\label{classData_aab2d2ba01acb88ede5beb3ab54053d73}} 
+\index{Data@{Data}!get\_datum@{get\_datum}}
+\index{get\_datum@{get\_datum}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_datum()}{get\_datum()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Data\+::get\+\_\+datum (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$}]{x,  }\item[{double \&}]{y\+\_\+val,  }\item[{double \&}]{y\+\_\+err }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/classData_aab2d2ba01acb88ede5beb3ab54053d73_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_a1ac2adcf6c6717759f820eceed4b55e4}\label{classData_a1ac2adcf6c6717759f820eceed4b55e4}} 
+\index{Data@{Data}!get\_n\_cfgs@{get\_n\_cfgs}}
+\index{get\_n\_cfgs@{get\_n\_cfgs}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_n\_cfgs()}{get\_n\_cfgs()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+n\+\_\+cfgs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a1ac2adcf6c6717759f820eceed4b55e4}\label{classData_a1ac2adcf6c6717759f820eceed4b55e4}} 
+\index{Data@{Data}!get\_n\_cfgs@{get\_n\_cfgs}}
+\index{get\_n\_cfgs@{get\_n\_cfgs}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_n\_cfgs()}{get\_n\_cfgs()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+n\+\_\+cfgs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a1ec16adf40ee062d8d75b33acfe156d5}\label{classData_a1ec16adf40ee062d8d75b33acfe156d5}} 
+\index{Data@{Data}!get\_n\_data@{get\_n\_data}}
+\index{get\_n\_data@{get\_n\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_n\_data()}{get\_n\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+n\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a1ec16adf40ee062d8d75b33acfe156d5}\label{classData_a1ec16adf40ee062d8d75b33acfe156d5}} 
+\index{Data@{Data}!get\_n\_data@{get\_n\_data}}
+\index{get\_n\_data@{get\_n\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{get\_n\_data()}{get\_n\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Data\+::get\+\_\+n\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a804a4d59e6211aa54a629b31ad66cbd4}\label{classData_a804a4d59e6211aa54a629b31ad66cbd4}} 
+\index{Data@{Data}!is\_data\_init@{is\_data\_init}}
+\index{is\_data\_init@{is\_data\_init}!Data@{Data}}
+\subsubsection{\texorpdfstring{is\_data\_init()}{is\_data\_init()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Data\+::is\+\_\+data\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a804a4d59e6211aa54a629b31ad66cbd4}\label{classData_a804a4d59e6211aa54a629b31ad66cbd4}} 
+\index{Data@{Data}!is\_data\_init@{is\_data\_init}}
+\index{is\_data\_init@{is\_data\_init}!Data@{Data}}
+\subsubsection{\texorpdfstring{is\_data\_init()}{is\_data\_init()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Data\+::is\+\_\+data\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_acf9b4e6e52730e9da47d82bda61ac1ca}\label{classData_acf9b4e6e52730e9da47d82bda61ac1ca}} 
+\index{Data@{Data}!make@{make}}
+\index{make@{make}!Data@{Data}}
+\subsubsection{\texorpdfstring{make()}{make()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Data\+::make (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$ $>$ \&}]{x\+\_\+,  }\item[{const vector$<$ Ensem\+Real $>$ \&}]{y\+\_\+ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{d0/df3/classData_acf9b4e6e52730e9da47d82bda61ac1ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_acf9b4e6e52730e9da47d82bda61ac1ca}\label{classData_acf9b4e6e52730e9da47d82bda61ac1ca}} 
+\index{Data@{Data}!make@{make}}
+\index{make@{make}!Data@{Data}}
+\subsubsection{\texorpdfstring{make()}{make()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Data\+::make (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$ $>$ \&}]{x\+\_\+,  }\item[{const vector$<$ Ensem\+Real $>$ \&}]{y\+\_\+ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/classData_acf9b4e6e52730e9da47d82bda61ac1ca_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_af5d089365e8be78e4cd486bda87f37b4}\label{classData_af5d089365e8be78e4cd486bda87f37b4}} 
+\index{Data@{Data}!make\_active\_data@{make\_active\_data}}
+\index{make\_active\_data@{make\_active\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{make\_active\_data()}{make\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ Data\+::make\+\_\+active\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_af5d089365e8be78e4cd486bda87f37b4}\label{classData_af5d089365e8be78e4cd486bda87f37b4}} 
+\index{Data@{Data}!make\_active\_data@{make\_active\_data}}
+\index{make\_active\_data@{make\_active\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{make\_active\_data()}{make\_active\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ Data\+::make\+\_\+active\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{d0/df3/classData_af5d089365e8be78e4cd486bda87f37b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_a39cfb18f88b5b75d640404d87b428820}\label{classData_a39cfb18f88b5b75d640404d87b428820}} 
+\index{Data@{Data}!make\_inv\_cov@{make\_inv\_cov}}
+\index{make\_inv\_cov@{make\_inv\_cov}!Data@{Data}}
+\subsubsection{\texorpdfstring{make\_inv\_cov()}{make\_inv\_cov()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily itpp\+::mat Data\+::make\+\_\+inv\+\_\+cov (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data,  }\item[{int \&}]{n\+\_\+reset\+\_\+sv }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_a39cfb18f88b5b75d640404d87b428820}\label{classData_a39cfb18f88b5b75d640404d87b428820}} 
+\index{Data@{Data}!make\_inv\_cov@{make\_inv\_cov}}
+\index{make\_inv\_cov@{make\_inv\_cov}!Data@{Data}}
+\subsubsection{\texorpdfstring{make\_inv\_cov()}{make\_inv\_cov()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily itpp\+::mat Data\+::make\+\_\+inv\+\_\+cov (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data,  }\item[{int \&}]{n\+\_\+reset\+\_\+sv }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/classData_a39cfb18f88b5b75d640404d87b428820_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d0/df3/classData_a39cfb18f88b5b75d640404d87b428820_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_a4af8ede7697476321f80686ca5576228}\label{classData_a4af8ede7697476321f80686ca5576228}} 
+\index{Data@{Data}!operator=@{operator=}}
+\index{operator=@{operator=}!Data@{Data}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Data\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{d\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classData_a4af8ede7697476321f80686ca5576228}\label{classData_a4af8ede7697476321f80686ca5576228}} 
+\index{Data@{Data}!operator=@{operator=}}
+\index{operator=@{operator=}!Data@{Data}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Data\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{d\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classData_a8663c7e41a90bdc730ff8b6cbe046c52}\label{classData_a8663c7e41a90bdc730ff8b6cbe046c52}} 
+\index{Data@{Data}!print\_data@{print\_data}}
+\index{print\_data@{print\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{print\_data()}{print\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily string Data\+::print\+\_\+data (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_a8663c7e41a90bdc730ff8b6cbe046c52}\label{classData_a8663c7e41a90bdc730ff8b6cbe046c52}} 
+\index{Data@{Data}!print\_data@{print\_data}}
+\index{print\_data@{print\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{print\_data()}{print\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily string Data\+::print\+\_\+data (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/classData_a8663c7e41a90bdc730ff8b6cbe046c52_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{d0/df3/classData_a8663c7e41a90bdc730ff8b6cbe046c52_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_a255a7abe193d5dfbd77fb957942bda64}\label{classData_a255a7abe193d5dfbd77fb957942bda64}} 
+\index{Data@{Data}!print\_data@{print\_data}}
+\index{print\_data@{print\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{print\_data()}{print\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily string Data\+::print\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{d0/df3/classData_a255a7abe193d5dfbd77fb957942bda64_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{d0/df3/classData_a255a7abe193d5dfbd77fb957942bda64_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_a255a7abe193d5dfbd77fb957942bda64}\label{classData_a255a7abe193d5dfbd77fb957942bda64}} 
+\index{Data@{Data}!print\_data@{print\_data}}
+\index{print\_data@{print\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{print\_data()}{print\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily string Data\+::print\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{d0/df3/classData_a255a7abe193d5dfbd77fb957942bda64_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{d0/df3/classData_a255a7abe193d5dfbd77fb957942bda64_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_a9dd9812c56754c985d50e9a5fc855320}\label{classData_a9dd9812c56754c985d50e9a5fc855320}} 
+\index{Data@{Data}!print\_plot\_data@{print\_plot\_data}}
+\index{print\_plot\_data@{print\_plot\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{print\_plot\_data()}{print\_plot\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Data\+::print\+\_\+plot\+\_\+data (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/df3/classData_a9dd9812c56754c985d50e9a5fc855320_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{d0/df3/classData_a9dd9812c56754c985d50e9a5fc855320_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classData_a9dd9812c56754c985d50e9a5fc855320}\label{classData_a9dd9812c56754c985d50e9a5fc855320}} 
+\index{Data@{Data}!print\_plot\_data@{print\_plot\_data}}
+\index{print\_plot\_data@{print\_plot\_data}!Data@{Data}}
+\subsubsection{\texorpdfstring{print\_plot\_data()}{print\_plot\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Data\+::print\+\_\+plot\+\_\+data (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{active\+\_\+data }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classData_a8faffbd514fe8831470ce0e982c048da}\label{classData_a8faffbd514fe8831470ce0e982c048da}} 
+\index{Data@{Data}!set\_sv\_cut@{set\_sv\_cut}}
+\index{set\_sv\_cut@{set\_sv\_cut}!Data@{Data}}
+\subsubsection{\texorpdfstring{set\_sv\_cut()}{set\_sv\_cut()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Data\+::set\+\_\+sv\+\_\+cut (\begin{DoxyParamCaption}\item[{double}]{cut }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classData_a8faffbd514fe8831470ce0e982c048da}\label{classData_a8faffbd514fe8831470ce0e982c048da}} 
+\index{Data@{Data}!set\_sv\_cut@{set\_sv\_cut}}
+\index{set\_sv\_cut@{set\_sv\_cut}!Data@{Data}}
+\subsubsection{\texorpdfstring{set\_sv\_cut()}{set\_sv\_cut()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Data\+::set\+\_\+sv\+\_\+cut (\begin{DoxyParamCaption}\item[{double}]{cut }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/\mbox{\hyperlink{lib_2fitting__lib_2data_8h}{data.\+h}}\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/\mbox{\hyperlink{data_8cc}{data.\+cc}}\end{DoxyCompactItemize}

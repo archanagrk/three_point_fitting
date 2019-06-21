@@ -1,0 +1,225 @@
+\hypertarget{install_2include_2fitting__lib_2tools_8h}{}\section{/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib\+\_\+install/include/fitting\+\_\+lib/tools.h File Reference}
+\label{install_2include_2fitting__lib_2tools_8h}\index{/Users/archanar/three\_pt\_analysis/fitting\_lib\_install/include/fitting\_lib/tools.h@{/Users/archanar/three\_pt\_analysis/fitting\_lib\_install/include/fitting\_lib/tools.h}}
+{\ttfamily \#include \char`\"{}includes.\+h\char`\"{}}\newline
+Include dependency graph for tools.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/dcc/install_2include_2fitting__lib_2tools_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d23/install_2include_2fitting__lib_2tools_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+pair$<$ double, double $>$ \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_a36a15a543355583b84ee2b203a6b2fd1}{mean\+\_\+err}} (const Ensem\+Real \&e)
+\item 
+double \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_a63b1a63a02eb3d422d9378ac0fd3c5cc}{covariance}} (const Ensem\+Real \&e1, const Ensem\+Real \&e2)
+\item 
+double \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_a2ad08e4e24ac38df5733f7122e3c1c7d}{correlation}} (const Ensem\+Real \&e1, const Ensem\+Real \&e2)
+\item 
+itpp\+::mat \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_ad4dd58ed09ce5cd92c83dccef1c65c21}{covariance\+\_\+matrix}} (const vector$<$ Ensem\+Real $>$ \&ve)
+\item 
+itpp\+::mat \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_a60cad8235c6ee5aab8b545d18663751d}{correlation\+\_\+matrix}} (const vector$<$ Ensem\+Real $>$ \&ve)
+\item 
+bool \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_acfaf3b10ef34d327d62809c6679f8cdc}{check\+\_\+reasonable\+\_\+fluctuation}} (double \mbox{\hyperlink{old__edb_8cc_a63584b830e7aaacb521b11b72291a4bc}{x}}, double mean, double err, double nsigma, string \&report)
+\item 
+Ensem\+Real \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_aab53f2db54db368c3afbbff5a2b21780}{generate\+\_\+ensem\+\_\+value}} (double mean, double error, int ncfgs, int seed, bool exact\+\_\+mean)
+\item 
+map$<$ string, Ensem\+Real $>$ \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_a7bb30e3079207936e3b00a59bebcb93d}{generate\+\_\+correlated\+\_\+ensembles}} (vector$<$ string $>$ names, vector$<$ double $>$ values, vector$<$ double $>$ errs, itpp\+::mat corr, int ncfgs, int seed, bool exact\+\_\+mean)
+\item 
+vector$<$ Ensem\+Real $>$ \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_af28215753b66ad79b3440faeffb84ef1}{generate\+\_\+correlated\+\_\+ensembles}} (vector$<$ double $>$ values, vector$<$ double $>$ errs, itpp\+::mat corr, int ncfgs, int seed, bool exact\+\_\+mean)
+\item 
+itpp\+::mat \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_afcdd28a774035022274585e6b41a6f0c}{invert\+S\+VD}} (const itpp\+::mat \&A, double tol, int \&n\+Reset)
+\item 
+string \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_a9936795def8f2d6be874d6860525e79c}{bracketed\+\_\+error}} (double val, double err)
+\item 
+string \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_ad3209e5c8326eda24011ebbd7175260b}{get\+\_\+current\+\_\+working\+\_\+directory}} ()
+\item 
+bool \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_acc6f44ad08fd74ee215aa1497a40bdb2}{does\+\_\+directory\+\_\+exist}} (const string \&path)
+\item 
+void \mbox{\hyperlink{install_2include_2fitting__lib_2tools_8h_a2de026bc5e34ef39e60586776fef4214}{make\+\_\+directory}} (const string \&path)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_a9936795def8f2d6be874d6860525e79c}\label{install_2include_2fitting__lib_2tools_8h_a9936795def8f2d6be874d6860525e79c}} 
+\index{tools.h@{tools.h}!bracketed\_error@{bracketed\_error}}
+\index{bracketed\_error@{bracketed\_error}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{bracketed\_error()}{bracketed\_error()}}
+{\footnotesize\ttfamily string bracketed\+\_\+error (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{double}]{err }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_acfaf3b10ef34d327d62809c6679f8cdc}\label{install_2include_2fitting__lib_2tools_8h_acfaf3b10ef34d327d62809c6679f8cdc}} 
+\index{tools.h@{tools.h}!check\_reasonable\_fluctuation@{check\_reasonable\_fluctuation}}
+\index{check\_reasonable\_fluctuation@{check\_reasonable\_fluctuation}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{check\_reasonable\_fluctuation()}{check\_reasonable\_fluctuation()}}
+{\footnotesize\ttfamily bool check\+\_\+reasonable\+\_\+fluctuation (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{mean,  }\item[{double}]{err,  }\item[{double}]{nsigma,  }\item[{string \&}]{report }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2f/install_2include_2fitting__lib_2tools_8h_acfaf3b10ef34d327d62809c6679f8cdc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_a2ad08e4e24ac38df5733f7122e3c1c7d}\label{install_2include_2fitting__lib_2tools_8h_a2ad08e4e24ac38df5733f7122e3c1c7d}} 
+\index{tools.h@{tools.h}!correlation@{correlation}}
+\index{correlation@{correlation}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{correlation()}{correlation()}}
+{\footnotesize\ttfamily double correlation (\begin{DoxyParamCaption}\item[{const Ensem\+Real \&}]{e1,  }\item[{const Ensem\+Real \&}]{e2 }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2f/install_2include_2fitting__lib_2tools_8h_a2ad08e4e24ac38df5733f7122e3c1c7d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_a60cad8235c6ee5aab8b545d18663751d}\label{install_2include_2fitting__lib_2tools_8h_a60cad8235c6ee5aab8b545d18663751d}} 
+\index{tools.h@{tools.h}!correlation\_matrix@{correlation\_matrix}}
+\index{correlation\_matrix@{correlation\_matrix}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{correlation\_matrix()}{correlation\_matrix()}}
+{\footnotesize\ttfamily itpp\+::mat correlation\+\_\+matrix (\begin{DoxyParamCaption}\item[{const vector$<$ Ensem\+Real $>$ \&}]{ve }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2f/install_2include_2fitting__lib_2tools_8h_a60cad8235c6ee5aab8b545d18663751d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_a63b1a63a02eb3d422d9378ac0fd3c5cc}\label{install_2include_2fitting__lib_2tools_8h_a63b1a63a02eb3d422d9378ac0fd3c5cc}} 
+\index{tools.h@{tools.h}!covariance@{covariance}}
+\index{covariance@{covariance}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{covariance()}{covariance()}}
+{\footnotesize\ttfamily double covariance (\begin{DoxyParamCaption}\item[{const Ensem\+Real \&}]{e1,  }\item[{const Ensem\+Real \&}]{e2 }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2f/install_2include_2fitting__lib_2tools_8h_a63b1a63a02eb3d422d9378ac0fd3c5cc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_ad4dd58ed09ce5cd92c83dccef1c65c21}\label{install_2include_2fitting__lib_2tools_8h_ad4dd58ed09ce5cd92c83dccef1c65c21}} 
+\index{tools.h@{tools.h}!covariance\_matrix@{covariance\_matrix}}
+\index{covariance\_matrix@{covariance\_matrix}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{covariance\_matrix()}{covariance\_matrix()}}
+{\footnotesize\ttfamily itpp\+::mat covariance\+\_\+matrix (\begin{DoxyParamCaption}\item[{const vector$<$ Ensem\+Real $>$ \&}]{ve }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2f/install_2include_2fitting__lib_2tools_8h_ad4dd58ed09ce5cd92c83dccef1c65c21_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_acc6f44ad08fd74ee215aa1497a40bdb2}\label{install_2include_2fitting__lib_2tools_8h_acc6f44ad08fd74ee215aa1497a40bdb2}} 
+\index{tools.h@{tools.h}!does\_directory\_exist@{does\_directory\_exist}}
+\index{does\_directory\_exist@{does\_directory\_exist}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{does\_directory\_exist()}{does\_directory\_exist()}}
+{\footnotesize\ttfamily bool does\+\_\+directory\+\_\+exist (\begin{DoxyParamCaption}\item[{const string \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_a7bb30e3079207936e3b00a59bebcb93d}\label{install_2include_2fitting__lib_2tools_8h_a7bb30e3079207936e3b00a59bebcb93d}} 
+\index{tools.h@{tools.h}!generate\_correlated\_ensembles@{generate\_correlated\_ensembles}}
+\index{generate\_correlated\_ensembles@{generate\_correlated\_ensembles}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{generate\_correlated\_ensembles()}{generate\_correlated\_ensembles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily map$<$string, Ensem\+Real$>$ generate\+\_\+correlated\+\_\+ensembles (\begin{DoxyParamCaption}\item[{vector$<$ string $>$}]{names,  }\item[{vector$<$ double $>$}]{values,  }\item[{vector$<$ double $>$}]{errs,  }\item[{itpp\+::mat}]{corr,  }\item[{int}]{ncfgs,  }\item[{int}]{seed,  }\item[{bool}]{exact\+\_\+mean }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2f/install_2include_2fitting__lib_2tools_8h_a7bb30e3079207936e3b00a59bebcb93d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_af28215753b66ad79b3440faeffb84ef1}\label{install_2include_2fitting__lib_2tools_8h_af28215753b66ad79b3440faeffb84ef1}} 
+\index{tools.h@{tools.h}!generate\_correlated\_ensembles@{generate\_correlated\_ensembles}}
+\index{generate\_correlated\_ensembles@{generate\_correlated\_ensembles}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{generate\_correlated\_ensembles()}{generate\_correlated\_ensembles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vector$<$Ensem\+Real$>$ generate\+\_\+correlated\+\_\+ensembles (\begin{DoxyParamCaption}\item[{vector$<$ double $>$}]{values,  }\item[{vector$<$ double $>$}]{errs,  }\item[{itpp\+::mat}]{corr,  }\item[{int}]{ncfgs,  }\item[{int}]{seed,  }\item[{bool}]{exact\+\_\+mean }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2f/install_2include_2fitting__lib_2tools_8h_af28215753b66ad79b3440faeffb84ef1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_aab53f2db54db368c3afbbff5a2b21780}\label{install_2include_2fitting__lib_2tools_8h_aab53f2db54db368c3afbbff5a2b21780}} 
+\index{tools.h@{tools.h}!generate\_ensem\_value@{generate\_ensem\_value}}
+\index{generate\_ensem\_value@{generate\_ensem\_value}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{generate\_ensem\_value()}{generate\_ensem\_value()}}
+{\footnotesize\ttfamily Ensem\+Real generate\+\_\+ensem\+\_\+value (\begin{DoxyParamCaption}\item[{double}]{mean,  }\item[{double}]{error,  }\item[{int}]{ncfgs,  }\item[{int}]{seed,  }\item[{bool}]{exact\+\_\+mean }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2f/install_2include_2fitting__lib_2tools_8h_aab53f2db54db368c3afbbff5a2b21780_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_ad3209e5c8326eda24011ebbd7175260b}\label{install_2include_2fitting__lib_2tools_8h_ad3209e5c8326eda24011ebbd7175260b}} 
+\index{tools.h@{tools.h}!get\_current\_working\_directory@{get\_current\_working\_directory}}
+\index{get\_current\_working\_directory@{get\_current\_working\_directory}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{get\_current\_working\_directory()}{get\_current\_working\_directory()}}
+{\footnotesize\ttfamily string get\+\_\+current\+\_\+working\+\_\+directory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_afcdd28a774035022274585e6b41a6f0c}\label{install_2include_2fitting__lib_2tools_8h_afcdd28a774035022274585e6b41a6f0c}} 
+\index{tools.h@{tools.h}!invertSVD@{invertSVD}}
+\index{invertSVD@{invertSVD}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{invertSVD()}{invertSVD()}}
+{\footnotesize\ttfamily itpp\+::mat invert\+S\+VD (\begin{DoxyParamCaption}\item[{const itpp\+::mat \&}]{A,  }\item[{double}]{tol,  }\item[{int \&}]{n\+Reset }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2f/install_2include_2fitting__lib_2tools_8h_afcdd28a774035022274585e6b41a6f0c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_a2de026bc5e34ef39e60586776fef4214}\label{install_2include_2fitting__lib_2tools_8h_a2de026bc5e34ef39e60586776fef4214}} 
+\index{tools.h@{tools.h}!make\_directory@{make\_directory}}
+\index{make\_directory@{make\_directory}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{make\_directory()}{make\_directory()}}
+{\footnotesize\ttfamily void make\+\_\+directory (\begin{DoxyParamCaption}\item[{const string \&}]{path }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{d5/d2f/install_2include_2fitting__lib_2tools_8h_a2de026bc5e34ef39e60586776fef4214_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{install_2include_2fitting__lib_2tools_8h_a36a15a543355583b84ee2b203a6b2fd1}\label{install_2include_2fitting__lib_2tools_8h_a36a15a543355583b84ee2b203a6b2fd1}} 
+\index{tools.h@{tools.h}!mean\_err@{mean\_err}}
+\index{mean\_err@{mean\_err}!tools.h@{tools.h}}
+\subsubsection{\texorpdfstring{mean\_err()}{mean\_err()}}
+{\footnotesize\ttfamily pair$<$double, double$>$ mean\+\_\+err (\begin{DoxyParamCaption}\item[{const Ensem\+Real \&}]{e }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/d2f/install_2include_2fitting__lib_2tools_8h_a36a15a543355583b84ee2b203a6b2fd1_cgraph}
+\end{center}
+\end{figure}

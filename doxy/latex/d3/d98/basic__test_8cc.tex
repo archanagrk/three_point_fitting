@@ -1,0 +1,214 @@
+\hypertarget{basic__test_8cc}{}\section{/\+Users/archanar/three\+\_\+pt\+\_\+analysis/three\+\_\+point\+\_\+fitting/src/basic\+\_\+test.cc File Reference}
+\label{basic__test_8cc}\index{/Users/archanar/three\_pt\_analysis/three\_point\_fitting/src/basic\_test.cc@{/Users/archanar/three\_pt\_analysis/three\_point\_fitting/src/basic\_test.cc}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}fitting\+\_\+lib/tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fitting\+\_\+lib/data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fitting\+\_\+lib/data\+\_\+selectors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fitting\+\_\+lib/fit\+\_\+quality\+\_\+factory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fitting\+\_\+lib/functions\+\_\+factory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fitting\+\_\+lib/fit\+\_\+selector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}three\+\_\+point\+\_\+abscissa.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}three\+\_\+point\+\_\+functions.\+h\char`\"{}}\newline
+Include dependency graph for basic\+\_\+test.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/d4d/basic__test_8cc__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbest__single__Dt}{best\+\_\+single\+\_\+\+Dt}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{basic__test_8cc_aff14bc8b7906835ebb4d88bcc400c468}{make\+\_\+three\+\_\+points}} (const vector$<$ int $>$ \&Dts, int ncfgs, \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}})
+\item 
+void \mbox{\hyperlink{basic__test_8cc_aa3a6ca540d5da152ef1d2832b9ed232a}{do\+\_\+single\+\_\+\+Dt\+\_\+const\+\_\+fits}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, int Dt, int dt, const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&start\+\_\+params, vector$<$ \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} $\ast$$>$ \&fits)
+\item 
+\mbox{\hyperlink{structbest__single__Dt}{best\+\_\+single\+\_\+\+Dt}} \mbox{\hyperlink{basic__test_8cc_aaab549ac44f6cc54a17456a860a84ef8}{select\+\_\+single\+\_\+\+Dt\+\_\+fit}} (vector$<$ \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} $\ast$$>$ \&fits, \mbox{\hyperlink{classFitQuality}{Fit\+Quality}} $\ast$fit\+\_\+qual)
+\item 
+void \mbox{\hyperlink{basic__test_8cc_ab62da5f2a664aaedbbb80637228daa61}{do\+\_\+single\+\_\+\+Dt\+\_\+src\+\_\+exp\+\_\+fits}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, int Dt, const \mbox{\hyperlink{structbest__single__Dt}{best\+\_\+single\+\_\+\+Dt}} \&best\+\_\+const, vector$<$ \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} $\ast$$>$ \&fits)
+\item 
+void \mbox{\hyperlink{basic__test_8cc_ac8f4dfc060f25eca6d59b78af5e47328}{do\+\_\+single\+\_\+\+Dt\+\_\+snk\+\_\+exp\+\_\+fits}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, int Dt, const \mbox{\hyperlink{structbest__single__Dt}{best\+\_\+single\+\_\+\+Dt}} \&best\+\_\+const, vector$<$ \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} $\ast$$>$ \&fits)
+\item 
+void \mbox{\hyperlink{basic__test_8cc_a60497790074dc16f303b311b7a8b3509}{do\+\_\+single\+\_\+\+Dt\+\_\+src\+\_\+snk\+\_\+exp\+\_\+fits}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, int Dt, const \mbox{\hyperlink{structbest__single__Dt}{best\+\_\+single\+\_\+\+Dt}} \&best, vector$<$ \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} $\ast$$>$ \&fits)
+\item 
+vector$<$ \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} $\ast$ $>$ \mbox{\hyperlink{basic__test_8cc_ac29f5289125ca3e0f3ce317b59a2e140}{do\+\_\+single\+\_\+\+Dt\+\_\+fits}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, int Dt, int dt\+\_\+min, \mbox{\hyperlink{classFitQuality}{Fit\+Quality}} $\ast$fit\+\_\+qual)
+\item 
+int \mbox{\hyperlink{basic__test_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{basic__test_8cc_aa3a6ca540d5da152ef1d2832b9ed232a}\label{basic__test_8cc_aa3a6ca540d5da152ef1d2832b9ed232a}} 
+\index{basic\_test.cc@{basic\_test.cc}!do\_single\_Dt\_const\_fits@{do\_single\_Dt\_const\_fits}}
+\index{do\_single\_Dt\_const\_fits@{do\_single\_Dt\_const\_fits}!basic\_test.cc@{basic\_test.cc}}
+\subsubsection{\texorpdfstring{do\_single\_Dt\_const\_fits()}{do\_single\_Dt\_const\_fits()}}
+{\footnotesize\ttfamily void do\+\_\+single\+\_\+\+Dt\+\_\+const\+\_\+fits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{int}]{Dt,  }\item[{int}]{dt,  }\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{start\+\_\+params,  }\item[{vector$<$ \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} $\ast$$>$ \&}]{fits }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{d3/d98/basic__test_8cc_aa3a6ca540d5da152ef1d2832b9ed232a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d98/basic__test_8cc_aa3a6ca540d5da152ef1d2832b9ed232a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{basic__test_8cc_ac29f5289125ca3e0f3ce317b59a2e140}\label{basic__test_8cc_ac29f5289125ca3e0f3ce317b59a2e140}} 
+\index{basic\_test.cc@{basic\_test.cc}!do\_single\_Dt\_fits@{do\_single\_Dt\_fits}}
+\index{do\_single\_Dt\_fits@{do\_single\_Dt\_fits}!basic\_test.cc@{basic\_test.cc}}
+\subsubsection{\texorpdfstring{do\_single\_Dt\_fits()}{do\_single\_Dt\_fits()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classAvgFit}{Avg\+Fit}}$\ast$$>$ do\+\_\+single\+\_\+\+Dt\+\_\+fits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{int}]{Dt,  }\item[{int}]{dt\+\_\+min,  }\item[{\mbox{\hyperlink{classFitQuality}{Fit\+Quality}} $\ast$}]{fit\+\_\+qual }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d98/basic__test_8cc_ac29f5289125ca3e0f3ce317b59a2e140_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{d3/d98/basic__test_8cc_ac29f5289125ca3e0f3ce317b59a2e140_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{basic__test_8cc_ac8f4dfc060f25eca6d59b78af5e47328}\label{basic__test_8cc_ac8f4dfc060f25eca6d59b78af5e47328}} 
+\index{basic\_test.cc@{basic\_test.cc}!do\_single\_Dt\_snk\_exp\_fits@{do\_single\_Dt\_snk\_exp\_fits}}
+\index{do\_single\_Dt\_snk\_exp\_fits@{do\_single\_Dt\_snk\_exp\_fits}!basic\_test.cc@{basic\_test.cc}}
+\subsubsection{\texorpdfstring{do\_single\_Dt\_snk\_exp\_fits()}{do\_single\_Dt\_snk\_exp\_fits()}}
+{\footnotesize\ttfamily void do\+\_\+single\+\_\+\+Dt\+\_\+snk\+\_\+exp\+\_\+fits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{int}]{Dt,  }\item[{const \mbox{\hyperlink{structbest__single__Dt}{best\+\_\+single\+\_\+\+Dt}} \&}]{best\+\_\+const,  }\item[{vector$<$ \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} $\ast$$>$ \&}]{fits }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{d3/d98/basic__test_8cc_ac8f4dfc060f25eca6d59b78af5e47328_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d98/basic__test_8cc_ac8f4dfc060f25eca6d59b78af5e47328_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{basic__test_8cc_ab62da5f2a664aaedbbb80637228daa61}\label{basic__test_8cc_ab62da5f2a664aaedbbb80637228daa61}} 
+\index{basic\_test.cc@{basic\_test.cc}!do\_single\_Dt\_src\_exp\_fits@{do\_single\_Dt\_src\_exp\_fits}}
+\index{do\_single\_Dt\_src\_exp\_fits@{do\_single\_Dt\_src\_exp\_fits}!basic\_test.cc@{basic\_test.cc}}
+\subsubsection{\texorpdfstring{do\_single\_Dt\_src\_exp\_fits()}{do\_single\_Dt\_src\_exp\_fits()}}
+{\footnotesize\ttfamily void do\+\_\+single\+\_\+\+Dt\+\_\+src\+\_\+exp\+\_\+fits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{int}]{Dt,  }\item[{const \mbox{\hyperlink{structbest__single__Dt}{best\+\_\+single\+\_\+\+Dt}} \&}]{best\+\_\+const,  }\item[{vector$<$ \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} $\ast$$>$ \&}]{fits }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{d3/d98/basic__test_8cc_ab62da5f2a664aaedbbb80637228daa61_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d98/basic__test_8cc_ab62da5f2a664aaedbbb80637228daa61_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{basic__test_8cc_a60497790074dc16f303b311b7a8b3509}\label{basic__test_8cc_a60497790074dc16f303b311b7a8b3509}} 
+\index{basic\_test.cc@{basic\_test.cc}!do\_single\_Dt\_src\_snk\_exp\_fits@{do\_single\_Dt\_src\_snk\_exp\_fits}}
+\index{do\_single\_Dt\_src\_snk\_exp\_fits@{do\_single\_Dt\_src\_snk\_exp\_fits}!basic\_test.cc@{basic\_test.cc}}
+\subsubsection{\texorpdfstring{do\_single\_Dt\_src\_snk\_exp\_fits()}{do\_single\_Dt\_src\_snk\_exp\_fits()}}
+{\footnotesize\ttfamily void do\+\_\+single\+\_\+\+Dt\+\_\+src\+\_\+snk\+\_\+exp\+\_\+fits (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{int}]{Dt,  }\item[{const \mbox{\hyperlink{structbest__single__Dt}{best\+\_\+single\+\_\+\+Dt}} \&}]{best,  }\item[{vector$<$ \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} $\ast$$>$ \&}]{fits }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{d3/d98/basic__test_8cc_a60497790074dc16f303b311b7a8b3509_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d98/basic__test_8cc_a60497790074dc16f303b311b7a8b3509_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{basic__test_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{basic__test_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{basic\_test.cc@{basic\_test.cc}!main@{main}}
+\index{main@{main}!basic\_test.cc@{basic\_test.cc}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d98/basic__test_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{basic__test_8cc_aff14bc8b7906835ebb4d88bcc400c468}\label{basic__test_8cc_aff14bc8b7906835ebb4d88bcc400c468}} 
+\index{basic\_test.cc@{basic\_test.cc}!make\_three\_points@{make\_three\_points}}
+\index{make\_three\_points@{make\_three\_points}!basic\_test.cc@{basic\_test.cc}}
+\subsubsection{\texorpdfstring{make\_three\_points()}{make\_three\_points()}}
+{\footnotesize\ttfamily void make\+\_\+three\+\_\+points (\begin{DoxyParamCaption}\item[{const vector$<$ int $>$ \&}]{Dts,  }\item[{int}]{ncfgs,  }\item[{\mbox{\hyperlink{classData}{Data}} \&}]{data }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d98/basic__test_8cc_aff14bc8b7906835ebb4d88bcc400c468_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{d3/d98/basic__test_8cc_aff14bc8b7906835ebb4d88bcc400c468_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{basic__test_8cc_aaab549ac44f6cc54a17456a860a84ef8}\label{basic__test_8cc_aaab549ac44f6cc54a17456a860a84ef8}} 
+\index{basic\_test.cc@{basic\_test.cc}!select\_single\_Dt\_fit@{select\_single\_Dt\_fit}}
+\index{select\_single\_Dt\_fit@{select\_single\_Dt\_fit}!basic\_test.cc@{basic\_test.cc}}
+\subsubsection{\texorpdfstring{select\_single\_Dt\_fit()}{select\_single\_Dt\_fit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structbest__single__Dt}{best\+\_\+single\+\_\+\+Dt}} select\+\_\+single\+\_\+\+Dt\+\_\+fit (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classAvgFit}{Avg\+Fit}} $\ast$$>$ \&}]{fits,  }\item[{\mbox{\hyperlink{classFitQuality}{Fit\+Quality}} $\ast$}]{fit\+\_\+qual }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d98/basic__test_8cc_aaab549ac44f6cc54a17456a860a84ef8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d3/d98/basic__test_8cc_aaab549ac44f6cc54a17456a860a84ef8_icgraph}
+\end{center}
+\end{figure}

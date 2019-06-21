@@ -1,0 +1,61 @@
+\hypertarget{old_8h}{}\section{/\+Users/archanar/three\+\_\+pt\+\_\+analysis/three\+\_\+pt\+\_\+fit/old/stash/old/old.h File Reference}
+\label{old_8h}\index{/Users/archanar/three\_pt\_analysis/three\_pt\_fit/old/stash/old/old.h@{/Users/archanar/three\_pt\_analysis/three\_pt\_fit/old/stash/old/old.h}}
+{\ttfamily \#include \char`\"{}data\+\_\+selectors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fit\+\_\+quality\+\_\+factory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}functions\+\_\+factory.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}fit\+\_\+selector.\+h\char`\"{}}\newline
+Include dependency graph for old.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/d6a/old_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{db/d51/old_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structfit__three__point__control}{fit\+\_\+three\+\_\+point\+\_\+control}}
+\item 
+struct \mbox{\hyperlink{structfit__three__point__output}{fit\+\_\+three\+\_\+point\+\_\+output}}
+\item 
+struct \mbox{\hyperlink{structplot__three__point__timeslice__function__data}{plot\+\_\+three\+\_\+point\+\_\+timeslice\+\_\+function\+\_\+data}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structfit__three__point__output}{fit\+\_\+three\+\_\+point\+\_\+output}} \mbox{\hyperlink{old_8h_a6a9d245c6f7b6e76aea04b50147e41d5}{fit\+\_\+three\+\_\+point\+\_\+corr}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, const vector$<$ bool $>$ accepted\+\_\+data, \mbox{\hyperlink{structfit__three__point__control}{fit\+\_\+three\+\_\+point\+\_\+control}} control, \mbox{\hyperlink{classFitQuality}{Fit\+Quality}} $\ast$fit\+\_\+qual, double chisq\+\_\+ndof\+\_\+cutoff)
+\item 
+\mbox{\hyperlink{structplot__three__point__timeslice__function__data}{plot\+\_\+three\+\_\+point\+\_\+timeslice\+\_\+function\+\_\+data}} \mbox{\hyperlink{old_8h_ae236ac8ce25229cb65f1c0d7f3c80f70}{plot\+\_\+three\+\_\+point\+\_\+timeslice\+\_\+ensem\+\_\+function}} (\mbox{\hyperlink{classThreePointtimesliceCorrFunction}{Three\+Pointtimeslice\+Corr\+Function}} $\ast$fn, const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&ensem\+\_\+pars, const vector$<$ std\+::pair$<$ double, double $>$$>$ \&t\+\_\+values, const vector$<$ double $>$ \&delt)
+\item 
+vector$<$ pair$<$ pair$<$ double, double $>$, double $>$ $>$ \mbox{\hyperlink{old_8h_a7235212f17437e527d304237f3f0d731}{plot\+\_\+three\+\_\+point\+\_\+timeslice\+\_\+function}} (\mbox{\hyperlink{classThreePointtimesliceCorrFunction}{Three\+Pointtimeslice\+Corr\+Function}} $\ast$fn, const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&pars, const vector$<$ std\+::pair$<$ double, double $>$$>$ \&t\+\_\+values)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{old_8h_a6a9d245c6f7b6e76aea04b50147e41d5}\label{old_8h_a6a9d245c6f7b6e76aea04b50147e41d5}} 
+\index{old.h@{old.h}!fit\_three\_point\_corr@{fit\_three\_point\_corr}}
+\index{fit\_three\_point\_corr@{fit\_three\_point\_corr}!old.h@{old.h}}
+\subsubsection{\texorpdfstring{fit\_three\_point\_corr()}{fit\_three\_point\_corr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structfit__three__point__output}{fit\+\_\+three\+\_\+point\+\_\+output}} fit\+\_\+three\+\_\+point\+\_\+corr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{const vector$<$ bool $>$}]{accepted\+\_\+data,  }\item[{\mbox{\hyperlink{structfit__three__point__control}{fit\+\_\+three\+\_\+point\+\_\+control}}}]{control,  }\item[{\mbox{\hyperlink{classFitQuality}{Fit\+Quality}} $\ast$}]{fit\+\_\+qual,  }\item[{double}]{chisq\+\_\+ndof\+\_\+cutoff }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{old_8h_ae236ac8ce25229cb65f1c0d7f3c80f70}\label{old_8h_ae236ac8ce25229cb65f1c0d7f3c80f70}} 
+\index{old.h@{old.h}!plot\_three\_point\_timeslice\_ensem\_function@{plot\_three\_point\_timeslice\_ensem\_function}}
+\index{plot\_three\_point\_timeslice\_ensem\_function@{plot\_three\_point\_timeslice\_ensem\_function}!old.h@{old.h}}
+\subsubsection{\texorpdfstring{plot\_three\_point\_timeslice\_ensem\_function()}{plot\_three\_point\_timeslice\_ensem\_function()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structplot__three__point__timeslice__function__data}{plot\+\_\+three\+\_\+point\+\_\+timeslice\+\_\+function\+\_\+data}} plot\+\_\+three\+\_\+point\+\_\+timeslice\+\_\+ensem\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classThreePointtimesliceCorrFunction}{Three\+Pointtimeslice\+Corr\+Function}} $\ast$}]{fn,  }\item[{const map$<$ string, \mbox{\hyperlink{structensem__param__value}{ensem\+\_\+param\+\_\+value}} $>$ \&}]{ensem\+\_\+pars,  }\item[{const vector$<$ std\+::pair$<$ double, double $>$$>$ \&}]{t\+\_\+values,  }\item[{const vector$<$ double $>$ \&}]{delt }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{old_8h_a7235212f17437e527d304237f3f0d731}\label{old_8h_a7235212f17437e527d304237f3f0d731}} 
+\index{old.h@{old.h}!plot\_three\_point\_timeslice\_function@{plot\_three\_point\_timeslice\_function}}
+\index{plot\_three\_point\_timeslice\_function@{plot\_three\_point\_timeslice\_function}!old.h@{old.h}}
+\subsubsection{\texorpdfstring{plot\_three\_point\_timeslice\_function()}{plot\_three\_point\_timeslice\_function()}}
+{\footnotesize\ttfamily vector$<$ pair$<$pair$<$double,double$>$,double$>$ $>$ plot\+\_\+three\+\_\+point\+\_\+timeslice\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classThreePointtimesliceCorrFunction}{Three\+Pointtimeslice\+Corr\+Function}} $\ast$}]{fn,  }\item[{const map$<$ string, \mbox{\hyperlink{structparam__value}{param\+\_\+value}} $>$ \&}]{pars,  }\item[{const vector$<$ std\+::pair$<$ double, double $>$$>$ \&}]{t\+\_\+values }\end{DoxyParamCaption})}
+

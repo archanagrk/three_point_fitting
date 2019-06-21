@@ -1,0 +1,319 @@
+\hypertarget{namespaceedb__reader}{}\section{edb\+\_\+reader Namespace Reference}
+\label{namespaceedb__reader}\index{edb\_reader@{edb\_reader}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structedb__reader_1_1DumbDisambiguator}{Dumb\+Disambiguator}}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespaceedb__reader_a813c5a58e50141034390e821ed895942}{usage}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{namespaceedb__reader_a9caf0c894a49fc4a9829aead7ec614fd}{print\+Meta}} (const string \&dbase)
+\begin{DoxyCompactList}\small\item\em Print the metadata. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename K $>$ }\\void \mbox{\hyperlink{namespaceedb__reader_af770eded7bd6582e1e379f54c13bd0c2}{print\+Keys}} (const string \&dbase)
+\begin{DoxyCompactList}\small\item\em Print all the keys. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename K $>$ }\\void \mbox{\hyperlink{namespaceedb__reader_add7c23b7ba3986c35bcaa28611526f89}{print\+Keys\+X\+ML}} (const string \&xml\+\_\+file, const string \&dbase)
+\begin{DoxyCompactList}\small\item\em Print all the keys to a xml file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename K , typename V $>$ }\\V \mbox{\hyperlink{namespaceedb__reader_aa1903de7bccd11ada11d0166e1662064}{print\+Key\+Value}} (const \mbox{\hyperlink{test__db_8cc_ab54a55a9054a3f0247c74233453ae568}{K}} \&ky, All\+Conf\+Store\+DB$<$ Serial\+D\+B\+Key$<$ \mbox{\hyperlink{test__db_8cc_ab54a55a9054a3f0247c74233453ae568}{K}} $>$, Serial\+D\+B\+Data$<$ typename Ensem\+Scalar$<$ V $>$\+::Type\+\_\+t $>$ $>$ \&database)
+\begin{DoxyCompactList}\small\item\em Get a key/value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename K , typename V $>$ }\\void \mbox{\hyperlink{namespaceedb__reader_ae02dd53c91dd84ab984521559b49306f}{print\+Ensem}} (const string \&xml\+\_\+key\+\_\+file, const string \&dbase)
+\begin{DoxyCompactList}\small\item\em Print ensemble files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceedb__reader_a15f77d6bf819d626b19549dbd921c1b0}{print\+Meson}} (const string \&xml\+\_\+key\+\_\+file, const string \&dbase)
+\begin{DoxyCompactList}\small\item\em Print meson elemental. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceedb__reader_a35b2acb7ef05b07177eb13058c1f4768}{print\+Prop}} (const string \&xml\+\_\+key\+\_\+file, const string \&dbase)
+\begin{DoxyCompactList}\small\item\em Print prop elemental. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename K , typename V $>$ }\\int \mbox{\hyperlink{namespaceedb__reader_a25cd3a48db32e167495d3229528e6cdb}{work\+Handler}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Handle all the work. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename K , typename V $>$ }\\int \mbox{\hyperlink{namespaceedb__reader_acbef2e39b69c0ac895a7f37a12f9ed47}{meson\+Work\+Handler}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Handle all the work. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename K , typename V $>$ }\\int \mbox{\hyperlink{namespaceedb__reader_a2d373bb444230e1ed02c918c196f1d39}{prop\+Work\+Handler}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Handle all the work. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceedb__reader_abc5253cfecd30dd91009a5b4d96a3306}{register\+All}} ()
+\begin{DoxyCompactList}\small\item\em Registration hack. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{namespaceedb__reader_a39298f59ee1c604a3c52311afab377e5}{usage}} (int argc, char $\ast$$\ast$argv)
+\item 
+{\footnotesize template$<$typename K , typename V $>$ }\\int \mbox{\hyperlink{namespaceedb__reader_af7f03dfd858d5d80986e77d069b1ccbd}{work\+Handler}} (int argc, char $\ast$$\ast$argv)
+\item 
+{\footnotesize template$<$typename K , typename V $>$ }\\int \mbox{\hyperlink{namespaceedb__reader_a652a00afe7723e5e5cb678177917f3c1}{meson\+Work\+Handler}} (int argc, char $\ast$$\ast$argv)
+\item 
+{\footnotesize template$<$typename K , typename V $>$ }\\int \mbox{\hyperlink{namespaceedb__reader_ad11a22f7a22c60eef4c74fc64bb779f6}{prop\+Work\+Handler}} (int argc, char $\ast$$\ast$argv)
+\item 
+A\+D\+A\+T\+::\+Map\+Object$<$ Hadron\+::\+Key\+Hadron\+S\+U\+N\+N\+Part\+N\+Pt\+Corr\+\_\+t, std\+::vector$<$ E\+N\+S\+E\+M\+::\+Vector\+Complex $>$ $>$ \mbox{\hyperlink{namespaceedb__reader_acda70ebf60da73d7caecba719cb087a3}{get\+Corrs}} (const std\+::string \&dbase)
+\begin{DoxyCompactList}\small\item\em Get corrs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceedb__reader_acda70ebf60da73d7caecba719cb087a3}\label{namespaceedb__reader_acda70ebf60da73d7caecba719cb087a3}} 
+\index{edb\_reader@{edb\_reader}!getCorrs@{getCorrs}}
+\index{getCorrs@{getCorrs}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{getCorrs()}{getCorrs()}}
+{\footnotesize\ttfamily A\+D\+A\+T\+::\+Map\+Object$<$ Hadron\+::\+Key\+Hadron\+S\+U\+N\+N\+Part\+N\+Pt\+Corr\+\_\+t, std\+::vector$<$ E\+N\+S\+E\+M\+::\+Vector\+Complex $>$ $>$ edb\+\_\+reader\+::get\+Corrs (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{dbase }\end{DoxyParamCaption})}
+
+
+
+Get corrs. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{d8/d4f/namespaceedb__reader_acda70ebf60da73d7caecba719cb087a3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{d8/d4f/namespaceedb__reader_acda70ebf60da73d7caecba719cb087a3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceedb__reader_a652a00afe7723e5e5cb678177917f3c1}\label{namespaceedb__reader_a652a00afe7723e5e5cb678177917f3c1}} 
+\index{edb\_reader@{edb\_reader}!mesonWorkHandler@{mesonWorkHandler}}
+\index{mesonWorkHandler@{mesonWorkHandler}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{mesonWorkHandler()}{mesonWorkHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+int edb\+\_\+reader\+::meson\+Work\+Handler (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceedb__reader_acbef2e39b69c0ac895a7f37a12f9ed47}\label{namespaceedb__reader_acbef2e39b69c0ac895a7f37a12f9ed47}} 
+\index{edb\_reader@{edb\_reader}!mesonWorkHandler@{mesonWorkHandler}}
+\index{mesonWorkHandler@{mesonWorkHandler}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{mesonWorkHandler()}{mesonWorkHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+int edb\+\_\+reader\+::meson\+Work\+Handler (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Handle all the work. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/namespaceedb__reader_acbef2e39b69c0ac895a7f37a12f9ed47_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceedb__reader_ae02dd53c91dd84ab984521559b49306f}\label{namespaceedb__reader_ae02dd53c91dd84ab984521559b49306f}} 
+\index{edb\_reader@{edb\_reader}!printEnsem@{printEnsem}}
+\index{printEnsem@{printEnsem}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{printEnsem()}{printEnsem()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+void edb\+\_\+reader\+::print\+Ensem (\begin{DoxyParamCaption}\item[{const string \&}]{xml\+\_\+key\+\_\+file,  }\item[{const string \&}]{dbase }\end{DoxyParamCaption})}
+
+
+
+Print ensemble files. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/namespaceedb__reader_ae02dd53c91dd84ab984521559b49306f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceedb__reader_af770eded7bd6582e1e379f54c13bd0c2}\label{namespaceedb__reader_af770eded7bd6582e1e379f54c13bd0c2}} 
+\index{edb\_reader@{edb\_reader}!printKeys@{printKeys}}
+\index{printKeys@{printKeys}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{printKeys()}{printKeys()}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+void edb\+\_\+reader\+::print\+Keys (\begin{DoxyParamCaption}\item[{const string \&}]{dbase }\end{DoxyParamCaption})}
+
+
+
+Print all the keys. 
+
+\mbox{\Hypertarget{namespaceedb__reader_add7c23b7ba3986c35bcaa28611526f89}\label{namespaceedb__reader_add7c23b7ba3986c35bcaa28611526f89}} 
+\index{edb\_reader@{edb\_reader}!printKeysXML@{printKeysXML}}
+\index{printKeysXML@{printKeysXML}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{printKeysXML()}{printKeysXML()}}
+{\footnotesize\ttfamily template$<$typename K $>$ \\
+void edb\+\_\+reader\+::print\+Keys\+X\+ML (\begin{DoxyParamCaption}\item[{const string \&}]{xml\+\_\+file,  }\item[{const string \&}]{dbase }\end{DoxyParamCaption})}
+
+
+
+Print all the keys to a xml file. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/namespaceedb__reader_add7c23b7ba3986c35bcaa28611526f89_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceedb__reader_aa1903de7bccd11ada11d0166e1662064}\label{namespaceedb__reader_aa1903de7bccd11ada11d0166e1662064}} 
+\index{edb\_reader@{edb\_reader}!printKeyValue@{printKeyValue}}
+\index{printKeyValue@{printKeyValue}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{printKeyValue()}{printKeyValue()}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+V edb\+\_\+reader\+::print\+Key\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{test__db_8cc_ab54a55a9054a3f0247c74233453ae568}{K}} \&}]{ky,  }\item[{All\+Conf\+Store\+DB$<$ Serial\+D\+B\+Key$<$ \mbox{\hyperlink{test__db_8cc_ab54a55a9054a3f0247c74233453ae568}{K}} $>$, Serial\+D\+B\+Data$<$ typename Ensem\+Scalar$<$ V $>$\+::Type\+\_\+t $>$ $>$ \&}]{database }\end{DoxyParamCaption})}
+
+
+
+Get a key/value. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{d8/d4f/namespaceedb__reader_aa1903de7bccd11ada11d0166e1662064_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceedb__reader_a15f77d6bf819d626b19549dbd921c1b0}\label{namespaceedb__reader_a15f77d6bf819d626b19549dbd921c1b0}} 
+\index{edb\_reader@{edb\_reader}!printMeson@{printMeson}}
+\index{printMeson@{printMeson}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{printMeson()}{printMeson()}}
+{\footnotesize\ttfamily void edb\+\_\+reader\+::print\+Meson (\begin{DoxyParamCaption}\item[{const string \&}]{xml\+\_\+key\+\_\+file,  }\item[{const string \&}]{dbase }\end{DoxyParamCaption})}
+
+
+
+Print meson elemental. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/namespaceedb__reader_a15f77d6bf819d626b19549dbd921c1b0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/namespaceedb__reader_a15f77d6bf819d626b19549dbd921c1b0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceedb__reader_a9caf0c894a49fc4a9829aead7ec614fd}\label{namespaceedb__reader_a9caf0c894a49fc4a9829aead7ec614fd}} 
+\index{edb\_reader@{edb\_reader}!printMeta@{printMeta}}
+\index{printMeta@{printMeta}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{printMeta()}{printMeta()}}
+{\footnotesize\ttfamily void edb\+\_\+reader\+::print\+Meta (\begin{DoxyParamCaption}\item[{const string \&}]{dbase }\end{DoxyParamCaption})}
+
+
+
+Print the metadata. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/namespaceedb__reader_a9caf0c894a49fc4a9829aead7ec614fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceedb__reader_a35b2acb7ef05b07177eb13058c1f4768}\label{namespaceedb__reader_a35b2acb7ef05b07177eb13058c1f4768}} 
+\index{edb\_reader@{edb\_reader}!printProp@{printProp}}
+\index{printProp@{printProp}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{printProp()}{printProp()}}
+{\footnotesize\ttfamily void edb\+\_\+reader\+::print\+Prop (\begin{DoxyParamCaption}\item[{const string \&}]{xml\+\_\+key\+\_\+file,  }\item[{const string \&}]{dbase }\end{DoxyParamCaption})}
+
+
+
+Print prop elemental. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/namespaceedb__reader_a35b2acb7ef05b07177eb13058c1f4768_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/namespaceedb__reader_a35b2acb7ef05b07177eb13058c1f4768_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceedb__reader_ad11a22f7a22c60eef4c74fc64bb779f6}\label{namespaceedb__reader_ad11a22f7a22c60eef4c74fc64bb779f6}} 
+\index{edb\_reader@{edb\_reader}!propWorkHandler@{propWorkHandler}}
+\index{propWorkHandler@{propWorkHandler}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{propWorkHandler()}{propWorkHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+int edb\+\_\+reader\+::prop\+Work\+Handler (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceedb__reader_a2d373bb444230e1ed02c918c196f1d39}\label{namespaceedb__reader_a2d373bb444230e1ed02c918c196f1d39}} 
+\index{edb\_reader@{edb\_reader}!propWorkHandler@{propWorkHandler}}
+\index{propWorkHandler@{propWorkHandler}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{propWorkHandler()}{propWorkHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+int edb\+\_\+reader\+::prop\+Work\+Handler (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Handle all the work. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/namespaceedb__reader_a2d373bb444230e1ed02c918c196f1d39_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceedb__reader_abc5253cfecd30dd91009a5b4d96a3306}\label{namespaceedb__reader_abc5253cfecd30dd91009a5b4d96a3306}} 
+\index{edb\_reader@{edb\_reader}!registerAll@{registerAll}}
+\index{registerAll@{registerAll}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{registerAll()}{registerAll()}}
+{\footnotesize\ttfamily bool edb\+\_\+reader\+::register\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Registration hack. 
+
+\mbox{\Hypertarget{namespaceedb__reader_a813c5a58e50141034390e821ed895942}\label{namespaceedb__reader_a813c5a58e50141034390e821ed895942}} 
+\index{edb\_reader@{edb\_reader}!usage@{usage}}
+\index{usage@{usage}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{usage()}{usage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int edb\+\_\+reader\+::usage (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/namespaceedb__reader_a813c5a58e50141034390e821ed895942_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceedb__reader_a39298f59ee1c604a3c52311afab377e5}\label{namespaceedb__reader_a39298f59ee1c604a3c52311afab377e5}} 
+\index{edb\_reader@{edb\_reader}!usage@{usage}}
+\index{usage@{usage}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{usage()}{usage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int edb\+\_\+reader\+::usage (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceedb__reader_af7f03dfd858d5d80986e77d069b1ccbd}\label{namespaceedb__reader_af7f03dfd858d5d80986e77d069b1ccbd}} 
+\index{edb\_reader@{edb\_reader}!workHandler@{workHandler}}
+\index{workHandler@{workHandler}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{workHandler()}{workHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+int edb\+\_\+reader\+::work\+Handler (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceedb__reader_a25cd3a48db32e167495d3229528e6cdb}\label{namespaceedb__reader_a25cd3a48db32e167495d3229528e6cdb}} 
+\index{edb\_reader@{edb\_reader}!workHandler@{workHandler}}
+\index{workHandler@{workHandler}!edb\_reader@{edb\_reader}}
+\subsubsection{\texorpdfstring{workHandler()}{workHandler()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+int edb\+\_\+reader\+::work\+Handler (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Handle all the work. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4f/namespaceedb__reader_a25cd3a48db32e167495d3229528e6cdb_cgraph}
+\end{center}
+\end{figure}

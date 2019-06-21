@@ -1,0 +1,21 @@
+<MakeELab>
+
+
+  <momO>pion_proj0_p000_A1.jack</momO> 
+  <L>16</L>
+  <Xi>3.445</Xi>
+  <XiError>0.001</XiError> <!--Not taken into account as of now, donno how to add this to each ensem data-->
+  <name>pion_proj0_</name>
+  
+  <irrep>
+    <elem>p100_H0D4A2</elem>
+    <elem>p110_H0D2A2</elem>
+  </irrep>
+
+  <momSq>
+    <elem>1</elem>
+    <elem>2</elem>
+  </momSq>
+
+
+</MakeELab>

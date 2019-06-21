@@ -1,0 +1,93 @@
+\hypertarget{classThreePointFunction}{}\section{Three\+Point\+Function Class Reference}
+\label{classThreePointFunction}\index{ThreePointFunction@{ThreePointFunction}}
+
+
+{\ttfamily \#include $<$three\+\_\+point\+\_\+functions.\+h$>$}
+
+
+
+Inheritance diagram for Three\+Point\+Function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{d6/d8b/classThreePointFunction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Three\+Point\+Function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{d5/d18/classThreePointFunction__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classThreePointFunction_a0b8feef61409d9ad30c9296b6d137e3b}{$\sim$\+Three\+Point\+Function}} ()
+\item 
+virtual string \mbox{\hyperlink{classThreePointFunction_a4231093b53df2f82f4821a663ac8249f}{name}} () const =0
+\item 
+virtual double \mbox{\hyperlink{classThreePointFunction_a02550dd7bdee83aab6967d304bb40ff1}{operator()}} (const \mbox{\hyperlink{classAbscissa}{Abscissa}} \&\mbox{\hyperlink{old__edb_8cc_a63584b830e7aaacb521b11b72291a4bc}{x}}, const \mbox{\hyperlink{lib_2fitting__lib_2includes_8h_a647b481c557c7966517f753340a81d13}{mapstringdouble}} \&pars) const =0
+\item 
+virtual double \mbox{\hyperlink{classThreePointFunction_aa8a937bb564124ba5852898cd47e9fb3}{operator()}} (double Dt, double t, const \mbox{\hyperlink{lib_2fitting__lib_2includes_8h_a647b481c557c7966517f753340a81d13}{mapstringdouble}} \&pars) const =0
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classThreePointFunction_a0b8feef61409d9ad30c9296b6d137e3b}\label{classThreePointFunction_a0b8feef61409d9ad30c9296b6d137e3b}} 
+\index{ThreePointFunction@{ThreePointFunction}!````~ThreePointFunction@{$\sim$ThreePointFunction}}
+\index{````~ThreePointFunction@{$\sim$ThreePointFunction}!ThreePointFunction@{ThreePointFunction}}
+\subsubsection{\texorpdfstring{$\sim$ThreePointFunction()}{~ThreePointFunction()}}
+{\footnotesize\ttfamily virtual Three\+Point\+Function\+::$\sim$\+Three\+Point\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classThreePointFunction_a4231093b53df2f82f4821a663ac8249f}\label{classThreePointFunction_a4231093b53df2f82f4821a663ac8249f}} 
+\index{ThreePointFunction@{ThreePointFunction}!name@{name}}
+\index{name@{name}!ThreePointFunction@{ThreePointFunction}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily virtual string Three\+Point\+Function\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classFunction_ac6dc83996d6f002141a0a0f66f2c6496}{Function}}.
+
+
+
+Implemented in \mbox{\hyperlink{classThreePointConstPlusExp_ad7943ef83c3c7b511612e030797ece4a}{Three\+Point\+Const\+Plus\+Exp}}.
+
+\mbox{\Hypertarget{classThreePointFunction_a02550dd7bdee83aab6967d304bb40ff1}\label{classThreePointFunction_a02550dd7bdee83aab6967d304bb40ff1}} 
+\index{ThreePointFunction@{ThreePointFunction}!operator()@{operator()}}
+\index{operator()@{operator()}!ThreePointFunction@{ThreePointFunction}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual double Three\+Point\+Function\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAbscissa}{Abscissa}} \&}]{x,  }\item[{const \mbox{\hyperlink{lib_2fitting__lib_2includes_8h_a647b481c557c7966517f753340a81d13}{mapstringdouble}} \&}]{pars }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classFunction_a8cd7f815d5f883cc523341c53ba811d0}{Function}}.
+
+
+
+Implemented in \mbox{\hyperlink{classThreePointConstPlusExp_aabb955a37221d2dc9cff3528a1564584}{Three\+Point\+Const\+Plus\+Exp}}.
+
+\mbox{\Hypertarget{classThreePointFunction_aa8a937bb564124ba5852898cd47e9fb3}\label{classThreePointFunction_aa8a937bb564124ba5852898cd47e9fb3}} 
+\index{ThreePointFunction@{ThreePointFunction}!operator()@{operator()}}
+\index{operator()@{operator()}!ThreePointFunction@{ThreePointFunction}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual double Three\+Point\+Function\+::operator() (\begin{DoxyParamCaption}\item[{double}]{Dt,  }\item[{double}]{t,  }\item[{const \mbox{\hyperlink{lib_2fitting__lib_2includes_8h_a647b481c557c7966517f753340a81d13}{mapstringdouble}} \&}]{pars }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classThreePointConstPlusExp_abe81611888105afdb0014bc1b9c2c269}{Three\+Point\+Const\+Plus\+Exp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/archanar/three\+\_\+pt\+\_\+analysis/three\+\_\+point\+\_\+fitting/src/\mbox{\hyperlink{three__point__functions_8h}{three\+\_\+point\+\_\+functions.\+h}}\end{DoxyCompactItemize}

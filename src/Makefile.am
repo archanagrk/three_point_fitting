@@ -19,22 +19,24 @@ LDADD = -lfitting @SEMBLE_LIBS@ @ADAT_LIBS@ @ITPP_LIBS@ @LIBS@ @FITTING_LIBS@
 ##   be built by 'make check' and is not installed.
 
 
-bin_PROGRAMS = fit_zt ensemble_fit_three_pt_fns
+bin_PROGRAMS = fit_zt ensemble_fit_three_pt_fns make_elab
 
 check_PROGRAMS = test_three_pt_fit
 
 ##############################################################
 
-ensemble_fit_three_pt_fns_SOURCES   = ensemble_fit_three_pt_fns.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc edb_reader.cc key_struct.cc\
-													three_point_timeslice_corr_functions_factory.cc three_pt_fit_quality_factory.cc \
-													three_pt_fit_quality.cc
+ensemble_fit_three_pt_fns_SOURCES   = exe/ensemble_fit_three_pt_fns.cc lib/three_point_timeslice_corr_functions.cc lib/three_point_timeslice_fitting.cc lib/edb_reader.cc lib/key_struct.cc\
+													lib/three_point_timeslice_corr_functions_factory.cc lib/three_pt_fit_quality_factory.cc \
+													lib/three_pt_fit_quality.cc
 
-fit_zt_SOURCES		= fit_zt.cc z_timeslice_fitting.cc z_timeslice_functions.cc \
-												z_timeslice_functions_factory.cc
+fit_zt_SOURCES		= exe/fit_zt.cc lib/z_timeslice_fitting.cc lib/z_timeslice_functions.cc \
+												lib/z_timeslice_functions_factory.cc
 
-test_three_pt_fit_SOURCES	= test_three_pt_fit.cc three_point_timeslice_corr_functions.cc three_point_timeslice_fitting.cc \
-                           three_point_timeslice_corr_functions_factory.cc three_pt_fit_quality_factory.cc \
-                           three_pt_fit_quality.cc
+test_three_pt_fit_SOURCES	= exe/test_three_pt_fit.cc lib/three_point_timeslice_corr_functions.cc lib/three_point_timeslice_fitting.cc \
+                           lib/three_point_timeslice_corr_functions_factory.cc lib/three_pt_fit_quality_factory.cc \
+                           lib/three_pt_fit_quality.cc
+
+make_elab_SOURCES = exe/make_elab.cc 
 ##############################################################
 
 

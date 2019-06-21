@@ -1,0 +1,203 @@
+\hypertarget{namespaceradmat}{}\section{radmat Namespace Reference}
+\label{namespaceradmat}\index{radmat@{radmat}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em an extended key specifying the name of the particle to avoid ambiguity involved in state numbering \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structradmat_1_1RadmatMassOverlapData__t}{Radmat\+Mass\+Overlap\+Data\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em a serializable data container holding the energy and overlap \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespaceradmat_a452f967dd14ae6fc0f7f9aa7ba04f8a0}{operator$<$$<$}} (std\+::ostream \&, const \mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&)
+\begin{DoxyCompactList}\small\item\em for error messages \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_a99ffeb2977d9d4a90de6b401be74526c}{read}} (A\+D\+A\+T\+I\+O\+::\+Binary\+Reader \&bin, \mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&param)
+\begin{DoxyCompactList}\small\item\em read a serialized key \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_a2ca0177bbaa4c0cfe7505fd997dae1f1}{write}} (A\+D\+A\+T\+I\+O\+::\+Binary\+Writer \&bin, const \mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&param)
+\begin{DoxyCompactList}\small\item\em write a key to binary \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_ac62d85f3d4d74fc2ca2dc2536a8558fa}{read}} (A\+D\+A\+T\+X\+M\+L\+::\+X\+M\+L\+Reader \&xml, const std\+::string \&path, \mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&param)
+\begin{DoxyCompactList}\small\item\em read a key from xml \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_adaf52a8cd9ebda9a7d68fbe9f69d20a9}{write}} (A\+D\+A\+T\+X\+M\+L\+::\+X\+M\+L\+Writer \&xml, const std\+::string \&path, const \mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&param)
+\begin{DoxyCompactList}\small\item\em write a key to xml \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespaceradmat_a29507df1342906351184fb8d4e1bb16a}{file\+Name}} (const \mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&param)
+\begin{DoxyCompactList}\small\item\em a uniqe key \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_a48bba8fb1d24a49efdc5eed962710717}{read}} (A\+D\+A\+T\+I\+O\+::\+Binary\+Reader \&bin, \mbox{\hyperlink{structradmat_1_1RadmatMassOverlapData__t}{Radmat\+Mass\+Overlap\+Data\+\_\+t}} \&param)
+\begin{DoxyCompactList}\small\item\em read serialized data \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespaceradmat_a47d088d360c723c8981b3ef1ed8da405}{write}} (A\+D\+A\+T\+I\+O\+::\+Binary\+Writer \&bin, const \mbox{\hyperlink{structradmat_1_1RadmatMassOverlapData__t}{Radmat\+Mass\+Overlap\+Data\+\_\+t}} \&param)
+\begin{DoxyCompactList}\small\item\em write serialized data \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{namespaceradmat_a33c106e5957a1e9d566afd6012f2d87e}{operator==}} (const \mbox{\hyperlink{structradmat_1_1RadmatMassOverlapData__t}{Radmat\+Mass\+Overlap\+Data\+\_\+t}} \&, const \mbox{\hyperlink{structradmat_1_1RadmatMassOverlapData__t}{Radmat\+Mass\+Overlap\+Data\+\_\+t}} \&)
+\begin{DoxyCompactList}\small\item\em for testing routines \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceradmat_a29507df1342906351184fb8d4e1bb16a}\label{namespaceradmat_a29507df1342906351184fb8d4e1bb16a}} 
+\index{radmat@{radmat}!fileName@{fileName}}
+\index{fileName@{fileName}!radmat@{radmat}}
+\subsubsection{\texorpdfstring{fileName()}{fileName()}}
+{\footnotesize\ttfamily std\+::string radmat\+::file\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&}]{param }\end{DoxyParamCaption})}
+
+
+
+a uniqe key 
+
+\mbox{\Hypertarget{namespaceradmat_a452f967dd14ae6fc0f7f9aa7ba04f8a0}\label{namespaceradmat_a452f967dd14ae6fc0f7f9aa7ba04f8a0}} 
+\index{radmat@{radmat}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!radmat@{radmat}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream \& radmat\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&}]{op }\end{DoxyParamCaption})}
+
+
+
+for error messages 
+
+\mbox{\Hypertarget{namespaceradmat_a33c106e5957a1e9d566afd6012f2d87e}\label{namespaceradmat_a33c106e5957a1e9d566afd6012f2d87e}} 
+\index{radmat@{radmat}!operator==@{operator==}}
+\index{operator==@{operator==}!radmat@{radmat}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool radmat\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structradmat_1_1RadmatMassOverlapData__t}{Radmat\+Mass\+Overlap\+Data\+\_\+t}} \&}]{a,  }\item[{const \mbox{\hyperlink{structradmat_1_1RadmatMassOverlapData__t}{Radmat\+Mass\+Overlap\+Data\+\_\+t}} \&}]{b }\end{DoxyParamCaption})}
+
+
+
+for testing routines 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d83/namespaceradmat_a33c106e5957a1e9d566afd6012f2d87e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceradmat_a99ffeb2977d9d4a90de6b401be74526c}\label{namespaceradmat_a99ffeb2977d9d4a90de6b401be74526c}} 
+\index{radmat@{radmat}!read@{read}}
+\index{read@{read}!radmat@{radmat}}
+\subsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void radmat\+::read (\begin{DoxyParamCaption}\item[{A\+D\+A\+T\+I\+O\+::\+Binary\+Reader \&}]{bin,  }\item[{\mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&}]{param }\end{DoxyParamCaption})}
+
+
+
+read a serialized key 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d83/namespaceradmat_a99ffeb2977d9d4a90de6b401be74526c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceradmat_ac62d85f3d4d74fc2ca2dc2536a8558fa}\label{namespaceradmat_ac62d85f3d4d74fc2ca2dc2536a8558fa}} 
+\index{radmat@{radmat}!read@{read}}
+\index{read@{read}!radmat@{radmat}}
+\subsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void radmat\+::read (\begin{DoxyParamCaption}\item[{A\+D\+A\+T\+X\+M\+L\+::\+X\+M\+L\+Reader \&}]{xml,  }\item[{const std\+::string \&}]{path,  }\item[{\mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&}]{param }\end{DoxyParamCaption})}
+
+
+
+read a key from xml 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d83/namespaceradmat_ac62d85f3d4d74fc2ca2dc2536a8558fa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceradmat_a48bba8fb1d24a49efdc5eed962710717}\label{namespaceradmat_a48bba8fb1d24a49efdc5eed962710717}} 
+\index{radmat@{radmat}!read@{read}}
+\index{read@{read}!radmat@{radmat}}
+\subsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void radmat\+::read (\begin{DoxyParamCaption}\item[{A\+D\+A\+T\+I\+O\+::\+Binary\+Reader \&}]{bin,  }\item[{\mbox{\hyperlink{structradmat_1_1RadmatMassOverlapData__t}{Radmat\+Mass\+Overlap\+Data\+\_\+t}} \&}]{param }\end{DoxyParamCaption})}
+
+
+
+read serialized data 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{d4/d83/namespaceradmat_a48bba8fb1d24a49efdc5eed962710717_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{d4/d83/namespaceradmat_a48bba8fb1d24a49efdc5eed962710717_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceradmat_a2ca0177bbaa4c0cfe7505fd997dae1f1}\label{namespaceradmat_a2ca0177bbaa4c0cfe7505fd997dae1f1}} 
+\index{radmat@{radmat}!write@{write}}
+\index{write@{write}!radmat@{radmat}}
+\subsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void radmat\+::write (\begin{DoxyParamCaption}\item[{A\+D\+A\+T\+I\+O\+::\+Binary\+Writer \&}]{bin,  }\item[{const \mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&}]{param }\end{DoxyParamCaption})}
+
+
+
+write a key to binary 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d83/namespaceradmat_a2ca0177bbaa4c0cfe7505fd997dae1f1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d83/namespaceradmat_a2ca0177bbaa4c0cfe7505fd997dae1f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceradmat_adaf52a8cd9ebda9a7d68fbe9f69d20a9}\label{namespaceradmat_adaf52a8cd9ebda9a7d68fbe9f69d20a9}} 
+\index{radmat@{radmat}!write@{write}}
+\index{write@{write}!radmat@{radmat}}
+\subsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void radmat\+::write (\begin{DoxyParamCaption}\item[{A\+D\+A\+T\+X\+M\+L\+::\+X\+M\+L\+Writer \&}]{xml,  }\item[{const std\+::string \&}]{path,  }\item[{const \mbox{\hyperlink{structradmat_1_1RadmatExtendedKeyHadronNPartIrrep__t}{Radmat\+Extended\+Key\+Hadron\+N\+Part\+Irrep\+\_\+t}} \&}]{param }\end{DoxyParamCaption})}
+
+
+
+write a key to xml 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d83/namespaceradmat_adaf52a8cd9ebda9a7d68fbe9f69d20a9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespaceradmat_a47d088d360c723c8981b3ef1ed8da405}\label{namespaceradmat_a47d088d360c723c8981b3ef1ed8da405}} 
+\index{radmat@{radmat}!write@{write}}
+\index{write@{write}!radmat@{radmat}}
+\subsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void radmat\+::write (\begin{DoxyParamCaption}\item[{A\+D\+A\+T\+I\+O\+::\+Binary\+Writer \&}]{bin,  }\item[{const \mbox{\hyperlink{structradmat_1_1RadmatMassOverlapData__t}{Radmat\+Mass\+Overlap\+Data\+\_\+t}} \&}]{param }\end{DoxyParamCaption})}
+
+
+
+write serialized data 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d4/d83/namespaceradmat_a47d088d360c723c8981b3ef1ed8da405_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d83/namespaceradmat_a47d088d360c723c8981b3ef1ed8da405_icgraph}
+\end{center}
+\end{figure}

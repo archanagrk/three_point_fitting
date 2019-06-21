@@ -1,0 +1,185 @@
+\hypertarget{data__selectors_8cc}{}\section{/\+Users/archanar/three\+\_\+pt\+\_\+analysis/fitting\+\_\+lib/lib/fitting\+\_\+lib/data\+\_\+selectors.cc File Reference}
+\label{data__selectors_8cc}\index{/Users/archanar/three\_pt\_analysis/fitting\_lib/lib/fitting\_lib/data\_selectors.cc@{/Users/archanar/three\_pt\_analysis/fitting\_lib/lib/fitting\_lib/data\_selectors.cc}}
+{\ttfamily \#include \char`\"{}data\+\_\+selectors.\+h\char`\"{}}\newline
+Include dependency graph for data\+\_\+selectors.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d5/dc2/data__selectors_8cc__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a4d7b13c038868fce4829951ffa63db4a}{operator \&\&}} (const vector$<$ bool $>$ \&\mbox{\hyperlink{old__edb_8cc_a63584b830e7aaacb521b11b72291a4bc}{x}}, const vector$<$ bool $>$ \&y)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a76d26eb91a747bde27334cb3146d62d9}{operator$\vert$$\vert$}} (const vector$<$ bool $>$ \&\mbox{\hyperlink{old__edb_8cc_a63584b830e7aaacb521b11b72291a4bc}{x}}, const vector$<$ bool $>$ \&y)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_ac9b7fb56cc4a383e271994460eef1a48}{operator!}} (const vector$<$ bool $>$ \&\mbox{\hyperlink{old__edb_8cc_a63584b830e7aaacb521b11b72291a4bc}{x}})
+\item 
+int \mbox{\hyperlink{data__selectors_8cc_a7a933801cfc0bd9d2fbfcefb80a24fc9}{count\+\_\+active}} (const vector$<$ bool $>$ \&\mbox{\hyperlink{old__edb_8cc_a63584b830e7aaacb521b11b72291a4bc}{x}})
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a817f3e180edbffa6e912efe7cafbe078}{data\+\_\+below\+\_\+x}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$max\+\_\+x)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a476e7f45934c2c9ea4805d6715cf4145}{data\+\_\+above\+\_\+x}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$min\+\_\+x)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a8701e4d6b2f97603d5190490e8a75acb}{data\+\_\+at\+\_\+x}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$xx)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_abf6683488e4e5338a1fbf7c18c289096}{data\+\_\+in\+\_\+x\+\_\+range}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, pair$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$, \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$ range)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_af4d88c2673c1087e142c0f0e323fc612}{data\+\_\+below\+\_\+y}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, double y\+\_\+max)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_abbee05203ed104b8c70516c5b6aebf06}{data\+\_\+below\+\_\+y}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, double y\+\_\+max, double nsigma)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a24b3d3dda956196068c69f9cb353a752}{data\+\_\+above\+\_\+y}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, double y\+\_\+min)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a43f980fbb0706561319752429a915b16}{data\+\_\+above\+\_\+y}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, double y\+\_\+min, double nsigma)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a6eea802572f768cf450779ddba5b837b}{data\+\_\+in\+\_\+y\+\_\+range}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, pair$<$ double, double $>$ range)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_afbaeefdfefc3506391f01416cff82d8d}{data\+\_\+in\+\_\+y\+\_\+range}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, pair$<$ double, double $>$ range, double nsigma)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a7ba5274d70190f5b2e18ade467a04404}{data\+\_\+compatible\+\_\+with\+\_\+y}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, double yy, double nsigma)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a34c27e46ef56f8c2d8e18d19e621bbbb}{data\+\_\+is\+\_\+a\+\_\+number\+\_\+y}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}})
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a4c35d17d6b05ee7c7ed1e8437b35d02f}{data\+\_\+below\+\_\+y\+\_\+error}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, double error)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_a64cfb5fc35a4ae76a8a8a454a674687a}{data\+\_\+below\+\_\+y\+\_\+noise\+\_\+ratio}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, double noise\+\_\+ratio)
+\item 
+vector$<$ bool $>$ \mbox{\hyperlink{data__selectors_8cc_af1206af16d6642861897e01e014b0c2a}{reject\+\_\+outliers}} (const \mbox{\hyperlink{classData}{Data}} \&\mbox{\hyperlink{old__edb_8cc_a2447a95b2a1d12b72f84769c4832a305}{data}}, const map$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$, pair$<$ double, double $>$ $>$ \&ref, double n\+\_\+sigma)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{data__selectors_8cc_a7a933801cfc0bd9d2fbfcefb80a24fc9}\label{data__selectors_8cc_a7a933801cfc0bd9d2fbfcefb80a24fc9}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!count\_active@{count\_active}}
+\index{count\_active@{count\_active}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{count\_active()}{count\_active()}}
+{\footnotesize\ttfamily int count\+\_\+active (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_a476e7f45934c2c9ea4805d6715cf4145}\label{data__selectors_8cc_a476e7f45934c2c9ea4805d6715cf4145}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_above\_x@{data\_above\_x}}
+\index{data\_above\_x@{data\_above\_x}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_above\_x()}{data\_above\_x()}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+above\+\_\+x (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{\mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$}]{min\+\_\+x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_a24b3d3dda956196068c69f9cb353a752}\label{data__selectors_8cc_a24b3d3dda956196068c69f9cb353a752}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_above\_y@{data\_above\_y}}
+\index{data\_above\_y@{data\_above\_y}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_above\_y()}{data\_above\_y()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+above\+\_\+y (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{double}]{y\+\_\+min }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_a43f980fbb0706561319752429a915b16}\label{data__selectors_8cc_a43f980fbb0706561319752429a915b16}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_above\_y@{data\_above\_y}}
+\index{data\_above\_y@{data\_above\_y}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_above\_y()}{data\_above\_y()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+above\+\_\+y (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{double}]{y\+\_\+min,  }\item[{double}]{nsigma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_a8701e4d6b2f97603d5190490e8a75acb}\label{data__selectors_8cc_a8701e4d6b2f97603d5190490e8a75acb}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_at\_x@{data\_at\_x}}
+\index{data\_at\_x@{data\_at\_x}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_at\_x()}{data\_at\_x()}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+at\+\_\+x (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{\mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$}]{xx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_a817f3e180edbffa6e912efe7cafbe078}\label{data__selectors_8cc_a817f3e180edbffa6e912efe7cafbe078}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_below\_x@{data\_below\_x}}
+\index{data\_below\_x@{data\_below\_x}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_below\_x()}{data\_below\_x()}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+below\+\_\+x (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{\mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$}]{max\+\_\+x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_af4d88c2673c1087e142c0f0e323fc612}\label{data__selectors_8cc_af4d88c2673c1087e142c0f0e323fc612}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_below\_y@{data\_below\_y}}
+\index{data\_below\_y@{data\_below\_y}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_below\_y()}{data\_below\_y()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+below\+\_\+y (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{double}]{y\+\_\+max }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_abbee05203ed104b8c70516c5b6aebf06}\label{data__selectors_8cc_abbee05203ed104b8c70516c5b6aebf06}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_below\_y@{data\_below\_y}}
+\index{data\_below\_y@{data\_below\_y}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_below\_y()}{data\_below\_y()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+below\+\_\+y (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{double}]{y\+\_\+max,  }\item[{double}]{nsigma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_a4c35d17d6b05ee7c7ed1e8437b35d02f}\label{data__selectors_8cc_a4c35d17d6b05ee7c7ed1e8437b35d02f}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_below\_y\_error@{data\_below\_y\_error}}
+\index{data\_below\_y\_error@{data\_below\_y\_error}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_below\_y\_error()}{data\_below\_y\_error()}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+below\+\_\+y\+\_\+error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{double}]{error }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_a64cfb5fc35a4ae76a8a8a454a674687a}\label{data__selectors_8cc_a64cfb5fc35a4ae76a8a8a454a674687a}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_below\_y\_noise\_ratio@{data\_below\_y\_noise\_ratio}}
+\index{data\_below\_y\_noise\_ratio@{data\_below\_y\_noise\_ratio}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_below\_y\_noise\_ratio()}{data\_below\_y\_noise\_ratio()}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+below\+\_\+y\+\_\+noise\+\_\+ratio (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{double}]{noise\+\_\+ratio }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/de2/data__selectors_8cc_a64cfb5fc35a4ae76a8a8a454a674687a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{data__selectors_8cc_a7ba5274d70190f5b2e18ade467a04404}\label{data__selectors_8cc_a7ba5274d70190f5b2e18ade467a04404}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_compatible\_with\_y@{data\_compatible\_with\_y}}
+\index{data\_compatible\_with\_y@{data\_compatible\_with\_y}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_compatible\_with\_y()}{data\_compatible\_with\_y()}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+compatible\+\_\+with\+\_\+y (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{double}]{yy,  }\item[{double}]{nsigma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_abf6683488e4e5338a1fbf7c18c289096}\label{data__selectors_8cc_abf6683488e4e5338a1fbf7c18c289096}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_in\_x\_range@{data\_in\_x\_range}}
+\index{data\_in\_x\_range@{data\_in\_x\_range}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_in\_x\_range()}{data\_in\_x\_range()}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+in\+\_\+x\+\_\+range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{pair$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$, \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$$>$}]{range }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_a6eea802572f768cf450779ddba5b837b}\label{data__selectors_8cc_a6eea802572f768cf450779ddba5b837b}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_in\_y\_range@{data\_in\_y\_range}}
+\index{data\_in\_y\_range@{data\_in\_y\_range}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_in\_y\_range()}{data\_in\_y\_range()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+in\+\_\+y\+\_\+range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{pair$<$ double, double $>$}]{range }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_afbaeefdfefc3506391f01416cff82d8d}\label{data__selectors_8cc_afbaeefdfefc3506391f01416cff82d8d}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_in\_y\_range@{data\_in\_y\_range}}
+\index{data\_in\_y\_range@{data\_in\_y\_range}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_in\_y\_range()}{data\_in\_y\_range()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+in\+\_\+y\+\_\+range (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{pair$<$ double, double $>$}]{range,  }\item[{double}]{nsigma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_a34c27e46ef56f8c2d8e18d19e621bbbb}\label{data__selectors_8cc_a34c27e46ef56f8c2d8e18d19e621bbbb}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!data\_is\_a\_number\_y@{data\_is\_a\_number\_y}}
+\index{data\_is\_a\_number\_y@{data\_is\_a\_number\_y}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{data\_is\_a\_number\_y()}{data\_is\_a\_number\_y()}}
+{\footnotesize\ttfamily vector$<$bool$>$ data\+\_\+is\+\_\+a\+\_\+number\+\_\+y (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_a4d7b13c038868fce4829951ffa63db4a}\label{data__selectors_8cc_a4d7b13c038868fce4829951ffa63db4a}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!operator \&\&@{operator \&\&}}
+\index{operator \&\&@{operator \&\&}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{operator \&\&()}{operator \&\&()}}
+{\footnotesize\ttfamily vector$<$bool$>$ operator\&\& (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{x,  }\item[{const vector$<$ bool $>$ \&}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_ac9b7fb56cc4a383e271994460eef1a48}\label{data__selectors_8cc_ac9b7fb56cc4a383e271994460eef1a48}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!operator"!@{operator"!}}
+\index{operator"!@{operator"!}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{operator"!()}{operator!()}}
+{\footnotesize\ttfamily vector$<$bool$>$ operator! (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_a76d26eb91a747bde27334cb3146d62d9}\label{data__selectors_8cc_a76d26eb91a747bde27334cb3146d62d9}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}}
+\index{operator\texttt{"|}\texttt{"|}@{operator\texttt{"|}\texttt{"|}}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{operator\texttt{"|}\texttt{"|}()}{operator||()}}
+{\footnotesize\ttfamily vector$<$bool$>$ operator$\vert$$\vert$ (\begin{DoxyParamCaption}\item[{const vector$<$ bool $>$ \&}]{x,  }\item[{const vector$<$ bool $>$ \&}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{data__selectors_8cc_af1206af16d6642861897e01e014b0c2a}\label{data__selectors_8cc_af1206af16d6642861897e01e014b0c2a}} 
+\index{data\_selectors.cc@{data\_selectors.cc}!reject\_outliers@{reject\_outliers}}
+\index{reject\_outliers@{reject\_outliers}!data\_selectors.cc@{data\_selectors.cc}}
+\subsubsection{\texorpdfstring{reject\_outliers()}{reject\_outliers()}}
+{\footnotesize\ttfamily vector$<$bool$>$ reject\+\_\+outliers (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classData}{Data}} \&}]{data,  }\item[{const map$<$ \mbox{\hyperlink{classAbscissa}{Abscissa}} $\ast$, pair$<$ double, double $>$ $>$ \&}]{ref,  }\item[{double}]{n\+\_\+sigma }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/de2/data__selectors_8cc_af1206af16d6642861897e01e014b0c2a_cgraph}
+\end{center}
+\end{figure}

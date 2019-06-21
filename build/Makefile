@@ -213,15 +213,15 @@ AUTOCONF = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missin
 AUTOHEADER = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing autoheader
 AUTOMAKE = ${SHELL} /Users/archanar/three_pt_analysis/three_pt_fit/config/missing automake-1.16
 AWK = awk
-CC = gcc-8
+CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -Wall -g -O3 -mtune=native -fopenmp -fbounds-check
+CFLAGS = -g -O2
 CPPFLAGS = 
 CXX = g++-8
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -Wall -g -O3 -mtune=native -fopenmp -fbounds-check
+CXXFLAGS = -g -O2
 CYGPATH_W = echo
-DEFS = -DPACKAGE_NAME=\"3pt_fit\" -DPACKAGE_TARNAME=\"3pt_fit\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"3pt_fit\ 1.0\" -DPACKAGE_BUGREPORT=\"archanar@jlab.org\" -DPACKAGE_URL=\"\" -DPACKAGE=\"3pt_fit\" -DVERSION=\"1.0\"
+DEFS = -DPACKAGE_NAME=\"3pt_fit\" -DPACKAGE_TARNAME=\"3pt_fit\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"3pt_fit\ 1.0\" -DPACKAGE_BUGREPORT=\"archanar@jlab.org\" -DPACKAGE_URL=\"\" -DPACKAGE=\"3pt_fit\" -DVERSION=\"1.0\" -DPACKAGE=\"3pt_fit\" -DVERSION=\"1.0\"
 DEPDIR = .deps
 ECHO_C = \c
 ECHO_N = 
@@ -267,8 +267,8 @@ abs_builddir = /Users/archanar/three_pt_analysis/three_pt_fit/build
 abs_srcdir = /Users/archanar/three_pt_analysis/three_pt_fit/build/..
 abs_top_builddir = /Users/archanar/three_pt_analysis/three_pt_fit/build
 abs_top_srcdir = /Users/archanar/three_pt_analysis/three_pt_fit/build/..
-ac_ct_CC = 
-ac_ct_CXX = 
+ac_ct_CC = gcc
+ac_ct_CXX = g++
 am__include = include
 am__leading_dot = .
 am__quote = 
