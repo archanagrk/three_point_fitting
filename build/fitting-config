@@ -16,7 +16,7 @@
 # Be on the lookout for problems with undesirable CXXFLAGS and LDFLAGS
 # propagating through this script.
 
-prefix="/Users/archanar/three_pt_analysis/three_pt_fit_install"
+prefix="/Users/archanar/LQCDSoftware/three_pt_analysis/three_pt_fit_install"
 exec_prefix="${prefix}"
 exec_prefix_set=no
 
@@ -24,7 +24,7 @@ version="1.0"
 
 extra_libs=""
 
-fitting_cxx="g++-8"
+fitting_cxx="g++-9"
 fitting_cxxflags="-g -O2 -I${prefix}/include"
 fitting_ldflags=" -L${exec_prefix}/lib"
 fitting_libs="-lfitting "
