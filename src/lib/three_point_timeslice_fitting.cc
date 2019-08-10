@@ -992,7 +992,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
         for(int i = 0; i <= n_points; i++){ plot_t.push_back( make_pair(double(control.dt[j]),double(control.tsrc[j]) + double(i)*dt) ); }
       }
       
-      { /* write ensem fit function */
+      { /* write ensem fit function and the F values */
         plot << "# ensem fit" << endl;
 
         vector<double> delt;
@@ -1018,8 +1018,33 @@ fit_three_point_output fit_three_point_corr( const Data& data,
 
         plot << endl << endl;
 
+
+       /* write the F values */
+        plot << "# F values" << endl;
+
+        prev_dt = control.dt[0];
+
+        double F_plot  = toDouble(mean(out.F));
+        double F_upper = toDouble(mean(out.F) + sqrt(variance(out.F)));
+        double F_lower = toDouble(mean(out.F) - sqrt(variance(out.F)));
+
+        for(int i = 0; i != max;  i++)
+        {
+          pair<double,double> t = plot_fn.central[i].first;
+          if(t.first != prev_dt){ plot << endl << endl << "# F values" << endl;}
+
+          plot << t.first << "  " << t.second << "  "
+          << F_lower  << "  "
+          << F_plot   << "  "
+          << F_upper  << endl;
+
+          prev_dt = t.first;
+        }
+
+        plot << endl << endl;
+
       }
-      
+
       { /* write avg fit variation functions */ 
         for(vector<AvgFit*>::iterator fit = accepted_fits.begin(); fit != accepted_fits.end(); fit++)
         {

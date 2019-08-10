@@ -14,8 +14,8 @@ $plotfilename = "${filename}.plot";
 $random = int(rand(1000));
 $tmpfile = "/tmp/plot_three_point_fit.${random}.gnu";
 
-$ymin = 0.01;
-$ymax = -0.01;
+$ymin = 2.0;
+$ymax = -2.0;
 
 open(FILE , " < ${plotfilename}");
 $corrname = <FILE>;
@@ -29,6 +29,8 @@ while($line = <FILE>){
 
   if($line =~ m/# ensem fit/){last;}
   if($line =~ m/# inactive data/){last;}
+  if($line =~ m/# active data/){next;}
+  if($line =~ m/# F values/){last;}
   if($line eq /^#/){next;}
   if($line eq "\n"){next;}
 
@@ -41,8 +43,8 @@ while($line = <FILE>){
 }
 close(FILE);
 
-$ymax += 0.05*abs($ymax - $ymin);
-$ymin -= 0.05*abs($ymax - $ymin);
+$ymax += 0.005*abs($ymax - $ymin);
+$ymin -= 0.005*abs($ymax - $ymin);
 
 chomp $firstline; chomp $F; chomp $chisq; chomp $corrname;
 $corrname = substr($corrname, 8);
@@ -96,6 +98,7 @@ foreach my $i (0..$end) {
   $idx_one   =  $i;
   $idx_two   =  $Dt + $i;
   $idx_three =  $Dt + $Dt + $i;
+  $idx_four =  $Dt + $Dt + $Dt + $i;
 
 
 
@@ -103,6 +106,9 @@ foreach my $i (0..$end) {
   print OUT "plot   \'${plotfilename}\' index $idx_three using 2:5 w lines lw 2 lc rgb \"#C0272D\",\\\n"; #don't fill in aquaterm to see better
   print OUT "       \'${plotfilename}\' index $idx_three using 2:3 w lines lw 2 lc rgb \"#C0272D\",\\\n"; #don't fill in aquaterm to see better
   print OUT "       \'${plotfilename}\' index $idx_three using 2:4 w lines lw 2 lc rgb \"#C0272D\",\\\n";
+  print OUT "       \'${plotfilename}\' index $idx_four using 2:5 w lines lw 2 lc rgb \"#4B0082\",\\\n"; #don't fill in aquaterm to see better
+  print OUT "       \'${plotfilename}\' index $idx_four using 2:3 w lines lw 2 lc rgb \"#4B0082\",\\\n"; #don't fill in aquaterm to see better
+  print OUT "       \'${plotfilename}\' index $idx_four using 2:4 w lines lw 2 lc rgb \"#4B0082\",\\\n";
   print OUT "       \'${plotfilename}\' index $idx_one using 2:3:4 with yerr pt 70 lc rgb \"#000000\",\\\n";
   print OUT "       \'${plotfilename}\' index $idx_two using 2:3:4 with yerr pt 69 lc rgb \"#2F7A79\"\n";
 

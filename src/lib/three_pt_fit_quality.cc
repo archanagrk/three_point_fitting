@@ -37,7 +37,7 @@ gen3pt_params:: gen3pt_params(XMLReader& xml_in, const string& path)
 double Generic3pt::operator()( const AvgFit& fit ) const{
 
   chisq_dof xx = fit.get_chisq();
-  double y = double( xx.n_data - xx.n_reset_data_sv - xx.n_pars + xx.n_fixed_pars ) /  xx.chisq;
+  double y = 1.0 / xx.chisq_per_ndof();
 
 //*****************************************************************************************************************
   /* raise time to the specified power */
@@ -60,7 +60,7 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
   map<pair<string,string>,double> par_corr = fit.get_result().par_corr;
   
   for(auto it = par_corr.begin(); it != par_corr.end(); it++){
-    if((it->second > 0.8 || it->second < -0.7) && (it->first.first != it->first.second)){return 0;}
+    if((it->second > 0.9 || it->second < -0.9) && (it->first.first != it->first.second)){return 0;}
   }
 
 //*****************************************************************************************************************
@@ -151,14 +151,14 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
               }
 
             //else if(p->first == "F"){e1_fn += p->second.error; dev_F.at(dt_num) = abs( (p->second.value - y1)/(p->second.error - e1) );}
-            else if(p->first == "F"){e1_fn += p->second.error; dev_F.at(dt_num) += abs( y1/(p->second.value - y1) );}
+            else if(p->first == "F"){e1_fn += p->second.error; dev_F.at(dt_num) += abs((p->second.value - y1)/y1);}
 
             else{continue;}
             }
 
 
-          dev_data.at(dt_num) += abs( y1/(y1_fn - y1) );
-          err.at(dt_num) += abs(e1/e1_fn);
+          dev_data.at(dt_num) += abs((y1_fn - y1)/y1);
+          err.at(dt_num) += abs(1/(e1_fn - e1));
           i++;
 
         }
@@ -171,20 +171,22 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
 
   /* 
 
-  Multiply by |data|/|Model - Data| - to make sure the points in the model are not too far away from data points
-  Multiply by |data|/|F - Data| - to make sure that F is not too far away from the data
+  Check |data|/|Model - Data| - to make sure the points in the model are not too far away from data points
+  Check |data|/|F - Data| - to make sure that F is not too far away from the data
 
   */
   
   for(int i = 0; i < n ; i++)
   {
-
-    y *= pow(dev_data.at(i),2) * dev_F.at(i) * err.at(i);
+    if(dev_data.at(i) > pow(10,5)){
+      y *= 0;
+    }
+    //y *= pow(dev_data.at(i),-1);
 
     /* Some extra precautions */
     if(dev_F.at(i) < dev_data.at(i)){
       cout << "warming: the constant fit is better by a 'factor' of " << dev_data.at(i)/dev_F.at(i) << endl;
-      y *= 0.1;
+      //y *= dev_F.at(i)/dev_data.at(i);
     }
 
   }  
@@ -197,8 +199,8 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
     Multiply by |F_f * E_f|/|\delta E_f * \delta F_f | or |y(end_point -1) - y(midpoint) |/| \delta y(end_point - 1) - \delta y(midpoint)|
    */
 
-  vector<bool> src(n, false); int i = 0;
-  vector<bool> snk(n, false); int f = 0;
+  vector<bool> src(n, false); int i;
+  vector<bool> snk(n, false); int f;
 
   vector<double> slope_i(n,0.0), error_i(n,0.0);
   vector<double> slope_f(n,0.0), error_f(n,0.0);
@@ -211,12 +213,18 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
       std::istringstream str2int(pars.at(p).substr(pars.at(p).find("t") + 1));
       str2int >> Dt;
 
+      for(i = 0; i < Dts.size(); i++ ){
+        if(Dts.at(i) == Dt){break;}
+        else{continue;}
+      }
+
       param_value E_i = ( par_vals.find(pars.at(p)) )->second;
       param_value F_i = ( par_vals.find("Fi_Dt"+pars.at(p).substr(pars.at(p).find("t") + 1) ) )->second;
       
       //y *= pow( sin(abs(F_i.value/(E_i.value*F.value*Dt) *(exp(E_i.value*Dt) - 1))*2/PI), power_exp);
-      y *= pow( (E_i.value*F_i.value)/ (E_i.error*F_i.error), power_exp);
-      src.at(i) = true; i++;
+      y *= abs(pow( (E_i.value*F_i.value)/ (E_i.error*F_i.error), power_exp));
+
+      src.at(i) = true;
 
 
     }
@@ -228,14 +236,21 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
       std::istringstream str2int(pars.at(p).substr(pars.at(p).find("t") + 1));
       str2int >> Dt;
 
+      for(f = 0; f < Dts.size(); f++ ){
+        if(Dts.at(f) == Dt){break;}
+        else{continue;}
+      }
+
       param_value E_f = ( par_vals.find(pars.at(p)) )->second;
       param_value F_f = ( par_vals.find("Ff_Dt"+pars.at(p).substr(pars.at(p).find("t") + 1) ) )->second;
       
       //y *= pow( sin(abs(F_f.value/(E_f.value*F.value*Dt)*(exp(E_f.value*Dt) - 1))*2/PI), power_exp);
-      y *= pow( (F_f.value*E_f.value)/ (F_f.error*E_f.error) , power_exp);
-      snk.at(f) = true; f++;
+      y *= abs(pow( (F_f.value*E_f.value)/ (F_f.error*E_f.error) , power_exp));
+
+      snk.at(f) = true;
 
     }
+
   }
 
   if(multiply_exp){
@@ -255,6 +270,7 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
 
         start_point = 1;
         for(int pt = 0; pt < slope; pt++){start_point += Dts.at(pt) + 1; }
+        //cout << "sp:" << start_point << endl;
         midpoint = start_point + Dts.at(slope)/2 -1;
 
         error_i.at(slope) = sqrt(pow(mean_y_err.at(start_point),2) + pow(mean_y_err.at(midpoint -1),2));
@@ -277,8 +293,8 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
 
 
     for(int p = 0; p < n; p++){
-      if(!src.at(p)){y *= pow(slope_i.at(p)/error_i.at(p),power_exp);}
-      if(!snk.at(p)){y *= pow(slope_f.at(p)/error_f.at(p),power_exp);}
+      if(!src.at(p)){y *= pow(slope_i.at(p)/error_i.at(p),power_exp); }
+      if(!snk.at(p)){y *= pow(slope_f.at(p)/error_f.at(p),power_exp); }
     }
     
   }

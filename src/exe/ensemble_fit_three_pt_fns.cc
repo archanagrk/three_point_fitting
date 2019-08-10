@@ -239,7 +239,6 @@ int main(int argc, char** argv)
       vector<XMLArray::Array<int>> key_mom(np); vector<int> key_row(np); vector<string> key_irrep(np);
       string Ei_name,Ef_name;
 
-
       for(int k = 1; k <= np; k++ ) //Array1DO has 1-based indices
       {
         key_row[k-1]   =  corr->first.npoint[k].irrep.irrep_mom.row;
@@ -271,7 +270,7 @@ int main(int argc, char** argv)
                         corr->first.npoint[3].irrep.op.ops[1].name+".jack" << endl; exit(1);}
 
         //name of directory
-        name = key_irrep[0] + "r" + to_string(key_row[0]) + "_p" + to_string(key_mom[0][0]) + to_string(key_mom[0][1]) + to_string(key_mom[0][2]) + "__"+key_irrep[1] + "r" +
+        name = key_irrep[0] + "r" + to_string(key_row[0]) + "_p" + to_string(key_mom[0][0]) + to_string(key_mom[0][1]) + to_string(key_mom[0][2]) + "__" + key_irrep[1] + "r" +
               to_string(key_row[1]) + "_p" + to_string(key_mom[1][0]) + to_string(key_mom[1][1]) + to_string(key_mom[1][2]) + "__" +
               key_irrep[2] + "r" + to_string(key_row[2]) + "_p" + to_string(key_mom[2][0]) + to_string(key_mom[2][1]) + to_string(key_mom[2][2]); 
 
@@ -344,7 +343,7 @@ int main(int argc, char** argv)
           Ef = SEMBLE::toScalar(Ef_ensem.elem(bin));
           Ei = SEMBLE::toScalar(Ei_ensem.elem(bin));
 
-          yt.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * SEMBLE::toScalar(real(peekObs(corr->second[bin], t)));
+          yt.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * pow(Ei*Ef*m_f_sq; 0.5) * SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); //multiplying by the normalization sqrt(Ei*Ef)*mf
         }
 
         x_t.push_back(make_pair(dt, t));
@@ -366,7 +365,8 @@ int main(int argc, char** argv)
       
       key_row.clear(); key_mom.clear(); key_irrep.clear(); x_vec.clear(); y_vec.clear();
       x_t.clear();  y_t_ensem.clear();
-    
+
+
     }
 
     corrs.clear();
