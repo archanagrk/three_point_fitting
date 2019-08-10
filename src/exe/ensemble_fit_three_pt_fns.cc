@@ -343,7 +343,7 @@ int main(int argc, char** argv)
           Ef = SEMBLE::toScalar(Ef_ensem.elem(bin));
           Ei = SEMBLE::toScalar(Ei_ensem.elem(bin));
 
-          yt.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * pow(Ei*Ef*m_f_sq; 0.5) * SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); //multiplying by the normalization sqrt(Ei*Ef)*mf
+          yt.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * pow(Ei*Ef*m_f_sq, 0.5) * SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); //multiplying by the normalization sqrt(Ei*Ef)*mf
         }
 
         x_t.push_back(make_pair(dt, t));
