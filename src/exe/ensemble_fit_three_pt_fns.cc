@@ -122,9 +122,11 @@ int main(int argc, char** argv)
   //===== READ THE KFAC XML =====
 
     string kf;
-    double Xi, XiE, m_i_sq, m_f_sq;
+    double Xi, XiE, m_i_sq; 
+    string mf_file;
     int L, pts;
     prefactor kfac;
+    EnsemReal mf; 
 
 
     if(divkfac){
@@ -140,7 +142,7 @@ int main(int argc, char** argv)
         read(xml_kf_in,"/kfac/XiE",XiE);
 
         read(xml_kf_in,"/kfac/m3Sq",m_i_sq);
-        read(xml_kf_in,"/kfac/m1Sq",m_f_sq);
+        read(xml_kf_in,"/kfac/m1Sq",mf_file);
         read(xml_kf_in,"/kfac/kfacFile",kf);
 
 
@@ -149,6 +151,8 @@ int main(int argc, char** argv)
     catch( const string& error ){
       cerr << "Error reading input file : " << error << endl;
       }
+
+      read(mf_file, mf);
 
 
     }
@@ -292,13 +296,12 @@ int main(int argc, char** argv)
           Ef = SEMBLE::toScalar(Ef_ensem.elem(bin));
           Ei = SEMBLE::toScalar(Ei_ensem.elem(bin));
 
-          yt.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * pow(Ei*Ef*m_f_sq, 0.5) * pow(L,3) * SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); //multiplying by the normalization sqrt(Ei*Ef)*mf
+          yt.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); //multiplying by the normalization sqrt(Ei*Ef)*mf
 
           /* Find the Q^2 */
           if(divkfac && (t == 0)){
             double q =  pow(key_mom[1][0],2) + pow(key_mom[1][1],2) + pow(key_mom[1][2],2);
             pf_tmp.qsq.elem(bin) = pow(2*PI/(L*Xi), 2) * q - pow(Ef - Ei, 2);
-            pf_tmp.estar.elem(bin) = Ei; //if the vector is the creation operator
           }
         }
 
@@ -311,6 +314,8 @@ int main(int argc, char** argv)
 
       if(divkfac){
         read(kfpath, pf_tmp.kfac);
+        pf_tmp.ei = Ei_ensem; //if the vector is the creation operator
+        pf_tmp.ef = Ef_ensem;
         if(pref.find(corr_num) != pref.end()){pref.insert(make_pair(corr_num, pf_tmp));}
         }
 
@@ -532,12 +537,12 @@ int main(int argc, char** argv)
       // /* write the Q^2 vs F(Q^2) output */
       {
 
-        ENSEM::EnsemComplex fq2 = output.F/pf.kfac;
+        ENSEM::EnsemComplex fq2 = pow(pf.ei* pf.ef, 0.5) * mf * output.F/pf.kfac;
 
 
         //pair<complex<double>, complex<double>> me_f = mean_err(fq2);
-        pair<double,double> me_qsq = mean_err(pf.qsq);
-        pair<double,double> me_estar = mean_err(pf.estar);
+        // pair<double,double> me_qsq = mean_err(pf.qsq);
+        // pair<double,double> me_estar = mean_err(pf.estar);
 
         {
           ostringstream outfile; outfile << path << name << "_Q2.jack"; 
