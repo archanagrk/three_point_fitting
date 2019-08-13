@@ -122,7 +122,7 @@ int main(int argc, char** argv)
   //===== READ THE KFAC XML =====
 
     string kf;
-    double Xi, XiE, m_i_sq; 
+    double Xi, XiE, as, asE; 
     string mf_file;
     int L, pts;
     prefactor kfac;
@@ -138,11 +138,12 @@ int main(int argc, char** argv)
 
 
         read(xml_kf_in,"/kfac/L",L);
+        read(xml_kf_in,"/kfac/as",as);
+        read(xml_kf_in,"/kfac/asE",asE);
         read(xml_kf_in,"/kfac/Xi",Xi);
         read(xml_kf_in,"/kfac/XiE",XiE);
 
-        read(xml_kf_in,"/kfac/m3Sq",m_i_sq);
-        read(xml_kf_in,"/kfac/m1Sq",mf_file);
+        read(xml_kf_in,"/kfac/mfFile",mf_file);
         read(xml_kf_in,"/kfac/kfacFile",kf);
 
 
@@ -537,7 +538,7 @@ int main(int argc, char** argv)
       // /* write the Q^2 vs F(Q^2) output */
       {
 
-        ENSEM::EnsemComplex fq2 = pow(pf.ei* pf.ef, 0.5) * mf * output.F/pf.kfac;
+        ENSEM::EnsemComplex fq2 = pow(pf.ei* pf.ef, 0.5) * mf * SEMBLE::toScalar(pow(L*as,3)) * output.F/pf.kfac;
 
 
         //pair<complex<double>, complex<double>> me_f = mean_err(fq2);
