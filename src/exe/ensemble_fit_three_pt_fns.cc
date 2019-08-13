@@ -18,6 +18,8 @@
 // adat
 #include "hadron/ensem_filenames.h"
 
+using namespace key_struct;
+
 
 
 
@@ -119,14 +121,10 @@ int main(int argc, char** argv)
   //=============================
   //===== READ THE KFAC XML =====
 
-    int pts;
-    Array1dO<int> mom_i, mom_f, mom_ins;
-    int row_i, row_f, row_ins, lam_i, lam_f, lam_ins, psq_i, psq_ins, psq_f;
-    string irrep_i, irrep_f, irrep_ins;
-    double coeff_real, coeff_imag, Xi, XiE, m_i_sq, m_f_sq;
-    int L;
-
-    map< string, complex<double> > kfacs;
+    string kf;
+    double Xi, XiE, m_i_sq, m_f_sq;
+    int L, pts;
+    prefactor kfac;
 
 
     if(divkfac){
@@ -136,53 +134,16 @@ int main(int argc, char** argv)
       {
         read(xml_kf_in, "/kfac/pts", pts);
 
-        /* Have to sort the elems if not already descending order in Dt */
-        std::map<int,int> sort_dt;
+
         read(xml_kf_in,"/kfac/L",L);
         read(xml_kf_in,"/kfac/Xi",Xi);
         read(xml_kf_in,"/kfac/XiE",XiE);
 
         read(xml_kf_in,"/kfac/m3Sq",m_i_sq);
         read(xml_kf_in,"/kfac/m1Sq",m_f_sq);
-
-        for(int k = 1; k <= pts; k++ ){ 
-
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[3]/irrep", irrep_i);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[3]/row", row_i);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[3]/absLam", lam_i);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[3]/mom", mom_i);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[3]/psq", psq_i);
-
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[2]/irrep", irrep_ins);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[2]/row", row_ins);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[2]/absLam", lam_ins);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[2]/mom", mom_ins);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[2]/psq", psq_ins);
-
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[1]/irrep", irrep_f);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[1]/row", row_f);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[1]/absLam", lam_f);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[1]/mom", mom_f);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/elem[1]/psq", psq_f);
-
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/cReal", coeff_real);
-          read(xml_kf_in, "/kfac/elem["+std::to_string(k)+"]/cImag", coeff_imag);
-
-          std::complex<double> coeff(coeff_real, coeff_imag);
-          string kf;
-
-          if(psq_i){irrep_i = "H"+ to_string(lam_i/2) + irrep_i;}
-          if(psq_ins){irrep_ins = "H"+ to_string(lam_ins/2) + irrep_ins;}
-          if(psq_f){irrep_f = "H"+ to_string(lam_f/2) + irrep_f;}
-
-          kf = irrep_i + "r" + to_string(row_i) + "_p" + to_string(mom_i[1]) + to_string(mom_i[2]) + to_string(mom_i[3]) + "__" + irrep_ins + "r" +
-                      to_string(row_ins) + "_p" + to_string(mom_ins[1]) + to_string(mom_ins[2]) + to_string(mom_ins[3]) + "__" +
-                      irrep_f + "r" + to_string(row_f) + "_p" + to_string(mom_f[1]) + to_string(mom_f[2]) + to_string(mom_f[3]); 
-
-          kfacs.insert(make_pair(kf, coeff));
+        read(xml_kf_in,"/kfac/kfacFile",kf);
 
 
-        }
 
       }
     catch( const string& error ){
@@ -190,7 +151,7 @@ int main(int argc, char** argv)
       }
 
 
-  }
+    }
 
 
 
@@ -201,10 +162,10 @@ int main(int argc, char** argv)
   // Read all the correlators from an edb file the edbs need to be the same irreps they are not verified. User has to make sure
   std::map<key_struct::KeyHadronSUNNPartNPtIrrep_t, int> key; 
   std::map<int,string> dir;
-  std::map<int,double> qsqs;
-  std::map<int,double> mvs;
+  std::map<int, prefactor> pref;
   int key_count = 0;
   int corr_num;
+  double mom_sq_i, mom_sq_f;
 
   vector<vector<vector<pair<int,int>>> >x; vector<vector< vector<ENSEM::EnsemReal> >> y_ensem;
   vector<pair<int,int>> x_t; vector<ENSEM::EnsemReal> y_t_ensem; 
@@ -221,7 +182,7 @@ int main(int argc, char** argv)
 
 
     //============================
-    //===== LOAD THE DATA =====
+    //===== LOAD THE DATA IN THE EDB AND THE KFAC =====
 
       
     for(ADAT::MapObject<Hadron::KeyHadronSUNNPartNPtCorr_t, std::vector<ENSEM::VectorComplex> >::const_iterator  corr = corrs.begin(); corr != corrs.end(); ++corr) 
@@ -229,10 +190,7 @@ int main(int argc, char** argv)
       
       //name of directory
       std::string name;
-
-      //for Q^2
-      double mom_sq_i, mom_sq_f;
-      double qsq, mv, q;
+      prefactor pf_tmp;
 
       int np = corr->first.npoint.size();
 
@@ -318,15 +276,6 @@ int main(int argc, char** argv)
       //name of directory
       dir.insert(make_pair(corr_num,name));
 
-      /* Find the Q^2 */
-      if(divkfac){
-        double q =  pow(key_mom[1][0],2) + pow(key_mom[1][1],2) + pow(key_mom[1][2],2);
-        qsq = pow(2*PI/(L*Xi), 2) * q - pow(sqrt(m_f_sq + pow(2*PI/(L*Xi), 2) * mom_sq_f) - sqrt(m_i_sq + pow(2*PI/(L*Xi), 2) * mom_sq_i), 2);
-        mv = sqrt(m_i_sq + pow(2*PI/(L*Xi), 2) * mom_sq_i); //if the vector is the creation operator
-      }
-
-      qsqs.insert(make_pair(corr_num,qsq));
-      mvs.insert(make_pair(corr_num,mv));
 
 
       int dt = std::abs(corr->first.npoint[1].t_slice - corr->first.npoint[3].t_slice ); 
@@ -343,13 +292,28 @@ int main(int argc, char** argv)
           Ef = SEMBLE::toScalar(Ef_ensem.elem(bin));
           Ei = SEMBLE::toScalar(Ei_ensem.elem(bin));
 
-          yt.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * pow(Ei*Ef*m_f_sq, 0.5) * SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); //multiplying by the normalization sqrt(Ei*Ef)*mf
+          yt.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * pow(Ei*Ef*m_f_sq, 0.5) * pow(L,3) * SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); //multiplying by the normalization sqrt(Ei*Ef)*mf
+
+          /* Find the Q^2 */
+          if(divkfac && (t == 0)){
+            double q =  pow(key_mom[1][0],2) + pow(key_mom[1][1],2) + pow(key_mom[1][2],2);
+            pf_tmp.qsq.elem(bin) = pow(2*PI/(L*Xi), 2) * q - pow(Ef - Ei, 2);
+            pf_tmp.estar.elem(bin) = Ei; //if the vector is the creation operator
+          }
         }
 
         x_t.push_back(make_pair(dt, t));
         y_t_ensem.push_back( yt );
 
       }
+
+      string kfpath = name + kf;
+
+      if(divkfac){
+        read(kfpath, pf_tmp.kfac);
+        if(pref.find(corr_num) != pref.end()){pref.insert(make_pair(corr_num, pf_tmp));}
+        }
+
 
       if(corr_num >= x.size()){
         x_vec.push_back(x_t); y_vec.push_back(y_t_ensem);
@@ -560,62 +524,62 @@ int main(int argc, char** argv)
     //===============================================
     //======= DIVIDE BY THE KINEMATIC FACTOR ======== 
 
-    complex<double> kfac;
-
     if(output.success && divkfac){
-      if ( kfacs.find(name) == kfacs.end() ) {cerr << "The key:" << name << "does not exist in kfac.xml" << endl; exit(1);}
-      else {kfac = kfacs.find(name)->second;}
-      
-      double qsq = qsqs.find(num_corr)->second;
-      double mv  = mvs.find(num_corr)->second;
 
-      //* label with the rho irrep *//
-      // size_t found = name.find("r");
-      // size_t end = name.substr(found+3).find("__"); 
-      // string fqsqmv_key = name.substr(0,found) + name.substr(found+3,end);
-      string fqsqmv_key = name;
+      
+      prefactor pf = pref.find(num_corr)->second;
 
       // /* write the Q^2 vs F(Q^2) output */
       {
-        ENSEM::EnsemReal f_q2 = output.F / SEMBLE::toScalar(abs(kfac));
-        pair<double, double> me_f = mean_err(f_q2);
-        pair<double,double> me_qsq = make_pair(qsq,0.0);
-        pair<double,double> me_mv = make_pair(mv,0.0);
+
+        ENSEM::EnsemComplex fq2 = output.F/pf.kfac;
+
+
+        //pair<complex<double>, complex<double>> me_f = mean_err(fq2);
+        pair<double,double> me_qsq = mean_err(pf.qsq);
+        pair<double,double> me_estar = mean_err(pf.estar);
 
         {
-          ostringstream outfile; outfile << path << name << "_F_vs_Q2.jack"; 
-          write(outfile.str(), f_q2);
+          ostringstream outfile; outfile << path << name << "_Q2.jack"; 
+          write(outfile.str(), pf.qsq);
+        }
 
-          stringstream s; s << path <<  name << "_F_vs_Q2.plot";         
-          ofstream out; out.open(s.str().c_str());
-          out << "## name= " << name << endl;
-          out << "## Q^2  F F+E F-E" << endl << endl;
-          out << qsq  << "  " << me_f.first << "  " << me_f.first - me_f.second << "  " << me_f.first + me_f.second << endl;
-          out.close();
+        {
+          ostringstream outfile; outfile << path << name << "_F.jack"; 
+          write(outfile.str(), fq2);
+
+          // stringstream s; s << path <<  name << "_F_vs_Q2.plot";         
+          // ofstream out; out.open(s.str().c_str());
+          // out << "## name= " << name << endl;
+          // out << "## Q^2 Q^2+E Q^2-E F F+E F-E" << endl << endl;
+          // out << me_qsq.first  << "  " << me_qsq.first + me_qsq.second << " " << me_qsq.first - me_qsq.second << " "<< endl;
+          // //me_f.first << "  " << me_f.first - me_f.second << "  " << me_f.first + me_f.second << endl;
+          // out.close();
         }
 
         {
           ostringstream outfile; outfile << path << name << "_F_vs_Ev.jack"; 
-          write(outfile.str(), f_q2);
+          write(outfile.str(), fq2);
 
-          stringstream s; s << path <<  name << "_F_vs_Ev.plot";         
-          ofstream out; out.open(s.str().c_str());
-          out << "## name= " << name << endl;
-          out << "## Ev  F F+E F-E" << endl << endl;
-          out << mv  << "  " << me_f.first << "  " << me_f.first - me_f.second << "  " << me_f.first + me_f.second << endl;
-          out.close();
+          // stringstream s; s << path <<  name << "_F_vs_Ev.plot";         
+          // ofstream out; out.open(s.str().c_str());
+          // out << "## name= " << name << endl;
+          // out << "## Ev  F F+E F-E" << endl << endl;
+          // out << me_estar.first  << "  " << endl;
+          // //me_f.first << "  " << me_f.first - me_f.second << "  " << me_f.first + me_f.second << endl;
+          // out.close();
         }
 
 
-        if(fqsqmv.find(fqsqmv_key) == fqsqmv.end() ){
+        // if(fqsqmv.find(fqsqmv_key) == fqsqmv.end() ){
 
-          vector<pair<pair< pair<double,double>, pair<double,double>>,pair<double, double>>> fqsqmv_val;
-          fqsqmv_val.push_back(make_pair(make_pair(me_qsq, me_mv),me_f));
-          fqsqmv.insert(make_pair(fqsqmv_key, fqsqmv_val)); 
+        //   vector<pair<pair< pair<double,double>, pair<double,double>>,pair<double, double>>> fqsqmv_val;
+        //   fqsqmv_val.push_back(make_pair(make_pair(me_qsq, me_mv),me_f));
+        //   fqsqmv.insert(make_pair(fqsqmv_key, fqsqmv_val)); 
 
-          }
+        //   }
 
-        else{ fqsqmv.find(fqsqmv_key)->second.push_back(make_pair(make_pair(me_qsq, me_mv),me_f)); }
+        // else{ fqsqmv.find(fqsqmv_key)->second.push_back(make_pair(make_pair(me_qsq, me_mv),me_f)); }
         
       }
 
@@ -670,7 +634,7 @@ int main(int argc, char** argv)
 
   /* Write the F(Q^2) vs Q^2 plot */
 
-  if(divkfac){
+  if(0){
     
     std::string path = SEMBLE::SEMBLEIO::getPath();
     {

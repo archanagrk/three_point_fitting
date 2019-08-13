@@ -53,6 +53,8 @@ namespace key_struct
 
 } //end namespace key_struct
 
+//************************************************************************
+
 namespace std
 {
 
@@ -106,7 +108,20 @@ namespace std
        }
     };
 }
+//************************************************************************
+ /* STRUCT FOR HOLDING THE PREFACTOR */
+//************************************************************************
 
+namespace key_struct{
+
+    struct prefactor{
+        ENSEM::EnsemReal qsq;
+        ENSEM::EnsemComplex kfac;
+        ENSEM::EnsemReal estar;
+    };
+};
+
+//************************************************************************
 
 #endif
 
