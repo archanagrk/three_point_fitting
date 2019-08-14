@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 
   const double PI = (atan(double(1)) * double(4.0));
 
-  map<string, vector< pair< pair<pair<double,double>, pair<double,double>> , pair<double, double> >>> fqsqmv; 
+  map<string, vector< pair< pair<ENSEM::EnsemReal, ENSEM::EnsemReal> , ENSEM::EnsemComplex >>> fqsqmv; 
   /* the factories are really required here, as we're only considering a very limited set 
      of functions and fit_qualities */
 
@@ -118,6 +118,7 @@ int main(int argc, char** argv)
     cerr << "Error reading input file : " << error << endl;
     }
 
+
   //=============================
   //===== READ THE KFAC XML =====
 
@@ -125,7 +126,6 @@ int main(int argc, char** argv)
     double Xi, XiE, as, asE; 
     string mf_file;
     int L, pts;
-    prefactor kfac;
     EnsemReal mf; 
 
 
@@ -186,7 +186,7 @@ int main(int argc, char** argv)
     std::cout << "end of file =  " << filename[i] << std::endl;
 
 
-    //============================
+    //=================================================
     //===== LOAD THE DATA IN THE EDB AND THE KFAC =====
 
       
@@ -270,7 +270,8 @@ int main(int argc, char** argv)
 
       /* Make an ensemble of the two-point function energies */
 
-      EnsemReal Ei_ensem; read(Ei_name, Ei_ensem); EnsemReal Ef_ensem; read(Ef_name, Ef_ensem);
+      EnsemReal Ei_ensem; read(Ei_name, Ei_ensem); EnsemReal Ef_ensem; read(Ef_name, Ef_ensem); EnsemReal qsq; qsq.resize(Ei_ensem.size());
+      double q;
 
         
       key_struct::KeyHadronSUNNPartNPtIrrep_t tmp_k(key_row, key_mom, key_irrep);
@@ -301,8 +302,8 @@ int main(int argc, char** argv)
 
           /* Find the Q^2 */
           if(divkfac && (t == 0)){
-            double q =  pow(key_mom[1][0],2) + pow(key_mom[1][1],2) + pow(key_mom[1][2],2);
-            pf_tmp.qsq.elem(bin) = pow(2*PI/(L*Xi), 2) * q - pow(Ef - Ei, 2);
+            q =  pow(key_mom[1][0],2) + pow(key_mom[1][1],2) + pow(key_mom[1][2],2);
+            qsq.elem(bin) = pow(2*PI/(L*Xi), 2) * q - pow(Ef - Ei, 2);
           }
         }
 
@@ -311,13 +312,14 @@ int main(int argc, char** argv)
 
       }
 
-      string kfpath = name + kf;
+      string kfpath = name + "/" + kf;
 
       if(divkfac){
         read(kfpath, pf_tmp.kfac);
         pf_tmp.ei = Ei_ensem; //if the vector is the creation operator
         pf_tmp.ef = Ef_ensem;
-        if(pref.find(corr_num) != pref.end()){pref.insert(make_pair(corr_num, pf_tmp));}
+        pf_tmp.qsq = qsq;
+        if(pref.find(corr_num) == pref.end()){pref.insert(make_pair(corr_num, pf_tmp));}
         }
 
 
@@ -344,7 +346,7 @@ int main(int argc, char** argv)
   }
 
 
-  //============================
+  //================================
   //===== MAKE THE DATA OBJECT =====
 
 
@@ -354,9 +356,9 @@ int main(int argc, char** argv)
     the the output of this fit is used - reduces the complexity from n^m to n*m */
 
   /* threading over corrs */
-  int nthr = omp_get_max_threads(); 
-  cout << "*** distributing corrs over " << nthr << " threads ***" << endl;
-  #pragma omp parallel for num_threads(nthr) //schedule(dynamic)
+  // int nthr = omp_get_max_threads(); 
+  // cout << "*** distributing corrs over " << nthr << " threads ***" << endl;
+  // #pragma omp parallel for num_threads(nthr) //schedule(dynamic)
 
   
   // START THE LOOP OVER THE CORRS IN THE EDB
@@ -385,7 +387,7 @@ int main(int argc, char** argv)
     cout << "loaded data::" << endl << data[num_dt].print_data() << endl;
 
 
-    //============================
+    //=================================
 
     //=================================
     //===== REMOVE UNWANTED POINTS ====
@@ -513,6 +515,8 @@ int main(int argc, char** argv)
     //============================
     //======= DIR NAMING ======== 
 
+    /* Creates a subdirectory with the irrep names and the files for the respective fit is stored in this subdirectory */
+
     std::string name = dir.find(num_corr)->second;
     std::stringstream ss;
     ss << name;
@@ -538,12 +542,8 @@ int main(int argc, char** argv)
       // /* write the Q^2 vs F(Q^2) output */
       {
 
-        ENSEM::EnsemComplex fq2 = pow(pf.ei* pf.ef, 0.5) * mf * SEMBLE::toScalar(pow(L*as,3)) * output.F/pf.kfac;
+        ENSEM::EnsemComplex fq2 = sqrt(pf.ei* pf.ef) * mf * SEMBLE::toScalar(pow(L*as,3)) / pf.kfac * output.F;
 
-
-        //pair<complex<double>, complex<double>> me_f = mean_err(fq2);
-        // pair<double,double> me_qsq = mean_err(pf.qsq);
-        // pair<double,double> me_estar = mean_err(pf.estar);
 
         {
           ostringstream outfile; outfile << path << name << "_Q2.jack"; 
@@ -553,39 +553,23 @@ int main(int argc, char** argv)
         {
           ostringstream outfile; outfile << path << name << "_F.jack"; 
           write(outfile.str(), fq2);
-
-          // stringstream s; s << path <<  name << "_F_vs_Q2.plot";         
-          // ofstream out; out.open(s.str().c_str());
-          // out << "## name= " << name << endl;
-          // out << "## Q^2 Q^2+E Q^2-E F F+E F-E" << endl << endl;
-          // out << me_qsq.first  << "  " << me_qsq.first + me_qsq.second << " " << me_qsq.first - me_qsq.second << " "<< endl;
-          // //me_f.first << "  " << me_f.first - me_f.second << "  " << me_f.first + me_f.second << endl;
-          // out.close();
         }
 
         {
-          ostringstream outfile; outfile << path << name << "_F_vs_Ev.jack"; 
-          write(outfile.str(), fq2);
-
-          // stringstream s; s << path <<  name << "_F_vs_Ev.plot";         
-          // ofstream out; out.open(s.str().c_str());
-          // out << "## name= " << name << endl;
-          // out << "## Ev  F F+E F-E" << endl << endl;
-          // out << me_estar.first  << "  " << endl;
-          // //me_f.first << "  " << me_f.first - me_f.second << "  " << me_f.first + me_f.second << endl;
-          // out.close();
+          ostringstream outfile; outfile << path << name << "_Estar.jack"; 
+          write(outfile.str(), pf.ei);
         }
 
 
-        // if(fqsqmv.find(fqsqmv_key) == fqsqmv.end() ){
+        if(fqsqmv.find(name) == fqsqmv.end() ){
 
-        //   vector<pair<pair< pair<double,double>, pair<double,double>>,pair<double, double>>> fqsqmv_val;
-        //   fqsqmv_val.push_back(make_pair(make_pair(me_qsq, me_mv),me_f));
-        //   fqsqmv.insert(make_pair(fqsqmv_key, fqsqmv_val)); 
+          vector<pair<pair< ENSEM::EnsemReal, ENSEM::EnsemReal>, ENSEM::EnsemComplex>> fqsqmv_val;
+          fqsqmv_val.push_back(make_pair(make_pair(pf.qsq, pf.ei),fq2));
+          fqsqmv.insert(make_pair(name, fqsqmv_val)); 
 
-        //   }
+          }
 
-        // else{ fqsqmv.find(fqsqmv_key)->second.push_back(make_pair(make_pair(me_qsq, me_mv),me_f)); }
+        else{ fqsqmv.find(name)->second.push_back(make_pair(make_pair(pf.qsq, pf.ei),fq2)); }
         
       }
 
@@ -640,7 +624,7 @@ int main(int argc, char** argv)
 
   /* Write the F(Q^2) vs Q^2 plot */
 
-  if(0){
+  if(divkfac){
     
     std::string path = SEMBLE::SEMBLEIO::getPath();
     {
@@ -653,8 +637,10 @@ int main(int argc, char** argv)
               //it->second.first <<  "  " << it->second.first + it->second.second  << "  " << it->second.first - it->second.second  << endl;
         out << "## irrep=" << it->first << endl;
         for(auto it1 = it->second.begin(); it1 != it->second.end(); it1++){  
-        out << it1->first.first.first << "  " << it1->first.first.second << "  " <<  it1->second.first <<  "  " << it1->second.second << endl;}
-        out << endl << endl;
+          pair<double, double> qplot = mean_err(it1->first.first);
+          pair<complex<double>, complex<double>> fplot = make_pair( SEMBLE::toScalar( mean(it1->second) ), SEMBLE::toScalar( sqrt( variance( it1->second ) ) ) );
+          out << qplot.first << "  " << qplot.second << "  " <<  fplot.first <<  "  " << fplot.second << endl;}
+          out << endl << endl;
       }
 
       out.close();  
@@ -663,15 +649,17 @@ int main(int argc, char** argv)
     {
       stringstream s; s << path <<  xmlini << "_F_vs_mv.plot";         
       ofstream out; out.open(s.str().c_str());
-      out << "## Mv  Mv-E  Mv+E  F  F-E  F+E" << endl << endl;
+      out << "## E  E_E  F  F_E" << endl << endl;
       for(auto it = fqsqmv.begin(); it != fqsqmv.end(); it++ )
       {
         //out << it->first.first <<  "  " << it->first.first + it->first.second  << "  " << it->first.first - it->first.second  << "  " << 
               //it->second.first <<  "  " << it->second.first + it->second.second  << "  " << it->second.first - it->second.second  << endl;
         out << "## irrep=" << it->first << endl;
-        for(auto it1 = it->second.begin(); it1 != it->second.end(); it1++){  
-        out << it1->first.second.first << "  " << it1->first.second.second << "  " <<  it1->second.first <<  "  " << it1->second.second << endl;}
-        out << endl << endl;
+        for(auto it1 = it->second.begin(); it1 != it->second.end(); it1++){ 
+          pair<double, double> eiplot = mean_err(it1->first.second);
+          pair<complex<double>, complex<double>> fplot = make_pair( SEMBLE::toScalar( mean(it1->second) ), SEMBLE::toScalar( sqrt( variance( it1->second ) ) ) );
+          out << eiplot.first << "  " << eiplot.second << "  " <<  fplot.first <<  "  " << fplot.second << endl;}
+          out << endl << endl;
       }
 
       out.close();  

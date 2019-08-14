@@ -31,7 +31,7 @@
               </params>
         </fit_qual>
         <divKfac>true</divKfac>
-        <kfac>check.xml</kfac>
+        <kfac>iwish</kfac>
         <chisq_cutoff>2</chisq_cutoff>
         <noise_cutoff>100</noise_cutoff>
         <Ei>

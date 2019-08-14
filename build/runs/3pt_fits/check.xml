@@ -5,8 +5,12 @@
   <L>16</L>
   <Xi>3.445</Xi>
   <XiE>0.001</XiE>
+  <as>0.12</as>
+  <asE>0.01</asE>
+  <mfFile>pion_proj0_p000_A1.jack</mfFile>
   <m1Sq>0.00477</m1Sq>
   <m3Sq>0.01908</m3Sq>
+  <kfacFile>kfac.jack</kfacFile>
   <elem>
     <elem>
       <irrep>D3A2</irrep>

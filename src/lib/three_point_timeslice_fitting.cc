@@ -796,6 +796,7 @@ fit_three_point_output fit_three_point_corr( const Data& data,
     out.fit_summary = "No fits found";
     EnsemReal F; F.resize(1);
     out.F = F;
+    out.success = false;
     return out;
   }
 
