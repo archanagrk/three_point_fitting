@@ -273,6 +273,15 @@ int main(int argc, char** argv)
       EnsemReal Ei_ensem; read(Ei_name, Ei_ensem); EnsemReal Ef_ensem; read(Ef_name, Ef_ensem); EnsemReal qsq; qsq.resize(Ei_ensem.size());
       double q;
 
+      if(corr->second.size() != Ei_ensem.size()){ 
+        cout << "Ei size and the ebd ensem size don't match" << endl;
+        exit(1);
+      }
+      
+      if(corr->second.size() != Ef_ensem.size()){ 
+        cout << "Ef size and the ebd ensem size don't match" << endl;
+        exit(1);
+      }
         
       key_struct::KeyHadronSUNNPartNPtIrrep_t tmp_k(key_row, key_mom, key_irrep);
 
@@ -356,9 +365,9 @@ int main(int argc, char** argv)
     the the output of this fit is used - reduces the complexity from n^m to n*m */
 
   /* threading over corrs */
-  // int nthr = omp_get_max_threads(); 
-  // cout << "*** distributing corrs over " << nthr << " threads ***" << endl;
-  // #pragma omp parallel for num_threads(nthr) //schedule(dynamic)
+  int nthr = omp_get_max_threads(); 
+  cout << "*** distributing corrs over " << nthr << " threads ***" << endl;
+  #pragma omp parallel for num_threads(nthr) //schedule(dynamic)
 
   
   // START THE LOOP OVER THE CORRS IN THE EDB
@@ -542,7 +551,7 @@ int main(int argc, char** argv)
       // /* write the Q^2 vs F(Q^2) output */
       {
 
-        ENSEM::EnsemComplex fq2 = sqrt(pf.ei* pf.ef) * mf * SEMBLE::toScalar(pow(L*as,3)) / pf.kfac * output.F;
+        ENSEM::EnsemComplex fq2 = sqrt(pf.ei* pf.ef) * SEMBLE::toScalar(pow(L,3)/(2.0* Xi)) / pf.kfac * output.F;
 
 
         {
