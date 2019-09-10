@@ -269,8 +269,10 @@ int main(int argc, char** argv)
 
 
       /* Make an ensemble of the two-point function energies */
+      string kfpath = name + "/" + kf;
 
       EnsemReal Ei_ensem; read(Ei_name, Ei_ensem); EnsemReal Ef_ensem; read(Ef_name, Ef_ensem); EnsemReal qsq; qsq.resize(Ei_ensem.size());
+      EnsemComplex kfac_ensem; read(kfpath, kfac_ensem);
       double q;
 
       if(corr->second.size() != Ei_ensem.size()){ 
@@ -307,7 +309,18 @@ int main(int argc, char** argv)
           Ef = SEMBLE::toScalar(Ef_ensem.elem(bin));
           Ei = SEMBLE::toScalar(Ei_ensem.elem(bin));
 
-          yt.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); //multiplying by the normalization sqrt(Ei*Ef)*mf
+          if(!divkfac){
+            yt.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * SEMBLE::toScalar(sqrt(pow(real(peekObs(corr->second[bin], t)),2) +
+                                                 pow(imag(peekObs(corr->second[bin], t)),2)  )); //multiplying by the normalization sqrt(Ei*Ef)*mf
+                                                 }
+          else{
+	          complex<double> kf = SEMBLE::toScalar(kfac_ensem.elem(bin));
+	          complex<double> ff = SEMBLE::toScalar(peekObs(corr->second[bin], t))/SEMBLE::toScalar(kfac_ensem.elem(bin));
+	          if((imag(ff) > pow(10,-1)) &&  (abs(kf) > pow(10,-5)) ){ cout << "The corr has an imag part of " << 
+				                                    imag(ff) << " and a real part of " << real(ff) << endl; exit(-1);}
+
+            yt.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * real(ff); //multiplying by the normalization sqrt(Ei*Ef)*mf}            
+          }
 
           /* Find the Q^2 */
           if(divkfac && (t == 0)){
@@ -321,13 +334,11 @@ int main(int argc, char** argv)
 
       }
 
-      string kfpath = name + "/" + kf;
-
       if(divkfac){
-        read(kfpath, pf_tmp.kfac);
-        pf_tmp.ei = Ei_ensem; //if the vector is the creation operator
-        pf_tmp.ef = Ef_ensem;
-        pf_tmp.qsq = qsq;
+        pf_tmp.kfac = kfac_ensem;
+        pf_tmp.ei   = Ei_ensem; //if the vector is the creation operator
+        pf_tmp.ef   = Ef_ensem;
+        pf_tmp.qsq  = qsq;
         if(pref.find(corr_num) == pref.end()){pref.insert(make_pair(corr_num, pf_tmp));}
         }
 
@@ -551,7 +562,7 @@ int main(int argc, char** argv)
       // /* write the Q^2 vs F(Q^2) output */
       {
 
-        ENSEM::EnsemComplex fq2 = sqrt(pf.ei* pf.ef) * SEMBLE::toScalar(pow(L,3)/(2.0* Xi)) / pf.kfac * output.F;
+        ENSEM::EnsemComplex fq2 = output.F;
 
 
         {
@@ -642,8 +653,7 @@ int main(int argc, char** argv)
       out << "## Q  Q_E  F  F_E" << endl << endl;
       for(auto it = fqsqmv.begin(); it != fqsqmv.end(); it++ )
       {
-        //out << it->first.first <<  "  " << it->first.first + it->first.second  << "  " << it->first.first - it->first.second  << "  " << 
-              //it->second.first <<  "  " << it->second.first + it->second.second  << "  " << it->second.first - it->second.second  << endl;
+
         out << "## irrep=" << it->first << endl;
         for(auto it1 = it->second.begin(); it1 != it->second.end(); it1++){  
           pair<double, double> qplot = mean_err(it1->first.first);
@@ -661,8 +671,7 @@ int main(int argc, char** argv)
       out << "## E  E_E  F  F_E" << endl << endl;
       for(auto it = fqsqmv.begin(); it != fqsqmv.end(); it++ )
       {
-        //out << it->first.first <<  "  " << it->first.first + it->first.second  << "  " << it->first.first - it->first.second  << "  " << 
-              //it->second.first <<  "  " << it->second.first + it->second.second  << "  " << it->second.first - it->second.second  << endl;
+
         out << "## irrep=" << it->first << endl;
         for(auto it1 = it->second.begin(); it1 != it->second.end(); it1++){ 
           pair<double, double> eiplot = mean_err(it1->first.second);
