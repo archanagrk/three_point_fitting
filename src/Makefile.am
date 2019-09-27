@@ -27,7 +27,7 @@ check_PROGRAMS = test_three_pt_fit
 
 ensemble_fit_three_pt_fns_SOURCES   = exe/ensemble_fit_three_pt_fns.cc lib/three_point_timeslice_corr_functions.cc lib/three_point_timeslice_fitting.cc lib/edb_reader.cc lib/key_struct.cc\
 													lib/three_point_timeslice_corr_functions_factory.cc lib/three_pt_fit_quality_factory.cc \
-													lib/three_pt_fit_quality.cc
+													lib/three_pt_fit_quality.cc lib/rotations.cc
 
 fit_zt_SOURCES		= exe/fit_zt.cc lib/z_timeslice_fitting.cc lib/z_timeslice_functions.cc \
 												lib/z_timeslice_functions_factory.cc

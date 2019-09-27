@@ -574,7 +574,13 @@ exe/ensemble_fit_three_pt_fns.o: \
  /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/cgc_su3.h \
  /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/cgcs.h \
  /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/cgc_irrep_mom.h \
- ../../src/lib/key_struct.h \
+ ../../src/lib/key_struct.h ../../src/lib/rotations.h \
+ /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irreps_cubic_factory.h \
+ /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irreps_cubic.h \
+ /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irrep_util.h \
+ /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irreps_cubic_helicity_factory.h \
+ /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irreps_cubic_helicity.h \
+ /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irrep_util.h \
  /Users/archanar/LQCDSoftware/three_pt_analysis/semble_install/include/semble/semble_file_management.h \
  /Users/archanar/LQCDSoftware/three_pt_analysis/semble_install/include/semble/semble_meta.h \
  /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/ensem_filenames.h
@@ -1728,6 +1734,20 @@ exe/ensemble_fit_three_pt_fns.o: \
 /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/cgc_irrep_mom.h:
 
 ../../src/lib/key_struct.h:
+
+../../src/lib/rotations.h:
+
+/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irreps_cubic_factory.h:
+
+/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irreps_cubic.h:
+
+/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irrep_util.h:
+
+/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irreps_cubic_helicity_factory.h:
+
+/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irreps_cubic_helicity.h:
+
+/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include/hadron/irrep_util.h:
 
 /Users/archanar/LQCDSoftware/three_pt_analysis/semble_install/include/semble/semble_file_management.h:
 

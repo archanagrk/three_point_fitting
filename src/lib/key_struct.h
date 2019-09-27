@@ -116,7 +116,6 @@ namespace key_struct{
 
     struct prefactor{
         ENSEM::EnsemReal qsq;
-        ENSEM::EnsemComplex kfac;
         ENSEM::EnsemReal ei;
         ENSEM::EnsemReal ef;
     };

@@ -109,7 +109,7 @@ am_ensemble_fit_three_pt_fns_OBJECTS =  \
 	lib/edb_reader.$(OBJEXT) lib/key_struct.$(OBJEXT) \
 	lib/three_point_timeslice_corr_functions_factory.$(OBJEXT) \
 	lib/three_pt_fit_quality_factory.$(OBJEXT) \
-	lib/three_pt_fit_quality.$(OBJEXT)
+	lib/three_pt_fit_quality.$(OBJEXT) lib/rotations.$(OBJEXT)
 ensemble_fit_three_pt_fns_OBJECTS =  \
 	$(am_ensemble_fit_three_pt_fns_OBJECTS)
 ensemble_fit_three_pt_fns_LDADD = $(LDADD)
@@ -152,7 +152,7 @@ am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = exe/$(DEPDIR)/ensemble_fit_three_pt_fns.Po \
 	exe/$(DEPDIR)/fit_zt.Po exe/$(DEPDIR)/make_elab.Po \
 	exe/$(DEPDIR)/test_three_pt_fit.Po lib/$(DEPDIR)/edb_reader.Po \
-	lib/$(DEPDIR)/key_struct.Po \
+	lib/$(DEPDIR)/key_struct.Po lib/$(DEPDIR)/rotations.Po \
 	lib/$(DEPDIR)/three_point_timeslice_corr_functions.Po \
 	lib/$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po \
 	lib/$(DEPDIR)/three_point_timeslice_fitting.Po \
@@ -325,7 +325,7 @@ LDADD = -lfitting @SEMBLE_LIBS@ @ADAT_LIBS@ @ITPP_LIBS@ @LIBS@ @FITTING_LIBS@
 ##############################################################
 ensemble_fit_three_pt_fns_SOURCES = exe/ensemble_fit_three_pt_fns.cc lib/three_point_timeslice_corr_functions.cc lib/three_point_timeslice_fitting.cc lib/edb_reader.cc lib/key_struct.cc\
 													lib/three_point_timeslice_corr_functions_factory.cc lib/three_pt_fit_quality_factory.cc \
-													lib/three_pt_fit_quality.cc
+													lib/three_pt_fit_quality.cc lib/rotations.cc
 
 fit_zt_SOURCES = exe/fit_zt.cc lib/z_timeslice_fitting.cc lib/z_timeslice_functions.cc \
 												lib/z_timeslice_functions_factory.cc
@@ -449,6 +449,8 @@ lib/three_pt_fit_quality_factory.$(OBJEXT): lib/$(am__dirstamp) \
 	lib/$(DEPDIR)/$(am__dirstamp)
 lib/three_pt_fit_quality.$(OBJEXT): lib/$(am__dirstamp) \
 	lib/$(DEPDIR)/$(am__dirstamp)
+lib/rotations.$(OBJEXT): lib/$(am__dirstamp) \
+	lib/$(DEPDIR)/$(am__dirstamp)
 
 ensemble_fit_three_pt_fns$(EXEEXT): $(ensemble_fit_three_pt_fns_OBJECTS) $(ensemble_fit_three_pt_fns_DEPENDENCIES) $(EXTRA_ensemble_fit_three_pt_fns_DEPENDENCIES) 
 	@rm -f ensemble_fit_three_pt_fns$(EXEEXT)
@@ -492,6 +494,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@exe/$(DEPDIR)/test_three_pt_fit.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@lib/$(DEPDIR)/edb_reader.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@lib/$(DEPDIR)/key_struct.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@lib/$(DEPDIR)/rotations.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@lib/$(DEPDIR)/three_point_timeslice_corr_functions.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@lib/$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@lib/$(DEPDIR)/three_point_timeslice_fitting.Po@am__quote@ # am--include-marker
@@ -662,6 +665,7 @@ distclean: distclean-am
 	-rm -f exe/$(DEPDIR)/test_three_pt_fit.Po
 	-rm -f lib/$(DEPDIR)/edb_reader.Po
 	-rm -f lib/$(DEPDIR)/key_struct.Po
+	-rm -f lib/$(DEPDIR)/rotations.Po
 	-rm -f lib/$(DEPDIR)/three_point_timeslice_corr_functions.Po
 	-rm -f lib/$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po
 	-rm -f lib/$(DEPDIR)/three_point_timeslice_fitting.Po
@@ -721,6 +725,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f exe/$(DEPDIR)/test_three_pt_fit.Po
 	-rm -f lib/$(DEPDIR)/edb_reader.Po
 	-rm -f lib/$(DEPDIR)/key_struct.Po
+	-rm -f lib/$(DEPDIR)/rotations.Po
 	-rm -f lib/$(DEPDIR)/three_point_timeslice_corr_functions.Po
 	-rm -f lib/$(DEPDIR)/three_point_timeslice_corr_functions_factory.Po
 	-rm -f lib/$(DEPDIR)/three_point_timeslice_fitting.Po

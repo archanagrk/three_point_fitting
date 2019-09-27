@@ -54,7 +54,7 @@ $end = scalar(@irreps);
 $i = 0;
 
 
-foreach my $i(0 .. $#irreps) {
+#foreach my $i(0 .. $#irreps) {
 
   open(OUT, "> $tmpfile");
   print OUT "set term aqua noenhanced\n";  #add options for x11, or pdf
@@ -76,8 +76,8 @@ foreach my $i(0 .. $#irreps) {
   system("rm $tmpfile");
 
 
-  $i++;
+  #$i++;
 
-}
+#}
 
 exit(0);
