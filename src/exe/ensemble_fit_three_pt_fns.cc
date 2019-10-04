@@ -337,6 +337,8 @@ int main(int argc, char** argv)
       }
 
       EnsemReal Ei_ensem; read(Ei_name, Ei_ensem); EnsemReal Ef_ensem; read(Ef_name, Ef_ensem); EnsemReal qsq; qsq.resize(Ei_ensem.size());
+      Ei_ensem = rescaleEnsemDown( Ei_ensem );
+      Ef_ensem = rescaleEnsemDown( Ei_ensem );
       double q;
 
       /* Find the Q^2 */
@@ -345,18 +347,19 @@ int main(int argc, char** argv)
         double Ef = SEMBLE::toScalar(Ef_ensem.elem(bin));
         double Ei = SEMBLE::toScalar(Ei_ensem.elem(bin));
         q =  pow(mom[1][0],2) + pow(mom[1][1],2) + pow(mom[1][2],2);
-        qsq.elem(bin) = pow(2*PI/(L*Xi), 2) * q - pow(Ef - Ei, 2);
+        qsq.elem(bin) = (pow(2*PI/(L*Xi), 2) * q) - pow(Ef - Ei, 2);
 
       }
 
       /* Make an ensemble of the two-point function energies */
       std::stringstream kfpath;
       kfpath << "Q2_";
-      kfpath << std::fixed << std::setprecision(6) << mean_err(qsq).first; 
+      kfpath << std::fixed << std::setprecision(6) << toDouble( mean(qsq) ); 
       kfpath << "/" + base_name + "/" + name + "/" + kf;
       EnsemComplex kfac_ensem; read(kfpath.str(), kfac_ensem);
+      kfac_ensem = rescaleEnsemDown(kfac_ensem);
 
-      if((mean_err(real(kfac_ensem)).first == 0.0) && (mean_err(imag(kfac_ensem)).first == 0.0) ){continue;} // rule out corrs with kfac = 0.0
+      if(( toDouble( mean(real(kfac_ensem)) ) == 0.0) && (toDouble( mean(imag(kfac_ensem)) ) == 0.0) ){continue;} // rule out corrs with kfac = 0.0
 
 
       if(corr->second.size() != Ei_ensem.size()){ 
@@ -390,25 +393,41 @@ int main(int argc, char** argv)
 
         for(int bin = 0; bin < corr->second.size(); bin++){//corr num issue
 
+          yt_rl.elem(bin) = SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); 
+          yt_im.elem(bin) = SEMBLE::toScalar(imag(peekObs(corr->second[bin], t))); 
+
+        }
+
+        yt_rl = rescaleEnsemDown(yt_rl);
+        yt_im = rescaleEnsemDown(yt_im);
+
+
+        for(int bin = 0; bin < corr->second.size(); bin++){//corr num issue
+
+
           double Ef, Ei;
 
-          Ef = SEMBLE::toScalar(Ef_ensem.elem(bin));
+          Ef = SEMBLE::toScalar(Ef_ensem.elem(bin)); 
           Ei = SEMBLE::toScalar(Ei_ensem.elem(bin));
 
           if(!divkfac){
-            yt_rl.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); //multiplying by the normalization sqrt(Ei*Ef)*mf
-            yt_im.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * SEMBLE::toScalar(imag(peekObs(corr->second[bin], t))); 
+            yt_rl.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * SEMBLE::toScalar(yt_rl.elem(bin)); //multiplying by the exp
+            yt_im.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * SEMBLE::toScalar(yt_im.elem(bin)); 
                                                  }
           else{
 
-	          complex<double> ff = SEMBLE::toScalar(peekObs(corr->second[bin], t));
+	          complex<double> ff(SEMBLE::toScalar(yt_rl.elem(bin)),SEMBLE::toScalar(yt_im.elem(bin))) ;
             complex<double> kf = SEMBLE::toScalar(kfac_ensem.elem(bin));
-            yt_rl.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * real(ff/kf); //multiplying by the normalization sqrt(Ei*Ef)*mf    
 
-            yt_im.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * imag(ff/kf); //multiplying by the normalization sqrt(Ei*Ef)*mf    
+            yt_rl.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * real(ff/kf); //multiplying by the exp
+
+            yt_im.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * imag(ff/kf); //multiplying by exp  
           }
 
         }
+
+        yt_rl = rescaleEnsemUp(yt_rl);
+        yt_im = rescaleEnsemUp(yt_im);
 
         x_t.push_back(make_pair(dt, t));
         ytensem_rl.push_back( yt_rl ); ytensem_im.push_back(yt_im);
@@ -472,9 +491,9 @@ int main(int argc, char** argv)
     the the output of this fit is used - reduces the complexity from n^m to n*m */
 
   /* threading over corrs */
-  // int nthr = omp_get_max_threads(); 
-  // cout << "*** distributing corrs over " << nthr << " threads ***" << endl;
-  // #pragma omp parallel for num_threads(nthr) //schedule(dynamic)
+  int nthr = omp_get_max_threads(); 
+  cout << "*** distributing corrs over " << nthr << " threads ***" << endl;
+  #pragma omp parallel for num_threads(nthr) //schedule(dynamic)
 
   
   // START THE LOOP OVER THE CORRS IN THE EDB
@@ -669,7 +688,7 @@ int main(int argc, char** argv)
     std::string name = dir.find(num_corr)->second;
     std::stringstream ss;
     ss << "Q2_";
-    ss << std::fixed << std::setprecision(6) << mean_err(pref.find(num_corr)->second.qsq).first; 
+    ss << std::fixed << std::setprecision(6) << toDouble( mean(pref.find(num_corr)->second.qsq) ); 
     ss << "/" + name;
     std::string path = SEMBLE::SEMBLEIO::getPath() += ss.str();
     SEMBLE::SEMBLEIO::makeDirectoryPath(path);
@@ -963,10 +982,10 @@ int main(int argc, char** argv)
 
       else{ fqsq.find(name)->second.push_back(make_pair(make_pair(pf.qsq, pf.ei),fq2)); }
 
-      stringstream s; s <<  std::fixed << std::setprecision(6) << mean_err(pf.qsq).first;
+      stringstream s; s <<  std::fixed << std::setprecision(6) << toDouble(mean(pf.qsq));
       string q2 = s.str();
 
-      stringstream ss; ss <<  std::fixed << std::setprecision(6) << mean_err(pf.ei).first;
+      stringstream ss; ss <<  std::fixed << std::setprecision(6) << toDouble(mean(pf.ei));
       string ei = s.str();
 
       if(favg.find(q2) == favg.end()){ vector<ENSEM::EnsemReal> val; val.push_back(fq2); favg.insert( make_pair(q2,val) );}
