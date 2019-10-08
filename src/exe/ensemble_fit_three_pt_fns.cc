@@ -338,7 +338,7 @@ int main(int argc, char** argv)
 
       EnsemReal Ei_ensem; read(Ei_name, Ei_ensem); EnsemReal Ef_ensem; read(Ef_name, Ef_ensem); EnsemReal qsq; qsq.resize(Ei_ensem.size());
       Ei_ensem = rescaleEnsemDown( Ei_ensem );
-      Ef_ensem = rescaleEnsemDown( Ei_ensem );
+      Ef_ensem = rescaleEnsemDown( Ef_ensem );
       double q;
 
       /* Find the Q^2 */
