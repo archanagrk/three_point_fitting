@@ -363,12 +363,12 @@ int main(int argc, char** argv)
 
 
       if(corr->second.size() != Ei_ensem.size()){ 
-        cout << "Ei size and the ebd ensem size don't match" << endl;
+        cout << "Ei size and the edb ensem size don't match" << endl;
         exit(1);
       }
       
       if(corr->second.size() != Ef_ensem.size()){ 
-        cout << "Ef size and the ebd ensem size don't match" << endl;
+        cout << "Ef size and the edb ensem size don't match" << endl;
         exit(1);
       }
         
@@ -454,8 +454,12 @@ int main(int argc, char** argv)
             double sizen = size_of_base.find(corr_num)->second;
 
             for(int tin = 0; tin < ytensem_rl.size(); tin++){
-              y_vec_rl.at(i).at(tin) =  ((SEMBLE::toScalar(sizeo) * y_vec_rl.at(i).at(tin) ) + ytensem_rl.at(tin))/SEMBLE::toScalar(sizen);
-              y_vec_im.at(i).at(tin) =  ((SEMBLE::toScalar(sizeo) * y_vec_im.at(i).at(tin) ) + ytensem_im.at(tin))/SEMBLE::toScalar(sizen);
+              y_vec_rl.at(i).at(tin) =  ((SEMBLE::toScalar(sizeo) * rescaleEnsemDown(y_vec_rl.at(i).at(tin)) ) + rescaleEnsemDown(ytensem_rl.at(tin)))/SEMBLE::toScalar(sizen);
+              y_vec_im.at(i).at(tin) =  ((SEMBLE::toScalar(sizeo) * rescaleEnsemDown(y_vec_im.at(i).at(tin)) ) + rescaleEnsemDown(ytensem_im.at(tin)))/SEMBLE::toScalar(sizen);
+
+              y_vec_rl.at(i).at(tin) = rescaleEnsemUp(y_vec_rl.at(i).at(tin));
+              y_vec_im.at(i).at(tin) = rescaleEnsemUp(y_vec_im.at(i).at(tin));
+
             }
 
             break;
