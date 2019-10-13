@@ -352,10 +352,11 @@ int main(int argc, char** argv)
       }
 
       /* Make an ensemble of the two-point function energies */
-      std::stringstream kfpath;
-      kfpath << "Q2_";
-      kfpath << std::fixed << std::setprecision(6) << toDouble( mean(qsq) ); 
-      kfpath << "/" + base_name + "/" + name + "/" + kf;
+      std::stringstream path, kfpath;
+      path << "Q2_";
+      path << std::fixed << std::setprecision(6) << toDouble( mean(qsq) ); 
+      path << "/" + base_name + "/" + name + "/" ;
+      kfpath << path.str() + kf;
       EnsemComplex kfac_ensem; read(kfpath.str(), kfac_ensem);
       kfac_ensem = rescaleEnsemDown(kfac_ensem);
 
@@ -386,17 +387,27 @@ int main(int argc, char** argv)
 
       int dt = std::abs(corr->first.npoint[1].t_slice - corr->first.npoint[3].t_slice ); 
 
+      EnsemVectorComplex yt_post; yt_post.resize(corr->second.size()); yt_post.resizeObs(corr->second[0].numElem()); //to write the files 
+      EnsemVectorComplex yt_pre; yt_pre.resize(corr->second.size()); yt_pre.resizeObs(corr->second[0].numElem()); //to write the files  
+
+
       for(int t = 0; t < corr->second[0].numElem(); t++){ //numElem gives the number of observables in the ensem so use any index for convinience use 0
 
         ENSEM::EnsemReal yt_rl; yt_rl.resize(corr->second.size()); //resize the ensem to the size of the vector = number of bins 
         ENSEM::EnsemReal yt_im; yt_im.resize(corr->second.size()); //resize the ensem to the size of the vector = number of bins 
+        ENSEM::EnsemComplex yt; yt.resize(corr->second.size()); //resize the ensem to the size of the vector = number of bins 
 
         for(int bin = 0; bin < corr->second.size(); bin++){//corr num issue
 
           yt_rl.elem(bin) = SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); 
           yt_im.elem(bin) = SEMBLE::toScalar(imag(peekObs(corr->second[bin], t))); 
 
+          ENSEM::RComplex<double> tmp(SEMBLE::toScalar(yt_rl.elem(bin)),SEMBLE::toScalar(yt_im.elem(bin))); //for some reason cannot read in a complex corr have to stick to this method
+          yt.elem(bin)    = tmp;
+
         }
+
+        pokeObs(yt_pre, yt, t);
 
         yt_rl = rescaleEnsemDown(yt_rl);
         yt_im = rescaleEnsemDown(yt_im);
@@ -424,16 +435,30 @@ int main(int argc, char** argv)
             yt_im.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * imag(ff/kf); //multiplying by exp  
           }
 
+          ENSEM::RComplex<double> tmp(SEMBLE::toScalar(yt_rl.elem(bin)),SEMBLE::toScalar(yt_im.elem(bin))); //for some reason cannot read in a complex corr have to stick to this method
+          yt.elem(bin)    = tmp;
+
         }
 
         yt_rl = rescaleEnsemUp(yt_rl);
         yt_im = rescaleEnsemUp(yt_im);
+        yt    = rescaleEnsemUp(yt);
+
+        pokeObs(yt_post, yt, t);
 
         x_t.push_back(make_pair(dt, t));
         ytensem_rl.push_back( yt_rl ); ytensem_im.push_back(yt_im);
 
       }
 
+      {
+        ostringstream outfile; outfile << path.str() << "/corr.jack";
+        write(outfile.str(), yt_pre);
+      }   
+      {
+        ostringstream outfile; outfile << path.str() << "/normalized_corr.jack";
+        write(outfile.str(), yt_post);
+      }
 
       pf_tmp.ei   = Ei_ensem; //if the vector is the creation operator
       pf_tmp.ef   = Ef_ensem;
