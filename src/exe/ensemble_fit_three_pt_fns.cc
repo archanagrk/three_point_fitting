@@ -847,6 +847,9 @@ int main(int argc, char** argv)
         ofstream file; // out file stream
         file.open(outfile.str());
         file << "The Arg(F) is: " << ratio.first << " ( "  << ratio.second << " ) " << endl;
+        file << "the real part is: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
+        file << "the imag part is: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
+        file << "****************************************************************" << endl << endl;
         file << "The value is real with the value of F: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
 
         file.close();
@@ -880,6 +883,9 @@ int main(int argc, char** argv)
         ofstream file; // out file stream
         file.open(outfile.str());
         file << "The Arg(F) is: " << ratio.first << " ( "  << ratio.second << " ) " << endl;
+        file << "the real part is: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
+        file << "the imag part is: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
+        file << "****************************************************************" << endl << endl;
         file << "The value is imag with the value of F: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
 
         file.close();
