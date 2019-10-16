@@ -422,17 +422,17 @@ int main(int argc, char** argv)
           Ei = SEMBLE::toScalar(Ei_ensem.elem(bin));
 
           if(!divkfac){
-            yt_rl.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * SEMBLE::toScalar(yt_rl.elem(bin)); //multiplying by the exp
-            yt_im.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * SEMBLE::toScalar(yt_im.elem(bin)); 
+            yt_rl.elem(bin) = std::exp(Ef*(dt - t))/(sqrt(CurrFac)) * std::exp(Ei*t) * SEMBLE::toScalar(yt_rl.elem(bin)); //multiplying by the exp
+            yt_im.elem(bin) = std::exp(Ef*(dt - t))/(sqrt(CurrFac)) * std::exp(Ei*t) * SEMBLE::toScalar(yt_im.elem(bin)); 
                                                  }
           else{
 
 	          complex<double> ff(SEMBLE::toScalar(yt_rl.elem(bin)),SEMBLE::toScalar(yt_im.elem(bin))) ;
             complex<double> kf = SEMBLE::toScalar(kfac_ensem.elem(bin));
 
-            yt_rl.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * real(ff/kf); //multiplying by the exp
+            yt_rl.elem(bin) = std::exp(Ef*(dt - t))/(sqrt(CurrFac)) * std::exp(Ei*t) * real(ff/kf); //multiplying by the exp
 
-            yt_im.elem(bin) = std::exp(Ef*(dt - t)) * std::exp(Ei*t) * imag(ff/kf); //multiplying by exp  
+            yt_im.elem(bin) = std::exp(Ef*(dt - t))/(sqrt(CurrFac)) * std::exp(Ei*t) * imag(ff/kf); //multiplying by exp  
           }
 
           ENSEM::RComplex<double> tmp(SEMBLE::toScalar(yt_rl.elem(bin)),SEMBLE::toScalar(yt_im.elem(bin))); //for some reason cannot read in a complex corr have to stick to this method
@@ -742,7 +742,7 @@ int main(int argc, char** argv)
       // /* write the Q^2 vs F(Q^2) output */
       {
 
-        ENSEM::EnsemReal fq2 = output_rl.F/SEMBLE::toScalar(sqrt(CurrFac)); 
+        ENSEM::EnsemReal fq2 = output_rl.F; 
 
         {
           ostringstream outfile; outfile << path << "Real/";
@@ -791,7 +791,7 @@ int main(int argc, char** argv)
       // /* write the Q^2 vs F(Q^2) output */
       {
 
-        ENSEM::EnsemReal fq2 = output_im.F/SEMBLE::toScalar(sqrt(CurrFac));//*Zv*Zs*CurrFac;
+        ENSEM::EnsemReal fq2 = output_im.F;//*Zv*Zs*CurrFac;
 
         {
           ostringstream outfile; outfile << path << "Imag/";
@@ -854,7 +854,7 @@ int main(int argc, char** argv)
 
         file.close();
             
-        fq2 = output_rl.F/SEMBLE::toScalar(sqrt(CurrFac));
+        fq2 = output_rl.F;
 
         {
           ostringstream outfile; outfile << path << name << "_F.jack"; 
@@ -864,7 +864,7 @@ int main(int argc, char** argv)
         if(Zfile == "true"?true:false)
         {
 
-          ENSEM::EnsemReal Zv = SEMBLE::toScalar(sqrt(CurrFac))/output_rl.F; 
+          ENSEM::EnsemReal Zv = SEMBLE::toScalar(1.0)/output_rl.F; 
 
           {
             ostringstream outfile; outfile << path << name << "_Zv.jack"; 
@@ -890,7 +890,7 @@ int main(int argc, char** argv)
 
         file.close();
             
-        fq2 = output_im.F/SEMBLE::toScalar(sqrt(CurrFac));
+        fq2 = output_im.F;
 
         {
           ostringstream outfile; outfile << path << name << "_F.jack"; 
@@ -900,7 +900,7 @@ int main(int argc, char** argv)
         if(Zfile == "true"?true:false)
         {
 
-          ENSEM::EnsemReal Zv = SEMBLE::toScalar(sqrt(CurrFac))/output_im.F; 
+          ENSEM::EnsemReal Zv = SEMBLE::toScalar(1.0)/output_im.F; 
 
           {
             ostringstream outfile; outfile << path << name << "_Zv.jack"; 
@@ -925,7 +925,7 @@ int main(int argc, char** argv)
 
       file.close();
           
-      fq2 = output_rl.F/SEMBLE::toScalar(sqrt(CurrFac));
+      fq2 = output_rl.F;
 
       {
         ostringstream outfile; outfile << path << name << "_F.jack"; 
@@ -935,7 +935,7 @@ int main(int argc, char** argv)
       if(Zfile == "true"?true:false)
       {
 
-        ENSEM::EnsemReal Zv = SEMBLE::toScalar(sqrt(CurrFac))/output_rl.F; 
+        ENSEM::EnsemReal Zv = SEMBLE::toScalar(1.0)/output_rl.F; 
 
         {
           ostringstream outfile; outfile << path << name << "_Zv.jack"; 
@@ -958,7 +958,7 @@ int main(int argc, char** argv)
 
       file.close();
           
-      fq2 = output_im.F/SEMBLE::toScalar(sqrt(CurrFac));
+      fq2 = output_im.F;
 
       {
         ostringstream outfile; outfile << path << name << "_F.jack"; 
@@ -968,7 +968,7 @@ int main(int argc, char** argv)
       if(Zfile == "true"?true:false)
       {
 
-        ENSEM::EnsemReal Zv = SEMBLE::toScalar(sqrt(CurrFac))/output_im.F; 
+        ENSEM::EnsemReal Zv = SEMBLE::toScalar(1.0)/output_im.F; 
 
         {
           ostringstream outfile; outfile << path << name << "_Zv.jack"; 
