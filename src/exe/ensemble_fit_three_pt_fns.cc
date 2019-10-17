@@ -841,6 +841,7 @@ int main(int argc, char** argv)
 
     bool out_rl = false;
     bool out_im = false;
+    bool write_out = true;
     
     if(output_rl.success){
       pair<double,double>  const_rl = mean_err(output_rl.F);
@@ -853,10 +854,12 @@ int main(int argc, char** argv)
     
 
     if(output_rl.success && output_im.success){
+
       EnsemReal ratio_ensem = rescaleEnsemUp(  atan( rescaleEnsemDown(output_im.F)/rescaleEnsemDown(output_rl.F) ));
       pair<double,double> ratio = mean_err(ratio_ensem);     
 
       if( (0.25 > (abs(ratio.first) + ratio.second)) && ( (abs(ratio.first) - ratio.second) > -0.25) ){
+
 
         ostringstream outfile; outfile << path << "fit.log";
         ofstream file; // out file stream
@@ -892,11 +895,7 @@ int main(int argc, char** argv)
           
         }
 
-        else{file << "Decided the value is statistically consistent with zero" << endl;
-
-          file.close();        
-                
-        }
+        else{file << "Decided the value is statistically consistent with zero" << endl; file.close();  write_out = false;  }
 
         
       }    
@@ -938,11 +937,7 @@ int main(int argc, char** argv)
           }
         }
 
-        else{file << "Decided the value is statistically consistent with zero" << endl;
-
-          file.close();     
-
-        }
+        else{file << "Decided the value is statistically consistent with zero" << endl; file.close(); write_out = false; }
 
       }
 
@@ -982,9 +977,7 @@ int main(int argc, char** argv)
 
         }
       }
-      else{file << "Decided the value is statistically consistent with zero" << endl;
-          file.close();     
-      }
+      else{file << "Decided the value is statistically consistent with zero" << endl; file.close(); write_out = false; }
 
       cout << "All fits to the imaginary part failed " << endl;
     }
@@ -1024,19 +1017,17 @@ int main(int argc, char** argv)
         cout << "All fits to the real part failed " << endl;
       }
 
-      else{file << "Decided the value is statistically consistent with zero" << endl;
-          file.close();     
-      }
+      else{file << "Decided the value is statistically consistent with zero" << endl; file.close(); write_out = false; }
     }
 
-    else{ cout << "All fits to the real part and the imaginary part failed" << endl; }
+    else{ cout << "All fits to the real part and the imaginary part failed" << endl; write_out = false; }
 
 
 
     //=============================
     //======= OUTPUT STUFF ======== 
 
-    if((output_im.success || output_rl.success) && (out_rl || out_im)){
+    if(write_out){
 
       SEMBLE::SEMBLEIO::makeDirectoryPath(path + "../jackfiles/"); 
 
