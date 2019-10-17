@@ -838,9 +838,24 @@ int main(int argc, char** argv)
 
     ENSEM::EnsemReal fq2;
 
+
+    bool out_rl = false;
+    bool out_im = false;
+    
+    if(output_rl.success){
+      pair<double,double>  const_rl = mean_err(output_rl.F);
+      if( (abs(const_rl.first) - (3.*(const_rl.second)) ) > 0. ){out_rl = true;}
+    }
+    if(output_im.success){
+      pair<double,double>  const_im = mean_err(output_im.F);
+      if( (abs(const_im.first) - (3.*(const_im.second)) ) > 0. ){out_im = true;}
+    }
+    
+
     if(output_rl.success && output_im.success){
-      EnsemReal ratio_ensem = atan(output_im.F/output_rl.F);
-      pair<double,double> ratio = mean_err(ratio_ensem);
+      EnsemReal ratio_ensem = rescaleEnsemUp(  atan( rescaleEnsemDown(output_im.F)/rescaleEnsemDown(output_rl.F) ));
+      pair<double,double> ratio = mean_err(ratio_ensem);     
+
       if( (0.25 > (abs(ratio.first) + ratio.second)) && ( (abs(ratio.first) - ratio.second) > -0.25) ){
 
         ostringstream outfile; outfile << path << "fit.log";
@@ -850,10 +865,103 @@ int main(int argc, char** argv)
         file << "the real part is: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
         file << "the imag part is: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
         file << "****************************************************************" << endl << endl;
-        file << "The value is real with the value of F: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
+        if(out_rl){
+          file << "The value is real with the value of F: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
+
+          file.close();
+              
+          fq2 = output_rl.F;
+
+          {
+            ostringstream outfile; outfile << path << name << "_F.jack"; 
+            write(outfile.str(), fq2);
+          }
+
+          if(Zfile == "true"?true:false)
+          {
+
+            ENSEM::EnsemReal Zv = SEMBLE::toScalar(1.0)/output_rl.F; 
+
+            {
+              ostringstream outfile; outfile << path << name << "_Zv.jack"; 
+              write(outfile.str(), Zv);
+
+            }        
+
+          }          
+          
+        }
+
+        else{file << "Decided the value is statistically consistent with zero" << endl;
+
+          file.close();        
+                
+        }
+
+        
+      }    
+
+
+      else{
+
+        ostringstream outfile; outfile << path << "fit.log";
+        ofstream file; // out file stream
+        file.open(outfile.str());
+        file << "The Arg(F) is: " << ratio.first << " ( "  << ratio.second << " ) " << endl;
+        file << "the real part is: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
+        file << "the imag part is: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
+        file << "****************************************************************" << endl << endl;
+
+        if(out_im){
+          file << "The value is imag with the value of F: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
+
+          file.close();
+              
+          fq2 = output_im.F;
+
+          {
+            ostringstream outfile; outfile << path << name << "_F.jack"; 
+            write(outfile.str(), fq2);
+          }
+
+          if(Zfile == "true"?true:false)
+          {
+
+            ENSEM::EnsemReal Zv = SEMBLE::toScalar(1.0)/output_im.F; 
+
+            {
+              ostringstream outfile; outfile << path << name << "_Zv.jack"; 
+              write(outfile.str(), Zv);
+
+            }        
+
+          }
+        }
+
+        else{file << "Decided the value is statistically consistent with zero" << endl;
+
+          file.close();     
+
+        }
+
+      }
+
+    }
+
+    else if(output_rl.success){
+      ostringstream outfile; outfile << path << "fit.log";
+      ofstream file; // out file stream
+      file.open(outfile.str());
+
+      
+      file << "The fits to the imaginary part failed" << endl;
+      file << "The value of the real part is: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
+      file << "****************************************************************" << endl << endl;
+      if(out_rl){
+        file << "The value is real with the value of F: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl; 
 
         file.close();
-            
+          
         fq2 = output_rl.F;
 
         {
@@ -873,21 +981,24 @@ int main(int argc, char** argv)
           }        
 
         }
-        
-      }    
+      }
+      else{file << "Decided the value is statistically consistent with zero" << endl;
+          file.close();     
+      }
 
+      cout << "All fits to the imaginary part failed " << endl;
+    }
 
-      else{
+    else if(output_im.success){
+      ostringstream outfile; outfile << path << "fit.log";
+      ofstream file; // out file stream
+      file.open(outfile.str());
 
-        ostringstream outfile; outfile << path << "fit.log";
-        ofstream file; // out file stream
-        file.open(outfile.str());
-        file << "The Arg(F) is: " << ratio.first << " ( "  << ratio.second << " ) " << endl;
-        file << "the real part is: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
-        file << "the imag part is: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
-        file << "****************************************************************" << endl << endl;
-        file << "The value is imag with the value of F: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
-
+      file << "The fits to the real part failed" << endl;
+      file << "The value of the imag part is: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
+      file << "****************************************************************" << endl << endl;
+      if(out_im){
+        file << "The value is imag with the value of F: " <<  mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
         file.close();
             
         fq2 = output_im.F;
@@ -909,76 +1020,13 @@ int main(int argc, char** argv)
           }        
 
         }
-
+        
+        cout << "All fits to the real part failed " << endl;
       }
 
-    }
-
-    else if(output_rl.success){
-      ostringstream outfile; outfile << path << "fit.log";
-      ofstream file; // out file stream
-      file.open(outfile.str());
-
-      
-      file << "The fits to the imaginary part failed" << endl;
-      file << "The value is real with the value of F: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
-
-      file.close();
-          
-      fq2 = output_rl.F;
-
-      {
-        ostringstream outfile; outfile << path << name << "_F.jack"; 
-        write(outfile.str(), fq2);
+      else{file << "Decided the value is statistically consistent with zero" << endl;
+          file.close();     
       }
-
-      if(Zfile == "true"?true:false)
-      {
-
-        ENSEM::EnsemReal Zv = SEMBLE::toScalar(1.0)/output_rl.F; 
-
-        {
-          ostringstream outfile; outfile << path << name << "_Zv.jack"; 
-          write(outfile.str(), Zv);
-
-        }        
-
-      }
-
-      cout << "All fits to the imaginary part failed " << endl;
-    }
-
-    else if(output_im.success){
-      ostringstream outfile; outfile << path << "fit.log";
-      ofstream file; // out file stream
-      file.open(outfile.str());
-
-      file << "The fits to the real part failed" << endl;
-      file << "The value is imag with the value of F: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
-
-      file.close();
-          
-      fq2 = output_im.F;
-
-      {
-        ostringstream outfile; outfile << path << name << "_F.jack"; 
-        write(outfile.str(), fq2);
-      }
-
-      if(Zfile == "true"?true:false)
-      {
-
-        ENSEM::EnsemReal Zv = SEMBLE::toScalar(1.0)/output_im.F; 
-
-        {
-          ostringstream outfile; outfile << path << name << "_Zv.jack"; 
-          write(outfile.str(), Zv);
-
-        }        
-
-      }
-      
-      cout << "All fits to the real part failed " << endl;
     }
 
     else{ cout << "All fits to the real part and the imaginary part failed" << endl; }
@@ -988,7 +1036,7 @@ int main(int argc, char** argv)
     //=============================
     //======= OUTPUT STUFF ======== 
 
-    if(output_im.success || output_rl.success){
+    if((output_im.success || output_rl.success) && (out_rl || out_im)){
 
       SEMBLE::SEMBLEIO::makeDirectoryPath(path + "../jackfiles/"); 
 
