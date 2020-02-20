@@ -47,7 +47,7 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
   vector<bool> active = fit.get_active_data();
   int active_t = 0;
 
-  for(int i = 0; i < active.size(); i++){ if(active[i]){active_t++;} else{continue;} }
+  for(size_t i = 0; i < active.size(); i++){ if(active[i]){active_t++;} else{continue;} }
 
   double ratio_timeslice = double(active_t)/double(active.size());
 
@@ -74,7 +74,7 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
   /* Value of Dt */
   vector<int> Dts;
 
-  for(int i = 0; i < n ; i++)
+  for(size_t i = 0; i < n ; i++)
   {
     std::size_t found  = name.find("x");
     string this_name = name.substr(0,found);
@@ -122,7 +122,7 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
 
     int dt_num = 0;
     {
-      int i = 1;
+      size_t i = 1;
       while(i < mean_y_vals.size()-1)
       {
 
@@ -176,7 +176,7 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
 
   */
   
-  for(int i = 0; i < n ; i++)
+  for(size_t i = 0; i < n ; i++)
   {
     if(dev_data.at(i) > pow(10,5)){
       y *= 0;
@@ -199,13 +199,13 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
     Multiply by |F_f * E_f|/|\delta E_f * \delta F_f | or |y(end_point -1) - y(midpoint) |/| \delta y(end_point - 1) - \delta y(midpoint)|
    */
 
-  vector<bool> src(n, false); int i;
-  vector<bool> snk(n, false); int f;
+  vector<bool> src(n, false); size_t i;
+  vector<bool> snk(n, false); size_t f;
 
   vector<double> slope_i(n,0.0), error_i(n,0.0);
   vector<double> slope_f(n,0.0), error_f(n,0.0);
 
-  for(int p = 0; p < pars.size(); p++){
+  for(size_t p = 0; p < pars.size(); p++){
 
     if( ( pars.at(p).find("Ei") != std::string::npos ) && multiply_exp ){
 
@@ -292,7 +292,7 @@ double Generic3pt::operator()( const AvgFit& fit ) const{
     slope_f.at(slope) = abs(mean_y_vals.at(dt_num -1) - mean_y_vals.at(midpoint)/(dt_num -1 - midpoint )); 
 
 
-    for(int p = 0; p < n; p++){
+    for(size_t p = 0; p < n; p++){
       if(!src.at(p)){y *= pow(slope_i.at(p)/error_i.at(p),power_exp); }
       if(!snk.at(p)){y *= pow(slope_f.at(p)/error_f.at(p),power_exp); }
     }
@@ -331,7 +331,7 @@ double QNGen::operator()( const AvgFit& fit ) const {
 
   int active_t = 0;
 
-  for(int i = 0; i < active.size(); i++){ if(active[i]){active_t++;} else{continue;} }
+  for(size_t i = 0; i < active.size(); i++){ if(active[i]){active_t++;} else{continue;} }
 
 
   double ratio_timeslice = double(active_t)/double(active.size());

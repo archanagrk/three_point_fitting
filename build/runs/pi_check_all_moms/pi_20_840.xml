@@ -1,0 +1,53 @@
+<hadron>
+  <npt>3</npt>
+  <L>20</L>
+  <Xi>3.445</Xi>
+  <XiError>0.001</XiError> <!-- Not taken to consideration as of now -->
+  <as>0.12</as>
+  <asError>0.01</asError> <!-- Not taken to consideration as of now -->
+  <mfFile>pion_proj0_p000_A1.jack</mfFile>
+  <had>
+    <elem>
+      <name>pion_proj0</name>
+      <twoJ>0</twoJ>
+      <P>-1</P>
+      <ell>0</ell>
+      <msq>0.0695</msq> <!-- pi -->
+      <Elab>
+        <elem>pion_proj0_p000_A1.jack</elem>
+        <elem>pion_proj0_p100_H0D4A2.jack</elem>
+        <elem>pion_proj0_p110_H0D2A2.jack</elem>
+        <elem>pion_proj0_p111_H0D3A2.jack</elem>
+      </Elab>
+      <max_mom>3</max_mom>
+    </elem>
+    <elem>
+        <name>rho_rhoxD0_J0__J1</name>
+        <twoJ>2</twoJ>
+        <P>-1</P>
+        <ell>0</ell>
+        <msq>0</msq>
+        <Elab>
+          <elem>null</elem>
+        </Elab>
+        <max_mom>0</max_mom>
+    </elem>
+    <elem>
+      <name>pion_proj0</name>
+      <twoJ>0</twoJ>
+      <P>-1</P>
+      <ell>0</ell>
+      <msq>0.0695</msq> <!-- pi -->
+        <Elab>
+        <elem>pion_proj0_p000_A1.jack</elem>
+        <elem>pion_proj0_p100_H0D4A2.jack</elem>
+        <elem>pion_proj0_p110_H0D2A2.jack</elem>
+        <elem>pion_proj0_p111_H0D3A2.jack</elem>
+        </Elab>
+        <max_mom>3</max_mom>
+    </elem>
+  </had>
+  <matrix_type>kin_fac_scalar_vector_scalar</matrix_type>
+  <phase>true</phase>
+</hadron>
+

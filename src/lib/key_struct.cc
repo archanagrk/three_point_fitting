@@ -35,17 +35,17 @@ namespace key_struct
   std::ostream& operator<<(std::ostream& os, const KeyHadronSUNNPartNPtIrrep_t& op)
   {
 
-    for(int i=0; i < op.irrep.size(); ++i)
+    for(size_t i=0; i < op.irrep.size(); ++i)
     {
       os << " irrep[" << i << "]:  " << op.irrep[i];
     }   
 
-    for(int i=0; i < op.row.size(); ++i)
+    for(size_t i=0; i < op.row.size(); ++i)
     {
       os << " row[" << i << "]:  " << op.row[i];
     }   
 
-    for(int i=0; i < op.mom.size(); ++i)
+    for(size_t i=0; i < op.mom.size(); ++i)
     {
       for(int j=0; j < op.mom[i].size(); ++j )
       {
@@ -91,7 +91,7 @@ namespace key_struct
   // Read a key
   void read(BinaryReader& bin, KeyHadronSUNNPartNPtIrrep_t& param)
   {
-    for(int i = 0; i < param.irrep.size(); i++){
+    for(size_t i = 0; i < param.irrep.size(); i++){
       readDesc(bin, param.irrep[i]);
     }
     read(bin, param.row);
@@ -103,7 +103,7 @@ namespace key_struct
   // Write a key
   void write(BinaryWriter& bin, const KeyHadronSUNNPartNPtIrrep_t& param)
   {
-    for(int i = 0; i < param.irrep.size(); i++){
+    for(size_t i = 0; i < param.irrep.size(); i++){
       writeDesc(bin, param.irrep[i]);
     }
     write(bin, param.row);

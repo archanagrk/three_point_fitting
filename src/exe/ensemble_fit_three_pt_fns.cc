@@ -122,6 +122,44 @@ int main(int argc, char** argv)
       read(xml_in,"/ThreeptIniParams/Renormalization/InvCurrFac2",CurrFac);
       read(xml_in,"/ThreeptIniParams/Renormalization/writeZFile",Zfile);
 
+      bool improv;
+      curr_props photon; 
+      bool npt_t, npt_s;
+      npt_props threept;
+      
+      read(xml_in,"/ThreeptIniParams/NPoints/space/active",npt_s);
+      if(npt_s){
+        vector<string> pt_s(3);
+        for(int i = 0; i < 3; i++){
+          read(xml_in,"/ThreeptIniParams/NPoints/space/Ops/elem[i]",pt_s[i]);
+        }
+        threept.npt_s = pt_s;
+      }
+
+
+      read(xml_in,"/ThreeptIniParams/NPoints/time/active",npt_t);
+      if(npt_t){
+        vector<string> pt_t(3);
+        for(int i = 0; i < 3; i++){
+          read(xml_in,"/ThreeptIniParams/NPoints/time/Ops/elem[i]",pt_t[i]);
+        }
+        threept.npt_t = pt_t;
+      }
+
+      
+      read(xml_in,"/ThreeptIniParams/Improvement/active",improv);
+
+      if(improv){
+        double tmprl, tmpim;
+
+        read(xml_in,"/ThreeptIniParams/Improvement/name",photon.name);
+        read(xml_in,"/ThreeptIniParams/Improvement/Nu_s",photon.nu_s);
+        read(xml_in,"/ThreeptIniParams/Improvement/Xi_0",photon.xi0);
+        read(xml_in,"/ThreeptIniParams/Improvement/coeff_r",tmprl);
+        read(xml_in,"/ThreeptIniParams/Improvement/coeff_i",tmpim);
+
+        photon.coeff = (tmprl,tmpim); 
+      }
 
     }
   catch( const string& error ){
@@ -180,7 +218,7 @@ int main(int argc, char** argv)
   std::map<int, int> size_of_base;
   std::map<int, prefactor> pref;
   int key_count = 0;
-  int corr_num;
+  size_t corr_num;
   double mom_sq_i, mom_sq_f;
 
 
@@ -342,7 +380,7 @@ int main(int argc, char** argv)
       double q;
 
       /* Find the Q^2 */
-      for(int bin = 0; bin < Ei_ensem.size(); bin++){
+      for(size_t bin = 0; bin < Ei_ensem.size(); bin++){
 
         double Ef = SEMBLE::toScalar(Ef_ensem.elem(bin));
         double Ei = SEMBLE::toScalar(Ei_ensem.elem(bin));
@@ -397,7 +435,7 @@ int main(int argc, char** argv)
         ENSEM::EnsemReal yt_im; yt_im.resize(corr->second.size()); //resize the ensem to the size of the vector = number of bins 
         ENSEM::EnsemComplex yt; yt.resize(corr->second.size()); //resize the ensem to the size of the vector = number of bins 
 
-        for(int bin = 0; bin < corr->second.size(); bin++){//corr num issue
+        for(size_t bin = 0; bin < corr->second.size(); bin++){//corr num issue
 
           yt_rl.elem(bin) = SEMBLE::toScalar(real(peekObs(corr->second[bin], t))); 
           yt_im.elem(bin) = SEMBLE::toScalar(imag(peekObs(corr->second[bin], t))); 
@@ -413,7 +451,7 @@ int main(int argc, char** argv)
         yt_im = rescaleEnsemDown(yt_im);
 
 
-        for(int bin = 0; bin < corr->second.size(); bin++){//corr num issue
+        for(size_t bin = 0; bin < corr->second.size(); bin++){//corr num issue
 
 
           double Ef, Ei;
@@ -473,12 +511,12 @@ int main(int argc, char** argv)
 
       else{
         x_vec = x.at(corr_num); y_vec_rl = y_ensem_rl.at(corr_num); y_vec_im = y_ensem_im.at(corr_num);
-        for(int i = 0; i < x_vec.size(); i++){
+        for(size_t i = 0; i < x_vec.size(); i++){
           if( dt == (x_vec.at(i)).at(0).first ){
             double sizeo = (size_of_base.find(corr_num)->second - 1);
             double sizen = size_of_base.find(corr_num)->second;
 
-            for(int tin = 0; tin < ytensem_rl.size(); tin++){
+            for(size_t tin = 0; tin < ytensem_rl.size(); tin++){
               y_vec_rl.at(i).at(tin) =  ((SEMBLE::toScalar(sizeo) * rescaleEnsemDown(y_vec_rl.at(i).at(tin)) ) + rescaleEnsemDown(ytensem_rl.at(tin)))/SEMBLE::toScalar(sizen);
               y_vec_im.at(i).at(tin) =  ((SEMBLE::toScalar(sizeo) * rescaleEnsemDown(y_vec_im.at(i).at(tin)) ) + rescaleEnsemDown(ytensem_im.at(tin)))/SEMBLE::toScalar(sizen);
 
@@ -526,7 +564,7 @@ int main(int argc, char** argv)
 
   
   // START THE LOOP OVER THE CORRS IN THE EDB
-  for(int num_corr = 0; num_corr < x.size(); num_corr += 1)
+  for(size_t num_corr = 0; num_corr < x.size(); num_corr += 1)
   {
 
     int num_dt = x[num_corr].size();
@@ -593,7 +631,7 @@ int main(int argc, char** argv)
         vector<bool> remove_ends_all_im = ( data_at_x(data_im[num_dt], x_dt ) ) || ( data_at_x(data_im[num_dt], x_0 ) ); 
         remove_dt_all_im = remove_dt_all_im || !(remove_ends_all_im);
 
-        delete x_dt, x_0;
+        delete x_dt;delete x_0;
       }
       
       vector<bool> remove_noisy_rl = data_below_y_error( data_rl[i], noise); //removes all noisy data points depending on the absolute error in y
@@ -842,14 +880,15 @@ int main(int argc, char** argv)
     bool out_rl = false;
     bool out_im = false;
     bool write_out = true;
+    pair<double,double>  const_rl, const_im;
     
     if(output_rl.success){
-      pair<double,double>  const_rl = mean_err(output_rl.F);
-      if( (abs(const_rl.first) - (3.*(const_rl.second)) ) > 0. ){out_rl = true;}
+      const_rl = mean_err(output_rl.F);
+      if( (abs(const_rl.first) - abs(3.*(const_rl.second)) ) > 0. ){out_rl = true;}
     }
     if(output_im.success){
-      pair<double,double>  const_im = mean_err(output_im.F);
-      if( (abs(const_im.first) - (3.*(const_im.second)) ) > 0. ){out_im = true;}
+      const_im = mean_err(output_im.F);
+      if( (abs(const_im.first) - abs(3.*(const_im.second)) ) > 0. ){out_im = true;}
     }
     
 
@@ -865,11 +904,11 @@ int main(int argc, char** argv)
         ofstream file; // out file stream
         file.open(outfile.str());
         file << "The Arg(F) is: " << ratio.first << " ( "  << ratio.second << " ) " << endl;
-        file << "the real part is: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
-        file << "the imag part is: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
+        file << "the real part is: " << const_rl.first << " ( " << const_rl.second << " ) " << endl;
+        file << "the imag part is: " << const_im.first << " ( " << const_im.second << " ) " << endl;
         file << "****************************************************************" << endl << endl;
         if(out_rl){
-          file << "The value is real with the value of F: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
+          file << "The value is real with the value of F: " << const_rl.first << " ( " << const_rl.second << " ) " << endl;
 
           file.close();
               
@@ -907,12 +946,12 @@ int main(int argc, char** argv)
         ofstream file; // out file stream
         file.open(outfile.str());
         file << "The Arg(F) is: " << ratio.first << " ( "  << ratio.second << " ) " << endl;
-        file << "the real part is: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
-        file << "the imag part is: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
+        file << "the real part is: " << const_rl.first << " ( " << const_rl.second << " ) " << endl;
+        file << "the imag part is: " << const_im.first << " ( " << const_im.second << " ) " << endl;
         file << "****************************************************************" << endl << endl;
 
         if(out_im){
-          file << "The value is imag with the value of F: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
+          file << "The value is imag with the value of F: " << const_im.first << " ( " << const_im.second << " ) " << endl;
 
           file.close();
               
@@ -950,10 +989,10 @@ int main(int argc, char** argv)
 
       
       file << "The fits to the imaginary part failed" << endl;
-      file << "The value of the real part is: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl;
+      file << "The value of the real part is: " << const_rl.first << " ( " << const_rl.second << " ) " << endl;
       file << "****************************************************************" << endl << endl;
       if(out_rl){
-        file << "The value is real with the value of F: " << mean_err(output_rl.F).first << " ( " << mean_err(output_rl.F).second << " ) " << endl; 
+        file << "The value is real with the value of F: " << const_rl.first << " ( " << const_rl.second << " ) " << endl; 
 
         file.close();
           
@@ -988,10 +1027,10 @@ int main(int argc, char** argv)
       file.open(outfile.str());
 
       file << "The fits to the real part failed" << endl;
-      file << "The value of the imag part is: " << mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
+      file << "The value of the imag part is: " << const_im.first << " ( " << const_im.second << " ) " << endl;
       file << "****************************************************************" << endl << endl;
       if(out_im){
-        file << "The value is imag with the value of F: " <<  mean_err(output_im.F).first << " ( " << mean_err(output_im.F).second << " ) " << endl;
+        file << "The value is imag with the value of F: " <<  const_im.first << " ( " << const_im.second << " ) " << endl;
         file.close();
             
         fq2 = output_im.F;
@@ -1046,27 +1085,29 @@ int main(int argc, char** argv)
         write(outfile.str(), pf.ei);
       }
 
-      if(fqsq.find(name) == fqsq.end() ){
+      if(toDouble(mean(fq2)) == toDouble(mean(output_rl.F))){
+        if(fqsq.find(name) == fqsq.end() ){
 
-        vector<pair<pair< ENSEM::EnsemReal, ENSEM::EnsemReal>, ENSEM::EnsemReal>> fqsq_val;
-        fqsq_val.push_back(make_pair(make_pair(pf.qsq, pf.ei),fq2));
-        fqsq.insert(make_pair(name, fqsq_val)); 
+          vector<pair<pair< ENSEM::EnsemReal, ENSEM::EnsemReal>, ENSEM::EnsemReal>> fqsq_val;
+          fqsq_val.push_back(make_pair(make_pair(pf.qsq, pf.ei),fq2));
+          fqsq.insert(make_pair(name, fqsq_val)); 
 
-        }
+          }
 
-      else{ fqsq.find(name)->second.push_back(make_pair(make_pair(pf.qsq, pf.ei),fq2)); }
+        else{ fqsq.find(name)->second.push_back(make_pair(make_pair(pf.qsq, pf.ei),fq2)); }
 
-      stringstream s; s <<  std::fixed << std::setprecision(6) << toDouble(mean(pf.qsq));
-      string q2 = s.str();
+        stringstream s; s <<  std::fixed << std::setprecision(6) << toDouble(mean(pf.qsq));
+        string q2 = s.str();
 
-      stringstream ss; ss <<  std::fixed << std::setprecision(6) << toDouble(mean(pf.ei));
-      string ei = s.str();
+        stringstream ss; ss <<  std::fixed << std::setprecision(6) << toDouble(mean(pf.ei));
+        string ei = ss.str();
 
-      if(favg.find(q2) == favg.end()){ vector<ENSEM::EnsemReal> val; val.push_back(fq2); favg.insert( make_pair(q2,val) );}
-      else{favg.find(q2)->second.push_back(fq2);}
+        if(favg.find(q2) == favg.end()){ vector<ENSEM::EnsemReal> val; val.push_back(fq2); favg.insert( make_pair(q2,val) );}
+        else{favg.find(q2)->second.push_back(fq2);}
 
-      if(fmean.find(ei) == fmean.end()){ vector<ENSEM::EnsemReal> val; val.push_back(fq2); fmean.insert( make_pair(ei,val) );}
-      else{fmean.find(ei)->second.push_back(fq2);}
+        if(fmean.find(ei) == fmean.end()){ vector<ENSEM::EnsemReal> val; val.push_back(fq2); fmean.insert( make_pair(ei,val) );}
+        else{fmean.find(ei)->second.push_back(fq2);}
+      }
     }
 
     data_rl.clear(); keep_rl.clear(); control.clear(); data_im.clear(); keep_im.clear(); 
@@ -1161,9 +1202,10 @@ int main(int argc, char** argv)
       write_zvf << "## Q2        Zv        Zv_E" << endl << endl;
 
       for(auto it = favg.begin(); it != favg.end(); it++ ){
-        ENSEM::EnsemReal avg = it->second.at(0);
-        for(auto it1 = it->second.begin()+1; it1 != it->second.end(); it1++){avg += (SEMBLE::toScalar(1/it->second.size()) * (*it1));}
+        ENSEM::EnsemReal avg = rescaleEnsemDown(it->second.at(0));
+        for(auto it1 = it->second.begin()+1; it1 != it->second.end(); it1++){avg += (SEMBLE::toScalar(1/it->second.size()) * rescaleEnsemDown(*it1));}
 
+        avg = rescaleEnsemUp(avg);
 
         stringstream s; s << path << "Q2_" << it->first << "/jackfiles/FF.jack";
         write(s.str(),avg);
@@ -1191,10 +1233,11 @@ int main(int argc, char** argv)
 
 
       for(auto it = favg.begin(); it != favg.end(); it++ ){
-        ENSEM::EnsemReal avg = it->second.at(0);
+        ENSEM::EnsemReal avg = rescaleEnsemDown(it->second.at(0));
 
-        for(auto it1 = it->second.begin()+1; it1 != it->second.end(); it1++){avg += (SEMBLE::toScalar(1/it->second.size()) * (*it1));}
+        for(auto it1 = it->second.begin()+1; it1 != it->second.end(); it1++){avg += (SEMBLE::toScalar(1/it->second.size()) * rescaleEnsemDown(*it1));}
 
+        avg = rescaleEnsemUp(avg);
         stringstream s; s << path << "Q2_" << it->first << "/FF.jack";
 
 

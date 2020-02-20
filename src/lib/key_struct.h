@@ -13,6 +13,20 @@
 
 using namespace std;
 
+ struct curr_props
+ {
+   string name;
+   complex<double> coeff;
+   double nu_s;
+   double xi0;
+ };
+
+ struct npt_props
+ {
+    vector<string> npt_s;
+    vector<string> npt_t;
+ };
+
 
 namespace key_struct
 {
@@ -22,6 +36,7 @@ namespace key_struct
     //bool CompAr(XMLArray::Array<int> a1, XMLArray::Array<int> a2);
 
     /*struct */
+
     struct KeyHadronSUNNPartNPtIrrep_t
     {
         KeyHadronSUNNPartNPtIrrep_t() : row(0) {}

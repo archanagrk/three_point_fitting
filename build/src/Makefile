@@ -208,22 +208,22 @@ am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/config/depcomp \
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = ${SHELL} /Users/archanar/LQCDSoftware/three_pt_analysis/three_point_function_analysis/config/missing aclocal-1.16
 ADAT_CONFIG = /Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/bin/adat-config
-ADAT_CXXFLAGS = -O2 -I/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include -I/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2
+ADAT_CXXFLAGS = -O2 -I/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include -I/usr/local/Cellar/libxml2/2.9.10/include/libxml2
 ADAT_LDFLAGS = -L/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/lib
-ADAT_LIBS = -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.9_2/lib -lxml2 -lz -lpthread -liconv -lm
+ADAT_LIBS = -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.10/lib -lxml2 -lz -lpthread -liconv -lm
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 1
 AUTOCONF = ${SHELL} /Users/archanar/LQCDSoftware/three_pt_analysis/three_point_function_analysis/config/missing autoconf
 AUTOHEADER = ${SHELL} /Users/archanar/LQCDSoftware/three_pt_analysis/three_point_function_analysis/config/missing autoheader
 AUTOMAKE = ${SHELL} /Users/archanar/LQCDSoftware/three_pt_analysis/three_point_function_analysis/config/missing automake-1.16
 AWK = awk
-CC = gcc
+CC = gcc-9
 CCDEPMODE = depmode=gcc3
-CFLAGS = -g -O2
+CFLAGS = -Wall -w -O3 -mtune=native -fopenmp -fbounds-check
 CPPFLAGS = 
 CXX = g++-9
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -g -O2
+CXXFLAGS = -Wall -w -O3 -mtune=native -fopenmp -fbounds-check
 CYGPATH_W = echo
 DEFS = -DPACKAGE_NAME=\"3pt_fit\" -DPACKAGE_TARNAME=\"3pt_fit\" -DPACKAGE_VERSION=\"1.0\" -DPACKAGE_STRING=\"3pt_fit\ 1.0\" -DPACKAGE_BUGREPORT=\"archanar@jlab.org\" -DPACKAGE_URL=\"\" -DPACKAGE=\"3pt_fit\" -DVERSION=\"1.0\" -DPACKAGE=\"3pt_fit\" -DVERSION=\"1.0\"
 DEPDIR = .deps
@@ -271,8 +271,8 @@ abs_builddir = /Users/archanar/LQCDSoftware/three_pt_analysis/three_point_functi
 abs_srcdir = /Users/archanar/LQCDSoftware/three_pt_analysis/three_point_function_analysis/build/../src
 abs_top_builddir = /Users/archanar/LQCDSoftware/three_pt_analysis/three_point_function_analysis/build
 abs_top_srcdir = /Users/archanar/LQCDSoftware/three_pt_analysis/three_point_function_analysis/build/..
-ac_ct_CC = gcc
-ac_ct_CXX = g++
+ac_ct_CC = 
+ac_ct_CXX = 
 am__include = include
 am__leading_dot = .
 am__quote = 
@@ -315,12 +315,12 @@ top_srcdir = ../..
 # Boiler Plate stuff: Autoconf Substitutions etc
 #
 AM_CXXFLAGS = -I../../lib \
-	 -g -O2 -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/LQCDSoftware/three_pt_analysis/semble_install/include -O2 -I/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include -I/usr/local/Cellar/libxml2/2.9.9_2/include/libxml2 -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/LQCDSoftware/three_pt_analysis/fitting_lib_install/include  -I/Users/archanar/LQCDSoftware/Scattering/itpp_install/include -std=c++0x -O3
+	 -Wall -w -O3 -mtune=native -fopenmp -fbounds-check -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/LQCDSoftware/three_pt_analysis/semble_install/include -O2 -I/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/include -I/usr/local/Cellar/libxml2/2.9.10/include/libxml2 -O3 -mtune=native -fopenmp -fbounds-check -I/Users/archanar/LQCDSoftware/three_pt_analysis/fitting_lib_install/include  -I/Users/archanar/LQCDSoftware/Scattering/itpp_install/include -std=c++0x -O3
 
 AM_LDFLAGS = -L../lib \
   	  -L/Users/archanar/LQCDSoftware/Kinematic_factor/adat_devel_install/lib -L/Users/archanar/LQCDSoftware/three_pt_analysis/fitting_lib_install/lib -L/Users/archanar/LQCDSoftware/three_pt_analysis/semble_install/lib
 
-LDADD = -lfitting -lsemble -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.9_2/lib -lxml2 -lz -lpthread -liconv -lm  -L/Users/archanar/LQCDSoftware/Scattering/itpp_install/lib -litpp -llapack -lblas  -lfitting
+LDADD = -lfitting -lsemble -ladat -lfiledb -lfilehash -lXPathReader -lxmlWriter -lMinuit2Base -L/usr/local/Cellar/libxml2/2.9.10/lib -lxml2 -lz -lpthread -liconv -lm  -L/Users/archanar/LQCDSoftware/Scattering/itpp_install/lib -litpp -llapack -lblas  -lfitting
 
 ##############################################################
 ensemble_fit_three_pt_fns_SOURCES = exe/ensemble_fit_three_pt_fns.cc lib/three_point_timeslice_corr_functions.cc lib/three_point_timeslice_fitting.cc lib/edb_reader.cc lib/key_struct.cc\

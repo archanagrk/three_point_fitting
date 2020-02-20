@@ -27,7 +27,7 @@ ThreePointtimesliceCorrNExp::ThreePointtimesliceCorrNExp( vector<int> src_exp_, 
 void ThreePointtimesliceCorrNExp::initialize(){
 
   {stringstream ss; 
-    for(int t = 0; t < dt.size(); t++){
+    for(size_t t = 0; t < dt.size(); t++){
     ss << "src_exp_" << src_exp[t] << "_snk_exp_" << snk_exp[t] << "_dt_" << dt[t]; the_name = ss.str();
     }}
   
@@ -36,7 +36,7 @@ void ThreePointtimesliceCorrNExp::initialize(){
 
 
   /* loop over the number of source-sink seperations and independently choose the number of source exp, sink exp in case */
-  for(int t = 0; t < dt.size(); t++){
+  for(size_t t = 0; t < dt.size(); t++){
 
     if(snk_exp[t] == 1){    
       { stringstream ss; ss << "Ff" << "_Dt" << dt[t];  par_names.push_back( ss.str() ); }
@@ -49,7 +49,7 @@ void ThreePointtimesliceCorrNExp::initialize(){
     }
 
     if(src_exp[t] >= 2){
-      for(int i = 1; i <= snk_exp[t]; i++){
+      for(size_t i = 1; i <= snk_exp[t]; i++){
         { stringstream ss; ss << "Fi" << i << "_Dt" << dt[t];  par_names.push_back( ss.str() ); }
         { stringstream ss; ss << "Ei" << i << "_Dt" << dt[t]; par_names.push_back( ss.str() ); }
       }
@@ -59,7 +59,7 @@ void ThreePointtimesliceCorrNExp::initialize(){
 
     if(snk_exp[t] >= 2){
       par_names.push_back( "F" );
-      for(int i = 1; i < snk_exp[t]; i++){
+      for(size_t i = 1; i < snk_exp[t]; i++){
         { stringstream ss; ss << "Ff" << i << "_Dt" << dt[t];  par_names.push_back( ss.str() ); }
         { stringstream ss; ss << "Ef" << i << "_Dt" << dt[t]; par_names.push_back( ss.str() ); }
       }
@@ -87,7 +87,7 @@ double ThreePointtimesliceCorrNExp::operator()( std::pair<double,double> t, cons
   double out = F;
 
   /* loop over the number of source-sink seperations and independently choose the function based on number of source exp, sink exp in case */
-  for(int i = 0; i < dt.size(); i++){ if(dt[i] == t_snk){ Dt = i; break;} }
+  for(size_t i = 0; i < dt.size(); i++){ if(dt[i] == t_snk){ Dt = i; break;} }
 
   if(src_exp[Dt] == 0){
 

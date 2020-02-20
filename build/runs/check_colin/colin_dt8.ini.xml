@@ -1,0 +1,46 @@
+<ThreeptIniParams>
+
+    <inputProps>
+        <NumdbFiles>1</NumdbFiles>
+        <dbFnames>
+            <elem>
+                <name>colin_dt8.edb</name>
+                <dt>8</dt>
+                <tmin>0</tmin>
+                <tmax>8</tmax>
+                <tsrc>0</tsrc>
+                <tsnk>8</tsnk>
+                <EiMin>0.001</EiMin> <!-- Approximately the diff in the energy of the ground state & 1st ex. state at src -->
+                <EfMin>0.001</EfMin> <!-- Diff in the energy of the ground state & 1st ex. state at sink -->
+                <EiMax>0.9</EiMax>  <!-- Dominated by the first ex. state but limit till first threshold -->
+                <EfMax>0.9</EfMax>
+                <NtMin>3</NtMin> 
+            </elem>
+        </dbFnames>
+    </inputProps>
+
+
+    <FitProps>
+        <fit_qual>
+            <type>generic</type>
+              <params>
+              <power>1</power>
+                <powerExp>1</powerExp>
+                <powerT>1</powerT>
+                <expFac>true</expFac>
+              </params>
+        </fit_qual>
+        <divKfac>false</divKfac>
+        <kfac>check.xml</kfac>
+        <chisq_cutoff>3</chisq_cutoff>
+        <noise_cutoff>100</noise_cutoff>
+        <Ei>
+          <elem>Nucleon_proj0_p000_G1g.jack</elem>
+        </Ei>  
+        <Ef>
+          <elem>Nucleon_proj0_p000_G1g.jack</elem>
+        </Ef>
+    </FitProps>
+
+</ThreeptIniParams>
+
