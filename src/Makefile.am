@@ -19,24 +19,28 @@ LDADD = -lfitting @SEMBLE_LIBS@ @ADAT_LIBS@ @ITPP_LIBS@ @LIBS@ @FITTING_LIBS@
 ##   be built by 'make check' and is not installed.
 
 
-bin_PROGRAMS = fit_zt ensemble_fit_three_pt_fns make_elab
+bin_PROGRAMS = fit_zt ensemble_fit_three_pt_fns make_elab fit_formfac_qsq
 
 check_PROGRAMS = test_three_pt_fit
 
 ##############################################################
 
-ensemble_fit_three_pt_fns_SOURCES   = exe/ensemble_fit_three_pt_fns.cc lib/three_point_timeslice_corr_functions.cc lib/three_point_timeslice_fitting.cc lib/edb_reader.cc lib/key_struct.cc\
+ensemble_fit_three_pt_fns_SOURCES   = exe/ensemble_fit_three_pt_fns.cc lib/three_point_timeslice_corr_functions.cc lib/three_point_timeslice_fitting.cc io/edb_reader.cc io/key_struct.cc\
 													lib/three_point_timeslice_corr_functions_factory.cc lib/three_pt_fit_quality_factory.cc \
-													lib/three_pt_fit_quality.cc lib/rotations.cc
+													lib/three_pt_fit_quality.cc lib/rotations.cc\
+													io/xml_reader.cc io/write_data.cc
 
-fit_zt_SOURCES		= exe/fit_zt.cc lib/z_timeslice_fitting.cc lib/z_timeslice_functions.cc \
-												lib/z_timeslice_functions_factory.cc
+fit_zt_SOURCES		= test/fit_zt.cc test/z_timeslice_fitting.cc test/z_timeslice_functions.cc \
+												test/z_timeslice_functions_factory.cc
 
-test_three_pt_fit_SOURCES	= exe/test_three_pt_fit.cc lib/three_point_timeslice_corr_functions.cc lib/three_point_timeslice_fitting.cc \
+fit_formfac_qsq_SOURCES    = exe/fit_formfac_qsq.cc lib/formfac_qsq_fitting.cc lib/formfac_qsq_functions.cc \
+										 lib/formfac_qsq_functions_factory.cc io/read_formfac_qsq_data.cc
+
+test_three_pt_fit_SOURCES	= test/test_three_pt_fit.cc lib/three_point_timeslice_corr_functions.cc lib/three_point_timeslice_fitting.cc \
                            lib/three_point_timeslice_corr_functions_factory.cc lib/three_pt_fit_quality_factory.cc \
                            lib/three_pt_fit_quality.cc
 
-make_elab_SOURCES = exe/make_elab.cc 
+make_elab_SOURCES = utility/make_elab.cc 
 ##############################################################
 
 
